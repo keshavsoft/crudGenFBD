@@ -19,6 +19,9 @@ let StartFunc = ({ inId }) => {
         return LocalReturnData;
     }
 
+    let LocalGenerateReference = {}
+    LocalGenerateReference.GenerateReference = {}
+    LocalGenerateReference.GenerateReference.ReferncePk = LocalId;
     let LocalBookingData = {};
     LocalBookingData.BookingData = {};
     LocalBookingData.OrderNumber = LocalIdByOrderData.UuId
@@ -28,18 +31,18 @@ let StartFunc = ({ inId }) => {
     LocalBookingData.BookingData.CheckOutData = LocalIdByOrderData.CheckOutData;
 
     Object.entries(LocalIdByOrderData.ItemsInOrder).forEach(([key, value]) => {
-        LocalForEachFunc({ itemData: value, inBookingData: LocalBookingData });
+        LocalForEachFunc({ inGenerateReference: LocalGenerateReference, itemData: value, inBookingData: LocalBookingData });
     });
     LocalReturnData.KTF = true;
     return LocalReturnData;
 };
 
-let LocalForEachFunc = ({ itemData, inBookingData }) => {
+let LocalForEachFunc = ({ inGenerateReference, itemData, inBookingData }) => {
     for (let i = 0; i < itemData.Pcs; i++) {
 
         let LocalSendData = {};
         LocalSendData.Pcs = i
-        LocalSendData = { ...itemData, ...inBookingData }
+        LocalSendData = { ...inGenerateReference, ...itemData, ...inBookingData }
         StartFuncwriteFileFromModal({ inDataToInsert: LocalSendData })
 
     };
