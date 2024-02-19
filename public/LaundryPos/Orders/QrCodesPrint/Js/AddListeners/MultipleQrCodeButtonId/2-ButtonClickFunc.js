@@ -25,7 +25,7 @@ let StartFunc = async ({ inEvent }) => {
                     inRowPk: jVarLocalRowPk
                 }).then(ResponseData => {
                     if (ResponseData) {
-                        StartFuncAfterFetch({ inQrCodeData: ResponseData });
+                        StartFuncAfterFetch({ inQrCodeData: ResponseData, inRowPk: jVarLocalRowPk });
                     };
                 });
             };
