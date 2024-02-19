@@ -9,12 +9,12 @@ import { StartFunc as StartFuncBillPrint } from "./BillPrint/EntryFile.js";
 import { StartFunc as StartFuncParent } from "./Parent/EntryFile.js";
 
 const StartFunc = () => {
-    StartFuncOrdersShow();
-    StartFuncTodayOrders();
-    StartFuncAllOrders();
-    StartFuncQrCodes();
+    // StartFuncOrdersShow();
+    // StartFuncTodayOrders();
+    // StartFuncAllOrders();
+    // StartFuncQrCodes();
     StartFuncQrCodesTable();
-    StartFuncOrdersBSTable();
+    // StartFuncOrdersBSTable();
     StartFuncQrCodesPrint();
     StartFuncBillPrint();
     StartFuncParent();

@@ -1,11 +1,8 @@
-// import { StartFunc as StartFuncKSMainTableRowDeleteClass } from "./KSMainTableRowDeleteClass/1-ClickAssign.js";
 import { StartFunc as StartFuncAddListeners } from "../../../../../AddListeners/StartFunc.js";
 
 let StartFunc = ({ inDataToShow, inQrCodeData }) => {
     jFLocalHideSpinner();
     let LocalinDataToShow = inDataToShow;
-    let jVarLocalDataToShow = jFLocalToArray({ inDataToShow });
-
     var $table = $('#table');
     let jVarLocalTransformedData = jFLocalInsertAggValues({ inData: LocalinDataToShow });
     let jVarWithQrCodeData = jFLocalInsertQrCodeData({ inData: jVarLocalTransformedData, inQrCodeData: inQrCodeData });
@@ -14,22 +11,8 @@ let StartFunc = ({ inDataToShow, inQrCodeData }) => {
     });
 
     StartFuncAddListeners();
-    // StartFuncKSMainTableRowDeleteClass();
 };
 
-let jFLocalToArray = ({ inDataToShow }) => {
-    let jVarLocalArray = [];
-    Object.entries(inDataToShow).forEach(
-        ([key, value]) => {
-            jVarLocalArray.push({
-                ...value,
-                UuId: key
-            });
-        }
-    );
-
-    return jVarLocalArray;
-};
 
 let jFLocalHideSpinner = () => {
     let jVarLocalSpinnerId = document.getElementById("SpinnerId");
@@ -66,9 +49,9 @@ let jFLocalInsertQrCodeData = ({ inData, inQrCodeData }) => {
     inData.forEach(element => {
         element.IsQrCodesRaised = false;
         element.TotalItems = 0;
-        let FindCheck = inQrCodeData.find(ele => ele.OrderNumber == element.pk);
-        if (FindCheck) {
-            element.TotalItems = Math.max(...Object.keys(element.ItemsInOrder))
+        let FilterCheck = inQrCodeData.filter(ele => ele.OrderNumber == element.pk);
+        if (FilterCheck.length > 0) {
+            element.TotalItems = FilterCheck.length
             element.IsQrCodesRaised = true;
         };
         jVarLocalReturnArray.push(element)
