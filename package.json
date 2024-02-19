@@ -2,7 +2,7 @@
   "name": "crudgenfbd",
   "version": "1.0.0",
   "description": "crud generate for flat json files only with folders",
-  "main": "PortListen.js",
+  "main": "app.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
