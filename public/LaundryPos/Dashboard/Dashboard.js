@@ -1,0 +1,9 @@
+import { StartFunc as StartFuncFormLoad } from "./Js/FormLoad/StartFunc.js";
+import { StartFunc as StartFuncAddListeners } from "./Js/AddListeners/StartFunc.js";
+
+const StartFunc = () => {
+    StartFuncFormLoad();
+    StartFuncAddListeners();
+};
+
+StartFunc();
