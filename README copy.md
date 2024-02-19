@@ -1,4 +1,4 @@
-<h1 align="center" color="#0000FF">crudGenFBD</h1>
+<h1 align="center" color="#0000FF">crudgenbd</h1>
 
 [![KeshavSoft Logo](./KeshavSoft.jpg)](https://keshavsoft.com/)
 
@@ -30,13 +30,13 @@ This project focuses on automating CRUD operations for JSON files, making it eas
 2. Clone the repository
    ```
    
-   git clone https://github.com/keshavsoft/crudGenFBD
+   git clone https://github.com/keshavsoft/crudGenBD
    
    ```
-3. Change Directory to crudGenFBD or Open the cloned folder, navigate to crudGenFBD, and open the command prompt.
+3. Change Directory to crudGenBD or Open the cloned folder, navigate to crudGenBD, and open the command prompt.
    ```
    
-    cd crudGenFBD
+    cd crudGenBD
    
    ```
 4. Run the batch file (For Windows)
