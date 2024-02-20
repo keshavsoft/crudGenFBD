@@ -15,8 +15,11 @@ let StartFunc = ({ inTablesCollection }) => {
         });
 
         LocalSecondLevelFiles.forEach(LoopSecondLevel => {
-            let LoopInside = LoopSecondLevel.path.replace(ConfigJson.ToDataDetails.DataSchemaLocation, ConfigJson.ToDataDetails.DataPath);
+            // let LoopInside = LoopSecondLevel.path.replace(ConfigJson.ToDataDetails.DataSchemaLocation, ConfigJson.ToDataDetails.DataPath);
+            let LoopInsideFirstChar = LoopSecondLevel.path.replaceAll("\\", "/");
+            let LoopInside = LoopInsideFirstChar.replace(ConfigJson.ToDataDetails.DataSchemaLocation, ConfigJson.ToDataDetails.DataPath);
 
+            
             fs.writeFileSync(LoopInside, JSON.stringify([]));
         });
     });

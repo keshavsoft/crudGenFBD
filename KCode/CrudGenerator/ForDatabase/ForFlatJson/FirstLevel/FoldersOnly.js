@@ -9,7 +9,10 @@ let StartFunc = ({ inTablesCollection }) => {
     });
 
     LocalFirstLevelFolders.forEach(element => {
-        let LoopInside = element.path.replace(ConfigJson.ToDataDetails.DataSchemaLocation, ConfigJson.ToDataDetails.DataPath);
+        let LoopInsideFirstChar = element.path.replaceAll("\\", "/");
+        let LoopInside = LoopInsideFirstChar.replace(ConfigJson.ToDataDetails.DataSchemaLocation, ConfigJson.ToDataDetails.DataPath);
+
+        // let LoopInside = element.path.replace(ConfigJson.ToDataDetails.DataSchemaLocation, ConfigJson.ToDataDetails.DataPath);
         fs.mkdirSync(LoopInside);
     });
 };

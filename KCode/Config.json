@@ -2,6 +2,6 @@
     "ToDataDetails": {
         "DataPk": 317,
         "DataPath": "KData/JSON",
-        "DataSchemaLocation": "KCode\\DataSchema"
+        "DataSchemaLocation": "KCode/DataSchema"
     }
 }
