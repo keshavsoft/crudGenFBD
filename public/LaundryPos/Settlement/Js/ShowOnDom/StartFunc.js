@@ -1,6 +1,6 @@
 import { StartFunc as StartFuncFetchFuncs } from "./FetchFuncs/EntryFile.js";
 
-const StartFunc = ({ inPk }) => {
-     StartFuncFetchFuncs({ inPk });
+const StartFunc = ({ inParams }) => {
+     StartFuncFetchFuncs({ inParams });
 };
 export { StartFunc };
