@@ -1,11 +1,7 @@
-import { StartFunc as StartFuncClickFunc } from "./ClickFunc.js";
+import { StartFunc as StartFuncClickFunc } from "./FetchFuncs/1-ClickAssign.js";
 
 let StartFunc = () => {
-    let jVarLocalClassName = document.getElementsByClassName("SettlementButtonClass");
-
-    for (let i = 0; i < jVarLocalClassName.length; i++) {
-        jVarLocalClassName[i].addEventListener('click', StartFuncClickFunc);
-    }
+    StartFuncClickFunc();
 };
 
 export { StartFunc };

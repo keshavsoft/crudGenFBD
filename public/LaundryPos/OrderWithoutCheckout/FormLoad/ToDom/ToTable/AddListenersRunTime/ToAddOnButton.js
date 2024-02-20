@@ -107,22 +107,6 @@ let jFLocalFromRowTable = ({ inJVarClosestTr }) => {
     jVarLocalReturnObject.Total = jVarLocalOrderItemsTotalClass.innerHTML;
 
     return jVarLocalReturnObject;
-    // let jVarLocalOrderItemsOrderItemsItemNameClass = clone.querySelector(".OrderItemsItemNameClass");
-    // jVarLocalOrderItemsOrderItemsItemNameClass.innerHTML = inItemName;
-
-    // let jVarLocalOrderItemsOrderItemsRateClass = clone.querySelector(".OrderItemsRateClass");
-    // jVarLocalOrderItemsOrderItemsRateClass.innerHTML = inItemRate;
-
-    // let jVarLocalOrderItemsOrderItemsItemWashClass = clone.querySelector(".OrderItemsItemWashClass");
-    // jVarLocalOrderItemsOrderItemsItemWashClass.innerHTML = inWashType;
-
-    // let jVarLocalOrderItemsOrderItemsAddOnClass = clone.querySelector(".OrderItemsAddOnClass");
-    // jVarLocalOrderItemsOrderItemsAddOnClass.innerHTML = inAddOn;
-
-    // let jVarLocalOrderItemsOrderItemsItemPcsClass = clone.querySelector(".OrderItemsItemPcsClass");
-    // jVarLocalOrderItemsOrderItemsItemPcsClass.innerHTML = inPcs;
-
-    //  StartFuncToAddOns({ inItemSerial: jVarLocalCurrentTarget.value });
 };
 
 export { StartFunc };

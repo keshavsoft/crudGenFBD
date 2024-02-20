@@ -1,10 +1,6 @@
-import { StartFunc as StartFuncShowSettlementDetails } from "./ShowSettlementDetails/StartFunc.js";
-
-import { StartFunc as StartFuncShowOrderDetails } from "./ShowOrderDetails/EntryFile.js";
+import { StartFunc as StartFuncFetchFuncs } from "./FetchFuncs/EntryFile.js";
 
 const StartFunc = ({ inPk }) => {
-    StartFuncShowOrderDetails({ inPk });
-    StartFuncShowSettlementDetails({ inPk });
+     StartFuncFetchFuncs({ inPk });
 };
-
 export { StartFunc };

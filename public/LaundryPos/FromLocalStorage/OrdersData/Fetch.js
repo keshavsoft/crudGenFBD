@@ -1,10 +1,10 @@
 
-const StartFunc = async (inPk) => {
+const StartFunc = async ({inPk}) => {
     let jVarLocalFetchUrl = `/bin/Transactions/Kakinada/${inPk}`;
 
 
     let localFetch = await fetch(jVarLocalFetchUrl);
-    let jVarLocalResponse = await response.json();
+    let jVarLocalResponse = await localFetch.json();
 
 
     return jVarLocalResponse;
