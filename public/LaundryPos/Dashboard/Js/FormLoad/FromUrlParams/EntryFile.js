@@ -8,6 +8,8 @@ let StartFunc = () => {
             icon: "error"
         });
     };
+
+    document.getElementById("BranchNameId").innerHTML = jVarLocalBranchName;
 };
 
 let getUrlQueryParams = ({ inGetKey }) => {
