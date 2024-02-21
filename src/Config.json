@@ -1,6 +1,6 @@
 {
     "jsonConfig": {
-        "DataPk": 316,
+        "DataPk": 317,
         "DataPath": "KData/JSON",
         "tableAndColumns": {
             "path": "FromTableColumns/317",

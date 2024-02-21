@@ -2,7 +2,7 @@ import {
     GetFunc as GetFuncRepo, GetDataOnlyFunc as GetDataOnlyFuncRepo,
     GetFromModalUuidFunc as GetFromModalUuidFuncRepo,
     GetFromModalUuidAndTSFunc as GetFromModalUuidAndTSFuncRepo, GetFromModalFunc as GetFromModalFuncRepo,
-    GetIdFunc as GetIdFuncRepo, GetBodyCheckFunc as GetBodyCheckFuncRepo,GetRowCountFunc as GetRowCountFuncRepo
+    GetIdFunc as GetIdFuncRepo, GetBodyCheckFunc as GetBodyCheckFuncRepo,GetRowCountFunc as GetRowCountFuncRepo,
 } from '../../repos/getFuncs/EntryFile.js';
 
 
@@ -17,6 +17,7 @@ let GetDataOnlyFunc = async (req, res) => {
 
     res.json(LocalFromRepo);
 };
+
 let GetIdFunc = async (req, res) => {
     let LocalParams = req.params;
     let LocalIfFromParam = LocalParams.id;
