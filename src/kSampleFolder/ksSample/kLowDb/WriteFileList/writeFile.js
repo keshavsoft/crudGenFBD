@@ -7,7 +7,12 @@ let StartFunc = ({ inDataToInsert }) => {
     LocalReturnData.KTF = false;
 
     const db = StartFuncCommonFuncs()
+   
     db.read();
+    if ("error" in  db.data) {
+        return db.data ;
+    };
+    
     let LocalDataWithUuid = LocalFuncGeneratePk({ inDataToInsert: LocalinDataToInsert, inData: db.data });
 
     if (Array.isArray(db.data) === false) {
