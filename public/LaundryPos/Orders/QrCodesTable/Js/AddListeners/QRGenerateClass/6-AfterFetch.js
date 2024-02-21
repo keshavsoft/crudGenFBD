@@ -2,7 +2,6 @@ let StartFunc = async ({ inFromFetch }) => {
     if (inFromFetch.KTF === false) {
         Swal.fire({
             icon: 'warning',
-            title: 'Raised',
             text: inFromFetch.KReason
         });
     } else {
@@ -17,7 +16,7 @@ let StartFunc = async ({ inFromFetch }) => {
             Swal.fire({
                 icon: 'success',
                 title: 'Raised',
-                text: inFromFetch.QrCodesRaised + ' QrCodes raised successfully'
+                text: ' QrCodes raised successfully'
             });
 
             let jVarLocalHtmlId = 'RefreshBSTableId';
