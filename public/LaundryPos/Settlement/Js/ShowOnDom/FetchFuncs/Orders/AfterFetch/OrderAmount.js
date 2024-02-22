@@ -1,5 +1,10 @@
+import { StartFunc as StartFuncFromLocalStorageOrderItemsToShow } from "../../../../../../FromLocalStorage/OrderItemsToShow/Bulk.js";
+
+
 let StartFunc = ({ inData }) => {
-    let jVarLocalItemsArray = Object.values(inData).map(element => {
+    let jVarLocalDataNeeded = StartFuncFromLocalStorageOrderItemsToShow();
+
+    let jVarLocalItemsArray = Object.values(jVarLocalDataNeeded.BodyData).map(element => {
         return element.Total;
     });
 
