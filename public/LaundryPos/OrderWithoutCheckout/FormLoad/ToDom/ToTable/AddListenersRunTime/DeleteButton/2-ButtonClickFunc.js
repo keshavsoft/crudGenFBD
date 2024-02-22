@@ -34,7 +34,7 @@ let jFLocalSwalAfterSwal = ({ inItemSerial }) => {
         let jVarLocalPreparePostData = StartFuncPreparePostData({ inItemSerial });
 
         StartFuncFetchFunc({ inBodyData: jVarLocalPreparePostData }).then(PromiseData => {
-            if (PromiseData.KTF === true) {
+            if (PromiseData === true) {
                 window.location.href = "";
             }
         });

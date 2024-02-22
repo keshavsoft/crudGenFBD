@@ -6,7 +6,7 @@ let StartFunc = ({ inTable, inId }) => {
     let LocalTable = inTable;
     let LocalId = inId;
     let LocalReturnData = { KTF: false, KReason: "" };
-    let LocalCheck = StartFuncCheck({ inId: LocalId });
+    let LocalCheck = StartFuncCheck({ inTable: LocalTable, inId: LocalId });
 
     if (LocalCheck.KTF === false) {
         return LocalReturnData;

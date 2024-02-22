@@ -1,6 +1,7 @@
 import { StartFunc as StartFuncToAddOns } from "../ToAddOns.js";
 
 let StartFunc = (event) => {
+    console.log("BranchName");
     jFLocalItemSerialButtonClickFunc(event);
 };
 
@@ -85,11 +86,8 @@ let jFLocalFromRowTable = ({ inJVarClosestTr }) => {
 
     let jVarLocalOrderItemsRateClass = inJVarClosestTr.querySelector(".OrderItemsRateClass");
 
-    let jVarLocalOrderItemsAddOnClass = inJVarClosestTr.querySelector(".OrderItemsAddOnClass");
-
     let jVarLocalOrderItemsTotalClass = inJVarClosestTr.querySelector(".OrderItemsTotalClass");
 
-    // jVarLocalOrderItemsCategoryClass.innerHTML = inCategory;
     jVarLocalReturnObject.Category = jVarLocalOrderItemsCategoryClass.innerHTML;
 
     jVarLocalReturnObject.ItemName = jVarLocalOrderItemsItemNameClass.innerHTML;
@@ -107,23 +105,6 @@ let jFLocalFromRowTable = ({ inJVarClosestTr }) => {
     jVarLocalReturnObject.Total = jVarLocalOrderItemsTotalClass.innerHTML;
 
     return jVarLocalReturnObject;
-    // let jVarLocalOrderItemsOrderItemsItemNameClass = clone.querySelector(".OrderItemsItemNameClass");
-    // jVarLocalOrderItemsOrderItemsItemNameClass.innerHTML = inItemName;
-
-    // let jVarLocalOrderItemsOrderItemsRateClass = clone.querySelector(".OrderItemsRateClass");
-    // jVarLocalOrderItemsOrderItemsRateClass.innerHTML = inItemRate;
-
-    // let jVarLocalOrderItemsOrderItemsItemWashClass = clone.querySelector(".OrderItemsItemWashClass");
-    // jVarLocalOrderItemsOrderItemsItemWashClass.innerHTML = inWashType;
-
-    // let jVarLocalOrderItemsOrderItemsAddOnClass = clone.querySelector(".OrderItemsAddOnClass");
-    // jVarLocalOrderItemsOrderItemsAddOnClass.innerHTML = inAddOn;
-
-    // let jVarLocalOrderItemsOrderItemsItemPcsClass = clone.querySelector(".OrderItemsItemPcsClass");
-    // jVarLocalOrderItemsOrderItemsItemPcsClass.innerHTML = inPcs;
-
-    //  console.log("jVarLocalCurrentTarget : ", jVarLocalOrderItemsCategoryClass.innerHTML);
-    //  StartFuncToAddOns({ inItemSerial: jVarLocalCurrentTarget.value });
 };
 
 export { StartFunc };

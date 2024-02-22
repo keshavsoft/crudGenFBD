@@ -3,8 +3,8 @@ import { StartFunc as StartFuncFetch } from "./Fetch.js";
 
 const StartFunc = ({ inPk, inBranchName }) => {
     let jVarLocalDataNeeded = StartFuncBulk({ inBranchName });
-    let LocalOrdersData = StartFuncFetch({ inPk });
-    console.log("LocalOrdersData:",LocalOrdersData);
+    let LocalOrdersData = StartFuncFetch({ inPk ,inBranchName});
+    console.log("LocalOrdersData:",LocalOrdersData,inBranchName,inPk);
     console.log("jVarLocalDataNeeded:", jVarLocalDataNeeded);
 
     // let jVarLocalReturnData = {};

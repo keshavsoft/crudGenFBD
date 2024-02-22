@@ -7,7 +7,7 @@ let StartFunc = async ({ inId }) => {
   db.read();
   let LocalarrayOfObjects = db.data;
 
-  const LocalFindId = LocalarrayOfObjects.find((obj) => obj.UuId === LocalId);
+  const LocalFindId = LocalarrayOfObjects.find((obj) => obj.pk == LocalId);
 
   if (LocalFindId === undefined) {
     return await { KTF: false, KReason: "Id not found in data" };
@@ -29,7 +29,7 @@ let deleteObjectById = ({ inCollection, inId }) => {
   let LocalId = inId;
 
   LocalCollection.splice(
-    LocalCollection.findIndex((a) => a.UuId === LocalId),
+    LocalCollection.findIndex((a) => a.pk == LocalId),
     1
   );
 
