@@ -1,36 +1,43 @@
-import { StartFunc as StartFuncCommonFuncs } from './readFileById.js';
+import { StartFunc as StartFuncReadBranchFile } from './readBranchFile.js';
 import { StartFunc as StartFuncwriteFileFromModal } from '../../../../../../../bin/QrCodes/Generate/kLowDb/WriteFileList/writeFile.js';
 import { StartFuncForBookings as StartFuncCheckQrCodes } from "../CheckQrCodes.js";
+import { StartFunc as StartFuncNoOrderCheck } from "./Check/NoOrderCheck.js";
+import { StartFunc as StartFuncSettlementCheck } from "./Check/SettlementCheck.js";
 
 let StartFunc = ({ inTable, inId }) => {
     let LocalTable = inTable;
     let LocalBookingPk = inId;
-    let LocalReturnData = { KTF: false, KReason: "" };
+    let LocalReturnData = { KTF: false };
+
     let LocalCheck = StartFuncCheckQrCodes({ inTable: LocalTable, inBookingPk: LocalBookingPk });
 
     if (LocalCheck.KTF === false) {
         return LocalReturnData;
     };
 
-    const db = StartFuncCommonFuncs({ inTable: LocalTable, inId: LocalId });
-    LocalReturnData = { ...db };
-    LocalReturnData.KTF = false;
+    const db = StartFuncReadBranchFile({ inTable: LocalTable });
+    db.read();
+    let LocalBranchData = db.data;
 
-    let LocalIdByOrderData = LocalReturnData.JsonData;
+    let LocalOrdeCheck = StartFuncNoOrderCheck({ inBranchData: LocalBranchData, inBookingPk: LocalBookingPk });
 
-    if (db.KTF === false) {
+    if (LocalOrdeCheck.KTF === false) {
+        LocalReturnData.KReason = LocalOrdeCheck.KReason;
         return LocalReturnData;
     };
 
-    if (Object.values(LocalIdByOrderData.CheckOutData)[0] === undefined) {
-        delete LocalReturnData.JsonData;
-        LocalReturnData.KReason = "No Settlement"
+    let LocalSettlementCheck = StartFuncSettlementCheck({ inBranchData: LocalBranchData, inBookingPk: LocalBookingPk });
+
+    if (LocalSettlementCheck.KTF === false) {
+        LocalReturnData.KReason = LocalSettlementCheck.KReason;
         return LocalReturnData;
     };
+
+    let LocalIdByOrderData = LocalSettlementCheck.JsonData;
 
     let LocalGenerateReference = {}
     LocalGenerateReference.GenerateReference = {}
-    LocalGenerateReference.GenerateReference.ReferncePk = LocalId;
+    LocalGenerateReference.GenerateReference.ReferncePk = LocalBookingPk;
     let LocalBookingData = {};
     LocalBookingData.BookingData = {};
     LocalBookingData.OrderNumber = LocalIdByOrderData.UuId
