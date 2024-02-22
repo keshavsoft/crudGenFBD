@@ -44,12 +44,13 @@ let jFLocalInsertAggValues = ({ inData }) => {
 };
 
 let jFLocalInsertQrCodeData = ({ inData, inQrCodeData }) => {
+    let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
 
     let jVarLocalReturnArray = [];
     inData.forEach(element => {
         element.IsQrCodesRaised = false;
         element.TotalItems = 0;
-        let FilterCheck = inQrCodeData.filter(ele => ele.OrderNumber == element.pk);
+        let FilterCheck = inQrCodeData.filter(ele => ele.OrderNumber == element.pk && ele.BookingData.OrderData.BranchName == jVarLocalBranchName);
         if (FilterCheck.length > 0) {
             element.TotalItems = FilterCheck.length
             element.IsQrCodesRaised = true;
@@ -58,6 +59,14 @@ let jFLocalInsertQrCodeData = ({ inData, inQrCodeData }) => {
     });
     return jVarLocalReturnArray;
 };
+
+let getUrlQueryParams = ({ inGetKey }) => {
+    const queryString = window.location.search;
+    const parameters = new URLSearchParams(queryString);
+    const value = parameters.get(inGetKey);
+    return value;
+};
+
 
 
 export { StartFunc }

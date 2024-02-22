@@ -1,18 +1,14 @@
-// import ApiConfigJson from "./../../../../../../../../../ApiConfig.json" assert {type: 'json'};
 
 let StartFunc = async ({ inBodyData }) => {
-    let jVarLocalBodyData = inBodyData;
+    let jVarLocalMainRowPK = inBodyData.MainRowPK;
+    let jVarLocalRowPK = inBodyData.RowPK;
+    let jVarLocalBranchName = inBodyData.BranchName;
+    let jVarLocalinKey = inBodyData.inKey;
 
-    // POST http://localhost:4119/JSONApi/Api/Data/FromFolder/FromFile/Items/FromDataFolder/WithScreens/SubTable/WithChecking/Insert
-    let jVarLocalFetchUrl = `/${ApiConfigJson.ProjectName}/Api/Data/FromFolder/FromFile/ScreensFromDisplayJson/SubTable/Row/Delete/FromRowPK`;
+    let jVarLocalFetchUrl = `/bin/Transactions/${jVarLocalBranchName}/FromKey/${jVarLocalMainRowPK}/${jVarLocalinKey}/${jVarLocalRowPK}`;
 
     let jVarLocalFetchHeaderObject = {
-        method: "post",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(jVarLocalBodyData)
+        method: "DELETE"
     };
 
     let response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaderObject);

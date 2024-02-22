@@ -37,7 +37,7 @@ const LocalInsertToKeyRow = ({ inFindRow, inDataToUpdate, inKeyName }) => {
     let LocalKeyName = inKeyName;
     let LocalKeyNeeded = LocalFindRow[LocalKeyName];
 
-    let largest_id = Math.max(...Object.keys(LocalKeyNeeded));
+    let largest_id = Math.max(...Object.keys(LocalKeyNeeded), 0);
 
     LocalKeyNeeded[largest_id + 1] = LocalDataToUpdate;
 };
