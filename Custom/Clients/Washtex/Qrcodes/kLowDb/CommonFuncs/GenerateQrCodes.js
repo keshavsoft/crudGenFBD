@@ -1,6 +1,6 @@
 import { StartFunc as StartFuncCommonFuncs } from '../../../../../../bin/Transactions/Kakinada/kLowDb/ReadFileList/readFileById.js';
 import { StartFunc as StartFuncwriteFileFromModal } from '../../../../../../bin/QrCodes/Generate/kLowDb/WriteFileList/writeFile.js';
-import { StartFunc as StartFuncCheck } from "./Check.js";
+import { StartFunc as StartFuncCheck } from "./CheckQrCodes.js";
 
 let StartFunc = ({ inId }) => {
     let LocalId = inId;

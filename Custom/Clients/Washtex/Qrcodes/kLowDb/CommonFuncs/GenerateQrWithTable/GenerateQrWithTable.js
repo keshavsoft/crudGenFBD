@@ -1,12 +1,12 @@
 import { StartFunc as StartFuncCommonFuncs } from './readFileById.js';
 import { StartFunc as StartFuncwriteFileFromModal } from '../../../../../../../bin/QrCodes/Generate/kLowDb/WriteFileList/writeFile.js';
-import { StartFunc as StartFuncCheck } from "../Check.js";
+import { StartFuncForBookings as StartFuncCheckQrCodes } from "../CheckQrCodes.js";
 
 let StartFunc = ({ inTable, inId }) => {
     let LocalTable = inTable;
-    let LocalId = inId;
+    let LocalBookingPk = inId;
     let LocalReturnData = { KTF: false, KReason: "" };
-    let LocalCheck = StartFuncCheck({ inTable: LocalTable, inId: LocalId });
+    let LocalCheck = StartFuncCheckQrCodes({ inTable: LocalTable, inBookingPk: LocalBookingPk });
 
     if (LocalCheck.KTF === false) {
         return LocalReturnData;
