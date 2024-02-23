@@ -11,10 +11,11 @@ let StartFunc = async () => {
         let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
 
         let LocalBranchFilterData = jVarLocalDcData.filter(e => e.BranchName == jVarLocalBranchName)
+        let LocalScanedFilterData = jVarLocalItemsData.filter(e => e.BranchName == jVarLocalBranchName)
 
         let jVarLocalData = jFLocalItemsData({
             inDcData: LocalBranchFilterData,
-            inItemsData: jVarLocalItemsData,
+            inItemsData: LocalScanedFilterData,
 
         });
 
@@ -26,11 +27,13 @@ let jFLocalItemsData = ({ inDcData, inItemsData }) => {
     let jVarLocalDcData = inDcData;
     let jVarLocalItemsData = inItemsData;
 
-    let localArrayObj = Object.values(jVarLocalDcData);
+    let localArrayObj = jVarLocalDcData;
 
     let jVarLocalReturnArray = localArrayObj.map((element) => {
 
-        element.ItemDetails = element.pk in jVarLocalItemsData ? jVarLocalItemsData[element.pk] : 0;
+        let LocalFilterdata = jVarLocalItemsData.filter(e => e.VoucherRef == element.pk)
+
+        element.ItemDetails = jVarLocalItemsData.length > 0 ? LocalFilterdata.length : 0;
 
         return element;
     });

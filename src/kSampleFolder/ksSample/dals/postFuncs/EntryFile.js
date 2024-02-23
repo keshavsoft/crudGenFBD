@@ -3,9 +3,15 @@ import { StartFunc as StartFuncwriteFile } from '../../kLowDb/WriteFileList/writ
 import { StartFunc as StartFuncWriteFileFromModal } from '../../kLowDb/WriteFileList/writeFileFromModal.js';
 import { StartFunc as StartFuncImportToFile } from '../../kLowDb/WriteFileList/ImportToFile.js';
 import { StartFunc as StartFuncUploadToFile } from '../../kLowDb/WriteFileList/UploadToFile.js';
+import { StartFunc as StartFuncwriteFileWithCustomPk } from '../../kLowDb/WriteFileList/writeFileWithCustomPk.js';
+
 
 let PostFunc = ({ inBodyKeys }) => {
     return StartFuncwriteFile({ inDataToInsert: inBodyKeys });
+};
+
+let PostCustomPkFunc = ({ inBodyKeys }) => {
+    return StartFuncwriteFileWithCustomPk({ inDataToInsert: inBodyKeys });
 };
 
 let PostFromModalFunc = ({ LocalBodyAsModal }) => {
@@ -26,5 +32,5 @@ let PostGetSelectColumnsFunc = ({ LocalBodyAsModal }) => {
 
 export {
     PostFunc, PostFromModalFunc,
-    PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc
+    PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc,PostCustomPkFunc
 };

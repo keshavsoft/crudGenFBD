@@ -19,6 +19,15 @@ content-type: application/json
 "Name":"1111111"
 }
 
+###
+POST http://localhost:7016/src/kSampleFolder/ksSample/CustomPk
+content-type: application/json
+
+{
+    "pk":234,
+"Name":"1111111"
+}
+
 ### GetSelectColumns
 POST http://localhost:7016/src/ksSample/GetSelectColumns
 content-type: application/json
