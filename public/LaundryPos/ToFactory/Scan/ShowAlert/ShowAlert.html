@@ -72,15 +72,7 @@
                                 ShowAll
                             </a>
                         </li>
-                        <li class="nav-item Bookings">
-                            <a id="FactoryFixId" class="nav-link active FactoryFixAClass" aria-current="page" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
-                                        <path d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022ZM6 8.694 1 10.36V15h5V8.694ZM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15Z"></path>
-                                        <path d="M2 11h1v1H2v-1Zm2 0h1v1H4v-1Zm-2 2h1v1H2v-1Zm2 0h1v1H4v-1Zm4-4h1v1H8V9Zm2 0h1v1h-1V9Zm-2 2h1v1H8v-1Zm2 0h1v1h-1v-1Zm2-2h1v1h-1V9Zm0 2h1v1h-1v-1ZM8 7h1v1H8V7Zm2 0h1v1h-1V7Zm2 0h1v1h-1V7ZM8 5h1v1H8V5Zm2 0h1v1h-1V5Zm2 0h1v1h-1V5Zm0-2h1v1h-1V3Z"></path>
-                                </svg>
-                                FactoryFix
-                            </a>
-                        </li>
+                       
                     </ul>   
                     <ul class="navbar-nav">
     <li id="HeaderLoginButtonId">
@@ -151,14 +143,14 @@
 </header>
 
     <main>
-        <div class="container">
+        <div class="container"> 
             <div class="container mt-2">
                 <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a id="BRDDashboardId" href="#">Dashboard</a></li>
                         <li class="breadcrumb-item"><a id="DCBRDId" href="#">ToFactoryFromParam</a></li>
                         <li class="breadcrumb-item"><a id="DcAllId" href="#">DC</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Scan</li>
+                        <li class="breadcrumb-item active" aria-current="page">FactoryFix</li>
                     </ol>
                 </nav>
             </div>
@@ -166,98 +158,100 @@
                 <strong id="AlertSuccessIdUserName">SavedPk</strong> sent sucessfully.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-            <div class="row">
-                <div class="col">
-                    <div class="card mt-2">
 
-                        <div class="card-header">
-                            Scan Qrcode
-                        </div>
-
-                        <div class="card-body">
-
-                            <div class="mb-3">
-                                <label for="InputPkId" class="form-label">Pk</label>
-                                <input type="text" class="form-control" id="InputPkId" placeholder="Scan QrCode" autofocus="">
-                            </div>
-                            <div class="mb-3">
-                                <label for="InputProductNameId" class="form-label">Item Name</label>
-                                <input type="text" class="form-control" id="InputProductNameId" placeholder="Enter Item Name" autofocus="">
-                            </div>
-                            <div class="mb-3">
-                                <label for="InputSalePriceId" class="form-label">Rate</label>
-                                <input type="text" class="form-control" id="InputSalePriceId" placeholder="Enter Rate" autofocus="">
-                            </div>
-                            <div class="mb-3">
-                                <label for="InputFactorySelectedId" class="form-label">Factory Selected</label>
-                                <input type="text" class="form-control" id="InputFactorySelectedId" placeholder="Enter Factory Selected" autofocus="">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="InputVoucherRefId" class="form-label">Voucher Ref</label>
-                                <input type="text" class="form-control" id="InputVoucherRefId" placeholder="Enter VoucherRef" autofocus="">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="InputBranchNameId" class="form-label">Branch Name</label>
-                                <input type="text" class="form-control" id="InputBranchNameId" placeholder="Enter Branch Name" autofocus="">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="VoucherNumberTextId" class="form-label">Voucher Number</label>
-                                <input type="text" class="form-control" id="VoucherNumberTextId" placeholder="Enter Voucher Number" autofocus="">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="DCFactoryTextId" class="form-label">DC Factory</label>
-                                <input type="text" class="form-control" id="DCFactoryTextId" placeholder="Enter DC Factory" autofocus="">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="DescriptionTextId" class="form-label">Description</label>
-                                <input type="text" class="form-control" id="DescriptionTextId" placeholder="Enter Description" autofocus="">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="DateTextId" class="form-label"> DC Date</label>
-                                <input type="text" class="form-control" id="DateTextId" placeholder="Enter Date" autofocus="">
-                            </div>
-
-                        </div>
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-success" id="ButtonSaveId">Save</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="container">
-                        <h6 style="display: inline;">Pk: </h6>
-                        <p style="display: inline;" id="pkDCDetailsTextId">Not found</p>
-                    </div>
-                    <div class="container">
-                        <h6 style="display: inline;">Voucher Number: </h6>
-                        <p style="display: inline;" id="VoucherNumberDCDetailsTextId">Not found</p>
-                    </div>
-                    <div class="container">
-                        <h6 style="display: inline;">Date: </h6>
-                        <p style="display: inline;" id="DateTextDCDetailsId">Not found</p>
-                    </div>
-                    <div class="container">
-                        <h6 style="display: inline;">Description: </h6>
-                        <p style="display: inline;" id="DescriptionTextDCDetailsId">Not found</p>
-                    </div>
-                    <div class="container">
-                        <h6 style="display: inline;">DC Factory: </h6>
-                        <p style="display: inline;" id="DCFactoryDCDetailsTextId">Not found</p>
-                    </div>
-                    <div class="container">
-                        <h6 style="display: inline;">DC Branch Name: </h6>
-                        <p style="display: inline;" id="DCBranchNameDCDetailsTextId">Not found</p>
-                    </div>
-                </div>
+            <div id="AlertInfoId" class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+                <p style="display: inline;">Only use this feature when you want to send the item to the same factory selected at the time of Order Booking.</p> 
             </div>
+<div class="row">
+    <div class="col">
+        <div class="card mt-2">
+            <div class="card-header">
+                Scan Qrcode
+            </div>
+            
+            <div class="card-body">
 
+                <div class="mb-3">
+                    <label for="InputPkId" class="form-label">Pk</label>
+                    <input type="text" class="form-control" id="InputPkId" placeholder="Scan QrCode" autofocus="">
+                </div>
+                <div class="mb-3">
+                    <label for="InputProductNameId" class="form-label">Item Name</label>
+                    <input type="text" class="form-control" id="InputProductNameId" placeholder="Enter Item Name" autofocus="">
+                </div>
+                <div class="mb-3">
+                    <label for="InputSalePriceId" class="form-label">Rate</label>
+                    <input type="text" class="form-control" id="InputSalePriceId" placeholder="Enter Rate" autofocus="">
+                </div>
+
+                <div class="mb-3">
+                    <label for="InputFactorySelectedId" class="form-label">Factory Selected</label>
+                    <input type="text" class="form-control" id="InputFactorySelectedId" placeholder="Enter Factory Selected" autofocus="">
+                </div>
+
+                <div class="mb-3">
+                    <label for="InputVoucherRefId" class="form-label">Voucher Ref</label>
+                    <input type="text" class="form-control" id="InputVoucherRefId" placeholder="Enter VoucherRef" autofocus="">
+                </div>
+
+                <div class="mb-3">
+                    <label for="InputBranchNameId" class="form-label">Branch Name</label>
+                    <input type="text" class="form-control" id="InputBranchNameId" placeholder="Enter Branch Name" autofocus="">
+                </div>
+
+                <div class="mb-3">
+                    <label for="VoucherNumberTextId" class="form-label">Voucher Number</label>
+                    <input type="text" class="form-control" id="VoucherNumberTextId" placeholder="Enter Voucher Number" autofocus="">
+                </div>
+
+                <div class="mb-3">
+                    <label for="DCFactoryTextId" class="form-label">DC Factory</label>
+                    <input type="text" class="form-control" id="DCFactoryTextId" placeholder="Enter DC Factory" autofocus="">
+                </div>
+
+                <div class="mb-3">
+                    <label for="DescriptionTextId" class="form-label">Description</label>
+                    <input type="text" class="form-control" id="DescriptionTextId" placeholder="Enter Description" autofocus="">
+                </div>
+
+                <div class="mb-3">
+                    <label for="DateTextId" class="form-label"> DC Date</label>
+                    <input type="text" class="form-control" id="DateTextId" placeholder="Enter Date" autofocus="">
+                </div>
+
+            </div>
+            <div class="card-footer">
+                <button type="button" class="btn btn-success" id="ButtonSaveId">Save</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+            <div class="container">
+                <h6 style="display: inline;">Pk: </h6>
+                <p style="display: inline;" id="pkDCDetailsTextId">Not found</p>
+            </div>
+            <div class="container">
+                <h6 style="display: inline;">Voucher Number: </h6>
+                <p style="display: inline;" id="VoucherNumberDCDetailsTextId">Not found</p>
+            </div>
+            <div class="container">
+                <h6 style="display: inline;">Date: </h6>
+                <p style="display: inline;" id="DateTextDCDetailsId">Not found</p>
+            </div>
+            <div class="container">
+                <h6 style="display: inline;">Description: </h6>
+                <p style="display: inline;" id="DescriptionTextDCDetailsId">Not found</p>
+            </div>
+            <div class="container">
+                <h6 style="display: inline;">DC Factory: </h6>
+                <p style="display: inline;" id="DCFactoryDCDetailsTextId">Not found</p>
+            </div>
+            <div class="container">
+                <h6 style="display: inline;">DC Branch Name: </h6>
+                <p style="display: inline;" id="DCBranchNameDCDetailsTextId">Not found</p>
+            </div>
+    </div>
+</div>
         </div>
     </main>
 
@@ -275,12 +269,12 @@
 
     <script>
         let jVarGlobalPresentViewData;
+        let jVarGlobalPresentViewData2;
     </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
     <script src="../Js/headerChange.js"></script>
 
-    <script src="./Js/ShowAlert.js" type="module"></script>
+    <script src="./Js/FactoryFix.js" type="module"></script>
 </body>
 
 </html>

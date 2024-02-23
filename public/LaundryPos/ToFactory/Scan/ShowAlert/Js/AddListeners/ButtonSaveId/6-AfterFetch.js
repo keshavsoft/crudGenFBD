@@ -1,6 +1,7 @@
 let StartFunc = ({ inFromFetch }) => {
+    console.log("inFromFetch:::::---",inFromFetch);
     let jVarLocalFetchData = inFromFetch;
-    if (jVarLocalFetchData.KTF === true) {
+    if (jVarLocalFetchData) {
         jFLocalForSuccess(jVarLocalFetchData);
     } 
     else{
@@ -35,7 +36,7 @@ let jFLocalForSuccess = (jVarLocalFetchData) => {
     const url = new URL(window.location.href);
     const params1 = new URLSearchParams(url.search);
 
-    params1.set("NewPk", jVarLocalFetchData.NewPk);
+    params1.set("NewPk", jVarLocalFetchData);
     params1.set("ShowAlert", true);
     window.location.href = `${url.origin}${url.pathname}?${params1}`;
 
