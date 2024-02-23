@@ -6,12 +6,20 @@ let StartFunc = async () => {
     const [a, b] = await Promise.all([StartFuncVoucherDetails(), StartFuncItemDetails()]);
 
     if (a.KTF && b.KTF) {
+
+        let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
         let jVarLocalDcData = a.JsonData;
         let jVarLocalItemsData = b.JsonData;
+        console.log("jVarLocalItemsData:", jVarLocalItemsData);
+
+        let jVarLocaldayDate = jFTodayDate();
+
+        let FlterDataByBranch = jVarLocalDcData.filter(e => e.BranchName == jVarLocalBranchName && e.Date == jVarLocaldayDate);
+        let LocalScanedFilterData = jVarLocalItemsData.filter(e => e.BranchName == jVarLocalBranchName)
 
         let jVarLocalData = jFLocalItemsData({
-            inDcData: jVarLocalDcData,
-            inItemsData: jVarLocalItemsData,
+            inDcData: FlterDataByBranch,
+            inItemsData: LocalScanedFilterData,
 
         });
 
@@ -23,29 +31,35 @@ let jFLocalItemsData = ({ inDcData, inItemsData }) => {
     let jVarLocalDcData = inDcData;
     let jVarLocalItemsData = inItemsData;
 
-    let localArrayObj = Object.values(jVarLocalDcData);
+    let localArrayObj = jVarLocalDcData;
 
     let jVarLocalReturnArray = localArrayObj.map((element) => {
-        // if (element.pk in inItemsData) {
-        //     element.ItemDetails = inItemsData[element.pk];
-        // } else {
-        //     element.ItemDetails = 0;
-        // };
-
-        element.ItemDetails = element.pk in jVarLocalItemsData ? jVarLocalItemsData[element.pk] : 0;
+        let LocalFilterdata = jVarLocalItemsData.filter(e => e.VoucherRef == element.pk)
+        element.ItemDetails = jVarLocalItemsData.length > 0 ? LocalFilterdata.length : 0;
 
         return element;
     });
 
-    // localItemsData.forEach((element) => {
-    //     localArrayObj.map((ele) => {
-    //         if (ele.pk == element[0]) {
-    //             ele.ItemDetails = element[1]
-    //         }
-    //     });
-    // });
-
     return jVarLocalReturnArray;
 };
+
+let getUrlQueryParams = ({ inGetKey }) => {
+    const queryString = window.location.search;
+    const parameters = new URLSearchParams(queryString);
+    const value = parameters.get(inGetKey);
+    return value;
+};
+
+const jFTodayDate = () => {
+    var today = new Date();
+
+    // Format today's date to match the "yyyy-mm-dd" format
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+    var yyyy = today.getFullYear();
+
+    return today = yyyy + '-' + mm + '-' + dd;
+
+}
 
 export { StartFunc }

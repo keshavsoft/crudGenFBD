@@ -1,10 +1,9 @@
 let StartFunc = ({ inFromFetch }) => {
-    console.log("inFromFetch:::::---",inFromFetch);
     let jVarLocalFetchData = inFromFetch;
-    if (jVarLocalFetchData) {
+    if (jVarLocalFetchData.KTF === true) {
         jFLocalForSuccess(jVarLocalFetchData);
-    } 
-    else{
+    }
+    else {
         if ("ServerSideCheck" in inFromFetch === false) {
 
             let jVarLocalHtmlId = 'InputPkId';
@@ -36,7 +35,7 @@ let jFLocalForSuccess = (jVarLocalFetchData) => {
     const url = new URL(window.location.href);
     const params1 = new URLSearchParams(url.search);
 
-    params1.set("NewPk", jVarLocalFetchData);
+    params1.set("NewPk", jVarLocalFetchData.Json.pk);
     params1.set("ShowAlert", true);
     window.location.href = `${url.origin}${url.pathname}?${params1}`;
 

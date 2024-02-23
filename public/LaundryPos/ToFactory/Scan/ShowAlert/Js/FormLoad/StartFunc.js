@@ -3,7 +3,7 @@ import { StartFunc as StartFuncDCDetails } from "./DCDetails/Entry.js";
 let StartFunc = () => {
 
     let jVarLocalVoucherRefValue = getUrlQueryParams({ inGetKey: "VoucherRef" });
-    if (jVarLocalVoucherRefValue === null) {
+    if (jVarLocalVoucherRefValue == "" && jVarLocalVoucherRefValue === null) {
         Swal.fire({
             icon: "error",
             title: "Error",
@@ -15,7 +15,7 @@ let StartFunc = () => {
     JFlocalShowAlertFunc();
     JFlocalNewPkAlertFunc();
     StartFuncDCDetails();
-    jFLocalShowBranch();
+    jFLocalToInputBranchName();
 
 };
 
@@ -35,34 +35,27 @@ const JFlocalNewPkAlertFunc = () => {
     jvarLocalAlertId.innerHTML = jVarLocalVoucherRefValue;
 };
 
-
-let getUrlQueryParams = ({ inGetKey }) => {
-    const queryString = window.location.search;
-    const parameters = new URLSearchParams(queryString);
-    const value = parameters.get(inGetKey);
-    return value;
-};
-
 let jFLocalToInputInputVoucherRefId = ({ inInputVoucherRefId }) => {
     let jVarLocalHtmlId = 'InputVoucherRefId';
     let jVarLocalInputVoucherRefId = document.getElementById(jVarLocalHtmlId);
     jVarLocalInputVoucherRefId.value = inInputVoucherRefId;
 };
 
-let jFLocalShowBranch = () => {
-    let jVarLocalUrlSplit = window.location.pathname.split("/");
-    let jVarLocalBranchName = jVarLocalUrlSplit[4];
-
-    jFLocalToInputBranchName({ inBranchName: jVarLocalBranchName });
-};
-
-let jFLocalToInputBranchName = ({ inBranchName }) => {
+let jFLocalToInputBranchName = () => {
+    let jVarLocalBranchNameparam = getUrlQueryParams({ inGetKey: "BranchName" });
     let jVarLocalHtmlId = 'InputBranchNameId';
     let jVarLocalBranchName = document.getElementById(jVarLocalHtmlId);
 
-    if (jVarLocalBranchName === null === false) {
-        jVarLocalBranchName.value = inBranchName;
+    if (jVarLocalBranchNameparam === null === false) {
+        jVarLocalBranchName.value = jVarLocalBranchNameparam;
     };
+};
+
+let getUrlQueryParams = ({ inGetKey }) => {
+    const queryString = window.location.search;
+    const parameters = new URLSearchParams(queryString);
+    const value = parameters.get(inGetKey);
+    return value;
 };
 
 export { StartFunc };
