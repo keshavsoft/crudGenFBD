@@ -1,12 +1,12 @@
 let StartFunc = ({ inFetchData }) => {
-    if (inFetchData.KTF) {
-
-        let jVarLocalFetchData = inFetchData.JsonData;
+    if (Object.values(inFetchData).length > 0) {
+        let jVarLocalFetchData = inFetchData;
+        jVarGlobalPresentViewData2 = jVarLocalFetchData;
 
         jFLocalToInputInputPkId({ inInputPkId: jVarLocalFetchData.pk });
         jFLocalToInputInputProductNameId({ inInputProductNameId: jVarLocalFetchData.ItemName });
         jFLocalToInputInputSalePriceId({ inInputSalePriceId: jVarLocalFetchData.Rate });
-        jFLocalToInputFactorySelectedId({ inInputFactorySelectedId: jVarLocalFetchData.location})
+        jFLocalToInputFactorySelectedId({ inInputFactorySelectedId: jVarLocalFetchData.location })
         jFLocalRunSaveClick();
     } else {
         Swal.fire({

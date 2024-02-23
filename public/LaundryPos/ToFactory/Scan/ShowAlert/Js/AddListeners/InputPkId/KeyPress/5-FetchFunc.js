@@ -1,12 +1,12 @@
-import ApiConfigJson from "../../../../ConfigKeys/ProjectKeys.json" assert {type: 'json'};
-import { StartFunc as StartFuncFetchHeaders } from "./FetchHeaders/EntryFile.js";
+import { StartFunc as StartFuncRowpk } from "./FetchHeaders/EntryFile.js";
 
 let StartFunc = async () => {
-    let jVarLocalFetchHeaders = StartFuncFetchHeaders();
+    let jVarLocalRowPk = StartFuncRowpk();
+    console.log("jVarLocalRowPk:",jVarLocalRowPk);
 
-    let jVarLocalFetchUrl = `/${ApiConfigJson.ProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/FilterData/ByPk/InputPK`;
+    let jVarLocalFetchUrl = `/bin/QrCodes/Generate/${jVarLocalRowPk}`;
 
-    let response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
+    let response = await fetch(jVarLocalFetchUrl);
     let jVarLocalResponse = await response.json();
     return jVarLocalResponse;
 

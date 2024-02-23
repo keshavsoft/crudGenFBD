@@ -4,16 +4,16 @@ import { StartFunc as StartFuncAfterFetch } from "./AfterFetch.js";
 
 let StartFunc = async () => {
     let jVarLocalDataNeeded = await StartFuncFetchFuncs();
-    if(Object.keys(jVarLocalDataNeeded.JsonData).length === 0){
+    if(Object.keys(jVarLocalDataNeeded).length === 0){
         Swal.fire({
             icon: "error",
             title: "Error",
             text:  "No QrCodes found in this voucher"
         });
     }
-    if (jVarLocalDataNeeded.JsonData !== null) {
-        if (jVarLocalDataNeeded.KTF) {
-            StartFuncAfterFetch({ inDataToShow: jVarLocalDataNeeded.JsonData });
+    if (jVarLocalDataNeeded !== null) {
+        if (jVarLocalDataNeeded) {
+            StartFuncAfterFetch({ inDataToShow: jVarLocalDataNeeded });
         }
     }
 };

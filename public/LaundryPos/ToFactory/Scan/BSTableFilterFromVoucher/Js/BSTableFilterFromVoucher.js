@@ -7,7 +7,8 @@ import { StartFunc as StartFuncAdminData } from "./AdminData/StartFunc.js";
 const StartFunc = () => {
     StartFuncFormLoadBeforeAdmin();
 
-    let jVarLocalFromAdmin = StartFuncAdminData({ inFormLoadFuncToRun: StartFuncShowOnDom });
+    // let jVarLocalFromAdmin = StartFuncAdminData({ inFormLoadFuncToRun: StartFuncShowOnDom });
+    let jVarLocalFromAdmin = true;
 
     if (jVarLocalFromAdmin) {
         StartFuncFormLoad();

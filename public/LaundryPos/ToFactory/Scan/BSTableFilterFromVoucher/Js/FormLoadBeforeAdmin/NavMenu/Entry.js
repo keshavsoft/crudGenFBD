@@ -7,7 +7,7 @@ import { StartFunc as StartFuncDashboardId } from "./DashboardId/Entry.js";
 const StartFunc = () => {
     StartFuncBSTableURL();
     StartFuncShowAlertURL();
-    StartFuncFactoryFixNewURL();
+    // StartFuncFactoryFixNewURL();
     StartFuncParentId();
     StartFuncDashboardId();
 };

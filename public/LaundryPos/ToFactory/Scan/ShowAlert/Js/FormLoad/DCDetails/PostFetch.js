@@ -1,13 +1,18 @@
-import { StartFunc as StartFuncFetchHeaders } from "./FetchHeaders/EntryFile.js";
-import ProjectKeys from "../../../ConfigKeys/ProjectKeys.json" assert {type: 'json'};
-
 let StartFunc = async () => {
-    let jVarLocalFetchHeaders = StartFuncFetchHeaders();
-    let jVarLocalFetchUrl = `/${ProjectKeys.ProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/AggregateFuncs/OnValues/Filter`;
-    let response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
+    let jVarLocalFilterString = getUrlQueryParams({ inGetKey: "VoucherRef" });
+
+    let jVarLocalFetchUrl = `/bin/Factory/VoucherDetails/${jVarLocalFilterString}`;
+    let response = await fetch(jVarLocalFetchUrl);
     let data = await response.json();
 
     return await data;
+};
+
+let getUrlQueryParams = ({ inGetKey }) => {
+    const queryString = window.location.search;
+    const parameters = new URLSearchParams(queryString);
+    const value = parameters.get(inGetKey);
+    return value;
 };
 
 export { StartFunc };
