@@ -2,38 +2,38 @@ import { StartFunc as StartFuncKSMainTableRowDeleteClass } from "./KSMainTableRo
 // import { StartFunc as StartFuncPrepareColumns } from "./BuildTable/PrepareColumns.js";
 
 let StartFunc = ({ inDataToShow }) => {
+    let jVarLocalDataToShow = inDataToShow;
+    let jVarLocalVoucherRef = getUrlQueryParams({ inGetKey: "VoucherRef" });
+    if (jVarLocalVoucherRef === '' || jVarLocalVoucherRef === null) swal.fire({ title: "No VoucherRef in Params", icon: "error" })
+
+    let LocalVoucherFilterData = jVarLocalDataToShow.filter(e => e.VoucherRef == jVarLocalVoucherRef);
+    if (LocalVoucherFilterData.length === 0 || jVarLocalVoucherRef === null) swal.fire({ title: "No Data", icon: "error" })
+
     jFLocalHideSpinner();
-    let jVarLocalDataToShow = jFLocalToArray({inDataToShow});
 
     var $table = $('#table');
 
     // StartFuncPrepareColumns();
 
     $table.bootstrapTable("destroy").bootstrapTable({
-        data: jVarLocalDataToShow,
+        data: LocalVoucherFilterData,
     });
 
     StartFuncKSMainTableRowDeleteClass();
 };
 
-let jFLocalHideSpinner=()=>{
+let jFLocalHideSpinner = () => {
     let jVarLocalSpinnerId = document.getElementById("SpinnerId");
     jVarLocalSpinnerId.style.display = "none";
 
 };
 
-let jFLocalToArray = ({ inDataToShow }) => {
-    let jVarLocalArray = [];
-    Object.entries(inDataToShow).forEach(
-        ([key, value]) => {
-            jVarLocalArray.push({
-                ...value,
-                pk: key
-            });
-        }
-    );
-
-    return jVarLocalArray;
+let getUrlQueryParams = ({ inGetKey }) => {
+    const queryString = window.location.search;
+    const parameters = new URLSearchParams(queryString);
+    const value = parameters.get(inGetKey);
+    return value;
 };
+
 
 export { StartFunc }

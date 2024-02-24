@@ -1,6 +1,7 @@
 let StartFunc = ({ inDataToShow }) => {
-    let jVarLocalData = Object.values(inDataToShow)[0];
-    
+
+    let jVarLocalData = inDataToShow;
+
     jFLocalToInnerHtmlpkTextId({ inpkTextId: jVarLocalData.pk });
     jFLocalToInnerHtmlVoucherNumberTextId({ inVoucherNumberTextId: jVarLocalData.VoucherNumber })
     jFLocalToInnerHtmlDescriptionTextId({ inDescriptionTextId: jVarLocalData.Description });

@@ -1,14 +1,14 @@
 import { StartFunc as StartFuncRefreshBSTableId } from "./RefreshBSTableId/EntryFile.js";
 import { StartFunc as StartFuncDCDetails } from "./RefreshBSTableId/FetchFromFuncs/DCDetails/Entry.js";
 let StartFunc = () => {
-    let jVarLocalFilterString = getUrlQueryParams({ inGetKey: "VoucherRef"});
-    if (jVarLocalFilterString === null) {
+    let jVarLocalFilterString = getUrlQueryParams({ inGetKey: "VoucherRef" });
+    if (jVarLocalFilterString === null || jVarLocalFilterString == "") {
         Swal.fire({
             icon: "error",
             title: "Error",
             text: "VoucherRef not found in URL"
-        }); 
-    }else{
+        });
+    } else {
         StartFuncDCDetails();
         StartFuncRefreshBSTableId();
     }
