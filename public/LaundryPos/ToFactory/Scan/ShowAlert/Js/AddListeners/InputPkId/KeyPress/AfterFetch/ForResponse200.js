@@ -1,18 +1,6 @@
 let StartFunc = async ({ inFetchResonse }) => {
-    if (inFetchResonse.status === 500) {
-        let jVarLocalResponseData = await inFetchResonse.text();
-
-        Swal.fire({
-            icon: "error",
-            title: "Error",
-            text: `${jVarLocalResponseData}`
-        });
-
-        return;
-    };
-
     let jVarLocalResponseData = await inFetchResonse.json();
-    
+
     if (Object.values(jVarLocalResponseData).length > 0) {
         let jVarLocalFetchData = jVarLocalResponseData;
         jVarGlobalPresentViewData2 = jVarLocalFetchData;

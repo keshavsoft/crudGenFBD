@@ -1,0 +1,1 @@
+for Laundry Washtex with foreign key in database ( here flat json files in folders )

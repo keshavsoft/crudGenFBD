@@ -5,8 +5,8 @@ let StartFunc = async () => {
     let jVarLocalFetchUrl = `/bin/QrCodes/Generate/${jVarLocalRowPk}`;
 
     let response = await fetch(jVarLocalFetchUrl);
-    let jVarLocalResponse = await response.json();
-    return jVarLocalResponse;
+    // let jVarLocalResponse = await response.json();
+    return await response;
 
 };
 
