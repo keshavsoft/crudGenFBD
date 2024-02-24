@@ -4,7 +4,7 @@ import { StartFunc as StartFuncWriteFileFromModal } from '../../kLowDb/WriteFile
 import { StartFunc as StartFuncImportToFile } from '../../kLowDb/WriteFileList/ImportToFile.js';
 import { StartFunc as StartFuncUploadToFile } from '../../kLowDb/WriteFileList/UploadToFile.js';
 import { StartFunc as StartFuncwriteFileWithCustomPk } from '../../kLowDb/WriteFileList/writeFileWithCustomPk.js';
-
+import { StartFunc as StartFuncWriteFileKeysCheck } from '../../kLowDb/WriteFileList/writeFileKeysCheck.js';
 
 let PostFunc = ({ inBodyKeys }) => {
     return StartFuncwriteFile({ inDataToInsert: inBodyKeys });
@@ -12,6 +12,10 @@ let PostFunc = ({ inBodyKeys }) => {
 
 let PostCustomPkFunc = ({ inBodyKeys }) => {
     return StartFuncwriteFileWithCustomPk({ inDataToInsert: inBodyKeys });
+};
+
+let PostWithKeysCheckFunc = ({ inBodyKeys }) => {
+    return StartFuncWriteFileKeysCheck({ inDataToInsert: inBodyKeys });
 };
 
 let PostFromModalFunc = ({ LocalBodyAsModal }) => {
@@ -32,5 +36,6 @@ let PostGetSelectColumnsFunc = ({ LocalBodyAsModal }) => {
 
 export {
     PostFunc, PostFromModalFunc,
-    PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc,PostCustomPkFunc
+    PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc, PostCustomPkFunc,
+    PostWithKeysCheckFunc
 };

@@ -3,8 +3,9 @@ import {
     PostFromModalFunc as PostFromModalFuncRepo,
     PostUploadFunc as PostUploadFuncRepo,
     PostGetSelectColumnsFunc as PostGetSelectColumnsFuncRepo,
-    PostUploadFromModalFunc as PostUploadFromModalFuncRepo,PostFilterFunc as PostFilterFuncRepo,
-    PostCustompkFunc as PostCustompkFuncRepo
+    PostUploadFromModalFunc as PostUploadFromModalFuncRepo, PostFilterFunc as PostFilterFuncRepo,
+    PostCustompkFunc as PostCustompkFuncRepo,
+    PostWithKeysCheckFunc as PostWithKeysCheckFuncRepo
 } from '../../repos/postFuncs/EntryFile.js';
 
 import {
@@ -30,6 +31,13 @@ let PostFunc = async (req, res) => {
 let PostCustomPkFunc = async (req, res) => {
     let LocalBody = req.body;
     let LocalFromRepo = await PostCustompkFuncRepo({ ...LocalBody });
+
+    res.json(LocalFromRepo);
+};
+
+let PostWithKeysCheckFunc = async (req, res) => {
+    let LocalBody = req.body;
+    let LocalFromRepo = await PostWithKeysCheckFuncRepo({ ...LocalBody });
 
     res.json(LocalFromRepo);
 };
@@ -110,5 +118,7 @@ let PostGetSelectColumnsFunc = (req, res) => {
 
 export {
     PostFunc, PostFromModalFunc,
-    PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc, PostUploadImageFunc,PostFilterFunc,PostCustomPkFunc
+    PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc,
+    PostUploadImageFunc, PostFilterFunc, PostCustomPkFunc,
+    PostWithKeysCheckFunc
 };

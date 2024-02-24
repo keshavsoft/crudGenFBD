@@ -4,7 +4,8 @@ import {
     PostFromModalFunc as PostFromModalFuncDal,
     PostUploadFunc as PostUploadFuncDal, PostGetSelectColumnsFunc as PostGetSelectColumnsFuncDal,
     PostUploadFromModalFunc as PostUploadFromModalFuncDal,
-    PostCustomPkFunc as PostCustomPkFuncDal
+    PostCustomPkFunc as PostCustomPkFuncDal,
+    PostWithKeysCheckFunc as PostWithKeysCheckFuncDal
 } from '../../dals/postFuncs/EntryFile.js';
 
 let PostFunc = async (inModalObject) => {
@@ -13,6 +14,10 @@ let PostFunc = async (inModalObject) => {
 
 let PostCustompkFunc = async (inModalObject) => {
     return PostCustomPkFuncDal({ inBodyKeys: inModalObject });
+};
+
+let PostWithKeysCheckFunc = async (inModalObject) => {
+    return PostWithKeysCheckFuncDal({ inBodyKeys: inModalObject });
 };
 
 let PostFilterFunc = async (inModalObject) => {
@@ -37,5 +42,6 @@ let PostGetSelectColumnsFunc = ({ LocalBodyAsModal }) => {
 
 export {
     PostFunc, PostFromModalFunc,
-    PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc,PostFilterFunc,PostCustompkFunc
+    PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc, PostFilterFunc, PostCustompkFunc,
+    PostWithKeysCheckFunc
 };
