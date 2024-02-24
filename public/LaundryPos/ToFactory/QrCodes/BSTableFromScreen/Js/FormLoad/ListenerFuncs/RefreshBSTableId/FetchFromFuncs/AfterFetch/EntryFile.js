@@ -1,41 +1,28 @@
-// import { StartFunc as StartFuncKSMainTableRowDeleteClass } from "./KSMainTableRowDeleteClass/1-ClickAssign.js";
-// import { StartFunc as StartFuncPrepareColumns } from "./BuildTable/PrepareColumns.js";
 
 let StartFunc = ({ inDataToShow }) => {
+    let LocalDataToShow = inDataToShow;
+    let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    let LocalFilterScanedData = LocalDataToShow.filter(e => e.BranchName == jVarLocalBranchName);
+    if ((LocalFilterScanedData.length > 0) === false) swal.fire({ title: "No data !", icon: "error" });
+
     jFLocalHideSpinner();
-    // let jVarLocalDataToShow = inDataToShow;
-    let jVarLocalDataToShow = jFLocalToArray({ inDataToShow });
-
-
     var $table = $('#table');
 
-    // StartFuncPrepareColumns({ data: jVarLocalDataToShow.DataFromServer[0].KData.TableColumns })
-
     $table.bootstrapTable("destroy").bootstrapTable({
-        data: jVarLocalDataToShow,
+        data: LocalFilterScanedData,
     });
-
-    // StartFuncKSMainTableRowDeleteClass();
 };
 
-let jFLocalToArray = ({ inDataToShow }) => {
-    let jVarLocalArray = [];
-    Object.entries(inDataToShow).forEach(
-        ([key, value]) => {
-            jVarLocalArray.push({
-                ...value,
-                pk: key
-            });
-        }
-    );
-
-    return jVarLocalArray;
-};
-
-let jFLocalHideSpinner=()=>{
+let jFLocalHideSpinner = () => {
     let jVarLocalSpinnerId = document.getElementById("SpinnerId");
     jVarLocalSpinnerId.style.display = "none";
+};
 
+let getUrlQueryParams = ({ inGetKey }) => {
+    const queryString = window.location.search;
+    const parameters = new URLSearchParams(queryString);
+    const value = parameters.get(inGetKey);
+    return value;
 };
 
 export { StartFunc }
