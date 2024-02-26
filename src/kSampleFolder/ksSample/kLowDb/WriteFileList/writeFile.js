@@ -3,11 +3,9 @@ import { StartFunc as StartFuncCommonFuncs } from '../CommonFuncs/ReturnDbObject
 let StartFunc = ({ inDataToInsert }) => {
     let LocalinDataToInsert = inDataToInsert;
     let LocalReturnData = { KTF: false, JSONFolderPath: "", CreatedLog: {} };
-
     LocalReturnData.KTF = false;
 
     const db = StartFuncCommonFuncs()
-
     db.read();
     if ("error" in db.data) {
         return db.data;
@@ -17,13 +15,11 @@ let StartFunc = ({ inDataToInsert }) => {
 
     if (Array.isArray(db.data) === false) {
         LocalReturnData.KReason = "Not array inside Json file...";
-
         return LocalReturnData;
     };
 
     db.data.push(LocalDataWithUuid);
     let LocalFromWrite = db.write();
-
     LocalReturnData.KTF = true;
 
     return LocalDataWithUuid.UuId;
@@ -49,7 +45,6 @@ const LocalFuncGeneratePk = ({ inDataToInsert, inData }) => {
 const Timestamp = () => {
     let currentDate = new Date();
     let formattedDate = currentDate.toISOString();
-
     return formattedDate;
 };
 

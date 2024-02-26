@@ -149,7 +149,6 @@ const LocalFuncGeneratePk = ({ inDataToInsert, inData }) => {
 const Timestamp = () => {
     let currentDate = new Date();
     let formattedDate = currentDate.toISOString();
-
     return formattedDate;
 };
 
