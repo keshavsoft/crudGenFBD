@@ -70,6 +70,7 @@
     },
     "QrCodeId": {
         "type": "INTEGER",
+        "unique": true,
         "references": {
           "model": {
             "tableName": "Generate"

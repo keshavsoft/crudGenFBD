@@ -1,10 +1,10 @@
 {
     "jsonConfig": {
-        "DataPk": 317,
+        "DataPk": 318,
         "DataPath": "KData/JSON",
         "tableAndColumns": {
-            "path": "FromTableColumns/317",
-            "name": "317",
+            "path": "FromTableColumns/318",
+            "name": "318",
             "children": [
                 {
                     "path": "FromTableColumns\\317\\Transactions",

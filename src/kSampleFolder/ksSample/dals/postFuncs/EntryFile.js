@@ -4,7 +4,8 @@ import { StartFunc as StartFuncWriteFileFromModal } from '../../kLowDb/WriteFile
 import { StartFunc as StartFuncImportToFile } from '../../kLowDb/WriteFileList/ImportToFile.js';
 import { StartFunc as StartFuncUploadToFile } from '../../kLowDb/WriteFileList/UploadToFile.js';
 import { StartFunc as StartFuncwriteFileWithCustomPk } from '../../kLowDb/WriteFileList/writeFileWithCustomPk.js';
-import { StartFunc as StartFuncWriteFileKeysCheck } from '../../kLowDb/WriteFileList/writeFileKeysCheck.js';
+// import { StartFunc as StartFuncWriteFileKeysCheck } from '../../kLowDb/WriteFileList/writeFileKeysCheck.js';
+import { StartFunc as StartFuncWriteFileKeysCheck } from '../../kLowDb/WriteTofile/WithChecking/StartFunc.js';
 
 let PostFunc = ({ inBodyKeys }) => {
     return StartFuncwriteFile({ inDataToInsert: inBodyKeys });
