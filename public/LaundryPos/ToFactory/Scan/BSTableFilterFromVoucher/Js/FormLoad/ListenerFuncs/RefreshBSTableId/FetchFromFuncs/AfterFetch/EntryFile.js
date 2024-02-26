@@ -4,9 +4,10 @@ import { StartFunc as StartFuncKSMainTableRowDeleteClass } from "./KSMainTableRo
 let StartFunc = ({ inDataToShow }) => {
     let jVarLocalDataToShow = inDataToShow;
     let jVarLocalVoucherRef = getUrlQueryParams({ inGetKey: "VoucherRef" });
+    let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
     if (jVarLocalVoucherRef === '' || jVarLocalVoucherRef === null) swal.fire({ title: "No VoucherRef in Params", icon: "error" })
 
-    let LocalVoucherFilterData = jVarLocalDataToShow.filter(e => e.VoucherRef == jVarLocalVoucherRef);
+    let LocalVoucherFilterData = jVarLocalDataToShow.filter(e => e.VoucherRef == jVarLocalVoucherRef && e.BranchName == jVarLocalBranchName);
     if (LocalVoucherFilterData.length === 0 || jVarLocalVoucherRef === null) swal.fire({ title: "No Data", icon: "error" })
 
     jFLocalHideSpinner();

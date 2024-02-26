@@ -29,6 +29,7 @@ let StartFunc = ({ inDataToInsert }) => {
     let LocalDataNeeded = StartFuncChecks({ inFileName: LocalK1.model.tableName, NeededKey: LocalValueNeeded });
 
     if (LocalDataNeeded.KTF === false) {
+        LocalReturnData.KReason = LocalDataNeeded.KReason;
         return LocalReturnData;
     };
 
