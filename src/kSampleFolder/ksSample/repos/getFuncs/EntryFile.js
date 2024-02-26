@@ -14,7 +14,7 @@ let GetDataOnlyFunc = async () => {
     return GetDataOnlyFuncDal();
 };
 
-let GetIdFunc = async ({ inId }) => {
+let GetIdFunc = ({ inId }) => {
     return GetIdFuncDal({ inId });
 };
 
@@ -41,5 +41,5 @@ let GetRowCountFunc = async () => {
 export {
     GetFunc, GetDataOnlyFunc, GetFromModalFunc,
     GetFromModalUuidFunc, GetFromModalUuidAndTSFunc,
-    GetIdFunc, GetBodyCheckFunc,GetRowCountFunc
+    GetIdFunc, GetBodyCheckFunc, GetRowCountFunc
 };

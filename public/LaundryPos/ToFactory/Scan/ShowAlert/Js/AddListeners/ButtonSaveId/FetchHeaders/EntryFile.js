@@ -3,8 +3,7 @@ import KeysJson from './Keys.json' assert {type: 'json'};
 let StartFunc = () => {
 
     let inDataToInsert = {};
-
-    inDataToInsert.pk = jFLocalFromDomInputPkId();
+    inDataToInsert.QrCodeId = jFLocalFromDomInputPkId();
     inDataToInsert.ItemName = jFLocalFromDomInputProductNameId();
     inDataToInsert.Rate = jFLocalFromDomInputSalePriceId();
     inDataToInsert.FactorySelected = jFLocalFromDomInputFactorySelectedId();

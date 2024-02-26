@@ -9,6 +9,11 @@ let StartFunc = ({ inId }) => {
     db.read();
     let LocalRowNeeded = db.data.find(e => e.UuId == LocalId);
 
+    if (LocalRowNeeded === undefined) {
+        LocalReturnData.KReason = "No Data"
+        return LocalReturnData;
+    };
+
     LocalReturnData.JsonData = LocalRowNeeded;
     LocalReturnData.KTF = true;
 

@@ -16,6 +16,7 @@ let StartFunc = () => {
     JFlocalNewPkAlertFunc();
     StartFuncDCDetails();
     jFLocalToInputBranchName();
+    jFLocalBranchName()
 
 };
 
@@ -48,6 +49,16 @@ let jFLocalToInputBranchName = () => {
 
     if (jVarLocalBranchNameparam === null === false) {
         jVarLocalBranchName.value = jVarLocalBranchNameparam;
+    };
+};
+
+let jFLocalBranchName = () => {
+    let jVarLocalBranchNameparam = getUrlQueryParams({ inGetKey: "BranchName" });
+    let jVarLocalHtmlId = 'BranchNameId';
+    let jVarLocalBranchName = document.getElementById(jVarLocalHtmlId);
+
+    if (jVarLocalBranchNameparam === null === false) {
+        jVarLocalBranchName.innerHTML = jVarLocalBranchNameparam;
     };
 };
 

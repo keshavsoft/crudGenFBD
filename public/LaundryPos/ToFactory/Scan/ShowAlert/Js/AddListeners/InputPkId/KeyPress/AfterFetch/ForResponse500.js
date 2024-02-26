@@ -1,10 +1,10 @@
 let StartFunc = async ({ inFetchResonse }) => {
-    let jVarLocalResponseData = await inFetchResonse.text();
+    let jVarLocalResponseData = inFetchResonse;
 
     Swal.fire({
         icon: "error",
         title: "Error",
-        text: `${jVarLocalResponseData}`
+        text: `${jVarLocalResponseData.KReason}`
     });
 
     return;

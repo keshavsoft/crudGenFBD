@@ -1,5 +1,5 @@
 let StartFunc = async ({ inFetchResonse }) => {
-    let jVarLocalResponseData = await inFetchResonse.json();
+    let jVarLocalResponseData = await inFetchResonse;
 
     if (Object.values(jVarLocalResponseData).length > 0) {
         let jVarLocalFetchData = jVarLocalResponseData;
