@@ -21,7 +21,7 @@ const StartFunc = ({ inFileName, NeededKey }) => {
     let LocalDataNeeded = LocalFuncPullData({ inFileName: LocalinFileName });
 
     let LocalFindValue = LocalDataNeeded.filter(element => {
-        return element.pk === NeededKey;
+        return element.pk == NeededKey;
     });
 
     if (LocalFindValue.length === 0) {

@@ -49,16 +49,18 @@ let StartFunc = ({ inDataToInsert }) => {
         return LocalReturnData;
     };
 
-    db.data.push(LocalDataWithUuid);
+    db.data.push(LocalDataWithUuid.InsertData);
     let LocalFromWrite = db.write();
 
     LocalReturnData.KTF = true;
-
-    return LocalDataWithUuid;
+    LocalReturnData.MaxPk = LocalDataWithUuid.InsertData.pk
+    return LocalReturnData;
 };
 
 const LocalFuncGeneratePk = ({ inDataToInsert, inData }) => {
     let LocalInData = inData;
+    let LocalReturnData = { KTF: false, JSONFolderPath: "", CreatedLog: {} };
+
     let LocalArrayPk = LocalInData.map(element => element.pk);
 
     let LocalRemoveUndefined = LocalArrayPk.filter(function (element) {
@@ -69,7 +71,8 @@ const LocalFuncGeneratePk = ({ inDataToInsert, inData }) => {
 
     let MaxPk = (Math.max(...numberArray, 0) + 1);
 
-    let LocalReturnData = { ...inDataToInsert, UuId: MaxPk, pk: MaxPk, DateTime: Timestamp() };
+    LocalReturnData.InsertData = { ...inDataToInsert, UuId: MaxPk, pk: MaxPk, DateTime: Timestamp() };
+    LocalReturnData.KTF = true;
     return LocalReturnData
 };
 
