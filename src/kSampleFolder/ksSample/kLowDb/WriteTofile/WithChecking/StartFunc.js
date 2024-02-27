@@ -53,7 +53,7 @@ let StartFunc = ({ inDataToInsert }) => {
     let LocalFromWrite = db.write();
 
     LocalReturnData.KTF = true;
-    LocalReturnData.MaxPk = LocalDataWithUuid.InsertData.pk
+    LocalReturnData.ScanNo = LocalDataWithUuid.InsertData.QrCodeId
     return LocalReturnData;
 };
 

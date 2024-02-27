@@ -3,6 +3,7 @@ const StartFunc = ({ inFromFetch }) => {
     let LocalMax = (Math.max(... (LocalinFromFetch.map(e => e.pk)), 0)) + 1
     jFLocalToInputJobId({ inJobId: LocalMax });
     jVarLocalBranchName();
+    jFShowDeliveryDateTime();
 };
 
 
@@ -31,4 +32,12 @@ let getUrlQueryParams = ({ inGetKey }) => {
     return value;
 };
 
+const jFShowDeliveryDateTime = () => {
+    let jVarLocalHtmlId = "Date";
+    let currentDate = new Date();
+    let formattedDate = currentDate.toISOString().slice(0, 10);
+
+    let jVarLocalMenItemsTabId = document.getElementById(jVarLocalHtmlId);
+    jVarLocalMenItemsTabId.value = formattedDate;
+};
 export { StartFunc };

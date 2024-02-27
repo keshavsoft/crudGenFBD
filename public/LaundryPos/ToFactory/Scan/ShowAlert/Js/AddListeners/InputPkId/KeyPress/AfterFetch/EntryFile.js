@@ -13,9 +13,9 @@ let StartFunc = async ({ inFetchResonse }) => {
 
     } else {
         Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: `Not this Branch`
+            icon: 'question',
+            title: 'Not this branch',
+            text: `Scan only your branch`
         });
     }
 

@@ -36,7 +36,7 @@ let jFLocalForSuccess = (jVarLocalFetchData) => {
     const url = new URL(window.location.href);
     const params1 = new URLSearchParams(url.search);
 
-    params1.set("NewPk", jVarLocalFetchData.MaxPk);
+    params1.set("NewPk", jVarLocalFetchData.ScanNo);
     params1.set("ShowAlert", true);
     window.location.href = `${url.origin}${url.pathname}?${params1}`;
 

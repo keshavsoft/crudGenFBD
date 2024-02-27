@@ -1,13 +1,22 @@
 let StartFunc = async ({ inFetchResonse }) => {
     let jVarLocalResponseData = inFetchResonse;
 
-    Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: `${jVarLocalResponseData.KReason}`
-    });
+    if (jVarLocalResponseData.KReason == "No Data") {
+        Swal.fire({
+            icon: "warning",
+            title: "No data found",
+            text: `${jVarLocalResponseData.KReason}`
+        });
 
-    return;
+    } else {
+        Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: `${jVarLocalResponseData.KReason}`
+        });
+
+        return;
+    };
 };
 
 export { StartFunc };
