@@ -27,6 +27,11 @@ let GetIdFunc = ({ inId }) => {
     return LocalFromLowDb.JsonData;
 };
 
+let GetRowDataFunc = ({ inId }) => {
+    return StartFunReadFileById({ inId });
+
+};
+
 let GetFromModalFunc = () => {
     return StartFuncReadFileFromModal();
 };
@@ -46,5 +51,5 @@ let GetBodyCheckFunc = () => {
 export {
     GetFunc, GetDataOnlyFunc, GetFromModalFunc,
     GetFromModalUuidFunc, GetFromModalUuidAndTSFunc,
-    GetIdFunc,GetBodyCheckFunc
+    GetIdFunc,GetBodyCheckFunc,GetRowDataFunc
 };

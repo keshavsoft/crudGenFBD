@@ -3,7 +3,8 @@ import {
     GetFromModalUuidFunc as GetFromModalUuidFuncDal,
     GetFromModalUuidAndTSFunc as GetFromModalUuidAndTSFuncDal,
     GetFromModalFunc as GetFromModalFuncDal,
-    GetIdFunc as GetIdFuncDal, GetBodyCheckFunc as GetBodyCheckFuncDal
+    GetIdFunc as GetIdFuncDal, GetBodyCheckFunc as GetBodyCheckFuncDal,
+    GetRowDataFunc as GetRowDataFuncDal
 } from '../../dals/getFuncs/EntryFile.js';
 
 let GetFunc = async () => {
@@ -16,6 +17,10 @@ let GetDataOnlyFunc = async () => {
 
 let GetIdFunc = ({ inId }) => {
     return GetIdFuncDal({ inId });
+};
+
+let GetRowDataFunc = ({ inId }) => {
+    return GetRowDataFuncDal({ inId });
 };
 
 let GetFromModalFunc = () => {
@@ -41,5 +46,5 @@ let GetRowCountFunc = async () => {
 export {
     GetFunc, GetDataOnlyFunc, GetFromModalFunc,
     GetFromModalUuidFunc, GetFromModalUuidAndTSFunc,
-    GetIdFunc, GetBodyCheckFunc, GetRowCountFunc
+    GetIdFunc, GetBodyCheckFunc, GetRowCountFunc,GetRowDataFunc
 };
