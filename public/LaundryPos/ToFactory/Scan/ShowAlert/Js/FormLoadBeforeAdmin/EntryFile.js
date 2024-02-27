@@ -3,7 +3,7 @@ import { StartFunc as StartFuncBreadCumMenu } from "./BreadCumMenu/Entry.js";
 
 const StartFunc = () => {
     StartFuncNavMenu();
-    StartFuncBreadCumMenu();
+    // StartFuncBreadCumMenu();
 };
 
 export { StartFunc };

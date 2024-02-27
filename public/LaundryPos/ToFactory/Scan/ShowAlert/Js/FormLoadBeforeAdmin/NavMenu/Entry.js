@@ -4,10 +4,10 @@ import { StartFunc as StartFuncParentId } from "./ParentId/Entry.js";
 import { StartFunc as StartFuncDashboardId } from "./DashboardId/Entry.js";
 
 const StartFunc = () => {
-    StartFuncBSTableURL();
-    StartFuncShowAlertURL();
+    // StartFuncBSTableURL();
+    // StartFuncShowAlertURL();
     StartFuncParentId();
-    StartFuncDashboardId();
+    // StartFuncDashboardId();
 };
 
 export { StartFunc };
