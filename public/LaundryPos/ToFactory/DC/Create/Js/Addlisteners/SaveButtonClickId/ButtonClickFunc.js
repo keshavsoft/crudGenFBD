@@ -4,8 +4,6 @@ import { StartFunc as StartFuncFetchFromFuncs } from "./FetchFromFuncs/Entry.js"
 let StartFunc = () => {
     let LocalCreateCustomerButtonId = document.getElementById("CreateCustomerButtonId");
     LocalCreateCustomerButtonId.addEventListener("click", LocalClickFunc)
-
-
 };
 
 const LocalClickFunc = () => {
