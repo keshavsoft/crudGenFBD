@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate QR Code with Array Object Data</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body text-center">
+          <h5 class="card-title">QR Code Generator</h5>
+          <div id="qrcode"></div>
+          <hr>
+          <p class="card-text">Scan the QR code</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- QRCode.js -->
+<script src="https://cdn.jsdelivr.net/npm/qrcode@latest"></script>
+<script>
+  // Sample array of objects
+  var dataArray = [
+    { name: "John", age: 30 },
+    { name: "Alice", age: 25 },
+    { name: "Bob", age: 35 }
+  ];
+
+  // Generate data string for QR code
+  var dataString = JSON.stringify(dataArray);
+
+  // Get the container element for the QR code
+  var qrcodeContainer = document.getElementById('qrcode');
+
+  // Generate QR code
+  var qr = new QRCode(qrcodeContainer, {
+    text: dataString, // Data string for QR code
+    width: 256, // Width and height of the QR code
+    height: 256
+  });
+</script>
+
+</body>
+</html>

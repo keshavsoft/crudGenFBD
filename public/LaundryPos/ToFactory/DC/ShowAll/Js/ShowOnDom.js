@@ -10,7 +10,6 @@ let StartFunc = async () => {
         let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
         let jVarLocalDcData = a.JsonData;
         let jVarLocalItemsData = b.JsonData;
-        console.log("jVarLocalItemsData:", jVarLocalItemsData);
 
         let jVarLocaldayDate = jFTodayDate();
 
