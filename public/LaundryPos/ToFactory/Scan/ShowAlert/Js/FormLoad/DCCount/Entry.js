@@ -7,7 +7,7 @@ let StartFunc = async () => {
     
     if (jVarLocalDataNeeded !== null) {
         if (jVarLocalDataNeeded.KTF) {
-            StartFuncAfterFetch({ inDataToShow: jVarLocalDataNeeded.JsonData });
+            StartFuncAfterFetch({ inDataToShow: jVarLocalDataNeeded });
         }
     }
 };

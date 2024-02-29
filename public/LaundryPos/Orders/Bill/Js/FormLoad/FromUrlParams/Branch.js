@@ -1,10 +1,7 @@
 let StartFunc = () => {
-    let jVarLocalCustomer = getUrlQueryParams({ inGetKey: "FromSave"})
-
-    if (jVarLocalCustomer === "true") {
-        console.log("Hai");
-    }
-
+    let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    let jVarLocalBranchId = document.getElementById("BranchNameId");
+    jVarLocalBranchId.innerHTML = jVarLocalBranchId.innerHTML.replace("{{Branch}}", jVarLocalBranchName)
 };
 
 let getUrlQueryParams = ({ inGetKey }) => {

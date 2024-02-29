@@ -1,7 +1,7 @@
 import { StartFunc as StartFuncURLNavigation } from "./URLNavigation.js";
 
 let StartFunc = () => {
-    let jVarLocalNavId = document.getElementById("BSTableFromScreenId");
+    let jVarLocalNavId = document.getElementById("TotalQrsWithFilterId");
     jVarLocalNavId.addEventListener("click", StartFuncURLNavigation)
 };
 

@@ -23,3 +23,6 @@ GET http://localhost:7016/src/kSampleFolder/ksSample/FromModalUuidAndTS
 
 ###Get for as is data
 GET http://localhost:7016/src/kSampleFolder/ksSample/1
+
+###Get Row Count By Key and Value
+GET http://localhost:7016/bin/Factory/VoucherDetails/RowCount/VoucherNumber/1

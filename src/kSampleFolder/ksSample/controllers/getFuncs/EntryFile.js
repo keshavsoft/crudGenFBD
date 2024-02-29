@@ -2,8 +2,9 @@ import {
     GetFunc as GetFuncRepo, GetDataOnlyFunc as GetDataOnlyFuncRepo,
     GetFromModalUuidFunc as GetFromModalUuidFuncRepo,
     GetFromModalUuidAndTSFunc as GetFromModalUuidAndTSFuncRepo, GetFromModalFunc as GetFromModalFuncRepo,
-    GetIdFunc as GetIdFuncRepo, GetBodyCheckFunc as GetBodyCheckFuncRepo,GetRowCountFunc as GetRowCountFuncRepo,
+    GetIdFunc as GetIdFuncRepo, GetBodyCheckFunc as GetBodyCheckFuncRepo, GetRowCountFunc as GetRowCountFuncRepo,
     GetRowDataFunc as GetRowDataFuncRepo,
+    GetRowCountByIdFunc as GetRowCountByIdFuncRepo
 } from '../../repos/getFuncs/EntryFile.js';
 
 
@@ -29,9 +30,19 @@ let GetIdFunc = (req, res) => {
 
 let GetRowDataFunc = (req, res) => {
     let LocalParams = req.params;
+    let LocalIdKeyFromParam = LocalParams.idKey;
     let LocalIfFromParam = LocalParams.id;
 
-    let LocalFromRepo = GetRowDataFuncRepo({ inId: LocalIfFromParam });
+    let LocalFromRepo = GetRowDataFuncRepo({ inKey: LocalIdKeyFromParam, inId: LocalIfFromParam });
+    res.json(LocalFromRepo);
+};
+
+let GetRowCountByIdFunc = (req, res) => {
+    let LocalParams = req.params;
+    let LocalIdKeyFromParam = LocalParams.idKey;
+    let LocalIdFromParam = LocalParams.id;
+
+    let LocalFromRepo = GetRowCountByIdFuncRepo({ inKey: LocalIdKeyFromParam, inId: LocalIdFromParam });
     res.json(LocalFromRepo);
 };
 
@@ -55,8 +66,8 @@ let GetBodyCheckFunc = async (req, res) => {
     res.json(LocalFromRepo);
 };
 
-let GetRowCountFunc = async (req, res) => {
-    let LocalFromRepo = await GetRowCountFuncRepo();
+let GetRowCountFunc = (req, res) => {
+    let LocalFromRepo = GetRowCountFuncRepo();
     res.json(LocalFromRepo);
 };
 
@@ -64,5 +75,5 @@ export {
     GetFunc, GetDataOnlyFunc, GetFromModalFunc,
     GetFromModalUuidFunc, GetFromModalUuidAndTSFunc,
     GetIdFunc,
-    GetBodyCheckFunc,GetRowCountFunc,GetRowDataFunc
+    GetBodyCheckFunc, GetRowCountFunc, GetRowDataFunc, GetRowCountByIdFunc
 };

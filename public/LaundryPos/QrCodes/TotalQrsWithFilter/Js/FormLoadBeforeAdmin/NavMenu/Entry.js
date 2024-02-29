@@ -10,8 +10,8 @@ const StartFunc = () => {
     StartFuncDashboardId();
     StartFuncBSTableFromScreen();
     StartFuncTree();
-    StartFuncKSTree();
-    StartFuncCreate();
+    // StartFuncKSTree();
+    // StartFuncCreate();
 };
 
 export { StartFunc };

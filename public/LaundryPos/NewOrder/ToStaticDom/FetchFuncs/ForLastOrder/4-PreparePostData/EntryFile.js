@@ -1,4 +1,3 @@
-import ConfigJson from "../../../../../ApiConfig.json" assert {type: 'json'};
 
 const StartFunc = () => {
     let jVarLocalReturnObject = {};

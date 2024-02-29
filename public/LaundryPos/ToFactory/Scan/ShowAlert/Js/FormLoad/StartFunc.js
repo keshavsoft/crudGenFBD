@@ -1,4 +1,5 @@
 import { StartFunc as StartFuncDCDetails } from "./DCDetails/Entry.js";
+import { StartFunc as StartFuncDCCount } from "./DCCount/Entry.js";
 
 let StartFunc = () => {
 
@@ -15,6 +16,7 @@ let StartFunc = () => {
     JFlocalShowAlertFunc();
     JFlocalNewPkAlertFunc();
     StartFuncDCDetails();
+    StartFuncDCCount();
     jFLocalToInputBranchName();
     jFLocalBranchName()
 
