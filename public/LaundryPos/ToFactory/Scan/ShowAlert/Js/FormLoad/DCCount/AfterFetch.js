@@ -5,7 +5,7 @@ let StartFunc = ({ inDataToShow }) => {
 };
 
 let jFLocalToInnerHtmlpkTextId = ({ inpkTextId }) => {
-    let jVarLocalHtmlId = 'RowCounrId';
+    let jVarLocalHtmlId = 'RowCountId';
     let jVarLocalpkTextId = document.getElementById(jVarLocalHtmlId);
     jVarLocalpkTextId.innerHTML = inpkTextId;
 };
