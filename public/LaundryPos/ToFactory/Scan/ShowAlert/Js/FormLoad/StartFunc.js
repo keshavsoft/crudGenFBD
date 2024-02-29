@@ -1,25 +1,18 @@
 import { StartFunc as StartFuncDCDetails } from "./DCDetails/Entry.js";
 import { StartFunc as StartFuncDCCount } from "./DCCount/Entry.js";
+import { StartFunc as StartFuncParams } from "./Params/EntryFile.js";
+import { StartFunc as StartFuncQrTable } from "./QrTable/EntryFile.js";
 
 let StartFunc = () => {
-
-    let jVarLocalVoucherRefValue = getUrlQueryParams({ inGetKey: "VoucherRef" });
-    if (jVarLocalVoucherRefValue == "" && jVarLocalVoucherRefValue === null) {
-        Swal.fire({
-            icon: "error",
-            title: "Error",
-            text: "VoucherRef Not Found in Params"
-
-        });
-    }
-    jFLocalToInputInputVoucherRefId({ inInputVoucherRefId: jVarLocalVoucherRefValue })
+    StartFuncParams();
+    jFLocalToInputInputVoucherRefId()
     JFlocalShowAlertFunc();
     JFlocalNewPkAlertFunc();
     StartFuncDCDetails();
     StartFuncDCCount();
     jFLocalToInputBranchName();
     jFLocalBranchName()
-
+    StartFuncQrTable();
 };
 
 const JFlocalShowAlertFunc = () => {
@@ -38,10 +31,12 @@ const JFlocalNewPkAlertFunc = () => {
     jvarLocalAlertId.innerHTML = jVarLocalVoucherRefValue;
 };
 
-let jFLocalToInputInputVoucherRefId = ({ inInputVoucherRefId }) => {
+let jFLocalToInputInputVoucherRefId = () => {
+    let jVarLocalVoucherRefValue = getUrlQueryParams({ inGetKey: "VoucherRef" });
+
     let jVarLocalHtmlId = 'InputVoucherRefId';
     let jVarLocalInputVoucherRefId = document.getElementById(jVarLocalHtmlId);
-    jVarLocalInputVoucherRefId.value = inInputVoucherRefId;
+    jVarLocalInputVoucherRefId.value = jVarLocalVoucherRefValue;
 };
 
 let jFLocalToInputBranchName = () => {
