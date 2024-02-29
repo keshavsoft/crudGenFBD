@@ -1,6 +1,5 @@
 let StartFunc = ({ inFromFetch }) => {
     let jVarLocalFetchData = inFromFetch;
-    console.log("jVarLocalFetchData:",jVarLocalFetchData);
     if (jVarLocalFetchData.KTF === true) {
         jFLocalForSuccess(jVarLocalFetchData);
     }
@@ -11,10 +10,15 @@ let StartFunc = ({ inFromFetch }) => {
             let jVarLocalInputPkId = document.getElementById(jVarLocalHtmlId);
             let jVarLocalLength = jVarLocalInputPkId.value.trim().length;
             jVarLocalInputPkId.setSelectionRange(0, jVarLocalLength);
+
             Swal.fire({
                 icon: 'error',
-                title: 'Oops...',
-                text: `${inFromFetch.KReason}`
+                title: `${inFromFetch.KReason}`,
+                confirmButtonText: "ok",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = ""
+                }
             });
 
         } else {
@@ -40,7 +44,7 @@ let jFLocalForSuccess = (jVarLocalFetchData) => {
     params1.set("ShowAlert", true);
     window.location.href = `${url.origin}${url.pathname}?${params1}`;
 
-     window.location.href = new_url.href;
+    window.location.href = new_url.href;
 };
 
 export { StartFunc };

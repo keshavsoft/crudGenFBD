@@ -2,6 +2,10 @@ import { StartFunc as StartFuncreadFile } from '../../kLowDb/ReadFileList/readFi
 import { StartFunc as StartFuncReadFileFromModal } from '../../kLowDb/ReadFileList/readFileFromModal.js';
 import { StartFunc as StartFunReadFileById } from '../../kLowDb/ReadFileList/readFileById.js';
 import { StartFunc as StartFuncGetTableSchema } from '../../kLowDb/GetTableSchema/GetColumns.js';
+import { StartFunc as StartFuncGetRowCountById } from '../../kLowDb/ReadFromFile/RowCountById.js';
+import { StartFunc as StartFuncGetRowCount } from '../../kLowDb/ReadFromFile/RowCount.js';
+import { StartFunc as StartFunRowDataByKeyId } from '../../kLowDb/ReadFromFile/RowDataByKeyId.js';
+
 
 let GetFunc = () => {
     return StartFuncreadFile();
@@ -27,9 +31,18 @@ let GetIdFunc = ({ inId }) => {
     return LocalFromLowDb.JsonData;
 };
 
-let GetRowDataFunc = ({ inId }) => {
-    return StartFunReadFileById({ inId });
+let GetRowDataFunc = ({ inKey, inId }) => {
+    return StartFunRowDataByKeyId({ inKey, inId });
 
+};
+
+let GetRowCountByIdFunc = ({ inKey, inId }) => {
+    return StartFuncGetRowCountById({ inKey, inId });
+
+};
+
+let GetRowCountFunc = () => {
+    return StartFuncGetRowCount();
 };
 
 let GetFromModalFunc = () => {
@@ -51,5 +64,5 @@ let GetBodyCheckFunc = () => {
 export {
     GetFunc, GetDataOnlyFunc, GetFromModalFunc,
     GetFromModalUuidFunc, GetFromModalUuidAndTSFunc,
-    GetIdFunc,GetBodyCheckFunc,GetRowDataFunc
+    GetIdFunc, GetBodyCheckFunc, GetRowDataFunc, GetRowCountFunc, GetRowCountByIdFunc
 };

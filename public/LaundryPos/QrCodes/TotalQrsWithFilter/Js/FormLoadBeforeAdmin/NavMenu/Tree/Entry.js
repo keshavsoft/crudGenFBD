@@ -1,7 +1,7 @@
 import { StartFunc as StartFuncBSTableNewUrl } from "./FactoryParamId.js";
 
 const StartFunc = () => {
-    let jVarLocalHtmlId = 'TreeId';
+    let jVarLocalHtmlId = 'TotalQrsId';
     let jVarlocalBSTreeId = document.getElementById(jVarLocalHtmlId);
 
     if (jVarlocalBSTreeId === null === false) {

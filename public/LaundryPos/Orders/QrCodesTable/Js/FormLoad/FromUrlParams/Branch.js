@@ -1,11 +1,8 @@
 let StartFunc = () => {
     let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    let jVarLocalBranchId = document.getElementById("BranchNameId");
 
-    const myUrlWithParams = new URL(`${window.location.origin}${window.location.pathname}`);
-    const k1 = new URL("../TotalQrsWithFilter/TotalQrsWithFilter.html", myUrlWithParams.href);
-    k1.searchParams.append("BranchName", jVarLocalBranchName);
-
-    window.location.href = k1.href;
+    jVarLocalBranchId.innerHTML = jVarLocalBranchId.innerHTML.replace("{{Branch}}", jVarLocalBranchName)
 };
 
 let getUrlQueryParams = ({ inGetKey }) => {
@@ -15,4 +12,4 @@ let getUrlQueryParams = ({ inGetKey }) => {
     return value;
 };
 
-export { StartFunc };
+export { StartFunc }

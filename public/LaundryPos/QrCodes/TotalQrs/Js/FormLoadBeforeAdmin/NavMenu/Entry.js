@@ -8,7 +8,7 @@ import { StartFunc as StartFuncCreate } from "./Create/Entry.js";
 const StartFunc = () => {
     StartFuncBSTableURL();
     StartFuncDashboardId();
-    // StartFuncBSTableFromScreen();
+    StartFuncBSTableFromScreen();
     // StartFuncTree();
     // StartFuncKSTree();
     // StartFuncCreate();

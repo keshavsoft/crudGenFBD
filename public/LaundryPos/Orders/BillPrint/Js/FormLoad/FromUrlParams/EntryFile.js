@@ -2,8 +2,8 @@ import { StartFunc as StartFuncPopUp } from "./PopUp.js";
 import { StartFunc as StartFuncBranch } from "./Branch.js";
 
 let StartFunc = () => {
-  StartFuncPopUp();
-  StartFuncBranch();
-};
+    StartFuncPopUp();
+    StartFuncBranch();
+}
 
 export { StartFunc }

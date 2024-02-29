@@ -4,11 +4,10 @@ let StartFunc = ({ inFromFetch }) => {
         if (data.KTF === false) {
             return false;
         };
-        let inOrderNumberId = Object.keys(data.JsonData)[0];
-        if (Object.keys(data.JsonData)[0] === undefined) {
+        if (data.RowCount === undefined) {
             inOrderNumberId = 0;
         }
-        jFLocalToInnerHtmlOrderNumberId({ inOrderNumberId });
+        jFLocalToInnerHtmlOrderNumberId({ inOrderNumberId: data.RowCount });
     };
 };
 
