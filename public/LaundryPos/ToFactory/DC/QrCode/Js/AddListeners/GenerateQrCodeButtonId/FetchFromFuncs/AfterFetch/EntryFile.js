@@ -16,8 +16,8 @@ let StartFunc = ({ inDataToShow }) => {
 
 let GenerateQrCodeOnModal = ({ inQrData = "", inCanvasId }) => {
     var canvas = inCanvasId;
-    canvas.height = 1;
-    canvas.width = 1;
+    canvas.height = 11;
+    canvas.width = 11;
     canvas.style.visibility = 'hidden';
 
     // Convert the options to an object.
@@ -26,8 +26,8 @@ let GenerateQrCodeOnModal = ({ inQrData = "", inCanvasId }) => {
     // Finish up the options
     opts.text = `${inQrData.VoucherNumber}~${inQrData.BranchName}~${inQrData.Date}~${inQrData.Description}`;
     opts.bcid = "qrcode";
-    opts.scaleX = 1;
-    opts.scaleY = 1;
+    opts.scaleX = 4;
+    opts.scaleY = 4;
     opts.rotate = "N";
 
     // Draw the bar code to the canvas
