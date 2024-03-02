@@ -5,7 +5,7 @@ import { StartFunc as StartFuncGetTableSchema } from '../../kLowDb/GetTableSchem
 import { StartFunc as StartFuncGetRowCountById } from '../../kLowDb/ReadFromFile/RowCountById.js';
 import { StartFunc as StartFuncGetRowCount } from '../../kLowDb/ReadFromFile/RowCount.js';
 import { StartFunc as StartFunRowDataByKeyId } from '../../kLowDb/ReadFromFile/RowDataByKeyId.js';
-
+import { StartFunc as StartFuncSampleRow } from '../../kLowDb/ReadFromFile/SampleRow.js';
 
 let GetFunc = () => {
     return StartFuncreadFile();
@@ -46,7 +46,10 @@ let GetRowCountFunc = () => {
 };
 
 let GetFromModalFunc = () => {
-    return StartFuncReadFileFromModal();
+    return StartFuncSampleRow();
+
+    // return StartFuncReadFileFromModal();
+    // StartFuncSampleRow
 };
 
 let GetFromModalUuidFunc = () => {

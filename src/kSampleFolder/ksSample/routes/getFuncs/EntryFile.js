@@ -15,7 +15,7 @@ router.get('/DataOnly', GetDataOnlyFunc);
 router.get('/BodyCheck', GetBodyCheckFunc);
 router.get('/RowCount', GetRowCountFunc);
 router.get('/RowCount/:idKey/:id', GetRowCountByIdFunc);
-
+    
 
 router.get('/:id', GetIdFunc);
 router.get('/RowData/:idKey/:id', GetRowDataFunc);
