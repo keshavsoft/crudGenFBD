@@ -26,7 +26,7 @@ let StartFunc = ({ inDataToInsert }) => {
     let LocalValueNeeded = inDataToInsert[LocalKeyNeeded];
 
     let LocalK1 = Object.values(LocalKeysNeeded)[0].references;
-    let LocalDataNeeded = StartFuncChecks({ inFileName: LocalK1.model.tableName, NeededKey: LocalValueNeeded });
+    let LocalDataNeeded = StartFuncChecks({ inFileName: LocalK1.model.tableName,inFolderName:LocalK1.folderName, NeededKey: LocalValueNeeded });
 
     if (LocalDataNeeded.KTF === false) {
         LocalReturnData.KReason = LocalDataNeeded.KReason;
