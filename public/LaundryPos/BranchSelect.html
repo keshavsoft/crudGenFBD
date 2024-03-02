@@ -16,19 +16,36 @@
 <body style="background-color: whitesmoke;">
     <header>
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-            <h1 class="display-4 fw-normal text-body-emphasis">Select Branch Name</h1>
-            <p class="fs-5 text-body-secondary">Choose your own Branch and start your Laundry bookings 
-            </p>
+            <h1 class="display-4 fw-normal text-body-emphasis">Welcome</h1>
+           
         </div>
     </header>
     <main>
         <div class="container">
             <div class="row">
                 <div class="col" style="text-align: center;">
-                    <img src="./assets/img/wm6.png" href="" alt="" width="300px">
-                    </a>
+                    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                        <h1 class="display-4 fw-normal text-body-emphasis">Select Factory Name</h1>
+                        <p class="fs-5 text-body-secondary">Choose your own Factory and start your Laundry Washing 
+                        </p>
+                    </div>
+                    <div class="input-group">
+                        <select id="FactorySelectInputId" class="form-select" id="inputGroupSelect04"
+                            aria-label="Example select with button addon">
+                            <option selected>Choose Factory</option>
+                            <option value="Vizag">Vizag</option>
+                            <option value="VZM">Vzm</option>
+                        </select>
+                        <button id="FactorySelectButtonId" class="btn btn-outline-secondary" type="button">Go To
+                            Branch</button>
+                    </div>
                 </div>
                 <div class="col" style="text-align: center;">
+                    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                        <h1 class="display-4 fw-normal text-body-emphasis">Select Branch Name</h1>
+                        <p class="fs-5 text-body-secondary">Choose your own Branch and start your Laundry bookings 
+                        </p>
+                    </div>
                     <div class="input-group">
                         <select id="BruchSelectInputId" class="form-select" id="inputGroupSelect04"
                             aria-label="Example select with button addon">
@@ -92,6 +109,27 @@
         };
         jFLocalBruchSelectButtonId();
     </script>
+
+<script>
+    let jFLocalFactorySelectButtonId = () => {
+        let jVarLocalFactorySelectButtonId = document.getElementById('FactorySelectInputId');
+
+        if (jVarLocalFactorySelectButtonId === null === false) {
+            jVarLocalFactorySelectButtonId.addEventListener("click", jFLocalFactorySelectInputId)
+        };
+    };
+
+    let jFLocalFactorySelectInputId = () => {
+        let jVarLocalBruchSelectInputId = document.getElementById('BruchSelectInputId');
+
+        if (jVarLocalBruchSelectInputId === null === false) {
+            let jVarLocalBruchSelectInputValue = jVarLocalBruchSelectInputId.value;
+
+            window.location.href = `/LaundryFactory/Dashboard/Dashboard.html?BranchName=${jVarLocalBruchSelectInputValue}`
+        };
+    };
+    jFLocalFactorySelectButtonId();
+</script>
 </body>
 
 </html>
