@@ -30,14 +30,14 @@
                         </p>
                     </div>
                     <div class="input-group">
-                        <select id="FactorySelectInputId" class="form-select" id="inputGroupSelect04"
+                        <select id="FactorySelectInputId" class="form-select" 
                             aria-label="Example select with button addon">
                             <option selected>Choose Factory</option>
                             <option value="Vizag">Vizag</option>
-                            <option value="VZM">Vzm</option>
+                            <option value="Vzm">Vzm</option>
                         </select>
                         <button id="FactorySelectButtonId" class="btn btn-outline-secondary" type="button">Go To
-                            Branch</button>
+                            Factory</button>
                     </div>
                 </div>
                 <div class="col" style="text-align: center;">
@@ -47,7 +47,7 @@
                         </p>
                     </div>
                     <div class="input-group">
-                        <select id="BruchSelectInputId" class="form-select" id="inputGroupSelect04"
+                        <select id="BruchSelectInputId" class="form-select" 
                             aria-label="Example select with button addon">
                             <option selected>Choose Branch</option>
                             <option value="Kakinada">Kakinada</option>
@@ -112,7 +112,7 @@
 
 <script>
     let jFLocalFactorySelectButtonId = () => {
-        let jVarLocalFactorySelectButtonId = document.getElementById('FactorySelectInputId');
+        let jVarLocalFactorySelectButtonId = document.getElementById('FactorySelectButtonId');
 
         if (jVarLocalFactorySelectButtonId === null === false) {
             jVarLocalFactorySelectButtonId.addEventListener("click", jFLocalFactorySelectInputId)
@@ -120,7 +120,7 @@
     };
 
     let jFLocalFactorySelectInputId = () => {
-        let jVarLocalBruchSelectInputId = document.getElementById('BruchSelectInputId');
+        let jVarLocalBruchSelectInputId = document.getElementById('FactorySelectInputId');
 
         if (jVarLocalBruchSelectInputId === null === false) {
             let jVarLocalBruchSelectInputValue = jVarLocalBruchSelectInputId.value;
