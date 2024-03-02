@@ -75,6 +75,7 @@
           "model": {
             "tableName": "Generate"
           },
+          "folderName": "QrCodes",
           "key": "id"
         },
         "allowNull": false,
