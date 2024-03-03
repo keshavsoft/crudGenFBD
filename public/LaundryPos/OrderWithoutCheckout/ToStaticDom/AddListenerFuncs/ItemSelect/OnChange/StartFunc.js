@@ -28,16 +28,14 @@ let jFLocalItemSelectChange = ({ inEvent }) => {
         let jVarLocalRate = jVarLocalClosestTab.querySelector(".RateClass");
 
         let jVarLocalItemPk = jVarLocalCurrentTarget.value;
-console.log("jVarLocalItemPk:",jVarLocalItemPk);
         let jVarLocalItems = StartFuncFromLocalStorage({ inLocalStorageKey: jVarLocalStorageKey });
-        console.log("jVarLocalItems:",jVarLocalItems);
         
-        let jVarLocalFind = jVarLocalItems.find(element => element.UuId === jVarLocalItemPk);
+        let jVarLocalFind = jVarLocalItems.find(element => element.pk === jVarLocalItemPk);
 
         jVarLocalRate.value = jVarLocalFind.DryWashRate;
 
     } catch (error) {
-        console.log("error : ", error);
+        // console.log("error : ", error);
     };
 };
 
