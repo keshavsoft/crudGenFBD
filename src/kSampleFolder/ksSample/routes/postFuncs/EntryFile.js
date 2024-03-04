@@ -27,5 +27,4 @@ router.post('/UploadFromModal', PostUploadFromModalFunc);
 router.post('/UploadImage/:Id', uploadFromMulter.single("image"), PostUploadImageFunc);
 router.post('/UploadMultipleImages/:Id', uploadFromMulter.array("images", 4), PostUploadImageFunc);
 
-
 export { router };

@@ -1,6 +1,7 @@
 import { StartFunc as StartFuncPullData } from "./PullData/EntryFile.js";
 import { StartFunc as StartFuncChecks } from "./Checks/QrCheck.js";
 import { StartFunc as StartFuncChecksQrCodeId } from "./Checks/QrCodeId.js";
+import { StartFunc as StartFuncUniqueKeyCheck } from "./Checks/UniqueKeyCheck.js";
 
 let StartFunc = ({ inDataToInsert }) => {
     let LocalinDataToInsert = inDataToInsert;
@@ -26,14 +27,19 @@ let StartFunc = ({ inDataToInsert }) => {
     let LocalValueNeeded = inDataToInsert[LocalKeyNeeded];
 
     let LocalK1 = Object.values(LocalKeysNeeded)[0].references;
-    let LocalDataNeeded = StartFuncChecks({ inFileName: LocalK1.model.tableName,inFolderName:LocalK1.folderName, NeededKey: LocalValueNeeded });
+    let LocalDataNeeded = StartFuncChecks({ inFileName: LocalK1.model.tableName, inFolderName: LocalK1.folderName, NeededKey: LocalValueNeeded });
 
     if (LocalDataNeeded.KTF === false) {
         LocalReturnData.KReason = LocalDataNeeded.KReason;
         return LocalReturnData;
     };
 
-    let LocalStartFuncChecksQrCodeId = StartFuncChecksQrCodeId({ inData: db.data, inDataToInsert: LocalinDataToInsert, });
+    // let LocalStartFuncChecksQrCodeId = StartFuncChecksQrCodeId({ inData: db.data, inDataToInsert: LocalinDataToInsert, });
+    let LocalStartFuncChecksQrCodeId = StartFuncUniqueKeyCheck({
+        inData: db.data, inDataToInsert: LocalinDataToInsert,
+        inTableSchema: LocalTableSchema.fileData
+    });
+
     if (LocalStartFuncChecksQrCodeId.KTF === false) {
         LocalReturnData.KReason = LocalStartFuncChecksQrCodeId.KReason;
         return LocalReturnData;
