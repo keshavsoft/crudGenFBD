@@ -1,4 +1,18 @@
-let StartFunc = () => {
+let StartFunc = ({ inFetchData }) => {
+    let LocalinFetchData = inFetchData;
+    
+    if (LocalinFetchData.KTF === false) {
+        Swal.fire({
+            title: `${LocalinFetchData.KReason}`,
+            confirmButtonText: "ok",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = ""
+                return;
+            };
+        });
+        return;
+    };
 
     const url = new URL(window.location.href);
     const params1 = new URLSearchParams(url.search);

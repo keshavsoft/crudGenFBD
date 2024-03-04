@@ -18,7 +18,13 @@ const jFFactory = () => {
 
     if (jVarLocalFactory.value === "") {
         jVarLocalFactory.classList.add("is-invalid");
+        jVarLocalFactory.focus();
         return false;
+    };
+
+    if ((jVarLocalFactory.value === "") === false) {
+        jVarLocalFactory.classList.remove("is-invalid");
+        return true;
     };
     return true;
 };
@@ -28,7 +34,12 @@ const jFItemName = () => {
 
     if (jVarLocalBranchName.value === "") {
         jVarLocalBranchName.classList.add("is-invalid");
+        jVarLocalBranchName.focus();
         return false;
+    };
+    if ((jVarLocalBranchName.value === "") === false) {
+        jVarLocalBranchName.classList.remove("is-invalid");
+        return true;
     };
     
     return true;
@@ -39,7 +50,12 @@ const jFDryWashRate = () => {
 
     if (jVarLocalBranchName.value === "") {
         jVarLocalBranchName.classList.add("is-invalid");
+        jVarLocalBranchName.focus();
         return false;
+    };
+    if ((jVarLocalBranchName.value === "") === false) {
+        jVarLocalBranchName.classList.remove("is-invalid");
+        return true;
     };
     
     return true;

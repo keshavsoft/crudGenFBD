@@ -6,7 +6,6 @@
     },
     "AddOnRate": {
       "type": "NUMBER",
-      "unique": true,
       "allowNull": false
     }
   }
