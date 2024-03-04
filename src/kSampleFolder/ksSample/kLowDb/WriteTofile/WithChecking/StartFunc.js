@@ -22,18 +22,19 @@ let StartFunc = ({ inDataToInsert }) => {
             LocalKeysNeeded[prop] = LocalTableSchema.fileData[prop];
         };
     };
+    if ((Object.keys(LocalKeysNeeded).length === 0) === false) {
 
-    let LocalKeyNeeded = Object.keys(LocalKeysNeeded)[0];
-    let LocalValueNeeded = inDataToInsert[LocalKeyNeeded];
+        let LocalKeyNeeded = Object.keys(LocalKeysNeeded)[0];
+        let LocalValueNeeded = inDataToInsert[LocalKeyNeeded];
 
-    let LocalK1 = Object.values(LocalKeysNeeded)[0].references;
-    let LocalDataNeeded = StartFuncChecks({ inFileName: LocalK1.model.tableName, inFolderName: LocalK1.folderName, NeededKey: LocalValueNeeded });
+        let LocalK1 = Object.values(LocalKeysNeeded)[0].references;
+        let LocalDataNeeded = StartFuncChecks({ inFileName: LocalK1.model.tableName, inFolderName: LocalK1.folderName, NeededKey: LocalValueNeeded });
 
-    if (LocalDataNeeded.KTF === false) {
-        LocalReturnData.KReason = LocalDataNeeded.KReason;
-        return LocalReturnData;
+        if (LocalDataNeeded.KTF === false) {
+            LocalReturnData.KReason = LocalDataNeeded.KReason;
+            return LocalReturnData;
+        };
     };
-
     // let LocalStartFuncChecksQrCodeId = StartFuncChecksQrCodeId({ inData: db.data, inDataToInsert: LocalinDataToInsert, });
     let LocalStartFuncChecksQrCodeId = StartFuncUniqueKeyCheck({
         inData: db.data, inDataToInsert: LocalinDataToInsert,
