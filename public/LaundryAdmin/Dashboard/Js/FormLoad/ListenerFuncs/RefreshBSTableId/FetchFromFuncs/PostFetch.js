@@ -1,5 +1,5 @@
 let StartFunc = async () => {
-    let jVarLocalFetchUrl = `/Common/bin/FilesWithData/ActualData/Transactions`;
+    let jVarLocalFetchUrl = `/Common/bin/FilesWithData/Summary/Transactions`;
     let response = await fetch(jVarLocalFetchUrl);
     let data = await response.json();
 
