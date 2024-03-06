@@ -129,3 +129,7 @@ to rerun the application for new schema
 2. delete data folder in KData/JSON ( data location )
 
 define you config in kcode folder
+
+6 Mar 2024
+
+Backup is working for get request
