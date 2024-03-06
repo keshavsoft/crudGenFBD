@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/keshavsoft/crudGenFBD#readme",
   "dependencies": {
+    "archiver": "^7.0.0",
     "cookie-parser": "^1.4.6",
     "directory-tree": "^3.5.1",
     "dotenv": "^16.4.3",
