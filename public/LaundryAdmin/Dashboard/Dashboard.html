@@ -17,7 +17,7 @@
 
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css">
 
-    <title>TabularColumnsData</title>
+    <title>Dashboard</title>
     <!-- Custom styles for this template -->
     <link href="./css/headers.css" rel="stylesheet">
 </head>
@@ -72,6 +72,18 @@
                                     Dashboard
                                 </a>
                             </li>
+                            <li class="nav-item Bookings">
+                                <a id="" href="./Orders/TotalOrders/TotalOrders.html" class="nav-link text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                        class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z">
+                                        </path>
+                                    </svg>
+
+                                    Orders
+                                </a>
+                            </li>
                            
                         </ul>
                         <ul class="navbar-nav">
@@ -119,91 +131,7 @@
         </div>
     </header>
 
-    <div class="modal fade" id="LoginModalId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Enter client user credentials</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="LoginFormPopUpId" class="" onsubmit="return false" novalidate="">
-                        <div class="mb-3 form-floating is-valid">
-                            <input type="text" class="form-control" id="KUserNameInput" required="">
-                            <label for="KUserNameInput">User Name</label>
-                            <div class="invalid-feedback">
-                                User Name cannot be empty.
-                            </div>
-                        </div>
-                        <div class="mb-3 form-floating">
-                            <input type="password" class="form-control" id="KPasswordInput" required="">
-                            <label for="KPasswordInput">Password</label>
-                            <div class="invalid-feedback">
-                                Password cannot be empty.
-                            </div>
-                        </div>
-                        <input id="LoginButtonOnModalId" type="submit" class=" btn btn-primary">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container mt-2">
-        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
-            aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a id="BRDDashboardId" href="../../LaundryPos/Index.html">Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page"> Dashboard Report</li>
-            </ol>
-        </nav>
-    </div>
-
-    <main>
-        <div class="container">
-            <div id="AlertSuccessId" class="alert alert-success alert-dismissible fade show mt-2" role="alert"
-                style="display: none;">
-                <strong id="RowPkInsertSuccessStrongId">SavedPk</strong> Saved
-                Sucessfully.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <a id="RefreshBSTableId" href="#">
-
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                            class="bi bi-arrow-clockwise align-middle" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"></path>
-                            <path
-                                d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z">
-                            </path>
-                        </svg>
-                    </a>
-                </div>
-                <div class="col">
-                    <div class="spinner-border align-middle" id="SpinnerId" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
-                </div>
-            </div>
-
-            <table id="table" data-toolbar="#toolbar" data-search="true" data-searchable="true" data-show-columns="true"
-                data-show-columns-toggle-all="true" data-show-export="true" data-detail-view="true"
-                data-detail-formatter="detailFormatter" data-id-field="pk" data-show-toggle="true"
-                data-filter-control="true">
-                <thead>
-                    <tr id="tableHeadRow">
-                        <th data-formatter="jFLocalSerialColumn">#</th>
-                        <th data-field="fileName" data-filter-control="input">Branch Name</th>
-                        <th data-field="DataCount" data-filter-control="select">Total Orders</th>
-                        <th data-field="LastOrdeDate" data-filter-control="select">LastOrde Date</th>
-                        <th data-field="LastOrdeTime" data-filter-control="select">LastOrde Time</th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-    </main>
+   
 
     <footer class="footer mt-auto py-3 bg-light fixed-bottom">
         <div class="container">
@@ -215,32 +143,7 @@
         </div>
     </footer>
 
-    <script>
-        function detailFormatter(index, row) {
-            var html = []
-            $.each(row, function (key, value) {
-                html.push('<p><b>' + key + ':</b> ' + value + '</p>')
-            })
-            return html.join('')
-        };
-
-        function jFLocalSerialColumn(value, row, index) {
-            return index + 1;
-        };
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-    <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
-
-    <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
-    <script
-        src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/export/bootstrap-table-export.min.js"></script>
-    <script
-        src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <script src="./Js/Dashboard.js" type="module"></script>
+   
 </body>
 
 </html>

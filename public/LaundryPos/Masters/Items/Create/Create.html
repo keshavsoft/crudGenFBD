@@ -218,9 +218,17 @@
                                             <label class="col-md-4 col-form-label">Category</label>
 
                                             <div class="col-md-8">
-                                                <input kvs1="" id="Category" name="Category" data-clienteval=""
+                                                <select class="form-select" id="Category" name="Category"
+                                                    aria-label="Default select example">
+                                                    <option>Men</option>
+                                                    <option>Women</option>
+                                                    <option>Kids</option>
+                                                    <option>Household</option>
+                                                    <option>Others</option>
+                                                </select>
+                                                <!-- <input kvs1="" id="Category" name="Category" data-clienteval=""
                                                     type="text" class="form-control" placeholder="Enter Category Name"
-                                                    autocomplete="off" list="CategoryId" required autofocus>
+                                                    autocomplete="off" list="CategoryId" required autofocus> -->
                                                 <div class="invalid-feedback">
                                                     Should not be Empty!!
                                                 </div>
@@ -229,10 +237,11 @@
                                         <div class="col-md-12">
                                             <label class="col-md-4 col-form-label">ItemName</label>
                                             <div class="col-md-8">
-                                                <input kvs1="" id="ItemName" name="ItemName" data-dataattribute="ItemName"
-                                                    value="" data-clienteval="" type=""
-                                                    class="form-control KeshavSoftHtmlAttributes" placeholder="Enter ItemName" autocomplete="off" list="">
-                                                <div class="invalid-feedback" id="ItemnameinvalidId" >
+                                                <input kvs1="" id="ItemName" name="ItemName"
+                                                    data-dataattribute="ItemName" value="" data-clienteval="" type=""
+                                                    class="form-control KeshavSoftHtmlAttributes"
+                                                    placeholder="Enter ItemName" autocomplete="off" list="">
+                                                <div class="invalid-feedback" id="ItemnameinvalidId">
                                                     Should not be Empty!!
                                                 </div>
                                             </div>
