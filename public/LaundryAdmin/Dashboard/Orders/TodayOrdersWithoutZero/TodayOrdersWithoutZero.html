@@ -241,13 +241,13 @@
 
             <table id="table" data-toolbar="#toolbar" data-search="true" data-searchable="true" data-show-columns="true"
                 data-show-columns-toggle-all="true" data-show-export="true" data-detail-view="true"
-                data-detail-formatter="detailFormatter" data-id-field="pk" data-show-toggle="true"
+                data-detail-formatter="detailFormatter" data-id-field="pk" data-show-toggle="true" data-show-footer="true"
                 data-filter-control="true">
                 <thead>
                     <tr id="tableHeadRow">
                         <th data-formatter="jFLocalSerialColumn">#</th>
                         <th data-field="fileName" data-filter-control="input">Branch Name</th>
-                        <th data-field="DataCount" data-filter-control="select">Total Orders</th>
+                        <th data-field="DataCount" data-filter-control="select" data-footer-formatter="TotalItems" data-align="right">Total Orders</th>
                         <th data-field="OrderDate" data-filter-control="select">Today Date</th>
                         <th data-field="SentInterVal" data-filter-control="select">Time Span</th>
                     </tr>
@@ -277,6 +277,16 @@
 
         function jFLocalSerialColumn(value, row, index) {
             return index + 1;
+        };
+        
+        function TotalItems(data, row) {
+            let localItemsData = data.map(i =>i.DataCount);
+            let sum = 0;
+            // iterate over each item in the array
+            for (let i = 0; i < localItemsData.length; i++) {
+                sum += localItemsData[i];
+            };
+            return sum;
         };
     </script>
 
