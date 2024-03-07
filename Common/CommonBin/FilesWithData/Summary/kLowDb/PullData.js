@@ -51,16 +51,26 @@ const LocalSummaryFunc = ({ inData }) => {
     let LocalDataArray = [];
 
     LocalArray.forEach(element => {
+        let LocalTodayData = LocalDateAndTime({ inData: element.FileData });
+
         let LocalneedData = {};
         LocalneedData.fileName = path.parse(element.FileName).name;
         LocalneedData.DataCount = element.FileData.length;
         LocalneedData.LastOrdeDateTime = "";
+        LocalneedData.firstOrder = "";
+        LocalneedData.lastOrder = ""
+        LocalneedData.todayFirstOrder = ""
+        LocalneedData.todayFastOrder = ""
 
         if (element.FileData.length > 0) {
             let LastOrdeDate = element.FileData[element.FileData.length - 1];
-            let LocalLocalDateAndTime = LocalDateAndTime({ inDataTime: LastOrdeDate.DateTime });
-            LocalneedData.LastOrdeDate = LocalLocalDateAndTime.LocalDate;
-            LocalneedData.LastOrdeTime = LocalLocalDateAndTime.LocalTime;
+            LocalneedData.firstOrder = element.FileData[0];
+            LocalneedData.lastOrder = LastOrdeDate;
+        };
+        if (LocalTodayData.length > 0) {
+            let TodayLastOrdeDate = LocalTodayData[LocalTodayData.length - 1];
+            LocalneedData.todayFirstOrder = LocalTodayData[0];
+            LocalneedData.todayFastOrder = TodayLastOrdeDate;
         };
         LocalDataArray.push(LocalneedData)
 
@@ -71,7 +81,7 @@ const LocalSummaryFunc = ({ inData }) => {
     return LocalReturnData;
 };
 
-const LocalDateAndTime = ({ inDataTime }) => {
+const LocalDateAndTime1 = ({ inDataTime }) => {
     const dateString = inDataTime;
 
     // Create a new Date object from the string
@@ -92,4 +102,16 @@ const LocalDateAndTime = ({ inDataTime }) => {
     return { LocalDate, LocalTime }
 
 }
+
+const LocalDateAndTime = ({ inData }) => {
+    const Localdate = inData;
+
+    const today = new Date(); // Get today's date
+    const todayDate = today.toISOString().split('T')[0]; // Extract today's date portion
+
+    return Localdate.filter(obj => {
+        const objDate = new Date(obj.OrderData.Currentdateandtime).toISOString().split('T')[0]; // Extract date portion of object's timestamp
+        return objDate === todayDate; // Compare with today's date
+    });
+};
 export { StartFunc };
