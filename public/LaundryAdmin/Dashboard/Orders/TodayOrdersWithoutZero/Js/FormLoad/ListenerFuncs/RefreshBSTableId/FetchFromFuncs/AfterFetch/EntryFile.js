@@ -1,7 +1,6 @@
 
 let StartFunc = ({ inDataToShow }) => {
     let LocalDataToShow = inDataToShow;
-    console.log("LocalDataToShow:",LocalDataToShow);
     let LocalFilterData = LocalDataToShow.filter(e => e.DataCount !== 0)
 
     let LocalmodifiedData = jFLocalShowDateDiffInMinSec({ inData: LocalFilterData });
@@ -27,10 +26,9 @@ let jFLocalShowDateDiffInMinSec = ({ inData }) => {
     jVarLocalReturnArray = inData.map(element => {
         element.SentInterVal = ""
         element.OrderDate = ""
-        if ((element.todayFastOrder === "") === false) {
-            console.log("element---",element.todayFastOrder);
-            element.SentInterVal = jFLocalKInterval({ inCurrentdateandtime: element.todayFastOrder.OrderData.Currentdateandtime });
-            element.OrderDate = element.todayFastOrder.OrderData.Currentdateandtime;
+        if ((element.todayFirstOrder === "") === false) {
+            element.SentInterVal = jFLocalKInterval({ inCurrentdateandtime: element.todayFirstOrder.OrderData.Currentdateandtime });
+            element.OrderDate = element.todayFirstOrder.OrderData.Currentdateandtime;
             return element;
         };
         return element;
