@@ -60,7 +60,7 @@ const LocalSummaryFunc = ({ inData }) => {
         LocalneedData.firstOrder = "";
         LocalneedData.lastOrder = ""
         LocalneedData.todayFirstOrder = ""
-        LocalneedData.todayFastOrder = ""
+        LocalneedData.todaylastOrder = ""
 
         if (element.FileData.length > 0) {
             let LastOrdeDate = element.FileData[element.FileData.length - 1];
@@ -70,7 +70,7 @@ const LocalSummaryFunc = ({ inData }) => {
         if (LocalTodayData.length > 0) {
             let TodayLastOrdeDate = LocalTodayData[LocalTodayData.length - 1];
             LocalneedData.todayFirstOrder = LocalTodayData[0];
-            LocalneedData.todayFastOrder = TodayLastOrdeDate;
+            LocalneedData.todaylastOrder = TodayLastOrdeDate;
         };
         LocalDataArray.push(LocalneedData)
 
@@ -110,7 +110,7 @@ const LocalDateAndTime = ({ inData }) => {
     const todayDate = today.toISOString().split('T')[0]; // Extract today's date portion
 
     return Localdate.filter(obj => {
-        const objDate = new Date(obj.OrderData.Currentdateandtime).toISOString().split('T')[0]; // Extract date portion of object's timestamp
+        const objDate = new Date(obj.DateTime).toISOString().split('T')[0]; // Extract date portion of object's timestamp
         return objDate === todayDate; // Compare with today's date
     });
 };
