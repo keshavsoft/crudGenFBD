@@ -5,7 +5,6 @@
     },
     "Date": {
         "type": "NUMBER",
-        "unique": true,
         "allowNull": false
     },
     "Description": {

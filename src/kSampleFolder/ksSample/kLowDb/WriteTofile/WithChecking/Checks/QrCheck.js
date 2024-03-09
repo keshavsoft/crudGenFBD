@@ -14,14 +14,15 @@ let LocalFuncPullData = ({ inFileName, inFolderName }) => {
     return db.data;
 };
 
-const StartFunc = ({ inFileName, NeededKey, inFolderName }) => {
+const StartFunc = ({ inFileName, NeededKey, inFolderName, inSearchKey }) => {
     let LocalinFileName = inFileName;
+    let LocalSearchKey = inSearchKey;
     let LocalReturnData = { KTF: false, JSONFolderPath: "", CreatedLog: {} };
 
     let LocalDataNeeded = LocalFuncPullData({ inFileName: LocalinFileName, inFolderName });
 
     let LocalFindValue = LocalDataNeeded.filter(element => {
-        return element.pk == NeededKey;
+        return element[LocalSearchKey] == NeededKey;
     });
 
     if (LocalFindValue.length === 0) {
