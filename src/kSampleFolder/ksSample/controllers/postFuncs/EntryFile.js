@@ -16,7 +16,6 @@ import { ClassSample } from '../../ModalClass.js';
 
 let PostFunc = async (req, res) => {
     let LocalBody = req.body;
-    // let LocalModalObject = new ClassSample({ ...LocalBody });
 
     let LocalFromRepo = await PostFuncRepo({ ...LocalBody });
 
@@ -38,6 +37,11 @@ let PostCustomPkFunc = async (req, res) => {
 let PostWithKeysCheckFunc = async (req, res) => {
     let LocalBody = req.body;
     let LocalFromRepo = await PostWithKeysCheckFuncRepo({ ...LocalBody });
+
+    if (LocalFromRepo.KTF === false) {
+        res.status(500).send(LocalFromRepo.KReason);
+        return;
+    };
 
     res.json(LocalFromRepo);
 };

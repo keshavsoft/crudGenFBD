@@ -34,7 +34,13 @@ let GetRowDataFunc = (req, res) => {
     let LocalIfFromParam = LocalParams.id;
 
     let LocalFromRepo = GetRowDataFuncRepo({ inKey: LocalIdKeyFromParam, inId: LocalIfFromParam });
-    res.json(LocalFromRepo);
+    
+    if (LocalFromRepo.KTF === false) {
+        res.status(500).send(LocalFromRepo.KReason);
+        return;
+    };
+
+    res.json(LocalFromRepo.JsonData);
 };
 
 let GetRowCountByIdFunc = (req, res) => {

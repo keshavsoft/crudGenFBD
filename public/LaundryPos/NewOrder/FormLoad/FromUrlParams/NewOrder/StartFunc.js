@@ -4,14 +4,6 @@ let StartFunc = () => {
     jFLocalShowCustomerName();
 };
 
-const jFLocalBranchName = () => {
-    let jFLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
-
-    let jVarLocalHtmlId = "BranchNameId";
-    let jVarLocalBranchNameId = document.getElementById(jVarLocalHtmlId);
-    jVarLocalBranchNameId.value = jFLocalBranchName;
-};
-
 let jFLocalShowCustomerMobile = () => {
     let jVarLocalHtmlId = "OrderInfoCustomerMobileId";
 
