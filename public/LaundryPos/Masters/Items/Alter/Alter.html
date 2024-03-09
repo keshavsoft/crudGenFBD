@@ -73,7 +73,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a id="CreateId" href="#" class="nav-link text-white CreateAClass">
+                                <a id="CreateId" href="#" class="nav-link text-info CreateAClass">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                         class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
                                         <path
@@ -81,20 +81,11 @@
                                         </path>
 
                                     </svg>
-                                    Create
+                                    Alter
                                 </a>
                             </li>
+                           
 
-                            <li class="nav-item Bookings">
-                                <a id="ShowId" class="nav-link active text-info" aria-current="page" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                        class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
-                                        <path
-                                            d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 2h-4v3h4zm0 4h-4v3h4zm0 4h-4v3h3a1 1 0 0 0 1-1zm-5 3v-3H6v3zm-5 0v-3H1v2a1 1 0 0 0 1 1zm-4-4h4V8H1zm0-4h4V4H1zm5-3v3h4V4zm4 4H6v3h4z" />
-                                    </svg>
-                                    Show
-                                </a>
-                            </li>
                         </ul>
                         <ul class="navbar-nav">
                             <li id="HeaderLoginButtonId">
@@ -134,6 +125,40 @@
                                 </ul>
                             </div>
                         </ul>
+                        <div class="modal fade" id="LoginModalId" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Enter client user credentials
+                                        </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="LoginFormPopUpId" class="" onsubmit="return false" novalidate="">
+                                            <div class="mb-3 form-floating is-valid">
+                                                <input type="text" class="form-control" id="KUserNameInput" required="">
+                                                <label for="KUserNameInput">User Name</label>
+                                                <div class="invalid-feedback">
+                                                    User Name cannot be empty.
+                                                </div>
+                                            </div>
+                                            <div class="mb-3 form-floating">
+                                                <input type="password" class="form-control" id="KPasswordInput"
+                                                    required="">
+                                                <label for="KPasswordInput">Password</label>
+                                                <div class="invalid-feedback">
+                                                    Password cannot be empty.
+                                                </div>
+                                            </div>
+                                            <input id="LoginButtonOnModalId" type="submit" class=" btn btn-primary">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
 
                     </div>
                 </div>
@@ -141,48 +166,16 @@
         </div>
     </header>
 
-    <div class="modal fade" id="LoginModalId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Enter client user credentials</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="LoginFormPopUpId" class="" onsubmit="return false" novalidate="">
-                        <div class="mb-3 form-floating is-valid">
-                            <input type="text" class="form-control" id="KUserNameInput" required="">
-                            <label for="KUserNameInput">User Name</label>
-                            <div class="invalid-feedback">
-                                User Name cannot be empty.
-                            </div>
-                        </div>
-                        <div class="mb-3 form-floating">
-                            <input type="password" class="form-control" id="KPasswordInput" required="">
-                            <label for="KPasswordInput">Password</label>
-                            <div class="invalid-feedback">
-                                Password cannot be empty.
-                            </div>
-                        </div>
-                        <input id="LoginButtonOnModalId" type="submit" class=" btn btn-primary">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container mt-2">
-        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
-            aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a id="BRDDashboardId" href="#">Dashboard</a></li>
-                <li class="breadcrumb-item"><a id="DCBRDId" href="#">Masters</a></li>
-                <li class="breadcrumb-item"><a id="RefreshBSTableId" href="#">Items</a></li>
-            </ol>
-        </nav>
-    </div>
-
     <main>
+
+        <datalist id="CategoryId">
+            <option>Men</option>
+            <option>Women</option>
+            <option>Kids</option>
+            <option>Household</option>
+            <option>Others</option>
+        </datalist>
+
         <div class="container">
             <div id="AlertSuccessId" class="alert alert-success alert-dismissible fade show mt-2" role="alert"
                 style="display: none;">
@@ -190,26 +183,102 @@
                 Sucessfully.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-            <div class="spinner-border align-middle" id="SpinnerId" role="status">
-                <span class="visually-hidden">Loading...</span>
+            <div class="container mt-2">
+                <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+                    aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a id="BRDDashboardId" href="#">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a id="DCBRDId" href="#">Masters</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Alter</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <div class="card mt-3">
+                        <div class="card-header text-bg-secondary ">
+                            Alter
+                        </div>
+                        <div class="card-body">
+                            <div class="card-body KCardBody">
+
+                                <form href="#" class="form-horizontal needs-validation" id="FormId">
+                                    <div class="row">
+
+                                        <div class="col-md-12">
+                                            <label class="col-md-4 col-form-label">Category</label>
+
+                                            <div class="col-md-8">
+                                                <select class="form-select" id="Category" name="Category"
+                                                    aria-label="Default select example">
+                                                    <option>Men</option>
+                                                    <option>Women</option>
+                                                    <option>Kids</option>
+                                                    <option>Household</option>
+                                                    <option>Others</option>
+                                                </select>
+                                                <!-- <input kvs1="" id="Category" name="Category" data-clienteval=""
+                                                    type="text" class="form-control" placeholder="Enter Category Name"
+                                                    autocomplete="off" list="CategoryId" required autofocus> -->
+                                                <div class="invalid-feedback">
+                                                    Should not be Empty!!
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label class="col-md-4 col-form-label">ItemName</label>
+                                            <div class="col-md-8">
+                                                <input kvs1="" id="ItemName" name="ItemName"
+                                                    data-dataattribute="ItemName" value="" data-clienteval="" type=""
+                                                    class="form-control KeshavSoftHtmlAttributes"
+                                                    placeholder="Enter ItemName" autocomplete="off" list="">
+                                                <div class="invalid-feedback" id="ItemnameinvalidId">
+                                                    Should not be Empty!!
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <label class="col-md-4 col-form-label">ItemRate</label>
+                                            <div class="col-md-8">
+                                                <input kvs1="" id="DryWashRate" name="DryWashRate" min="1" step="1"
+                                                    max="1000000" data-dataattribute="Description" value=""
+                                                    data-clienteval="" type="Number" class="form-control"
+                                                    placeholder="Enter ItemRate" autocomplete="off" required>
+                                                <div class="invalid-feedback " id="DryWashRateClass">
+                                                    Should not be Empty!!
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <label class="col-md-4 col-form-label">Pcs</label>
+                                            <div class="col-md-8">
+                                                <input kvs1="" id="Pcs" name="Pcs" min="1" step="1" max="1000000"
+                                                    data-dataattribute="Description" value="" data-clienteval=""
+                                                    type="Number" class="form-control" placeholder="Enter Pcs"
+                                                    autocomplete="off" required>
+                                                <div class="invalid-feedback " id="PcsClass">
+                                                    Should not be Empty!!
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" id="CreateCustomerButtonId" class="btn btn-primary">
+                                Update
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <table id="table" data-toolbar="#toolbar" data-search="true" data-searchable="true" data-show-columns="true"
-                data-show-columns-toggle-all="true" data-show-export="true" data-detail-view="true"
-                data-detail-formatter="detailFormatter" data-id-field="pk" data-show-toggle="true"
-                data-filter-control="true">
-                <thead>
-                    <tr id="tableHeadRow">
-                        <th data-formatter="jFLocalSerialColumn">#</th>
-                        <th data-field="Category" data-filter-control="input">Category</th>
-                        <th data-field="ItemName" data-filter-control="select">ItemName</th>
-                        <th data-field="DryWashRate" data-filter-control="select">DryWashRate</th>
-                        <th data-field="Pcs" data-filter-control="select">Pcs</th>
-                        <th data-formatter="ItemsFormatter"> Edit</th>
 
-                    </tr>
-                </thead>
-            </table>
         </div>
     </main>
 
@@ -222,57 +291,13 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        function detailFormatter(index, row) {
-            var html = []
-            $.each(row, function (key, value) {
-                html.push('<p><b>' + key + ':</b> ' + value + '</p>')
-            })
-            return html.join('')
-        };
-
-        function ItemsFormatter(value, row, index) {
-            console.log("row:", row);
-            let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
-
-            return [
-                `<a class="like btn btn-primary" href="../Alter/Alter.html?BranchName=${jVarLocalBranchName}&RowPk=${row.pk}" title="Show">`,
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">',
-                '<path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>',
-                '<path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>',
-                '</svg>',
-                ' ',
-                ,
-                '</a>',
-
-            ].join('')
-
-        };
-        let getUrlQueryParams = ({ inGetKey }) => {
-            const queryString = window.location.search;
-            const parameters = new URLSearchParams(queryString);
-            const value = parameters.get(inGetKey);
-            return value;
-        };
-
-        function jFLocalSerialColumn(value, row, index) {
-            return index + 1;
-        };
-    </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
-
-    <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
-    <script
-        src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/export/bootstrap-table-export.min.js"></script>
-    <script
-        src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <script src="./Js/Show.js" type="module"></script>
+    <script src="./Js/StartFunc.js" type="module"></script>
 </body>
 
 </html>
