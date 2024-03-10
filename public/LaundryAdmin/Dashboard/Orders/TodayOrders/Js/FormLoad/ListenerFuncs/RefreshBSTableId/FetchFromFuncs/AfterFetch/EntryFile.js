@@ -6,6 +6,7 @@ let StartFunc = ({ inDataToShow }) => {
     if ((LocalDataToShow.length > 0) === false) swal.fire({ title: "No data !", icon: "error" });
 
     jFLocalHideSpinner();
+
     var $table = $('#table');
 
     $table.bootstrapTable("destroy").bootstrapTable({
@@ -47,6 +48,5 @@ let jFLocalKInterval = ({ inCurrentdateandtime }) => {
 
     // console.log(diffDays + " days, " + diffHrs + " hours, " + diffMins + " min...");
 };
-
 
 export { StartFunc }
