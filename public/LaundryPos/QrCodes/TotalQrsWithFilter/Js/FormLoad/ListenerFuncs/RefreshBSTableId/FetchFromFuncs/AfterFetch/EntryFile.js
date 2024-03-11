@@ -6,7 +6,6 @@ let StartFunc = ({ inDataToShow, inQrCodeData, ScanedQrCodeData }) => {
     let LocalFilterScanedQrData = ScanedQrCodeData.filter(e => e.BranchName == jVarLocalBranchName);
 
     let LocalFilterScanedData = jFLocalFilerFunc({ inQrCodeData: LocalFilterQrCodeData, ScanedQrCodeData: LocalFilterScanedQrData })
-    console.log("LocalFilterScanedData:", LocalFilterScanedData);
     if ((LocalFilterScanedData.length > 0) === false) swal.fire({ title: "No data !", icon: "error" });
 
     jFLocalHideSpinner();

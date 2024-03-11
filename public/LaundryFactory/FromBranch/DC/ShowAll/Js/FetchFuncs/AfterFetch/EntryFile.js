@@ -1,6 +1,5 @@
 let StartFunc = async ({ inDataToShow }) => {
     let jVarLocalDataToShow = inDataToShow;
-    console.log("jVarLocalDataToShow : ", jVarLocalDataToShow);
 
     let jVarLocalHtmlId = 'tableHeadRow';
     let jVarLocaltableHeadRow = document.getElementById(jVarLocalHtmlId);
@@ -22,19 +21,7 @@ let StartFunc = async ({ inDataToShow }) => {
     
 };
 
-let jFLocalToArray = ({ inDataToShow }) => {
-    let jVarLocalArray = [];
-    Object.entries(inDataToShow).forEach(
-        ([key, value]) => {
-            jVarLocalArray.push({
-                ...value,
-                pk: key
-            });
-        }
-    );
 
-    return jVarLocalArray;
-};
 
 let jFLocalSerialNumberColumn = () => {
 
@@ -125,15 +112,6 @@ let jFLocalScanColumn = () => {
     return jVarLocalNewTh;
 };
 
-function operateFormatter(value, row, index) {
-    return [
-        `<a class="like" href="../../Scan/VerticalFromConfigJson/VerticalFromConfigJson.html?VoucherRef=1" title="Like">`,
-        '<i class="fa fa-heart">Save</i>',
-        '</a>  ',
-        '<a class="remove" href="javascript:void(0)" title="Remove">',
-        '<i class="fa fa-trash"></i>',
-        '</a>'
-    ].join('')
-};
+
 
 export { StartFunc }
