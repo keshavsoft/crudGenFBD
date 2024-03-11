@@ -1,6 +1,7 @@
 import {
   PutFunc as PutFuncRepo,
-  PutInsertToKeyFunc as PutInsertToKeyFuncRepo
+  PutInsertToKeyFunc as PutInsertToKeyFuncRepo,
+  PutUpdateUsingLoadAshFunc as PutUpdateUsingLoadAshFuncRepo
 } from "../../repos/putFuncs/EntryFile.js";
 
 let PutFunc = async (req, res) => {
@@ -43,4 +44,27 @@ let PutInsertToKeyFunc = async (req, res) => {
   res.json(LocalFromRepo);
 };
 
-export { PutFunc, PutInsertToKeyFunc };
+let PutUpdateUsingLoadAshFunc = async (req, res) => {
+  // let LocalDataToUpdate = ColumnsPullFunc()(req.body);
+  let LocalDataToUpdate = req.body;
+
+  let LocalIfFromParam = req.params.id;
+  let LocalBodyFindKey = req.body.FindKey;
+  let LocalBodyReplaceValue = req.body.ReplaceValue;
+
+  let LocalFromRepo = await PutUpdateUsingLoadAshFuncRepo({
+    inDataToUpdate: LocalDataToUpdate,
+    inId: LocalIfFromParam,
+    inFindKey: LocalBodyFindKey,
+    inReplaceValue: LocalBodyReplaceValue
+  });
+
+  if (LocalFromRepo.KTF === false) {
+    res.status(500).send(LocalFromRepo.KReason);
+    return;
+  };
+
+  res.json(LocalFromRepo);
+};
+
+export { PutFunc, PutInsertToKeyFunc, PutUpdateUsingLoadAshFunc };

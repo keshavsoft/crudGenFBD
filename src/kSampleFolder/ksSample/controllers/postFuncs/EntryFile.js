@@ -5,7 +5,8 @@ import {
     PostGetSelectColumnsFunc as PostGetSelectColumnsFuncRepo,
     PostUploadFromModalFunc as PostUploadFromModalFuncRepo, PostFilterFunc as PostFilterFuncRepo,
     PostCustompkFunc as PostCustompkFuncRepo,
-    PostWithKeysCheckFunc as PostWithKeysCheckFuncRepo
+    PostWithKeysCheckFunc as PostWithKeysCheckFuncRepo,
+    GetUsingLoadAshFunc as GetUsingLoadAshFuncRepo
 } from '../../repos/postFuncs/EntryFile.js';
 
 import {
@@ -120,9 +121,19 @@ let PostGetSelectColumnsFunc = (req, res) => {
     res.json(LocalFromRepo);
 };
 
+let GetUsingLoadAshFunc = (req, res) => {
+    let LocalBodyFindKey = req.body.FindKey
+    let LocalFromParamsId = req.params.Id
+
+    let LocalFromRepo = GetUsingLoadAshFuncRepo({ inFindKey: LocalBodyFindKey, inId: LocalFromParamsId });
+    res.json(LocalFromRepo);
+};
+
+
+
 export {
     PostFunc, PostFromModalFunc,
     PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc,
     PostUploadImageFunc, PostFilterFunc, PostCustomPkFunc,
-    PostWithKeysCheckFunc
+    PostWithKeysCheckFunc, GetUsingLoadAshFunc
 };
