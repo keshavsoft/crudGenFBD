@@ -6,6 +6,7 @@ import { StartFunc as StartFuncUploadToFile } from '../../kLowDb/WriteFileList/U
 import { StartFunc as StartFuncwriteFileWithCustomPk } from '../../kLowDb/WriteFileList/writeFileWithCustomPk.js';
 // import { StartFunc as StartFuncWriteFileKeysCheck } from '../../kLowDb/WriteFileList/writeFileKeysCheck.js';
 import { StartFunc as StartFuncWriteFileKeysCheck } from '../../kLowDb/WriteTofile/WithChecking/StartFunc.js';
+import { StartFunc as StartFuncreadFileUsingLoadAsh } from '../../kLowDb/ReadFileList/readFileUsingLoadAsh.js';
 
 // import { StartFunc as StartFuncwriteFile } from '../../kLowDb/WriteTofile/';
 
@@ -37,8 +38,12 @@ let PostGetSelectColumnsFunc = ({ LocalBodyAsModal }) => {
     return StartFuncReadFileFromModal();
 };
 
+let GetUsingLoadAshFunc = ({ inId, inFindKey }) => {
+    return StartFuncreadFileUsingLoadAsh({ inId, inFindKey });
+};
+
 export {
     PostFunc, PostFromModalFunc,
     PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc, PostCustomPkFunc,
-    PostWithKeysCheckFunc
+    PostWithKeysCheckFunc, GetUsingLoadAshFunc
 };

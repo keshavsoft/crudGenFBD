@@ -1,0 +1,10 @@
+###insert to value a key in root of that row
+###insert to value a key in root of that row
+
+PUT http://localhost:7016/src/kSampleFolder/ksSample/UsingLoadash/2
+content-type: application/json
+
+{
+"FindKey":"ItemsInOrder.2.Pcs",
+"ReplaceValue":"10"
+}

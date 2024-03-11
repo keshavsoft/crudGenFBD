@@ -5,7 +5,8 @@ import {
     PostUploadFunc as PostUploadFuncDal, PostGetSelectColumnsFunc as PostGetSelectColumnsFuncDal,
     PostUploadFromModalFunc as PostUploadFromModalFuncDal,
     PostCustomPkFunc as PostCustomPkFuncDal,
-    PostWithKeysCheckFunc as PostWithKeysCheckFuncDal
+    PostWithKeysCheckFunc as PostWithKeysCheckFuncDal,
+    GetUsingLoadAshFunc as  GetUsingLoadAshFuncDal
 } from '../../dals/postFuncs/EntryFile.js';
 
 let PostFunc = async (inModalObject) => {
@@ -40,8 +41,12 @@ let PostGetSelectColumnsFunc = ({ LocalBodyAsModal }) => {
     return PostGetSelectColumnsFuncDal({ LocalBodyAsModal });
 };
 
+let GetUsingLoadAshFunc = ({ inId, inFindKey }) => {
+    return GetUsingLoadAshFuncDal({ inId, inFindKey });
+};
+
 export {
     PostFunc, PostFromModalFunc,
     PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc, PostFilterFunc, PostCustompkFunc,
-    PostWithKeysCheckFunc
+    PostWithKeysCheckFunc, GetUsingLoadAshFunc
 };

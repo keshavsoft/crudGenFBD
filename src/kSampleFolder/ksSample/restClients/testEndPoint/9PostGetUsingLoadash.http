@@ -1,0 +1,9 @@
+###insert to value a key in root of that row
+###insert to value a key in root of that row
+
+POST http://localhost:7016/src/kSampleFolder/ksSample/GetUsingLoadAsh/2
+content-type: application/json
+
+{
+"FindKey":"ItemsInOrder.2.Pcs"
+}
