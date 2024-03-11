@@ -1,17 +1,16 @@
 const StartFunc = ({ inPcs, inItemSerial }) => {
     let jVarLocalOrderNumber = jFLocalFromDomOrderNumberId();
     let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
-    console.log("jVarLocalBranchName:",jVarLocalBranchName);
 
     let jVarLocalToLocalStorage = {};
 
-    jVarLocalToLocalStorage.JsonConfig = {};
-    jVarLocalToLocalStorage.InsertKey = "ItemsInOrder";
-
+    jVarLocalToLocalStorage.BodyData = {};
+    jVarLocalToLocalStorage.BranchName = jVarLocalBranchName;
     jVarLocalToLocalStorage.MainRowPK = jVarLocalOrderNumber;
-    jVarLocalToLocalStorage.SubTableRowPK = inItemSerial;
-    jVarLocalToLocalStorage.inDataToUpdate = {};
-    jVarLocalToLocalStorage.inDataToUpdate.Pcs = parseInt(inPcs);
+
+    jVarLocalToLocalStorage.BodyData.FindKey = `ItemsInOrder.${inItemSerial}.Pcs`
+    jVarLocalToLocalStorage.BodyData.ReplaceValue = parseInt(inPcs);
+
     return jVarLocalToLocalStorage;
 };
 
