@@ -39,10 +39,10 @@ let PostWithKeysCheckFunc = async (req, res) => {
     let LocalBody = req.body;
     let LocalFromRepo = await PostWithKeysCheckFuncRepo({ ...LocalBody });
 
-    if (LocalFromRepo.KTF === false) {
-        res.status(500).send(LocalFromRepo.KReason);
-        return;
-    };
+    // if (LocalFromRepo.KTF === false) {
+    //     res.status(500).send(LocalFromRepo.KReason);
+    //     return;
+    // };
 
     res.json(LocalFromRepo);
 };

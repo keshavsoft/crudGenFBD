@@ -17,6 +17,8 @@ const jFLocalSwal = ({ inItemSerial, inPcs }) => {
         title: `${inItemSerial} : Change Pcs`,
         input: 'number',
         inputAttributes: {
+            min:1,
+            maX:100
         },
         inputValue: inPcs,
         showCancelButton: true,
