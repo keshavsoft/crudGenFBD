@@ -2,6 +2,7 @@
 
 let StartFunc = async ({ inBodyData }) => {
     let jVarLocalBodyData = inBodyData;
+    console.log("jVarLocalBodyData:",jVarLocalBodyData);
 
     let jVarLocalFetchUrl = `/${ApiConfigJson.ProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/SubTable/Update`;
     // POST http://localhost:4119/JSONApi/Api/Data/FromFolder/FromFile/Items/FromDataFolder/WithScreens/SubTable/WithChecking/Insert

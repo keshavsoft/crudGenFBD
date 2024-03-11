@@ -1,7 +1,6 @@
 
 let StartFunc = ({ inDataToShow }) => {
     let LocalDataToShow = inDataToShow;
-    console.log("LocalDataToShow:",LocalDataToShow);
     let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
     let LocalFilterScanedData = LocalDataToShow.filter(e => e.BookingData.OrderData.BranchName == jVarLocalBranchName);
     if ((LocalFilterScanedData.length > 0) === false) swal.fire({ title: "No data !", icon: "error" });

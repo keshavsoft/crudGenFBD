@@ -1,6 +1,5 @@
 let StartFunc = async ({ inDataToShow }) => {
     let jVarLocalDataToShow = inDataToShow;
-    console.log("jVarLocalDataToShow : ", jVarLocalDataToShow);
 
     let jVarLocalHtmlId = 'tableHeadRow';
     let jVarLocaltableHeadRow = document.getElementById(jVarLocalHtmlId);
@@ -22,19 +21,6 @@ let StartFunc = async ({ inDataToShow }) => {
     
 };
 
-let jFLocalToArray = ({ inDataToShow }) => {
-    let jVarLocalArray = [];
-    Object.entries(inDataToShow).forEach(
-        ([key, value]) => {
-            jVarLocalArray.push({
-                ...value,
-                pk: key
-            });
-        }
-    );
-
-    return jVarLocalArray;
-};
 
 let jFLocalSerialNumberColumn = () => {
 

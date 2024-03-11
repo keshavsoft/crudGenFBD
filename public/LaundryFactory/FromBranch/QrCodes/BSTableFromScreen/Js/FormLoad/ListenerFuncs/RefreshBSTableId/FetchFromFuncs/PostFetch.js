@@ -1,5 +1,5 @@
 let StartFunc = async () => {
-    let jVarLocalFetchUrl = `/bin/Factory/QrCodeDetails`;
+    let jVarLocalFetchUrl = `/bin/Factory/FactoryScan`;
     let response = await fetch(jVarLocalFetchUrl);
     let data = await response.json();
 

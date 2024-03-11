@@ -1,7 +1,6 @@
 
 let StartFunc = ({ inDataToShow }) => {
     let LocalDataToShow = inDataToShow;
-    console.log("LocalDataToShow:",LocalDataToShow);
     if ((LocalDataToShow.length > 0) === false) swal.fire({ title: "No data !", icon: "error" });
 
     jFLocalHideSpinner();

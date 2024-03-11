@@ -1,14 +1,12 @@
 
 let StartFunc = ({ inDataToShow, inQrCodeData, ScanedQrCodeData }) => {
     let LocalDataToShow = inDataToShow;
-    console.log("ScanedQrCodeData", ScanedQrCodeData);
 
     let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
     let LocalFilterQrCodeData = inQrCodeData.filter(e => e.BookingData.OrderData.BranchName == jVarLocalBranchName);
     let LocalFilterScanedQrData = ScanedQrCodeData.filter(e => e.BranchName == jVarLocalBranchName);
 
     let LocalFilterScanedData = jFLocalFilerFunc({ inQrCodeData: LocalFilterQrCodeData, ScanedQrCodeData: LocalFilterScanedQrData })
-    // console.log("LocalFilterScanedData:", LocalFilterScanedData);
     if ((LocalFilterScanedData.length > 0) === false) swal.fire({ title: "No data !", icon: "error" });
 
     jFLocalHideSpinner();
@@ -42,8 +40,6 @@ const jFLocalFilerFunc = ({ inQrCodeData, ScanedQrCodeData }) => {
                 return element;
             }
         });
-        console.log("someData:", someData);
-
         return element;
     });
     return StatusData
