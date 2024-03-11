@@ -1,15 +1,12 @@
-// import ApiConfigJson from "./../../../../../../../../../ApiConfig.json" assert {type: 'json'};
+let StartFunc = async ({ inPreparePostData }) => {
+    let jVarLocalBodyData = inPreparePostData.BodyData;
+    let LocalBranchName = inPreparePostData.BranchName;
+    let LocalMainRowPK = inPreparePostData.MainRowPK;
 
-let StartFunc = async ({ inBodyData }) => {
-    let jVarLocalBodyData = inBodyData;
-    console.log("jVarLocalBodyData:",jVarLocalBodyData);
-
-    let jVarLocalFetchUrl = `/${ApiConfigJson.ProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/SubTable/Update`;
-    // POST http://localhost:4119/JSONApi/Api/Data/FromFolder/FromFile/Items/FromDataFolder/WithScreens/SubTable/WithChecking/Insert
-
+    let jVarLocalFetchUrl = `/bin/Transactions/${LocalBranchName}/UsingLoadash/${LocalMainRowPK}`;
 
     let jVarLocalFetchHeaderObject = {
-        method: "post",
+        method: "PUT",
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
