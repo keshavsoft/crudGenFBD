@@ -6,8 +6,10 @@ let StartFunc = ({ inDataToShow, inQrCodeData }) => {
     var $table = $('#table');
     let jVarLocalTransformedData = jFLocalInsertAggValues({ inData: LocalinDataToShow });
     let jVarWithQrCodeData = jFLocalInsertQrCodeData({ inData: jVarLocalTransformedData, inQrCodeData: inQrCodeData });
+    let LocalArrayReverseData = jVarWithQrCodeData.slice().reverse();
+
     $table.bootstrapTable("destroy").bootstrapTable({
-        data: jVarWithQrCodeData,
+        data: LocalArrayReverseData
     });
 
     StartFuncAddListeners();
@@ -26,7 +28,7 @@ let jFLocalInsertAggValues = ({ inData }) => {
 
     jVarLocalReturnObject = Object.entries(inData).map(element => {
         element[1].AggValues = {};
-        element[1].AggValues.ItemDetails = `${(parseInt(element[0]) + 1)} / ${Object.values(element[1].ItemsInOrder).map(p => p.Pcs).reduce((acc, val) => acc + val, 0)}`;
+        element[1].AggValues.ItemDetails = `${Object.keys(element[1].ItemsInOrder).length} / ${Object.values(element[1].ItemsInOrder).map(p => p.Pcs).reduce((acc, val) => acc + val, 0)}`;
 
         element[1].AggValues.SettlementAmount = ""
         if (Object.values(element[1].CheckOutData)[0]) {
@@ -57,6 +59,7 @@ let jFLocalInsertQrCodeData = ({ inData, inQrCodeData }) => {
         };
         jVarLocalReturnArray.push(element)
     });
+
     return jVarLocalReturnArray;
 };
 
