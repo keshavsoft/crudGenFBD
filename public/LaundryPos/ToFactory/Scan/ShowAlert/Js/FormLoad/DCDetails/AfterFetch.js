@@ -8,7 +8,7 @@ let StartFunc = ({ inDataToShow }) => {
     jFLocalToInnerHtmlFactoryTextId({ inFactoryTextId: jVarLocalData.Factory });
 
     jFLocalToInputpkDCDetailsTextId({ inpkDCDetailsTextId: jVarLocalData.pk });
-    jFLocalToInputVoucherNumberDCDetailsTextId({ inVoucherNumberDCDetailsTextId: jVarLocalData.VoucherNumber });
+    jFLocalToInputVoucherNumberDCDetailsTextId({ inVoucherNumberDCDetailsTextId: jVarLocalData.pk });
     jFLocalToInputDateTextDCDetailsId({ inDateTextDCDetailsId: jVarLocalData.Date });
     jFLocalToInputDescriptionTextDCDetailsId({ inDescriptionTextDCDetailsId: jVarLocalData.Description });
     jFLocalToInputDCFactoryDCDetailsTextId({ inDCFactoryDCDetailsTextId: jVarLocalData.Factory });

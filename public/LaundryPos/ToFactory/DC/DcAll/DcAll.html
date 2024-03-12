@@ -32,7 +32,7 @@
         </symbol>
     </svg>
 
-    <header>
+    <header class="container">
         <nav id="NavBarId" class="navbar navbar-expand-sm navbar-dark bg-primary" aria-label="Third navbar example">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#" id="BranchNameId">{{Branch}}</a>
@@ -247,24 +247,8 @@
                 Sucessfully.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-
-            <!-- <table id="table">
-                <thead>
-                  <tr>
-                    <th data-field="pk">ID</th>
-                    <th data-field="CustomerName" data-sortable="true">Customer Name</th>
-                    <th data-field="City">City</th>
-                    <th data-field="Mobile">Mobile</th>
-                  </tr>
-                </thead>
-              </table> -->
-
-            <div class="card mt-3">
-                <div class="card-header text-bg-secondary">
-                    Customers
-                </div>
-                <div class="card-body">
-                    <table id="table" data-toolbar="#toolbar" data-search="true" data-searchable="true"
+            <div>
+                <table id="table" data-toolbar="#toolbar" data-search="true" data-searchable="true"
                         data-show-footer="true" data-show-columns="true" data-show-columns-toggle-all="true"
                         data-click-to-select="true" data-filter-control="true" data-show-export="true"
                         data-detail-view="true" data-detail-formatter="detailFormatter" data-id-field="pk"
@@ -278,6 +262,25 @@
                             </tr>
                         </thead>
                     </table>
+            </div>
+
+            <!-- <table id="table">
+                <thead>
+                  <tr>
+                    <th data-field="pk">ID</th>
+                    <th data-field="CustomerName" data-sortable="true">Customer Name</th>
+                    <th data-field="City">City</th>
+                    <th data-field="Mobile">Mobile</th>
+                  </tr>
+                </thead>
+              </table> -->
+
+            <!-- <div class="card mt-3">
+                <div class="card-header text-bg-secondary">
+                    Customers
+                </div>
+                <div class="card-body">
+                    
                     <tbody id="KCont1">
 
                     </tbody>
@@ -286,7 +289,7 @@
                     </tfoot>
 
                 </div>
-            </div>
+            </div> -->
         </div>
     </main>
 
@@ -305,45 +308,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
-    <script id="HbsTemplateForFoldersOnly" type="text/x-handlebars">
-                {{#each CustomerNames}}
-                <tr class="{{RowClass}}" data-pk="{{pk}}">
-                    <td class="text-center">
-                        {{ForSNo @index}}
-                    </td>
-                    <td>
-                        {{CustomerName}}
-                    </td>
-                    <td>
-                        {{City}}
-                    </td>
-                    <td>
-                        {{Mobile}}
-                    </td>
-                   
-                    <td style="text-align:right">
-                        {{DryWashRate}}
-                    </td>
-                <td  style="text-align:right">
-                    {{Pcs}}
-                </td>
-                </tr>
 
-               
-                </tr>
-                {{/each}}
-</script>
-
-    <script>
-
-
-        let jVarLocalHbsTemplateForTable = document.getElementById("HbsTemplateForTable");
-
-        Handlebars.registerHelper('ForSNo', function (item) {
-            return item + 1;
-        });
-
-    </script>
+  
     <script>
 
         function jFGlobalSerialColumn(value, row, index) {

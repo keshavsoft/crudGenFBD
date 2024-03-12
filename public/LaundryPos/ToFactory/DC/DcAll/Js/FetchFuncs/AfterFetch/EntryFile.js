@@ -55,7 +55,7 @@ let jFLocalVoucherNumberColumn = () => {
 
     let jVarLocalNewTh = document.createElement("th");
     jVarLocalNewTh.innerHTML = "Dc #";
-    jVarLocalNewTh.dataset.field = "VoucherNumber";
+    jVarLocalNewTh.dataset.field = "pk";
     jVarLocalNewTh.setAttribute("data-filter-control", "input")
     return jVarLocalNewTh;
 };

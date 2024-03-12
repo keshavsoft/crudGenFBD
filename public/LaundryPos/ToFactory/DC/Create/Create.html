@@ -33,6 +33,7 @@
     </svg>
 
     <header>
+        <div class="container">
         <nav id="NavBarId" class="navbar navbar-expand-sm navbar-dark bg-primary" aria-label="Third navbar example">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#" id="BranchNameId">{{Branch}}</a>
@@ -182,6 +183,7 @@
                 </div>
             </div>
         </nav>
+    </div>
     </header>
 
     <main>
@@ -209,105 +211,104 @@
                 </nav>
             </div>
 
-
-            <div class="card mt-3">
-                <div class="card-header text-bg-secondary">
-                    Create New
-                </div>
-                <div class="card-body">
-                    <div class="card-body KCardBody">
-
-                        <form href="#" class="form-horizontal needs-validation" id="FormId">
-                            <div class="row">
-
-                                <div class="col-md-12">
-                                    <label class="col-md-4 col-form-label">VoucherNumber</label>
-
-                                    <div class="col-md-8">
-                                        <input kvs1="" id="VoucherNumber" name="VoucherNumber"
-                                            data-dataattribute="VoucherNumber" data-clienteval="" type="Number"
-                                            class="form-control" min="1" max="" step="1" placeholder="Enter"
-                                            autocomplete="off" list="">
-                                        <div class="invalid-feedback">
-                                            Should not be Empty!!
-                                        </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <form href="#" class="form-horizontal needs-validation" id="FormId">
+                        <div class="row">
+    
+                            <!-- <div class="col-md-12">
+                                <label class="col-md-4 col-form-label">VoucherNumber</label>
+    
+                                <div class="col-md-8">
+                                    <input kvs1="" id="VoucherNumber" name="VoucherNumber"
+                                        data-dataattribute="VoucherNumber" data-clienteval="" type="Number"
+                                        class="form-control" min="1" max="" step="1" placeholder="Enter"
+                                        autocomplete="off" list="">
+                                    <div class="invalid-feedback">
+                                        Should not be Empty!!
                                     </div>
-
                                 </div>
-
-                                <div class="col-md-12">
-                                    <label class="col-md-4 col-form-label">Date</label>
-
-                                    <div class="col-md-8">
-                                        <input kvs1="" id="Date" name="Date" data-dataattribute="Date" value=""
-                                            data-clienteval="" type="date" class="form-control " placeholder="Enter"
-                                            autocomplete="off" list="">
-                                        <div class="invalid-feedback">
-                                            Should not be Empty!!
-                                        </div>
+    
+                            </div> -->
+    
+                            <div class="col-md-12">
+                                <label class="col-md-4 col-form-label">Date</label>
+    
+                                <div class="col-md-8">
+                                    <input kvs1="" id="Date" name="Date" data-dataattribute="Date" value=""
+                                        data-clienteval="" type="date" class="form-control " placeholder="Enter"
+                                        autocomplete="off" list="">
+                                    <div class="invalid-feedback">
+                                        Should not be Empty!!
                                     </div>
-
                                 </div>
-
-                                <div class="col-md-12">
-                                    <label class="col-md-4 col-form-label">Description</label>
-
-                                    <div class="col-md-8">
-                                        <input kvs1="" id="Description" name="Description"
-                                            data-dataattribute="Description" value="" data-clienteval="" type=""
-                                            class="form-control KeshavSoftHtmlAttributes" min="" max="" step=""
-                                            placeholder="Enter Description" autocomplete="off" list="">
-                                        <div class="invalid-feedback">
-                                            Should not be Empty!!
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="col-md-12">
-                                    <label class="col-md-4 col-form-label">Factory</label>
-
-                                    <div class="col-md-8">
-                                        <input kvs1="" id="Factory" name="Factory" data-dataattribute="Factory" value=""
-                                            data-clienteval="" type="" class="form-control KeshavSoftHtmlAttributes"
-                                            min="" max="" step="" placeholder="Enter Factory" autocomplete="off"
-                                            list="FactoryId">
-                                        <div class="invalid-feedback">
-                                            Should not be Empty!!
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="col-md-12">
-                                    <label class="col-md-4 col-form-label">BranchName</label>
-
-                                    <div class="col-md-8">
-                                        <input kvs1="" id="BranchName" name="BranchName" data-dataattribute="BranchName"
-                                            value="" data-clienteval="" type=""
-                                            class="form-control KeshavSoftHtmlAttributes" min="" max="" step=""
-                                            placeholder="Enter BranchName" autocomplete="off" list="">
-                                        <div class="invalid-feedback">
-                                            Should not be Empty!!
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-
+    
                             </div>
-                        </form>
-                    </div>
+    
+                            <div class="col-md-12">
+                                <label class="col-md-4 col-form-label">Description</label>
+    
+                                <div class="col-md-8">
+                                    <input kvs1="" id="Description" name="Description"
+                                        data-dataattribute="Description" value="" data-clienteval="" type=""
+                                        class="form-control KeshavSoftHtmlAttributes" min="" max="" step=""
+                                        placeholder="Enter Description" autocomplete="off" list="" autofocus>
+                                    <div class="invalid-feedback">
+                                        Should not be Empty!!
+                                    </div>
+                                </div>
+    
+                            </div>
+    
+                            <div class="col-md-12">
+                                <label class="col-md-4 col-form-label">Factory</label>
+    
+                                <div class="col-md-8">
+                                    <input kvs1="" id="Factory" name="Factory" data-dataattribute="Factory" value=""
+                                        data-clienteval="" type="" class="form-control KeshavSoftHtmlAttributes"
+                                        min="" max="" step="" placeholder="Enter Factory" autocomplete="off"
+                                        list="FactoryId">
+                                    <div class="invalid-feedback">
+                                        Should not be Empty!!
+                                    </div>
+                                </div>
+    
+                            </div>
+    
+                            <div class="col-md-12">
+                                <label class="col-md-4 col-form-label">BranchName</label>
+    
+                                <div class="col-md-8">
+                                    <input kvs1="" id="BranchName" name="BranchName" data-dataattribute="BranchName"
+                                        value="" data-clienteval="" type=""
+                                        class="form-control KeshavSoftHtmlAttributes" min="" max="" step=""
+                                        placeholder="Enter BranchName" autocomplete="off" list="">
+                                    <div class="invalid-feedback">
+                                        Should not be Empty!!
+                                    </div>
+                                </div>
+    
+                            </div>
+                            <div class="col-md-12 m-3">
+    
+                                <div class="col-md-8">
+                                    <button type="button" id="CreateCustomerButtonId" class="btn btn-success">
+                                        Save New
+                                    </button>
+                                    
+                                </div>
+    
+                            </div>
+    
+    
+    
+                        </div>
+                    </form>
 
-                </div>
-                <div class="card-footer">
-
-                    <button type="button" id="CreateCustomerButtonId" class="btn btn-success">
-                        Save New
-                    </button>
                 </div>
             </div>
+
+           
         </div>
     </main>
 
