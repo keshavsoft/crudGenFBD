@@ -59,7 +59,7 @@
                                     Home
                                 </a>
                             </li>
-                           
+
                             <li class="nav-item">
                                 <a id="QrCodesTableId" href="#" class="nav-link text-white QrCodesTableAClass">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
@@ -180,7 +180,8 @@
             aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a id="BRDDashboardId" href="#">Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page">QrCodesTable</li>
+                <li class="breadcrumb-item"><a id="RefreshBSTableId" href="#">QrCodesTable</a></li>
+                <!-- <li class="breadcrumb-item active" aria-current="page">QrCodesTable</li> -->
             </ol>
         </nav>
     </div>
@@ -193,59 +194,35 @@
                 Sucessfully.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
+            <div>
 
-            <div class="card mt-3">
-                <div class="card-header">
-                    <div class="clearfix">
-                        <div class="float-start">Bs Table</div>
-                        <div class="float-end">
-                            <a id="RefreshBSTableId" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                    class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"></path>
-                                    <path
-                                        d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z">
-                                    </path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
+                <div class="spinner-border" id="SpinnerId" role="status">
+                    <span class="visually-hidden">Loading...</span>
                 </div>
-                <div class="card-body">
-                    <div id="AlertDeleteId" class="alert alert-danger alert-dismissible fade show mt-2" role="alert"
-                        style="display: none;">
-                        <strong></strong> Deleted Successfully
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                        </button>
-                    </div>
 
-                    <div class="spinner-border" id="SpinnerId" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
-
-                    <table id="table" data-toolbar="#toolbar" data-search="true" data-show-footer="true"
-                        data-searchable="true" data-show-columns="true" data-show-columns-toggle-all="true"
-                        data-show-export="true" data-detail-view="true" data-detail-formatter="detailFormatter"
-                        data-id-field="pk" data-show-toggle="true">
-                        <thead>
-                            <tr id="tableHeadRow">
-                                <th data-formatter="jFLocalSerialColumn">#</th>
-                                <th data-field="UuId">Order Number</th>
-                                <th data-field="CustomerData.CustomerName">Customer Name</th>
-                                <th data-field="OrderData.BranchName">Branch</th>
-                                <th data-field="CustomerData.CustomerMobile">Mobile</th>
-                                <th data-formatter="jFLocalDateFormatter">Date</th>
-                                <th data-formatter="jFLocalOrderDetails">Order Details</th>
-                                <th data-formatter="jFLocalSettlementDetails" data-footer-formatter="priceFormatter">
-                                    Settlement</th>
-                                <th data-formatter="jFLocalQrCodeDetails" data-footer-formatter="QrFormatter">QrCodes
-                                </th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
+                <table id="table" data-toolbar="#toolbar" data-search="true" data-show-footer="true"
+                    data-searchable="true" data-show-columns="true" data-show-columns-toggle-all="true"
+                    data-show-export="true" data-detail-view="true" data-detail-formatter="detailFormatter"
+                    data-id-field="pk" data-show-toggle="true">
+                    <thead>
+                        <tr id="tableHeadRow">
+                            <th data-formatter="jFLocalSerialColumn">#</th>
+                            <th data-field="UuId">Order Number</th>
+                            <th data-field="CustomerData.CustomerName">Customer Name</th>
+                            <th data-field="OrderData.BranchName">Branch</th>
+                            <th data-field="CustomerData.CustomerMobile">Mobile</th>
+                            <th data-formatter="jFLocalDateFormatter">Date</th>
+                            <th data-formatter="jFLocalOrderDetails">Order Details</th>
+                            <th data-formatter="jFLocalSettlementDetails" data-footer-formatter="priceFormatter">
+                                Settlement</th>
+                            <th data-formatter="jFLocalQrCodeDetails" data-footer-formatter="QrFormatter">QrCodes
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
             </div>
+
+            
         </div>
     </main>
 
@@ -360,7 +337,7 @@
         }
 
         function QrFormatter(data) {
-           return data.map(ele => ele.TotalItems).reduce((a, b) => a + b, 0)
+            return data.map(ele => ele.TotalItems).reduce((a, b) => a + b, 0)
 
         }
     </script>
