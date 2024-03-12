@@ -31,13 +31,13 @@ let GetIdFunc = ({ inId }) => {
     return LocalFromLowDb.JsonData;
 };
 
-let GetRowDataFunc = ({ inKey, inId }) => {
-    return StartFunRowDataByKeyId({ inKey, inId });
+let GetRowDataFunc = ({ inKey, inValue }) => {
+    return StartFunRowDataByKeyId({ inKey, inValue });
 
 };
 
-let GetRowCountByIdFunc = ({ inKey, inId }) => {
-    return StartFuncGetRowCountById({ inKey, inId });
+let GetRowCountByIdFunc = ({ inKey, inValue }) => {
+    return StartFuncGetRowCountById({ inKey, inValue });
 
 };
 

@@ -4,7 +4,7 @@ let StartFunc = ({ inFromFetch }) => {
         jFLocalForSuccess(jVarLocalFetchData);
     }
     else {
-        if ("ServerSideCheck" in inFromFetch === false) {
+        if (jVarLocalFetchData.KTF === false) {
 
             let jVarLocalHtmlId = 'InputPkId';
             let jVarLocalInputPkId = document.getElementById(jVarLocalHtmlId);
@@ -13,7 +13,7 @@ let StartFunc = ({ inFromFetch }) => {
 
             Swal.fire({
                 icon: 'error',
-                title: `${inFromFetch.KReason}`,
+                title: `Check And Scan`,
                 confirmButtonText: "ok",
             }).then((result) => {
                 if (result.isConfirmed) {

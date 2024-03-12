@@ -30,11 +30,11 @@ let GetIdFunc = (req, res) => {
 
 let GetRowDataFunc = (req, res) => {
     let LocalParams = req.params;
-    let LocalIdKeyFromParam = LocalParams.idKey;
-    let LocalIfFromParam = LocalParams.id;
+    let LocalIdKeyFromParam = LocalParams.inKey;
+    let LocalIfFromParam = LocalParams.inValue;
 
-    let LocalFromRepo = GetRowDataFuncRepo({ inKey: LocalIdKeyFromParam, inId: LocalIfFromParam });
-    
+    let LocalFromRepo = GetRowDataFuncRepo({ inKey: LocalIdKeyFromParam, inValue: LocalIfFromParam });
+
     if (LocalFromRepo.KTF === false) {
         res.status(500).send(LocalFromRepo.KReason);
         return;
@@ -45,10 +45,10 @@ let GetRowDataFunc = (req, res) => {
 
 let GetRowCountByIdFunc = (req, res) => {
     let LocalParams = req.params;
-    let LocalIdKeyFromParam = LocalParams.idKey;
-    let LocalIdFromParam = LocalParams.id;
+    let LocalIdKeyFromParam = LocalParams.inKey;
+    let LocalIdFromParam = LocalParams.inValue;
 
-    let LocalFromRepo = GetRowCountByIdFuncRepo({ inKey: LocalIdKeyFromParam, inId: LocalIdFromParam });
+    let LocalFromRepo = GetRowCountByIdFuncRepo({ inKey: LocalIdKeyFromParam, inValue: LocalIdFromParam });
     res.json(LocalFromRepo);
 };
 

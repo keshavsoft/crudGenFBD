@@ -19,12 +19,12 @@ let GetIdFunc = ({ inId }) => {
     return GetIdFuncDal({ inId });
 };
 
-let GetRowCountByIdFunc = ({ inKey, inId }) => {
-    return GetRowCountByIdFuncDal({ inKey, inId });
+let GetRowCountByIdFunc = ({ inKey, inValue }) => {
+    return GetRowCountByIdFuncDal({ inKey, inValue });
 };
 
-let GetRowDataFunc = ({ inKey, inId }) => {
-    return GetRowDataFuncDal({ inKey, inId });
+let GetRowDataFunc = ({ inKey, inValue }) => {
+    return GetRowDataFuncDal({ inKey, inValue });
 };
 
 let GetFromModalFunc = () => {

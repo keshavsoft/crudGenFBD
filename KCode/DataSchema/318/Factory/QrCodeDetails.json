@@ -72,10 +72,10 @@
         "unique": true,
         "references": {
           "model": {
-            "tableName": "Generate"
+            "tableName": "QrCodeDetails"
           },
-          "folderName": "QrCodes",
-          "key": "id"
+          "folderName": "Factory",
+          "key": "QrCodeId"
         },
         "allowNull": false,
         "onUpdate": "cascade",
