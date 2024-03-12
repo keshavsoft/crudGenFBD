@@ -26,9 +26,10 @@ const StartFunc = ({ inFileName, NeededKey, inFolderName, inSearchKey }) => {
     });
 
     if (LocalFindValue.length === 0) {
+        LocalReturnData.KTF = true;
+
         return LocalReturnData;
     };
-    LocalReturnData.KTF = true;
     return LocalReturnData;
 
 }

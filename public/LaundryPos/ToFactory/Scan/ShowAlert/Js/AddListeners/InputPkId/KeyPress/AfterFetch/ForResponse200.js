@@ -1,49 +1,27 @@
+import { StartFunc as StartFuncShowOnDom } from "./ShowOnDom.js";
+
 let StartFunc = async ({ inFetchResonse }) => {
-    let jVarLocalResponseData = await inFetchResonse;
+    let localinFetchResonse = await inFetchResonse.json();
+    let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
 
-    if (Object.values(jVarLocalResponseData).length > 0) {
-        let jVarLocalFetchData = jVarLocalResponseData;
-        jVarGlobalPresentViewData2 = jVarLocalFetchData;
+    if (localinFetchResonse.BookingData.OrderData.BranchName == jVarLocalBranchName) {
+        StartFuncShowOnDom({ inFetchResonse: localinFetchResonse });
 
-        jFLocalToInputInputPkId({ inInputPkId: jVarLocalFetchData.pk });
-        jFLocalToInputInputProductNameId({ inInputProductNameId: jVarLocalFetchData.ItemName });
-        jFLocalToInputInputSalePriceId({ inInputSalePriceId: jVarLocalFetchData.Rate });
-        jFLocalToInputFactorySelectedId({ inInputFactorySelectedId: jVarLocalFetchData.location })
-        jFLocalRunSaveClick();
-    };
+    } else {
+        Swal.fire({
+            icon: 'question',
+            title: 'Not this branch',
+            text: `Scan only your branch`
+        });
+    }
+
 };
 
-let jFLocalRunSaveClick = () => {
-    let jVarLocalHtmlId = 'ButtonSaveId';
-    let jVarLocalButtonSaveId = document.getElementById(jVarLocalHtmlId);
-    jVarLocalButtonSaveId.click();
-}
-
-let jFLocalToInputInputProductNameId = ({ inInputProductNameId }) => {
-    let jVarLocalHtmlId = 'InputProductNameId';
-    let jVarLocalInputProductNameId = document.getElementById(jVarLocalHtmlId);
-
-    if (jVarLocalInputProductNameId === null === false) {
-        jVarLocalInputProductNameId.value = inInputProductNameId;
-    };
-};
-
-let jFLocalToInputInputSalePriceId = ({ inInputSalePriceId }) => {
-    let jVarLocalHtmlId = 'InputSalePriceId';
-    let jVarLocalInputSalePriceId = document.getElementById(jVarLocalHtmlId);
-    jVarLocalInputSalePriceId.value = inInputSalePriceId;
-};
-
-let jFLocalToInputFactorySelectedId = ({ inInputFactorySelectedId }) => {
-    let jVarLocalHtmlId = 'InputFactorySelectedId';
-    let jVarLocalInputFactorySelectedId = document.getElementById(jVarLocalHtmlId);
-    jVarLocalInputFactorySelectedId.value = inInputFactorySelectedId;
-};
-
-let jFLocalToInputInputPkId = ({ inInputPkId }) => {
-    let jVarLocalHtmlId = 'InputPkId';
-    let jVarLocalInputPkId = document.getElementById(jVarLocalHtmlId);
-    jVarLocalInputPkId.value = inInputPkId;
+let getUrlQueryParams = ({ inGetKey }) => {
+    const queryString = window.location.search;
+    const parameters = new URLSearchParams(queryString);
+    const value = parameters.get(inGetKey);
+    return value;
 };
 
 export { StartFunc };
