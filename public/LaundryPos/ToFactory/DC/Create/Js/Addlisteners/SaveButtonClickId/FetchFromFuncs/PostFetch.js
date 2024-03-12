@@ -8,7 +8,7 @@ let StartFunc = async () => {
     let jVarLocalid = getUrlQueryParams({ inGetKey: "id" });
 
     let jVarLocalFetchHeaders = StartFuncFetchHeaders();
-    let jVarLocalFetchUrl = `/${LocalroutePath}//Factory/${LocaltableName}`;
+    let jVarLocalFetchUrl = `/${LocalroutePath}/Factory/${LocaltableName}/WithKeysCheck`;
     let response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
     let data = await response.json();
 

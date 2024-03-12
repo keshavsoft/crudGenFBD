@@ -1,11 +1,6 @@
 {
-    "VoucherNumber": {
-        "type": "NUMBER",
-        "allowNull": false
-    },
     "Date": {
         "type": "STRING",
-        "unique": true,
         "allowNull": false
     },
     "Description": {
