@@ -6,7 +6,7 @@ import {
     PostFunc, PostFromModalFunc,
     PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc,
     PostUploadImageFunc, PostFilterFunc, PostCustomPkFunc,
-    PostWithKeysCheckFunc,GetUsingLoadAshFunc
+    PostWithKeysCheckFunc,GetUsingLoadAshFunc,GetbyBodyFunc
 } from '../../controllers/postFuncs/EntryFile.js';
 
 import { PostFunc as PostFuncmiddleware } from '../../middlewares/postFuncs/EntryFile.js';
@@ -20,6 +20,7 @@ router.post('/', PostFunc);
 router.post('/CustomPk', PostCustomPkFunc);
 router.post('/WithKeysCheck', PostWithKeysCheckFunc);
 router.post('/GetUsingLoadAsh/:Id', GetUsingLoadAshFunc);
+router.post('/GetBybody', GetbyBodyFunc);
 
 router.post('/Filter', PostFilterFunc);
 router.post('/FromModal', PostFromModalFunc);

@@ -4,7 +4,7 @@ var router = express.Router();
 
 import {
     GetFunc, GetDataOnlyFunc, GetFromModalUuidFunc, GetFromModalUuidAndTSFunc,
-    GetFromModalFunc, GetIdFunc, GetBodyCheckFunc, GetRowCountFunc, GetRowDataFunc, GetRowCountByIdFunc
+    GetFromModalFunc, GetIdFunc, GetBodyCheckFunc, GetRowCountFunc, GetRowDataFunc, GetRowCountByIdFunc,GetFilterDataFunc
 } from '../../controllers/getFuncs/EntryFile.js';
 
 router.get('/FromModal', GetFromModalFunc);
@@ -18,5 +18,6 @@ router.get('/RowCount/:inKey/:inValue', GetRowCountByIdFunc);
 
 router.get('/:id', GetIdFunc);
 router.get('/RowData/:inKey/:inValue', GetRowDataFunc);
+router.get('/FilterData/:inKey/:inValue', GetFilterDataFunc);
 
 export { router };

@@ -4,7 +4,8 @@ import {
     GetFromModalUuidAndTSFunc as GetFromModalUuidAndTSFuncRepo, GetFromModalFunc as GetFromModalFuncRepo,
     GetIdFunc as GetIdFuncRepo, GetBodyCheckFunc as GetBodyCheckFuncRepo, GetRowCountFunc as GetRowCountFuncRepo,
     GetRowDataFunc as GetRowDataFuncRepo,
-    GetRowCountByIdFunc as GetRowCountByIdFuncRepo
+    GetRowCountByIdFunc as GetRowCountByIdFuncRepo,
+    GetfilterDataFunc as GetfilterDataFuncRepo
 } from '../../repos/getFuncs/EntryFile.js';
 
 
@@ -34,6 +35,21 @@ let GetRowDataFunc = (req, res) => {
     let LocalIfFromParam = LocalParams.inValue;
 
     let LocalFromRepo = GetRowDataFuncRepo({ inKey: LocalIdKeyFromParam, inValue: LocalIfFromParam });
+
+    if (LocalFromRepo.KTF === false) {
+        res.status(500).send(LocalFromRepo.KReason);
+        return;
+    };
+
+    res.json(LocalFromRepo.JsonData);
+};
+
+let GetFilterDataFunc = (req, res) => {
+    let LocalParams = req.params;
+    let LocalIdKeyFromParam = LocalParams.inKey;
+    let LocalIfFromParam = LocalParams.inValue;
+
+    let LocalFromRepo = GetfilterDataFuncRepo({ inKey: LocalIdKeyFromParam, inValue: LocalIfFromParam });
 
     if (LocalFromRepo.KTF === false) {
         res.status(500).send(LocalFromRepo.KReason);
@@ -81,5 +97,6 @@ export {
     GetFunc, GetDataOnlyFunc, GetFromModalFunc,
     GetFromModalUuidFunc, GetFromModalUuidAndTSFunc,
     GetIdFunc,
-    GetBodyCheckFunc, GetRowCountFunc, GetRowDataFunc, GetRowCountByIdFunc
+    GetBodyCheckFunc, GetRowCountFunc, GetRowDataFunc, GetRowCountByIdFunc,
+    GetFilterDataFunc
 };
