@@ -6,6 +6,7 @@ import { StartFunc as StartFuncGetRowCountById } from '../../kLowDb/ReadFromFile
 import { StartFunc as StartFuncGetRowCount } from '../../kLowDb/ReadFromFile/RowCount.js';
 import { StartFunc as StartFunRowDataByKeyId } from '../../kLowDb/ReadFromFile/RowDataByKeyId.js';
 import { StartFunc as StartFuncSampleRow } from '../../kLowDb/ReadFromFile/SampleRow.js';
+import { StartFunc as StartFunFilterDataByKeyId } from '../../kLowDb/ReadFromFile/FilterDataByKeyId.js';
 
 let GetFunc = () => {
     return StartFuncreadFile();
@@ -37,7 +38,12 @@ let GetRowDataFunc = ({ inKey, inValue }) => {
 };
 
 let GetRowCountByIdFunc = ({ inKey, inValue }) => {
-    return StartFuncGetRowCountById({ inKey, inValue });
+    return StartFunRowDataByKeyId({ inKey, inValue });
+
+};
+
+let GetFilterDataFunc = ({ inKey, inValue }) => {
+    return StartFunFilterDataByKeyId({ inKey, inValue });
 
 };
 
@@ -67,5 +73,5 @@ let GetBodyCheckFunc = () => {
 export {
     GetFunc, GetDataOnlyFunc, GetFromModalFunc,
     GetFromModalUuidFunc, GetFromModalUuidAndTSFunc,
-    GetIdFunc, GetBodyCheckFunc, GetRowDataFunc, GetRowCountFunc, GetRowCountByIdFunc
+    GetIdFunc, GetBodyCheckFunc, GetRowDataFunc, GetRowCountFunc, GetRowCountByIdFunc,GetFilterDataFunc
 };

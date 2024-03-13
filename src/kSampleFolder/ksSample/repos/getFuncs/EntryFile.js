@@ -4,7 +4,8 @@ import {
     GetFromModalUuidAndTSFunc as GetFromModalUuidAndTSFuncDal,
     GetFromModalFunc as GetFromModalFuncDal,
     GetIdFunc as GetIdFuncDal, GetBodyCheckFunc as GetBodyCheckFuncDal,
-    GetRowDataFunc as GetRowDataFuncDal, GetRowCountByIdFunc as GetRowCountByIdFuncDal, GetRowCountFunc as GetRowCountFuncDal
+    GetRowDataFunc as GetRowDataFuncDal, GetRowCountByIdFunc as GetRowCountByIdFuncDal, GetRowCountFunc as GetRowCountFuncDal,
+    GetFilterDataFunc as GetFilterDataFuncDal
 } from '../../dals/getFuncs/EntryFile.js';
 
 let GetFunc = async () => {
@@ -25,6 +26,10 @@ let GetRowCountByIdFunc = ({ inKey, inValue }) => {
 
 let GetRowDataFunc = ({ inKey, inValue }) => {
     return GetRowDataFuncDal({ inKey, inValue });
+};
+
+let GetfilterDataFunc = ({ inKey, inValue }) => {
+    return GetFilterDataFuncDal({ inKey, inValue });
 };
 
 let GetFromModalFunc = () => {
@@ -50,5 +55,5 @@ let GetRowCountFunc = () => {
 export {
     GetFunc, GetDataOnlyFunc, GetFromModalFunc,
     GetFromModalUuidFunc, GetFromModalUuidAndTSFunc,
-    GetIdFunc, GetBodyCheckFunc, GetRowCountFunc, GetRowDataFunc, GetRowCountByIdFunc
+    GetIdFunc, GetBodyCheckFunc, GetRowCountFunc, GetRowDataFunc, GetRowCountByIdFunc,GetfilterDataFunc
 };
