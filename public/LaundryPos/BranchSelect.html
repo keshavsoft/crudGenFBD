@@ -16,8 +16,9 @@
 <body style="background-color: whitesmoke;">
     <header>
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-            <h1 class="display-4 fw-normal text-body-emphasis">Welcome</h1>
-           
+            <a href="../index.html">
+                <h1 class="display-4 fw-normal text-body-emphasis">Welcome</h1>
+            </a>
         </div>
     </header>
     <main>
@@ -26,11 +27,11 @@
                 <div class="col" style="text-align: center;">
                     <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
                         <h1 class="display-4 fw-normal text-body-emphasis">Select Factory Name</h1>
-                        <p class="fs-5 text-body-secondary">Choose your own Factory and start your Laundry Washing 
+                        <p class="fs-5 text-body-secondary">Choose your own Factory and start your Laundry Washing
                         </p>
                     </div>
                     <div class="input-group">
-                        <select id="FactorySelectInputId" class="form-select" 
+                        <select id="FactorySelectInputId" class="form-select"
                             aria-label="Example select with button addon">
                             <option selected>Choose Factory</option>
                             <option value="Vizag">Vizag</option>
@@ -43,11 +44,11 @@
                 <div class="col" style="text-align: center;">
                     <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
                         <h1 class="display-4 fw-normal text-body-emphasis">Select Branch Name</h1>
-                        <p class="fs-5 text-body-secondary">Choose your own Branch and start your Laundry bookings 
+                        <p class="fs-5 text-body-secondary">Choose your own Branch and start your Laundry bookings
                         </p>
                     </div>
                     <div class="input-group">
-                        <select id="BruchSelectInputId" class="form-select" 
+                        <select id="BruchSelectInputId" class="form-select"
                             aria-label="Example select with button addon">
                             <option selected>Choose Branch</option>
                             <option value="Kakinada">Kakinada</option>
@@ -110,26 +111,26 @@
         jFLocalBruchSelectButtonId();
     </script>
 
-<script>
-    let jFLocalFactorySelectButtonId = () => {
-        let jVarLocalFactorySelectButtonId = document.getElementById('FactorySelectButtonId');
+    <script>
+        let jFLocalFactorySelectButtonId = () => {
+            let jVarLocalFactorySelectButtonId = document.getElementById('FactorySelectButtonId');
 
-        if (jVarLocalFactorySelectButtonId === null === false) {
-            jVarLocalFactorySelectButtonId.addEventListener("click", jFLocalFactorySelectInputId)
+            if (jVarLocalFactorySelectButtonId === null === false) {
+                jVarLocalFactorySelectButtonId.addEventListener("click", jFLocalFactorySelectInputId)
+            };
         };
-    };
 
-    let jFLocalFactorySelectInputId = () => {
-        let jVarLocalBruchSelectInputId = document.getElementById('FactorySelectInputId');
+        let jFLocalFactorySelectInputId = () => {
+            let jVarLocalBruchSelectInputId = document.getElementById('FactorySelectInputId');
 
-        if (jVarLocalBruchSelectInputId === null === false) {
-            let jVarLocalBruchSelectInputValue = jVarLocalBruchSelectInputId.value;
+            if (jVarLocalBruchSelectInputId === null === false) {
+                let jVarLocalBruchSelectInputValue = jVarLocalBruchSelectInputId.value;
 
-            window.location.href = `/LaundryFactory/Dashboard/Dashboard.html?BranchName=${jVarLocalBruchSelectInputValue}`
+                window.location.href = `/LaundryFactory/Dashboard/Dashboard.html?BranchName=${jVarLocalBruchSelectInputValue}`
+            };
         };
-    };
-    jFLocalFactorySelectButtonId();
-</script>
+        jFLocalFactorySelectButtonId();
+    </script>
 </body>
 
 </html>
