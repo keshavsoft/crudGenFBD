@@ -19,9 +19,6 @@ let StartFunc = ({ inTablesCollection, inTo, inFrom }) => {
         });
 
         LocalSecondLevelFiles.forEach(LoopSecond => {
-            // let LoopInsideFolderName = LoopSecond.path.replace(`FromTableColumns\\${ConfigJson.jsonConfig.DataPk}`, LocalTo);
-            // LoopInsideFolderName = LoopInsideFolderName.replace(LoopSecond.name, LoopSecondpath.parse(LoopSecond.name).name);
-
             try {
                 fs.cpSync(`${LocalFrom}/kSampleFolder/ksSample`, `${LocalTo}/${LoopFirst.name}/${path.parse(LoopSecond.name).name}`, {
                     recursive: true,
@@ -30,7 +27,7 @@ let StartFunc = ({ inTablesCollection, inTo, inFrom }) => {
                 console.log(error.message);
             };
 
-            console.log("LoopSecond : ", LoopSecond);
+            // console.log("LoopSecond : ", LoopSecond);
         });
     });
 };
