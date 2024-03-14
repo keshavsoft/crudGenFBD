@@ -1,5 +1,4 @@
 import { StartFunc as StartFuncCommonFuncs } from '../CommonFuncs/ReturnDbObject.js';
-import _ from "lodash";
 
 let StartFunc = ({ inFindValue, inFindKey }) => {
     let LocalFindKey = inFindKey;
@@ -12,9 +11,14 @@ let StartFunc = ({ inFindValue, inFindKey }) => {
     const db = StartFuncCommonFuncs();
     db.read();
 
-    let LocalFilterData = _.filter(db.data, { LocalFindKey: LocalFindValue, 'active': true });
+    let LocalFilterData = db.data.filter(e => {
+        return eval(LocalFindKey) == LocalFindValue
+    });
 
-    // db.write();
+    if (LocalFilterData.length === 0) {
+        LocalReturnData.KReason = "No Data";
+        return LocalReturnData;
+    };
 
     return LocalFilterData;
 };

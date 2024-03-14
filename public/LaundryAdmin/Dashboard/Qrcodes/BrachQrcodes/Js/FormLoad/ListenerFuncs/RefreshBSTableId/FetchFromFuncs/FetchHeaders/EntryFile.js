@@ -1,17 +1,11 @@
 import KeysJson from './Keys.json' assert {type: 'json'};
-import BodyKeysJson from '../../../../../../ConfigKeys/FetchKeys/ForPostKeysAsIs.json' assert {type: 'json'};
-import BranchNameJson from '../../../../../../ConfigKeys/FetchKeys/ForPostKeys.json' assert {type: 'json'};
 
 let StartFunc = () => {
-    let jVarLocalBodyKeys = {};
-    jVarLocalBodyKeys = BodyKeysJson;
+    let LocalDate = new Date().toISOString().split('T')[0]
+    let jVarLocalBodyKeysJson = {};
 
-    let jVarLocalFileValue = BodyKeysJson.FileNameOnly;
-
-    let jVarLocalBodyKeysJson = jVarLocalBodyKeys;
-
-    jVarLocalBodyKeysJson.FileNameOnly = jVarLocalFileValue.search(".") === -1 ? jVarLocalFileValue : jVarLocalFileValue.split(".")[0]
-    jVarLocalBodyKeysJson.FilterString = `value.BranchName === '${BranchNameJson.inFileName}'`
+    jVarLocalBodyKeysJson.FindKey = "new Date(e.OrderData.Currentdateandtime).toISOString().split('T')[0]"
+    jVarLocalBodyKeysJson.FindValue = LocalDate;
 
     KeysJson.body = JSON.stringify(jVarLocalBodyKeysJson);
 
