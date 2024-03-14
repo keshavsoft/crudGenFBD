@@ -2,6 +2,7 @@ import { StartFunc as StartFuncToFactory } from "./ToFactory/Entry.js";
 import { StartFunc as StartFuncOrdersId } from "./OrdersId/Entry.js";
 import { StartFunc as StartFuncQrCodeId } from "./QrCodeId/Entry.js";
 import { StartFunc as StartFuncMastersDashBoardId } from "./MastersDashBoardId/Entry.js";
+import { StartFunc as StartFuncTodayDashBoardId } from "./TodayDashBoardId/Entry.js";
 
 const StartFunc = () => {
     StartFuncToFactory();
@@ -9,6 +10,7 @@ const StartFunc = () => {
     StartFuncQrCodeId();
     StartFuncQrCodeId();
     StartFuncMastersDashBoardId();
+    StartFuncTodayDashBoardId();
 };
 
 export { StartFunc };
