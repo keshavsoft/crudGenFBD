@@ -43,12 +43,12 @@ let GetUsingLoadAshFunc = ({ inId, inFindKey }) => {
     return StartFuncreadFileUsingLoadAsh({ inId, inFindKey });
 };
 
-let GetbyBodyFunc = ({ inFindValue, inFindKey }) => {
+let FilterDataFrombodyFunc = ({ inFindValue, inFindKey }) => {
     return StartFuncreadreadFileUsingbyBody({ inFindValue, inFindKey });
 };
 
 export {
     PostFunc, PostFromModalFunc,
     PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc, PostCustomPkFunc,
-    PostWithKeysCheckFunc, GetUsingLoadAshFunc,GetbyBodyFunc
+    PostWithKeysCheckFunc, GetUsingLoadAshFunc,FilterDataFrombodyFunc
 };

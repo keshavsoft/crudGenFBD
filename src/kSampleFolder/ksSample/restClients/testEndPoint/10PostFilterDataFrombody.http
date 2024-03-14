@@ -1,0 +1,10 @@
+###insert to FindKey in body     Ex: "FindKey":"new Date(e.DateTime).toISOString().split('T')[0]"
+###insert to FindValue in body   Ex:"FindValue":"2024-03-05"
+
+POST http://localhost:7016/src/kSampleFolder/ksSample/GetBybody
+content-type: application/json
+
+{
+"FindKey":"new Date(e.DateTime).toISOString().split('T')[0]",
+"FindValue":"2024-03-05"
+}

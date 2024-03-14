@@ -1,0 +1,6 @@
+###insert to inKey in URL Path    Ex:  DateTime     # this is key
+###insert to inValue in URL Path  Ex: "2024-03-05T11:33:37.180Z" # this Value
+
+GET http://localhost:7016/src/kSampleFolder/ksSample/FilterData/<inKey>/<inValue>
+content-type: application/json
+
