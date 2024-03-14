@@ -189,92 +189,87 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a id="BRDDashboardId" href="#">Dashboard</a></li>
                         <li class="breadcrumb-item"><a id="DCBRDId" href="#">Masters</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Alter</li>
+                        <li class="breadcrumb-item"><a id="ItemsId" href="#">Items</a></li>
+                        <li class="breadcrumb-item"><a class="link-warning" href="#">Alter</a></li>
                     </ol>
                 </nav>
             </div>
             <div class="row">
                 <div class="col-8">
-                    <div class="card mt-3">
-                        <div class="card-header text-bg-secondary ">
-                            Alter
-                        </div>
-                        <div class="card-body">
-                            <div class="card-body KCardBody">
+                    
+                    <form href="#" class="form-horizontal needs-validation" id="FormId">
+                        <div class="row">
 
-                                <form href="#" class="form-horizontal needs-validation" id="FormId">
-                                    <div class="row">
+                            <div class="col-md-12">
+                                <label class="col-md-4 col-form-label">Category</label>
 
-                                        <div class="col-md-12">
-                                            <label class="col-md-4 col-form-label">Category</label>
-
-                                            <div class="col-md-8">
-                                                <select class="form-select" id="Category" name="Category"
-                                                    aria-label="Default select example">
-                                                    <option>Men</option>
-                                                    <option>Women</option>
-                                                    <option>Kids</option>
-                                                    <option>Household</option>
-                                                    <option>Others</option>
-                                                </select>
-                                                <!-- <input kvs1="" id="Category" name="Category" data-clienteval=""
-                                                    type="text" class="form-control" placeholder="Enter Category Name"
-                                                    autocomplete="off" list="CategoryId" required autofocus> -->
-                                                <div class="invalid-feedback">
-                                                    Should not be Empty!!
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label class="col-md-4 col-form-label">ItemName</label>
-                                            <div class="col-md-8">
-                                                <input kvs1="" id="ItemName" name="ItemName"
-                                                    data-dataattribute="ItemName" value="" data-clienteval="" type=""
-                                                    class="form-control KeshavSoftHtmlAttributes"
-                                                    placeholder="Enter ItemName" autocomplete="off" list="">
-                                                <div class="invalid-feedback" id="ItemnameinvalidId">
-                                                    Should not be Empty!!
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-12">
-                                            <label class="col-md-4 col-form-label">ItemRate</label>
-                                            <div class="col-md-8">
-                                                <input kvs1="" id="DryWashRate" name="DryWashRate" min="1" step="1"
-                                                    max="1000000" data-dataattribute="Description" value=""
-                                                    data-clienteval="" type="Number" class="form-control"
-                                                    placeholder="Enter ItemRate" autocomplete="off" required>
-                                                <div class="invalid-feedback " id="DryWashRateClass">
-                                                    Should not be Empty!!
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-12">
-                                            <label class="col-md-4 col-form-label">Pcs</label>
-                                            <div class="col-md-8">
-                                                <input kvs1="" id="Pcs" name="Pcs" min="1" step="1" max="1000000"
-                                                    data-dataattribute="Description" value="" data-clienteval=""
-                                                    type="Number" class="form-control" placeholder="Enter Pcs"
-                                                    autocomplete="off" required>
-                                                <div class="invalid-feedback " id="PcsClass">
-                                                    Should not be Empty!!
-                                                </div>
-                                            </div>
-                                        </div>
-
+                                <div class="col-md-8">
+                                    <select class="form-select" id="Category" name="Category"
+                                        aria-label="Default select example">
+                                        <option>Men</option>
+                                        <option>Women</option>
+                                        <option>Kids</option>
+                                        <option>Household</option>
+                                        <option>Others</option>
+                                    </select>
+                                    <!-- <input kvs1="" id="Category" name="Category" data-clienteval=""
+                                        type="text" class="form-control" placeholder="Enter Category Name"
+                                        autocomplete="off" list="CategoryId" required autofocus> -->
+                                    <div class="invalid-feedback">
+                                        Should not be Empty!!
                                     </div>
-                                </form>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="col-md-4 col-form-label">ItemName</label>
+                                <div class="col-md-8">
+                                    <input kvs1="" id="ItemName" name="ItemName"
+                                        data-dataattribute="ItemName" value="" data-clienteval="" type=""
+                                        class="form-control KeshavSoftHtmlAttributes"
+                                        placeholder="Enter ItemName" autocomplete="off" list="">
+                                    <div class="invalid-feedback" id="ItemnameinvalidId">
+                                        Should not be Empty!!
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label class="col-md-4 col-form-label">ItemRate</label>
+                                <div class="col-md-8">
+                                    <input kvs1="" id="DryWashRate" name="DryWashRate" min="1" step="1"
+                                        max="1000000" data-dataattribute="Description" value=""
+                                        data-clienteval="" type="Number" class="form-control"
+                                        placeholder="Enter ItemRate" autocomplete="off" required>
+                                    <div class="invalid-feedback " id="DryWashRateClass">
+                                        Should not be Empty!!
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label class="col-md-4 col-form-label">Pcs</label>
+                                <div class="col-md-8">
+                                    <input kvs1="" id="Pcs" name="Pcs" min="1" step="1" max="1000000"
+                                        data-dataattribute="Description" value="" data-clienteval=""
+                                        type="Number" class="form-control" placeholder="Enter Pcs"
+                                        autocomplete="off" required>
+                                    <div class="invalid-feedback " id="PcsClass">
+                                        Should not be Empty!!
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 m-3">
+                                <div class="col-md-8">
+                                    <button type="button" id="CreateCustomerButtonId" class="btn btn-primary">
+                                        Update
+                                    </button>
+                                </div>
                             </div>
 
                         </div>
-                        <div class="card-footer">
-                            <button type="button" id="CreateCustomerButtonId" class="btn btn-primary">
-                                Update
-                            </button>
-                        </div>
-                    </div>
+                    </form>
+                 
                 </div>
             </div>
 

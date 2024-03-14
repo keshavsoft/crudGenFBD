@@ -27,6 +27,7 @@ let jFLocalInsertAggValues = ({ inData }) => {
     let jVarLocalReturnObject = [];
 
     jVarLocalReturnObject = Object.entries(inData).map(element => {
+        console.log("element", Object.values(element[1].CheckOutData)[0]);
         element[1].AggValues = {};
         element[1].AggValues.ItemDetails = `${Object.keys(element[1].ItemsInOrder).length} / ${Object.values(element[1].ItemsInOrder).map(p => p.Pcs).reduce((acc, val) => acc + val, 0)}`;
 
@@ -34,6 +35,10 @@ let jFLocalInsertAggValues = ({ inData }) => {
         if (Object.values(element[1].CheckOutData)[0]) {
             element[1].AggValues.SettlementAmount = Object.values(element[1].CheckOutData)[0].CardAmount + Object.values(element[1].CheckOutData)[0].CashAmount + Object.values(element[1].CheckOutData)[0].UPIAmount;
             element[1].IsSettled = false;
+
+            element[1].CardAmount = Object.values(element[1].CheckOutData)[0].CardAmount
+            element[1].CashAmount = Object.values(element[1].CheckOutData)[0].CashAmount
+            element[1].UPIAmount = Object.values(element[1].CheckOutData)[0].UPIAmount
         };
         if (Object.keys(element[1].CheckOutData).length > 0) {
             element[1].IsSettled = true;
