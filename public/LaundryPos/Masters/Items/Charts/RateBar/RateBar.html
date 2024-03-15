@@ -331,31 +331,8 @@
                 </ul>
             </li><!-- End Tables Nav -->
 
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-bar-chart"></i><span>Charts</span><i class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="../Charts/RateBar/RateBar.html">
-                            <i class="bi bi-circle"></i><span>RateBar</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="charts-apexcharts.html">
-                            <i class="bi bi-circle"></i><span>ApexCharts</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="charts-echarts.html">
-                            <i class="bi bi-circle"></i><span>ECharts</span>
-                        </a>
-                    </li>
-                </ul>
-            </li><!-- End Charts Nav -->
-
         </ul>
+
     </aside>
     <!-- End Sidebar-->
 
@@ -375,6 +352,29 @@
             </nav>
         </div>
         <!-- End Page Title -->
+
+
+
+        <section class="section">
+            <div class="row">
+
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Bar CHart</h5>
+
+                            <!-- Bar Chart -->
+                            <canvas id="barChart" style="max-height: 400px;"></canvas>
+
+                            <!-- End Bar CHart -->
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
 
         <section class="section">
             <div class="row">
@@ -433,6 +433,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
         integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
     <!-- Template Main JS File -->
     <script src="./assets/js/main.js"></script>
