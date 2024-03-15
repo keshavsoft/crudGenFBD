@@ -225,13 +225,13 @@
             <table id="table" data-toolbar="#toolbar" data-search="true" data-searchable="true" data-show-columns="true"
                 data-show-columns-toggle-all="true" data-show-export="true" data-detail-view="true"
                 data-detail-formatter="detailFormatter" data-id-field="pk" data-show-toggle="true"
-                data-filter-control="true">
+                >
                 <thead>
                     <tr id="tableHeadRow">
                         <th data-formatter="jFLocalSerialColumn">#</th>
                         <th data-field="CustomerName" data-filter-control="input">CustomerName</th>
-                        <th data-field="Mobile" data-filter-control="select">Mobile</th>
-                        <th data-field="City" data-filter-control="select">City</th>
+                        <th data-field="Mobile" class="d-none d-sm-table-cell">Mobile</th>
+                        <th data-field="City"  class="d-none d-md-table-cell">City</th>
                     </tr>
                 </thead>
             </table>
