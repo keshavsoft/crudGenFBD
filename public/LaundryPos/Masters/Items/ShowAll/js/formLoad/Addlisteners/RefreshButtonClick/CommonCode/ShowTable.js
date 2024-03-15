@@ -11,7 +11,10 @@ const StartFunc = () => {
     var $table = $('#table');
 
     $table.bootstrapTable("destroy").bootstrapTable({
-        data: jFSortData({ inDataToSort: LocalDataToShow })
+        data: jFSortData({ inDataToSort: LocalDataToShow }),
+        onPostBody: function () {
+            $(".fixed-table-toolbar .search .search-input").focus()
+        }
     });
 };
 
