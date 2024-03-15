@@ -3,19 +3,22 @@ const StartFunc = () => {
 
     let LocalColumnsKeysArray = JSON.parse(jVarLocalDataFromLocalStorage);
 
-
     let LocalDataToShow = LocalColumnsKeysArray;
-    console.log("LocalDataToShow:", LocalDataToShow);
+
     if ((LocalDataToShow.length > 0) === false) swal.fire({ title: "No data !", icon: "error" });
 
     // jFLocalHideSpinner();
     var $table = $('#table');
 
     $table.bootstrapTable("destroy").bootstrapTable({
-        data: LocalDataToShow,
+        data: jFSortData({ inDataToSort: LocalDataToShow })
     });
 };
 
+let jFSortData = ({ inDataToSort }) => {
+    let jVarLocalDataAfterSort = _.sortBy(inDataToSort, ['Category', 'ItemName']);
 
+    return jVarLocalDataAfterSort;
+};
 
 export { StartFunc };

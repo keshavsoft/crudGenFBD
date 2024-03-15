@@ -300,15 +300,15 @@
 
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="../../../../Utility/src/backup">
+                <a class="nav-link collapsed" href="../CreateNew/CreateNew.html">
                     <i class="bi bi-database-down"></i>
-                    <span>Create</span>
+                    <span>CreateNew</span>
                 </a>
             </li>
             <!-- End F.A.Q Page Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="../ShowAll/ShowAll.html">
+                <a class="nav-link collapsed" href="#">
                     <i class="bi bi-box-arrow-in-right"></i>
                     <span>ShowAll</span>
                 </a>
@@ -340,77 +340,24 @@
 
         <section class="section">
             <div class="row">
-                <div class="col-8">
-                    <form href="#" class="form-horizontal needs-validation" id="FormId">
-                        <div class="row">
-
-                            <div class="col-md-12">
-                                <label class="col-md-4 col-form-label">Category</label>
-
-                                <div class="col-md-8">
-                                    <select class="form-select" id="Category" name="Category"
-                                        aria-label="Default select example">
-                                        <option>Men</option>
-                                        <option>Women</option>
-                                        <option>Kids</option>
-                                        <option>Household</option>
-                                        <option>Others</option>
-                                    </select>
-                                    <!-- <input kvs1="" id="Category" name="Category" data-clienteval=""
-                                        type="text" class="form-control" placeholder="Enter Category Name"
-                                        autocomplete="off" list="CategoryId" required autofocus> -->
-                                    <div class="invalid-feedback">
-                                        Should not be Empty!!
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <label class="col-md-4 col-form-label">ItemName</label>
-                                <div class="col-md-8">
-                                    <input kvs1="" id="ItemName" name="ItemName" data-dataattribute="ItemName" value=""
-                                        data-clienteval="" type="" class="form-control KeshavSoftHtmlAttributes"
-                                        placeholder="Enter ItemName" autocomplete="off" list="">
-                                    <div class="invalid-feedback" id="ItemnameinvalidId">
-                                        Should not be Empty!!
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-12">
-                                <label class="col-md-4 col-form-label">ItemRate</label>
-                                <div class="col-md-8">
-                                    <input kvs1="" id="DryWashRate" name="DryWashRate" min="1" step="1" max="1000000"
-                                        data-dataattribute="Description" value="" data-clienteval="" type="Number"
-                                        class="form-control" placeholder="Enter ItemRate" autocomplete="off" required>
-                                    <div class="invalid-feedback " id="DryWashRateClass">
-                                        Should not be Empty!!
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-12">
-                                <label class="col-md-4 col-form-label">Pcs</label>
-                                <div class="col-md-8">
-                                    <input kvs1="" id="Pcs" name="Pcs" min="1" step="1" max="1000000"
-                                        data-dataattribute="Description" value="" data-clienteval="" type="Number"
-                                        class="form-control" placeholder="Enter Pcs" autocomplete="off" required>
-                                    <div class="invalid-feedback " id="PcsClass">
-                                        Should not be Empty!!
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-12 m-3">
-                                <div class="col-md-8">
-                                    <button type="button" id="CreateCustomerButtonId" class="btn btn-primary">
-                                        Save New
-                                    </button>
-                                </div>
-                            </div>
-
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <table id="table" data-toolbar="#toolbar" data-search="true" data-searchable="true"
+                                data-show-columns="true" data-show-columns-toggle-all="true" data-show-export="true"
+                                data-id-field="pk" data-show-toggle="true" data-filter-control="true">
+                                <thead>
+                                    <tr id="tableHeadRow">
+                                        <th data-formatter="jFLocalSerialColumn" class="d-none d-md-table-cell">#</th>
+                                        <th data-field="Category" class="d-none d-sm-table-cell">Category</th>
+                                        <th data-field="ItemName">ItemName</th>
+                                        <th data-field="DryWashRate" class="d-none d-lg-table-cell">WashRate</th>
+                                        <th data-field="Pcs" class="d-none d-lg-table-cell">Pcs</th>
+                                    </tr>
+                                </thead>
+                            </table>
                         </div>
-                    </form>
-
+                    </div>
                 </div>
             </div>
         </section>
@@ -441,10 +388,13 @@
         src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/export/bootstrap-table-export.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+        integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Template Main JS File -->
     <script src="./assets/js/main.js"></script>
-    <script type="module" src="./Js/Create.js"></script>
+    <script type="module" src="./js/StartFunc.js"></script>
 </body>
 
 </html>

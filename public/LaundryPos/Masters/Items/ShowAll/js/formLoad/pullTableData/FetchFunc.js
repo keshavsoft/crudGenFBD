@@ -1,24 +1,19 @@
-import ConfigJson from "../../Config.json" assert { type: "json" };
+let StartFunc = async ({ inBodyData }) => {
 
-let StartFunc = async () => {
-    let LocalroutePath = ConfigJson.routePath;
-    let LocaltableName = ConfigJson.tableName;
-    let jVarLocalid = getUrlQueryParams({ inGetKey: "id" });
+    let jVarLocalFetchUrl = `/projects/Ticketing/Tickets/Upload`;
+    let jVarFromFetch = await fetch(jVarLocalFetchUrl, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(inBodyData)
+    });
 
-    let jVarLocalFetchUrl = `/${LocalroutePath}/Factory/${LocaltableName}/DataOnly`;
-    let response = await fetch(jVarLocalFetchUrl);
-    let data = await response.json();
+    let data = await jVarFromFetch.json();
 
     return await data;
 };
-
-let getUrlQueryParams = ({ inGetKey }) => {
-    const queryString = window.location.search;
-    const parameters = new URLSearchParams(queryString);
-    const value = parameters.get(inGetKey);
-    return value;
-};
-
 
 
 

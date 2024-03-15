@@ -1,4 +1,4 @@
-import { StartFunc as StartFuncSelectedColumns } from "./DeleteButton/StartFunc.js";
+import { StartFunc as StartFuncSelectedColumns } from "./SelectedColumns/StartFunc.js";
 
 let StartFunc = () => {
     StartFuncSelectedColumns();

@@ -1,13 +1,10 @@
-import { StartFunc as StartFuncButtonClickFunc } from "./ButtonClickFunc.js";
+import { StartFunc as StartFuncAfterFetch } from "./AfterFetch/AfterFetch.js";
+import { StartFunc as StartFuncFetchFunc } from "./FetchFunc.js";
 
-const StartFunc = () => {
-    let ButtonClickId = "OrginalColumnId";
+let StartFunc = async () => {
+    let jVarLocalFetchData = await StartFuncFetchFunc();
 
-    let jVarLocalCreateFolderButtonId = document.getElementById(ButtonClickId);
-
-    if (jVarLocalCreateFolderButtonId === null === false) {
-        jVarLocalCreateFolderButtonId.addEventListener("click", StartFuncButtonClickFunc);
-    };
+    StartFuncAfterFetch({ inFromFetch: jVarLocalFetchData });
 };
 
 export { StartFunc };

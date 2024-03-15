@@ -1,66 +1,29 @@
-import { StartFunc as StartFuncFetchFunc } from "./DeleteButton/FetchFunc.js";;
-let CommonTableColumns;
+let StartFunc1 = ({ inFromFetch }) => {
+    try {
+        let jVarLocalVerticalRowsDivID = document.getElementById("VerticalRowsDivID");
 
-let StartFunc = ({ inFromFetch }) => {
-    LocalColumns({ inFromFetch });
-    jFLocalShowTable();
+        for (const [key, value] of Object.entries(inFromFetch)) {
+            let template = document.getElementById("templateForVerticalRow");
+            const clone = template.content.cloneNode(true);
+
+            let javrlocalDisplayTextClass = clone.querySelector(".DisplayTextClass");
+            let javrlocalInputClass = clone.querySelector(".InputClass");
+
+            javrlocalDisplayTextClass.innerHTML = key;
+            javrlocalInputClass.name = key;
+            javrlocalInputClass.value = value;
+
+            jVarLocalVerticalRowsDivID.appendChild(clone);
+        }
+    } catch (error) {
+        console.error("Error in StartFunc:", error);
+    }
 };
 
-let jFLocalShowTable = () => {
-    var $table = $('#table');
+const StartFunc = ({ inFromFetch }) => {
+    console.log("inFromFetch:",inFromFetch.id);
 
-    $table.bootstrapTable('destroy');
-
-    $table.bootstrapTable({
-        onPostBody: function () {
-            $(".fixed-table-toolbar .search .search-input").focus()
-        },
-        onClickRow: LocalOnClickRow,
-        columns: CommonTableColumns
-    });
-};
-
-let LocalOnClickRow = async (row, $element, field) => {
-    if (field === 0) {
-        let LocalFromSwal = await swal.fire({
-            title: "Are you sure?",
-            text: "You will not be able to recover this imaginary file!",
-            showCancelButton: true,
-            confirmButtonColor: '#DD6B55',
-            confirmButtonText: 'Yes, I am sure!',
-            cancelButtonText: "No, cancel it!"
-        });
-
-        if (LocalFromSwal.isConfirmed) {
-            let LocalFromDeleteFetch;
-
-            if ("UuId" in row) {
-                LocalFromDeleteFetch = await StartFuncFetchFunc({ inUuId: row.UuId });
-            } else {
-                LocalFromDeleteFetch = await StartFuncFetchFunc({ inUuId: row.id });
-            };
-
-            if (LocalFromDeleteFetch) {
-                jFLocalShowTable();
-            };
-        };
-    };
-};
-
-const LocalColumns = ({ inFromFetch }) => {
-    let LocalColumnsKeysArray = Object.keys(inFromFetch[0]);
-    let JVarLocalColumnsArray = [];
-
-    JVarLocalColumnsArray.push({ title: "Delete", formatter: "operateFormatter" })
-
-    JVarLocalColumnsArray.push(...LocalColumnsKeysArray.map(element => {
-        let LocalObj = {};
-        LocalObj.field = element;
-        LocalObj.title = element;
-        return LocalObj
-    }));
-
-    CommonTableColumns = JVarLocalColumnsArray;
 }
+
 
 export { StartFunc };
