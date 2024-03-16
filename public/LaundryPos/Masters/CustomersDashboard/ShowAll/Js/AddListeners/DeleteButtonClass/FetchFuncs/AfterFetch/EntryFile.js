@@ -5,9 +5,8 @@ const StartFunc = ({ inFromFetch }) => {
             title: "Deleted sucesufully",
             confirmButtonText: "ok",
         }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
-            if (result.isConfirmed) {
-                window.location.href = ""
+            if (result.isConfirmed || result.dismiss) {
+                LocalRefreshBSTableIdFunc();
 
             }
         });
@@ -15,6 +14,14 @@ const StartFunc = ({ inFromFetch }) => {
 
     };
 };
+
+let LocalRefreshBSTableIdFunc = async () => {
+    let jVarLocalHtmlId = 'RefreshBSTableId';
+    let jVarLocalRefreshBSTableId = document.getElementById(jVarLocalHtmlId);
+    jVarLocalRefreshBSTableId.click();
+
+};
+
 
 
 export { StartFunc };
