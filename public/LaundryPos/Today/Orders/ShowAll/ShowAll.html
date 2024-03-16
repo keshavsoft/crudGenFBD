@@ -14,6 +14,7 @@
         type="image/png">
 
 
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css">
 
     <link rel="stylesheet" href="./assets/compiled/css/app.css">
     <link rel="stylesheet" href="./assets/compiled/css/app-dark.css">
@@ -76,7 +77,7 @@
                             </a>
                         </li>
 
-                        <li class="sidebar-item active ">
+                        <li class="sidebar-item  ">
                             <a href="index.html" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>CreateNew</span>
@@ -112,7 +113,7 @@
                         </div>
                     </div>
                 </div>
-                <section class="section">
+                <section class="section ">
                     <div class="row">
                         <div class="col">
 
@@ -121,36 +122,37 @@
                                     <h4 class="card-title">Striped rows</h4>
                                 </div>
                                 <div class="card-content">
-                                    <div class="spinner-border" id="SpinnerId" role="status">
-                                        <span class="visually-hidden">Loading...</span>
+                                    <div class="card-body">
+                                        <div class="spinner-border" id="SpinnerId" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+
+                                        <table id="table" data-toolbar="#toolbar" data-search="true"
+                                            data-show-footer="true" data-searchable="true" data-show-columns="true"
+                                            data-show-columns-toggle-all="true" data-show-export="true"
+                                            data-detail-view="true" data-detail-formatter="detailFormatter"
+                                            data-id-field="pk" data-show-toggle="true" data-buttons-class="primary">
+                                            <thead>
+                                                <tr id="tableHeadRow">
+                                                    <th data-formatter="jFLocalSerialColumn">#</th>
+                                                    <th data-field="UuId">Order Number</th>
+                                                    <th data-field="CustomerData.CustomerName">Customer Name</th>
+                                                    <th data-field="OrderData.BranchName">Branch</th>
+                                                    <th data-field="CustomerData.CustomerMobile">Mobile</th>
+                                                    <th data-formatter="jFLocalDateFormatter">Date</th>
+                                                    <th data-field="TimeSpan">TimeSpan</th>
+                                                    <th data-formatter="jFLocalOrderDetails">Order Details</th>
+                                                    <th data-formatter="jFLocalSettlementDetails"
+                                                        data-footer-formatter="priceFormatter">
+                                                        Settlement</th>
+                                                    <th data-formatter="jFLocalQrCodeDetails"
+                                                        data-footer-formatter="QrFormatter">
+                                                        QrCodes
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                        </table>
                                     </div>
-
-                                    <table id="table" data-toolbar="#toolbar" data-search="true" data-show-footer="true"
-                                        data-searchable="true" data-show-columns="true"
-                                        data-show-columns-toggle-all="true" data-show-export="true"
-                                        data-detail-view="true" data-detail-formatter="detailFormatter"
-                                        data-id-field="pk" data-show-toggle="true" data-buttons-class="primary">
-                                        <thead>
-                                            <tr id="tableHeadRow">
-                                                <th data-formatter="jFLocalSerialColumn">#</th>
-                                                <th data-field="UuId">Order Number</th>
-                                                <th data-field="CustomerData.CustomerName">Customer Name</th>
-                                                <th data-field="OrderData.BranchName">Branch</th>
-                                                <th data-field="CustomerData.CustomerMobile">Mobile</th>
-                                                <th data-formatter="jFLocalDateFormatter">Date</th>
-                                                <th data-field="TimeSpan">TimeSpan</th>
-                                                <th data-formatter="jFLocalOrderDetails">Order Details</th>
-                                                <th data-formatter="jFLocalSettlementDetails"
-                                                    data-footer-formatter="priceFormatter">
-                                                    Settlement</th>
-                                                <th data-formatter="jFLocalQrCodeDetails"
-                                                    data-footer-formatter="QrFormatter">
-                                                    QrCodes
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-
                                 </div>
                             </div>
 
@@ -158,7 +160,7 @@
                         </div>
                     </div>
                 </section>
-           
+
 
             </div>
 
