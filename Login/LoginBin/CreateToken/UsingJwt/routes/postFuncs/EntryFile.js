@@ -3,6 +3,6 @@ var router = express.Router();
 
 import { PostFunc } from '../../controllers/postFuncs/EntryFile.js';
 
-router.get('/:inFolderName', PostFunc);
+router.post('/', PostFunc);
 
 export { router };
