@@ -15,4 +15,6 @@ router.get('/FoldersAsArray', (req, res) => {
 
 router.use('/kSampleFolder', routerFromkSampleFolder);
 
+router.use('/auth/kSampleFolder', routerFromkSampleFolder);
+
 export { router };

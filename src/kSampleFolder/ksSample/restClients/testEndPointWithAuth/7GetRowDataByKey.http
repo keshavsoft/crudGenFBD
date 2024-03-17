@@ -1,0 +1,4 @@
+# Get the row data by sending inside the column name and the value to be searched for
+GET  http://localhost:7016/src/kSampleFolder/ksSample/RowData/<ColumnName>/<ColumnValue>
+
+
