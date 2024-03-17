@@ -1,21 +1,19 @@
 import fs from "fs";
 import dirTree from "directory-tree";
-import ConfigJson from '../../../../../bin/Config.json' assert {type: 'json'};
+import {StartFunc as StartFuncReturnDbObject } from  "./CommonFuncs/ReturnDbObject.js";
 
 let StartFunc = ({ inFolderName }) => {
     let LocalinFolderName = inFolderName;
     let LocalReturnData = { KTF: false }
 
-    let LocalDataPath = 
-    const tree = dirTree(LocalDataPath);
-
-    let LocalJsonData = LocalFuncReadFileData({ inFilesAsArrayData: tree.children });
-
-    if (LocalJsonData.KTF === false) {
+    let LocalFromLowDb = StartFuncReturnDbObject();
+    LocalFromLowDb.read();
+   
+    if (LocalFromLowDb.data.length === 0) {
+        LocalReturnData.KReason = "No Data"
         return LocalReturnData;
     };
-    LocalReturnData.KTF = true;
-    LocalReturnData.JsonData = LocalJsonData.JsonData;
+
     return LocalReturnData;
 
 };
