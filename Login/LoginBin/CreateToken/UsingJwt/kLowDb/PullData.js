@@ -6,7 +6,7 @@ let StartFunc = ({ inFolderName }) => {
     let LocalinFolderName = inFolderName;
     let LocalReturnData = { KTF: false }
 
-    let LocalDataPath = `${ConfigJson.jsonConfig.DataPath}/${ConfigJson.jsonConfig.DataPk}/${LocalinFolderName}`;
+    let LocalDataPath = 
     const tree = dirTree(LocalDataPath);
 
     let LocalJsonData = LocalFuncReadFileData({ inFilesAsArrayData: tree.children });
