@@ -21,32 +21,6 @@ let StartFunc = ({ inFolderName }) => {
 };
 export { StartFunc };
 
-
-const jFLocalFunc = ({ inFilesAsArrayData, inFoderPath }) => {
-    let LocalFilesAsArrayData = inFilesAsArrayData;
-    let LocalReturnData = { KTF: false }
-    let LocalArray = [];
-    LocalFilesAsArrayData.forEach(filePath => {
-        let LocalJsonPath = `${inFoderPath}/${filePath}`
-        const data = fs.readFileSync(LocalJsonPath, { encoding: 'utf8', flag: 'r' });
-        let JsonParseData = JSON.parse(data);
-        let LocalneedData = {};
-        LocalneedData.fileName = path.parse(filePath).name;
-        LocalneedData.DataCount = JsonParseData.length;
-        LocalneedData.LastOrdeDateTime = "";
-
-        if (JsonParseData.length > 0) {
-            let LastOrdeDate = JsonParseData[JsonParseData.length - 1];
-            LocalneedData.LastOrdeDateTime = LastOrdeDate.DateTime;
-        };
-        LocalArray.push(LocalneedData)
-
-    });
-    // console.log("LocalArray::",LocalArray);
-    LocalReturnData.KTF = true;
-    LocalReturnData.JsonData = LocalArray
-    return LocalReturnData;
-};
 const LocalFuncReadFileData = ({ inFilesAsArrayData }) => {
     let LocalFilesAsArrayData = inFilesAsArrayData;
     let LocalReturnData = { KTF: false }

@@ -4,6 +4,6 @@ var router = express.Router();
 
 import { router as routerFromUsingJwt } from './UsingJwt/routes';
 
-router.use('/ActualData', routerFromUsingJwt);
+router.use('/UsingJwt', routerFromUsingJwt);
 
 export { router };
