@@ -2,6 +2,6 @@ POST http://localhost:9001/Login/bin/CreateToken/UsingJwt
 content-type: application/json
 
 {
-"Username":"12345678",
-"Password":"asdfgasd"
+"Username":"",
+"Password":""
 }
