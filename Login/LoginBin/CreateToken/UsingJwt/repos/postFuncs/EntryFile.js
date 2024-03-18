@@ -1,7 +1,7 @@
 import { PostFunc as PostFuncDal } from '../../dals/postFuncs/EntryFile.js';
 
-let PostFunc = ({ inFolderName }) => {
-    return PostFuncDal({ inFolderName });
+let PostFunc = ({ inUsername,inPassword }) => {
+    return PostFuncDal({ inUsername,inPassword });
 };
 
 export { PostFunc };
