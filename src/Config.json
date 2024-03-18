@@ -2,6 +2,7 @@
     "jsonConfig": {
         "DataPk": 318,
         "DataPath": "KData/JSON",
+        "LoginPath": "KData/JSONForLogin",
         "tableAndColumns": {
             "path": "FromTableColumns/318",
             "name": "318",
