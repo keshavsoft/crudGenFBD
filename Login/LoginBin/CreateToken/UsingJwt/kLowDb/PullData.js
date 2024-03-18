@@ -1,13 +1,18 @@
 import fs from "fs";
-import { StartFunc as StartFuncReturnDbObject } from "./CommonFuncs/ReturnDbObject.js";
 
-let StartFunc = ({ inFolderName }) => {
-    let LocalReturnData = { KTF: false }
+import {StartFunc as StartFuncReturnDbObject } from  "./CommonFuncs/ReturnDbObject.js";
+
+let StartFunc = ({ inUsername,inPassword }) => {
+
+    let LocalUsername = inUsername;
+    let LocalPassword = inPassword;
+
+  let LocalReturnData = { KTF: false }
 
     let LocalFromLowDb = StartFuncReturnDbObject();
     LocalFromLowDb.read();
 
-    if (LocalFromLowDb.data.length === 0) {
+  if (LocalFromLowDb.data.length === 0) {
         LocalReturnData.KReason = "No Data"
         return LocalReturnData;
     };

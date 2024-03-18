@@ -1,10 +1,12 @@
 import { PostFunc as PostFuncRepo } from '../../repos/postFuncs/EntryFile.js';
 
 let PostFunc = async (req, res) => {
-    let LocalParams = req.params;
-    let LocalFolderNameFromParam = LocalParams.inFolderName;
+    let LocalData = req.body;
 
-    let LocalFromRepo = await PostFuncRepo({ inFolderName: LocalFolderNameFromParam });
+    let LocalUsername = LocalData.Username;
+    let LocalPassword = LocalData.Password;
+
+    let LocalFromRepo = await PostFuncRepo({ inUsername: LocalUsername, inPassword: LocalPassword });
     res.json(LocalFromRepo);
 };
 
