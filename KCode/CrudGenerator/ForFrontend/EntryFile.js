@@ -8,7 +8,9 @@ let StartFunc = ({ inTablesCollection, inFrom, inTo }) => {
     });
 
     LocalFirstLevelFolders.forEach(element => {
-        console.log("element : ", element.name);
+        console.log("element : ", element.path);
+
+        fs.createFileSync(`${inTo}/${element.path}/k1.json`, JSON.stringify({}));
     });
 };
 

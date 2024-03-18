@@ -5,7 +5,7 @@ let StartFunc = ({ inFilesArray }) => {
     StartFuncPrepareReadColumnsData({ inTableData: inFilesArray });
 
     let LocalFilesArray = inFilesArray;
-    let CommonFrom = "src";
+    let CommonFrom = "src/kSampleFolder/ksSample";
     let CommonTo = "bin";
 
     StartFuncForFrontend({
