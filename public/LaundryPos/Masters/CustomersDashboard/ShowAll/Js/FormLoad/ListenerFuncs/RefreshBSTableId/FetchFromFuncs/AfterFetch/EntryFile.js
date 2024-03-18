@@ -2,8 +2,11 @@ import { StartFunc as StartFuncAddListeners } from "../../../../../AddListeners/
 
 
 let StartFunc = ({ inDataToShow }) => {
-    let LocalDataToShow = inDataToShow;
+    // let LocalDataToShow = inDataToShow;
+
+    let LocalDataToShow = inDataToShow.sort((a, b) => a.CustomerName.localeCompare(b.CustomerName));
     if ((LocalDataToShow.length > 0) === false) swal.fire({ title: "No data !", icon: "error" });
+    document.getElementById("CustomrtCountId").innerHTML = LocalDataToShow.length;
 
     jFLocalHideSpinner();
     var $table = $('#table');
