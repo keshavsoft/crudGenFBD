@@ -1,5 +1,5 @@
 let StartFunc = () => {
-    let jVarLocalToUrl = `../Masters/Customers/Create/Create.html`;
+    let jVarLocalToUrl = `../Masters/CustomersDashboard/Create/Create.html`;
     const url = new URL(window.location.href);
     const params1 = new URLSearchParams(url.search);
     params1.append("FromDashBoard", true);
