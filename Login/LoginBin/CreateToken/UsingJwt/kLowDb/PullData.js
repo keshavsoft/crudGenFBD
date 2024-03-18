@@ -1,13 +1,19 @@
 import fs from "fs";
-import dirTree from "directory-tree";
+// import dirTree from "directory-tree";
 import {StartFunc as StartFuncReturnDbObject } from  "./CommonFuncs/ReturnDbObject.js";
 
-let StartFunc = ({ inFolderName }) => {
-    let LocalinFolderName = inFolderName;
+let StartFunc = ({ inUsername,inPassword }) => {
+
+    let LocalUsername = inUsername;
+    let LocalPassword = inPassword;
     let LocalReturnData = { KTF: false }
 
     let LocalFromLowDb = StartFuncReturnDbObject();
     LocalFromLowDb.read();
+    console.log("This is from LowDb ",LocalFromLowDb.read());
+    console.log("Username:",LocalUsername,"Password:",LocalPassword);
+
+
    
     if (LocalFromLowDb.data.length === 0) {
         LocalReturnData.KReason = "No Data"
