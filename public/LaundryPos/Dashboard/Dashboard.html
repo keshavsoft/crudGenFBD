@@ -293,6 +293,7 @@
 
         function ItemsFormatter(value, row, index) {
             let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+            localStorage.setItem("BranchName", jVarLocalBranchName);
 
             return [
                 `<a class="like btn btn-primary" href="../NewOrder/NewOrder.html?BranchName=${jVarLocalBranchName}&CustomerName=${row.CustomerName}&CustomerMobile=${row.Mobile}" title="Show">`,
