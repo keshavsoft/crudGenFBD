@@ -5,6 +5,7 @@ import { StartFunc as StartFuncAfterDomLoad } from "./AfterDomLoad/StartFunc.js"
 
 const StartFunc = () => {
     StartFuncNavigation();
+    // localStorage.setItem("BranchName", "Kakinada");
 
     let jVarLocalFromAdmin = true;
 

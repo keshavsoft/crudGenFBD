@@ -1,5 +1,7 @@
 let StartFunc = () => {
-    let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    // let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    let jVarLocalBranchName = localStorage.getItem("BranchName");
+
     let jVarLocalBranchId = document.getElementById("BranchNameId");
 
     jVarLocalBranchId.innerHTML = jVarLocalBranchId.innerHTML.replace("{{Branch}}", jVarLocalBranchName)

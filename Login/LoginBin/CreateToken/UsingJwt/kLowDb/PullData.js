@@ -12,18 +12,21 @@ let StartFunc = ({ inUsername, inPassword }) => {
     let LocalFromLowDb = StartFuncReturnDbObject();
     LocalFromLowDb.read();
 
-    let LocalFindData= LocalFromLowDb.data.find(e=>e.UserName==LocalUsername && e.Password==LocalPassword)
+    if (LocalFromLowDb.data.length !== 0) {
+        let LocalFindData = LocalFromLowDb.data.find(e => e.UserName == LocalUsername && e.Password == LocalPassword)
+
+        console.log("LocalData:", LocalFindData);
+
+        if (LocalFindData !== undefined) {
+            return LocalReturnData
+        }
+    };
     
-    console.log("LocalData:",LocalFindData);
-    
-    if (LocalFindData !== undefined) {
-        return LocalReturnData      
-    }
-    let LocalUuId=uuidv4();
-    let LocalObject={};
-    LocalObject.UserName=LocalUsername;
-    LocalObject.Password=LocalPassword;
-    LocalObject.UuId=LocalUuId;
+    let LocalUuId = uuidv4();
+    let LocalObject = {};
+    LocalObject.UserName = LocalUsername;
+    LocalObject.Password = LocalPassword;
+    LocalObject.UuId = LocalUuId;
 
     LocalFromLowDb.data.push(LocalObject);
     LocalFromLowDb.write;
