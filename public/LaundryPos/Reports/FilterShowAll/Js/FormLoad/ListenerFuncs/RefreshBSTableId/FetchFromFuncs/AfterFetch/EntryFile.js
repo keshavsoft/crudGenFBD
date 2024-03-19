@@ -8,7 +8,7 @@ let StartFunc = ({ inDataToShow, inQrCodeData }) => {
     let jVarLocalTransformedData = jFLocalInsertAggValues({ inData: LocalinDataToShow });
     let jVarWithQrCodeData = jFLocalInsertQrCodeData({ inData: jVarLocalTransformedData, inQrCodeData: inQrCodeData });
     let LocalArrayReverseData = jVarWithQrCodeData.slice().reverse();
-    localStorage.clear();
+    // localStorage.clear();
     localStorage.setItem("ReportsData", JSON.stringify(LocalArrayReverseData));
 
 
@@ -55,7 +55,8 @@ let jFLocalInsertAggValues = ({ inData }) => {
 };
 
 let jFLocalInsertQrCodeData = ({ inData, inQrCodeData }) => {
-    let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    // let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    let jVarLocalBranchName = localStorage.getItem("BranchName");
 
     let jVarLocalReturnArray = [];
     inData.forEach(element => {

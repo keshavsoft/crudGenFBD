@@ -5,7 +5,7 @@ import { StartFunc as StartFuncAfterDomLoad } from "./AfterDomLoad/StartFunc.js"
 import { StartFunc as StartFuncAddListeners } from "./AddListeners/StartFunc.js";
 
 const StartFunc = () => {
-    StartFuncNavigation();
+    // StartFuncNavigation();
 
     let jVarLocalFromAdmin = true;
 
