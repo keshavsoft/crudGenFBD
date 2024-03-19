@@ -3,7 +3,8 @@ import { StartFunc as StartFuncFetchHeaders } from "./FetchHeaders/EntryFile.js"
 
 let StartFunc = async () => {
     let LocalroutePath = ConfigJson.routePath;
-    let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    // let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    let jVarLocalBranchName = localStorage.getItem("BranchName");
 
     let LocalBodyObject = StartFuncFetchHeaders();
     let jVarLocalFetchUrl = `/bin/${LocalroutePath}/${jVarLocalBranchName}/FilterDataFrombody`

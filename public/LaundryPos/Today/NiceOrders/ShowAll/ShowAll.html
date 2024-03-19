@@ -286,30 +286,48 @@
 
         <ul class="sidebar-nav" id="sidebar-nav">
             <li class="nav-item">
-                <a id="HomeId" class="nav-link collapsed" href="#">
+                <a id="HomeId" class="nav-link collapsed" href="../../../Dashboard/Dashboard.html">
                     <i class="bi bi-grid"></i>
                     <span>Home</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a id="ParentId" class="nav-link collapsed" href="#">
-                    <i class="bi bi-grid"></i>
+                <a  class="nav-link collapsed" href="../../Dashboard/Dashboard.html" >
+                    <i class="bi bi-clock-fill"></i></i>
                     <span>Today</span>
                 </a>
             </li>
+
             <!-- End Dashboard Nav -->
 
             <li class="nav-item">
                 <a class="nav-link " data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-bar-chart"></i><span>Orders</span><i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-record-circle-fill"></i><span>Orders</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="charts-nav" class="nav-content  " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="../Charts/RateBar/RateBar.html" class="active">
+                        <a href="#" class="active">
                             <i class="bi bi-circle"></i><span>ShowAll</span>
                         </a>
                     </li>
+
+                </ul>
+            </li><!-- End Today Orders Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#Qrcodes-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-qr-code"></i><span>Qrcodes</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="Qrcodes-nav" class="nav-content  collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="../../NiceQrcodes/ShowAll/ShowAll.html" class="">
+                            <i class="bi bi-circle"></i><span>ShowAll</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li><!-- End Today Qrcodes Nav -->
                     
                 </ul>
             </li><!-- End Today Orders Nav -->
@@ -325,8 +343,8 @@
 
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Today</li>
+                    <li class="breadcrumb-item"><a href="../../../Dashboard/Dashboard.html">Home</a></li>
+                    <li class="breadcrumb-item"> <a href="../../Dashboard/Dashboard.html">Today</a></li>
                     <li class="breadcrumb-item active" id="RefreshBSTableId">Orders</li>
                 </ol>
             </nav>
@@ -394,13 +412,13 @@
 
         function jFLocalOrderDetails(value, row, index) {
             return [
-                `<a href="../../OrderWithoutCheckout/OrderWithoutCheckout.html?BranchName=${row.OrderData.BranchName}&OrderNumber=${row.UuId}" class="btn btn-success" >${row.AggValues.ItemDetails}</a>`,
+                `<a href="#" class="btn btn-success" >${row.AggValues.ItemDetails}</a>`,
             ].join('')
         }
         function jFLocalSettlementDetails(value, row, index) {
             if (row.IsSettled) {
                 return [
-                    `<a href="#" data-ordernumber="${row.UuId}" data-BranchName="${row.OrderData.BranchName}" class="btn btn-danger SettlementButtonClass" >`,
+                    `<a href="#" data-ordernumber="${row.UuId}" data-BranchName="${row.OrderData.BranchName}" class="btn btn-danger " >`,
                     `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">`,
                     `<path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z" />`,
                     `</svg>`,
@@ -410,7 +428,7 @@
             }
             else {
                 return [
-                    `<a href="#" data-ordernumber="${row.UuId}" data-BranchName="${row.OrderData.BranchName}" class="btn btn-outline-danger SettlementButtonClass" >`,
+                    `<a href="#" data-ordernumber="${row.UuId}" data-BranchName="${row.OrderData.BranchName}" class="btn btn-outline-danger " >`,
                     `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">`,
                     `<path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z" />`,
                     `</svg>`,
@@ -427,7 +445,7 @@
         function jFLocalQrCodeDetails(value, row, index) {
             if (row.IsQrCodesRaised) {
                 return [
-                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-primary QRGenerateClass">`,
+                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-primary ">`,
                     `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">`,
                     `<path d="M2 2h2v2H2V2Z"></path>`,
                     `<path d="M6 0v6H0V0h6ZM5 1H1v4h4V1ZM4 12H2v2h2v-2Z"></path>`,
@@ -442,7 +460,7 @@
                 ].join('')
             } else {
                 return [
-                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-outline-primary QRGenerateClass">`,
+                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-outline-primary ">`,
                     `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">`,
                     `<path d="M2 2h2v2H2V2Z"></path>`,
                     `<path d="M6 0v6H0V0h6ZM5 1H1v4h4V1ZM4 12H2v2h2v-2Z"></path>`,
