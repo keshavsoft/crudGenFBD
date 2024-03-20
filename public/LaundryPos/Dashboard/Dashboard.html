@@ -56,7 +56,7 @@
                         </li>
 
                         <li id="ToFactoryId" class="nav-item Bookings">
-                            <a class="nav-link active " aria-current="page" href="#">
+                            <a class="nav-link active " aria-current="page" href="../NiceToFactory/Dashboard/Dashboard.html">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                     class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
                                     <path
@@ -292,8 +292,8 @@
         };
 
         function ItemsFormatter(value, row, index) {
-            let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
-            localStorage.setItem("BranchName", jVarLocalBranchName);
+            // let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+            let jVarLocalBranchName = localStorage.getItem("BranchName");
 
             return [
                 `<a class="like btn btn-primary" href="../NewOrder/NewOrder.html?BranchName=${jVarLocalBranchName}&CustomerName=${row.CustomerName}&CustomerMobile=${row.Mobile}" title="Show">`,
