@@ -40,7 +40,9 @@ let jFLocalToInputInputVoucherRefId = () => {
 };
 
 let jFLocalToInputBranchName = () => {
-    let jVarLocalBranchNameparam = getUrlQueryParams({ inGetKey: "BranchName" });
+    // let jVarLocalBranchNameparam = getUrlQueryParams({ inGetKey: "BranchName" });
+    let jVarLocalBranchNameparam = localStorage.getItem("BranchName");
+
     let jVarLocalHtmlId = 'InputBranchNameId';
     let jVarLocalBranchName = document.getElementById(jVarLocalHtmlId);
 
@@ -50,7 +52,9 @@ let jFLocalToInputBranchName = () => {
 };
 
 let jFLocalBranchName = () => {
-    let jVarLocalBranchNameparam = getUrlQueryParams({ inGetKey: "BranchName" });
+    // let jVarLocalBranchNameparam = getUrlQueryParams({ inGetKey: "BranchName" });
+    let jVarLocalBranchNameparam = localStorage.getItem("BranchName");
+
     let jVarLocalHtmlId = 'BranchNameId';
     let jVarLocalBranchName = document.getElementById(jVarLocalHtmlId);
 

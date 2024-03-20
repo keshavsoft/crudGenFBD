@@ -1,9 +1,9 @@
 import { StartFunc as StartFuncNavMenu } from "./NavMenu/Entry.js";
-import { StartFunc as StartFuncBreadCumMenu } from "./BreadCumMenu/Entry.js";
+// import { StartFunc as StartFuncBreadCumMenu } from "./BreadCumMenu/Entry.js";
 
 const StartFunc = () => {
     StartFuncNavMenu();
-    StartFuncBreadCumMenu();
+    // StartFuncBreadCumMenu();
 };
 
 export { StartFunc };

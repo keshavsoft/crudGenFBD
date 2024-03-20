@@ -61,6 +61,6 @@ const jFTodayDate = () => {
 
     return today = yyyy + '-' + mm + '-' + dd;
 
-}
+};
 
 export { StartFunc }
