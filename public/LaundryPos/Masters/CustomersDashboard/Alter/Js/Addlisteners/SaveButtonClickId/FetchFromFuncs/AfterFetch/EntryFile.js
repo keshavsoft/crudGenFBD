@@ -21,7 +21,7 @@ let StartFunc = ({ inFetchData }) => {
                 const url = new URL(window.location.href);
                 let NewURl = new URL("../ShowAll/ShowAll.html", url);
                 const new_url = new URL(`${NewURl.href}`);
-                new_url.searchParams.append('BranchName', jVarLocalBranchName);
+                // new_url.searchParams.append('BranchName', jVarLocalBranchName);
 
                 window.location.href = new_url.href;
             };
