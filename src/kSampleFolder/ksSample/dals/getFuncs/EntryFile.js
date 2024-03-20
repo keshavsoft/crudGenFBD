@@ -38,7 +38,7 @@ let GetRowDataFunc = ({ inKey, inValue }) => {
 };
 
 let GetRowCountByIdFunc = ({ inKey, inValue }) => {
-    return StartFunRowDataByKeyId({ inKey, inValue });
+    return StartFuncGetRowCountById({ inKey, inValue });
 
 };
 
