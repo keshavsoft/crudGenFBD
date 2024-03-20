@@ -81,7 +81,7 @@
 
                 </li>
 
-              
+
 
                 <li class="nav-item dropdown pe-3">
 
@@ -229,8 +229,8 @@
                             </div>
                             <table id="table" data-toolbar="#toolbar" data-search="true" data-searchable="true"
                                 data-show-columns="true" data-show-columns-toggle-all="true" data-show-export="true"
-                                 data-detail-formatter="detailFormatter" data-id-field="pk"
-                                data-show-toggle="true" data-filter-control="true" data-show-footer="true" data-buttons-class="primary">
+                                data-detail-formatter="detailFormatter" data-id-field="pk" data-show-toggle="true"
+                                data-filter-control="true" data-show-footer="true" data-buttons-class="primary">
                                 <thead>
                                     <tr id="tableHeadRow">
                                         <th data-formatter="jFLocalSerialColumn">#</th>
@@ -238,7 +238,10 @@
                                         <th data-field="DataCount" data-filter-control="select"
                                             data-footer-formatter="TotalItems" data-align="right">Total Orders</th>
                                         <th data-field="OrderDate" data-filter-control="select">LastOrde Date</th>
-                                        <th data-field="SentInterVal" data-filter-control="select">Time sapm</th>
+                                        <th data-field="SentInterVal" data-filter-control="select">Time span</th>
+                                        <th data-formatter="jFLocalToBranchDashboard">
+                                            Branch Dashboard</th>
+                                        <th data-formatter="jFLocalSerialColumn">#</th>
                                     </tr>
                                 </thead>
                             </table>
@@ -265,7 +268,7 @@
             return index + 1;
         };
         function TotalItems(data, row) {
-            let localItemsData = data.map(i =>i.DataCount);
+            let localItemsData = data.map(i => i.DataCount);
             let sum = 0;
             // iterate over each item in the array
             for (let i = 0; i < localItemsData.length; i++) {
@@ -274,6 +277,14 @@
             return sum;
         };
 
+        function jFLocalToBranchDashboard(data, row) {
+            console.log("ssssssssssss",row);
+            return [
+                `<a href="" class="btn btn-success">`,
+                ` `,
+                `${row.fileName}</a>`
+            ].join('');
+        };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
