@@ -1,27 +1,7 @@
-// import ConfigJson from "../../../ApiConfig.json" assert {type: 'json'};
-
 const StartFunc = () => {
-    let jVarLocalOrderNumber=jFLocalFromDomOrderNumberId();
-    let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" })
-
-
    let jVarLocalToLocalStorage = jFLocalPrepareObject();
 
     return jVarLocalToLocalStorage;
-};
-
-let getUrlQueryParams = ({ inGetKey }) => {
-    const queryString = window.location.search;
-    const parameters = new URLSearchParams(queryString);
-    const value = parameters.get(inGetKey);
-    return value;
-};
-
-let jFLocalFromDomOrderNumberId = () => {
-    let jVarLocalHtmlOrderNumberId = 'OrderNumberId';
-   let jVarHtmlOrderNumberId = document.getElementById(jVarLocalHtmlOrderNumberId);
-   let jVarHtmlOrderNumberIdValue = jVarHtmlOrderNumberId.innerHTML.trim();
-   return jVarHtmlOrderNumberIdValue;
 };
 
 let jFLocalPrepareObject = () => {
@@ -74,14 +54,7 @@ let jFLocalPrepareObject = () => {
 
 let jFLocalItemSerialClass = ({ inTabPane }) => {
     try {
-        // let jVarClosestTabPane = inTabPane;
         let jVarLocalItemsTableBodyId = document.getElementById("ItemsTableBodyId");
-
-        // let jVarLocalItemSerialClass = jVarClosestTabPane.querySelector(".ItemSerialClass");
-
-        // let localReturnObject = {
-        //     ItemSerial: jVarLocalItemSerialClass.value
-        // };
 
         let localReturnObject = {
             ItemSerial: jVarLocalItemsTableBodyId.rows.length + 1
