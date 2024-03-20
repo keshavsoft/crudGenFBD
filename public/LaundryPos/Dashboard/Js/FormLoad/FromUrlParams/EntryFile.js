@@ -1,5 +1,6 @@
 let StartFunc = () => {
-    let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    // let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    let jVarLocalBranchName = localStorage.getItem("BranchName");
 
     if (jVarLocalBranchName === null) {
         Swal.fire({

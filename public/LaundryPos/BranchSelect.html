@@ -104,6 +104,8 @@
 
             if (jVarLocalBruchSelectInputId === null === false) {
                 let jVarLocalBruchSelectInputValue = jVarLocalBruchSelectInputId.value;
+                localStorage.setItem("BranchName", jVarLocalBruchSelectInputValue);
+
 
                 window.location.href = `/LaundryPos/Dashboard/Dashboard.html?BranchName=${jVarLocalBruchSelectInputValue}`
             };
