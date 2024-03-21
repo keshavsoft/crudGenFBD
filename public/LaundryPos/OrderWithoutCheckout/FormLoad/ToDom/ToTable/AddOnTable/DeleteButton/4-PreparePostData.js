@@ -1,6 +1,7 @@
 const StartFunc = ({ inRowPk }) => {
     let jVarLocalOrderNumber = jFLocalFromDomOrderNumberId();
-    let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" })
+    // let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" })
+    let jVarLocalBranchName = localStorage.getItem("BranchName");
 
     let jVarLocalToLocalStorage = {};
 

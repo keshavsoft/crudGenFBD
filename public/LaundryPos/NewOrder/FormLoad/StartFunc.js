@@ -1,5 +1,4 @@
 import { StartFunc as StartFuncAddToDom } from "./AddToDom.js";
-
 import { StartFunc as StartFuncToLocalStorageFuncs } from "./ToLocalStorageFuncs.js";
 import { StartFunc as StartFuncToItemAddTemplateRow } from "./ToDom/ToItemAddTemplateRow/ToItemSerialClass.js";
 import { StartFunc as StartFuncFromUrlParams } from "./FromUrlParams/StartFunc.js";
@@ -7,12 +6,9 @@ import { StartFunc as StartFuncFromUrlParams } from "./FromUrlParams/StartFunc.j
 let StartFunc = () => {
     StartFuncFromUrlParams();
     StartFuncToLocalStorageFuncs();
-
     StartFuncAddToDom();
-
     jFShowDeliveryDateTime();
     jFLocalCurrentDateTimeToday();
-
     StartFuncToItemAddTemplateRow();
 };
 
@@ -40,10 +36,6 @@ let jFLocalCurrentDateTime = () => {
     let mm = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
     let ss = (date.getSeconds() < 10 ? '0' : '') + date.getSeconds();
 
-    // let mm = date.getMinutes();
-
-    // let ss = date.getSeconds();
-
     return `${yyyy}-${MM}-${dd}T${HH}:${mm}:${ss}`;
 };
 
@@ -55,7 +47,6 @@ let jFLocalCurrentDateTimeToday = () => {
 };
 
 let jFLocalCurrentDateTime1 = () => {
-    let date1 = new Date();
     let jVarLocalAddDays7 = new Date();
     let date = new Date(jVarLocalAddDays7);
 

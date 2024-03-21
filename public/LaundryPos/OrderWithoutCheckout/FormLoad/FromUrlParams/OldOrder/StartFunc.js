@@ -21,11 +21,11 @@ let StartFunc = async () => {
 
 let jFLocalFromOrdersDataToItemsInOrder = () => {
     let jFLocalOrderNumber = getUrlQueryParams({ inGetKey: "OrderNumber" });
-    let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    // let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    let jVarLocalBranchName = localStorage.getItem("BranchName");
 
     let jVarLocalFromLocalStorage = StartFuncFromLocalStorage({
         inPk: jFLocalOrderNumber,
-        // inBranchName: ApiConfigJson.BranchName
         inBranchName: jVarLocalBranchName
     });
 
@@ -37,11 +37,12 @@ let jFLocalFromOrdersDataToItemsInOrder = () => {
 };
 
 let jFLocalAddAddOnData = () => {
-    let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    // let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    let jVarLocalBranchName = localStorage.getItem("BranchName");
+
     let jFLocalOrderNumber = getUrlQueryParams({ inGetKey: "OrderNumber" });
     let jVarLocalFromLocalStorage = StartFuncFromLocalStorage({
         inPk: jFLocalOrderNumber,
-        // inBranchName: ApiConfigJson.BranchName
         inBranchName: jVarLocalBranchName
     });
     if (jVarLocalFromLocalStorage === false) {

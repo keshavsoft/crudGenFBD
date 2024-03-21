@@ -1,7 +1,9 @@
 let StartFunc = async ({ inBodyData }) => {
     let jVarLocalBodyData = inBodyData;
     let jVarLocalOrderNumber = getUrlQueryParams({ inGetKey: "OrderNumber" });
-    let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    // let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    let jVarLocalBranchName = localStorage.getItem("BranchName");
+
 
 
     let jVarLocalFetchUrl = `/bin/Transactions/${jVarLocalBranchName}/InsertToKey/${jVarLocalOrderNumber}/ItemsInOrder`;

@@ -25,8 +25,7 @@ let jFLocalCurrentDateTime = () => {
     let dd = (date.getDate() < 10 ? '0' : '') + date.getDate();
     let MM = ((date.getMonth() + 1) < 10 ? '0' : '') + (date.getMonth() + 1);
     let yyyy = date.getFullYear();
-    // let HH = date.getHours();
-
+    
     let HH = (date.getHours() < 10 ? '0' : '') + date.getHours();
     let mm = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
     let ss = (date.getSeconds() < 10 ? '0' : '') + date.getSeconds();

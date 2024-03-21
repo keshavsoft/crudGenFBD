@@ -30,7 +30,7 @@ let jFLocalItemSelectChange = ({ inEvent }) => {
         let jVarLocalItemPk = jVarLocalCurrentTarget.value;
         let jVarLocalItems = StartFuncFromLocalStorage({ inLocalStorageKey: jVarLocalStorageKey });
         
-        let jVarLocalFind = jVarLocalItems.find(element => element.pk === jVarLocalItemPk);
+        let jVarLocalFind = jVarLocalItems.find(element => element.pk == jVarLocalItemPk);
 
         jVarLocalRate.value = jVarLocalFind.DryWashRate;
 
