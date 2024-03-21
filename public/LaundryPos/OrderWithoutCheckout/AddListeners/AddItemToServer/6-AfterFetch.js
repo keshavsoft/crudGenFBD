@@ -13,10 +13,6 @@ let StartFunc = ({ inFromFetch }) => {
 };
 
 let jFLocalToURL = ({ inOrderNumber }) => {
-    // const myUrlWithParams = new URL(`${window.location.origin}${window.location.pathname}`);
-    // myUrlWithParams.searchParams.append("OrderNumber", inOrderNumber);
-    // const k1 = new URL("../Orders/OrdersShow/OrdersShow.html", myUrlWithParams.href);
-
     window.location.href = "";
 };
 

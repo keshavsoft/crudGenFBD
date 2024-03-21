@@ -1,7 +1,8 @@
 import { StartFunc as StartFuncShowOnDom } from "../../ShowOnDom/StartFunc.js";
 
 let StartFunc = () => {
-    let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    // let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    let jVarLocalBranchName = localStorage.getItem("BranchName");
     let jFLocalOrderNumber = getUrlQueryParams({ inGetKey: "OrderNumber" });
     let jVarLocalParams = {};
     jVarLocalParams.BranchName = jVarLocalBranchName;

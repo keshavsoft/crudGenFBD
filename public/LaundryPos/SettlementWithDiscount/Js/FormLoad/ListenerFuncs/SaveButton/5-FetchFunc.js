@@ -1,6 +1,8 @@
 
 let StartFunc = async ({ inSettlementData }) => {
-    let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    // let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    let jVarLocalBranchName = localStorage.getItem("BranchName");
+
     let jVarLocalBodyData = inSettlementData.inDataToUpdate;
 
     let jVarLocalFetchUrl = `/bin/Transactions/${jVarLocalBranchName}/InsertToKey/${inSettlementData.MainRowPK}/${inSettlementData.InsertKey}`;
