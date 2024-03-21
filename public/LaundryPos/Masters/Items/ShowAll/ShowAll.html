@@ -293,29 +293,30 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="../../DashBoard.html">
-                    <i class="bi bi-grid"></i>
+                <a class="nav-link collapsed" href="../../Dashboard/Dashboard.html">
+                    <i class="bi bi-box-arrow-in-left"></i></i>
                     <span>Masters</span>
                 </a>
             </li>
             <!-- End Dashboard Nav -->
-
-
             <li class="nav-item">
-                <a class="nav-link collapsed" href="../CreateNew/CreateNew.html">
-                    <i class="bi bi-database-down"></i>
-                    <span>CreateNew</span>
+                <a class="nav-link " data-bs-target="#items-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-x-diamond-fill"></i><span>Items</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
-            </li>
-            <!-- End F.A.Q Page Nav -->
+                <ul id="items-nav" class="nav-content  " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="#" class="active">
+                            <i class="bi bi-circle"></i><span>ShowAll</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="CustomerCreateId1" href="../CreateNew/CreateNew.html">
+                            <i class="bi bi-circle"></i><span>Create</span>
+                        </a>
+                    </li>
 
-            <li class="nav-item">
-                <a class="nav-link " href="#">
-                    <i class="bi bi-box-arrow-in-right"></i>
-                    <span>ShowAll</span>
-                </a>
-            </li>
-            <!-- End Login Page Nav -->
+                </ul>
+            </li><!-- End Today Items Nav -->
 
 
             <li class="nav-item">
@@ -360,7 +361,7 @@
 
         <div class="pagetitle">
             <a href="#" id="RefreshbuttonIn">
-                <h1>Items - CreateNew</h1>
+                <h1>Items - ShowAll</h1>
             </a>
 
             <nav>
@@ -378,6 +379,11 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
+                            <div class="m-2">
+                                <button type="button" name="" id="CustomerCreateId" class="btn btn-primary"><a class="link-light" href="../CreateNew/CreateNew.html">Create
+                                    New</a></button>
+
+                            </div>
                             <table id="table" data-toolbar="#toolbar" data-search="true" data-searchable="true"
                                 data-show-columns="true" data-show-columns-toggle-all="true" data-show-export="true"
                                 data-id-field="pk" data-show-toggle="true" data-filter-control="true">
