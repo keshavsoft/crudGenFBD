@@ -53,7 +53,9 @@ let jFLocalInsertAggValues = ({ inData }) => {
 };
 
 let jFLocalInsertQrCodeData = ({ inData, inQrCodeData }) => {
-    let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    // let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    let jVarLocalBranchName = localStorage.getItem("BranchName");
+
 
     let jVarLocalReturnArray = [];
     inData.forEach(element => {
