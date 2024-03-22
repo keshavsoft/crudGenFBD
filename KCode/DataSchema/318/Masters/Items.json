@@ -15,5 +15,9 @@
     "Pcs": {
         "type": "NUMBER",
         "allowNull": true
+    },
+    "WashType": {
+        "type": "STRING",
+        "allowNull": true
     }
 }
