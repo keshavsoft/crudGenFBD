@@ -1,6 +1,7 @@
 
 let StartFunc = async () => {
-let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+// let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+let jVarLocalBranchName = localStorage.getItem("BranchName");
 
     let jVarLocalFetchUrl = `/bin/Transactions/${jVarLocalBranchName}/DataOnly`;
 

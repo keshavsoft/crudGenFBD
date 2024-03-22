@@ -374,20 +374,20 @@
                             <table id="table" data-toolbar="#toolbar" data-search="true" data-show-footer="true"
                                 data-searchable="true" data-show-columns="true" data-show-columns-toggle-all="true"
                                 data-show-export="true" data-detail-formatter="detailFormatter" data-id-field="pk"
-                                data-show-toggle="true" data-buttons-class="primary">
+                                data-show-toggle="true" >
                                 <thead>
                                     <tr id="tableHeadRow">
                                         <th data-formatter="jFLocalSerialColumn">#</th>
                                         <th data-field="UuId">Order #</th>
-                                        <th data-field="CustomerData.CustomerName">Customer Name</th>
+                                        <th data-field="CustomerData.CustomerName">Customers</th>
                                         <!-- <th data-field="OrderData.BranchName">Branch</th> -->
                                         <th data-field="CustomerData.CustomerMobile">Mobile</th>
                                         <th data-formatter="jFLocalDateFormatter">Date</th>
-                                        <th data-field="TotalPcs" data-footer-formatter="PcsFormatter">Pcs</th>
-                                        <th data-field="CashAmount" data-footer-formatter="CashAmountFormatter">CashAmount</th>
-                                        <th data-field="CardAmount" data-footer-formatter="CardAmountFormatter">CardAmount</th>
-                                        <th data-field="UPIAmount" data-footer-formatter="UPIAmountFormatter">UPIAmount</th>
-                                        <th data-field="AggValues.SettlementAmount" data-footer-formatter="priceFormatter">Total</th>
+                                        <th data-field="TotalPcs" data-footer-formatter="PcsFormatter" data-align="right">Pcs</th>
+                                        <th data-field="CashAmount" data-footer-formatter="CashAmountFormatter" data-align="right">Cash</th>
+                                        <th data-field="CardAmount" data-footer-formatter="CardAmountFormatter" data-align="right">Card</th>
+                                        <th data-field="UPIAmount" data-footer-formatter="UPIAmountFormatter" data-align="right">UPI</th>
+                                        <th data-field="AggValues.SettlementAmount" data-footer-formatter="priceFormatter" data-align="right">Total</th>
                                        
                                     </tr>
                                 </thead>

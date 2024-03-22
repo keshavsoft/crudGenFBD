@@ -2,7 +2,9 @@ import { StartFunc as StartFuncQrCodeToModal } from "./QrCodeToModal.js";
 
 let StartFunc = ({ inQrCodeData, inRowPk }) => {
     let localQrodeData = inQrCodeData;
-    let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    // let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    let jVarLocalBranchName = localStorage.getItem("BranchName");
+
     let localFilterQrcodeData = localQrodeData.filter(element => element.OrderNumber == inRowPk && element.BookingData.OrderData.BranchName == jVarLocalBranchName);
 
 
