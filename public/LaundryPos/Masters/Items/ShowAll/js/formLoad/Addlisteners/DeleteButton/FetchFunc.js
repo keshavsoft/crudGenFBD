@@ -1,7 +1,10 @@
 import ConfigJson from "../../../Config.json" assert { type: "json" };
 
-let StartFunc = async ({ inUuId }) => {
-    let LocalinUuId = inUuId;
+let StartFunc = async ({ inEvent }) => {
+    let jVarLocalCurrentTarget = inEvent.currentTarget;
+    let jVarLocalRowPk = jVarLocalCurrentTarget.dataset.rowpk;
+
+    let LocalinUuId = jVarLocalRowPk;
     let LocalroutePath = ConfigJson.routePath;
     let LocaltableName = ConfigJson.tableName;
 

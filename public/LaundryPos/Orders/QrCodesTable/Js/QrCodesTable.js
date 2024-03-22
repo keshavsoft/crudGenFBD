@@ -1,7 +1,6 @@
 import { StartFunc as StartFuncNavigation } from "./Navigation/EntryFile.js";
 import { StartFunc as StartFuncShowOnDom } from "./ShowOnDom.js";
 import { StartFunc as StartFuncFormLoad } from "./FormLoad/StartFunc.js";
-import { StartFunc as StartFuncAfterDomLoad } from "./AfterDomLoad/StartFunc.js";
 // import { StartFunc as StartFuncAdminData } from "./AdminData/StartFunc.js";
 
 const StartFunc = () => {
@@ -13,9 +12,7 @@ const StartFunc = () => {
     if (jVarLocalFromAdmin) {
         StartFuncFormLoad();
 
-        StartFuncShowOnDom({}).then(() => {
-            StartFuncAfterDomLoad();
-        });
+        StartFuncShowOnDom({}).then();
     };
 };
 
