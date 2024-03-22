@@ -1,3 +1,5 @@
+import { StartFunc as StartFuncAddlisteners } from "../../../../Addlisteners/StartFunc.js";
+
 const StartFunc = () => {
     let jVarLocalDataFromLocalStorage = localStorage.getItem("tableData");
 
@@ -16,6 +18,7 @@ const StartFunc = () => {
             $(".fixed-table-toolbar .search .search-input").focus()
         }
     });
+    StartFuncAddlisteners();
 };
 
 let jFSortData = ({ inDataToSort }) => {

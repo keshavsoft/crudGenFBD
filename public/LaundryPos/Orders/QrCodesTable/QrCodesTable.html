@@ -20,6 +20,7 @@
     <title>TabularColumnsData</title>
     <!-- Custom styles for this template -->
     <link href="./css/headers.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
 </head>
 
 <body class="mb-5">
@@ -73,9 +74,11 @@
                             </li>
                             <li class="nav-item">
                                 <a id="QrToRaiseId" href="#" class="nav-link text-white QrCodesTableAClass">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
-                                        <path d="M0 0h16v16H0zm1 1v6.5h6.5V1zm7.5 0v6.5H15V1zM15 8.5H8.5V15H15zM7.5 15V8.5H1V15z"/>
-                                      </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                        class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
+                                        <path
+                                            d="M0 0h16v16H0zm1 1v6.5h6.5V1zm7.5 0v6.5H15V1zM15 8.5H8.5V15H15zM7.5 15V8.5H1V15z" />
+                                    </svg>
                                     QrToRaise
                                 </a>
                             </li>
@@ -183,66 +186,76 @@
         </div>
     </div>
 
-    <div class="container mt-2">
-        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
-            aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a id="BRDDashboardId" href="#">Dashboard</a></li>
-                <li class="breadcrumb-item"><a class="link-warning" id="RefreshBSTableId" href="#">OrderTable</a></li>
-                <!-- <li class="breadcrumb-item active" aria-current="page">QrCodesTable</li> -->
-            </ol>
-        </nav>
-    </div>
 
-    <main>
-        <div class="container">
-            <div id="AlertSuccessId" class="alert alert-success alert-dismissible fade show mt-2" role="alert"
-                style="display: none;">
-                <strong id="RowPkInsertSuccessStrongId">SavedPk</strong> Saved
-                Sucessfully.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            <div>
 
-                <div class="spinner-border" id="SpinnerId" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
+    <main id="" class="main container">
 
-                <table id="table" data-toolbar="#toolbar" data-search="true" data-show-footer="true"
-                    data-searchable="true" data-show-columns="true" data-show-columns-toggle-all="true"
-                    data-show-export="true" data-detail-view="true" data-detail-formatter="detailFormatter"
-                    data-id-field="pk" data-show-toggle="true" data-buttons-class="primary">
-                    <thead>
-                        <tr id="tableHeadRow">
-                            <th data-formatter="jFLocalSerialColumn">#</th>
-                            <th data-field="UuId">Order Number</th>
-                            <th data-field="CustomerData.CustomerName">Customer Name</th>
-                            <th data-field="OrderData.BranchName">Branch</th>
-                            <th data-field="CustomerData.CustomerMobile">Mobile</th>
-                            <th data-formatter="jFLocalDateFormatter">Date</th>
-                            <th data-formatter="jFLocalOrderDetails">Order Details</th>
-                            <th data-formatter="jFLocalSettlementDetails" data-footer-formatter="priceFormatter">
-                                Settlement</th>
-                            <th data-formatter="jFLocalQrCodeDetails" data-footer-formatter="QrFormatter">QrCodes
-                            </th>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
+        <div class="pagetitle">
 
-            
+
+            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+                aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a id="BRDDashboardId" href="#">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a class="link-warning" id="RefreshBSTableId" href="#">OrderTable</a>
+                    </li>
+                    <!-- <li class="breadcrumb-item active" aria-current="page">QrCodesTable</li> -->
+                </ol>
+            </nav>
         </div>
+        <!-- End Page Title -->
+
+        <section class="section">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="spinner-border" id="SpinnerId" role="status">
+                                <span class="visually-hidden">Loading...</span>
+
+                            </div>
+
+                            <table id="table" data-toolbar="#toolbar" data-search="true" data-show-footer="true"
+                                data-searchable="true" data-show-columns="true" data-show-columns-toggle-all="true"
+                                data-show-export="true"  data-detail-formatter="detailFormatter"
+                                data-id-field="pk" data-show-toggle="true" data-buttons-class="primary">
+                                <thead>
+                                    <tr id="tableHeadRow">
+                                        <th data-formatter="jFLocalSerialColumn">#</th>
+                                        <th data-field="UuId">Order Number</th>
+                                        <th data-field="CustomerData.CustomerName">Customer Name</th>
+                                        <th data-field="OrderData.BranchName">Branch</th>
+                                        <th data-field="CustomerData.CustomerMobile">Mobile</th>
+                                        <th data-formatter="jFLocalDateFormatter">Date</th>
+                                        <th data-formatter="jFLocalOrderDetails">Order Details</th>
+                                        <th data-formatter="jFLocalSettlementDetails"
+                                            data-footer-formatter="priceFormatter">
+                                            Settlement</th>
+                                        <th data-formatter="jFLocalQrCodeDetails" data-footer-formatter="QrFormatter">
+                                            QrCodes
+                                        </th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="footer mt-auto py-3 bg-light fixed-bottom">
-        <div class="container">
-            <div class="bg-light d-flex justify-content-between">
-                <div>KeshavSoft v19.10</div>
 
-                <div data-BaseString="Last refresh : " id="KLastRefreshDT">Last refresh : </div>
-            </div>
+
+    <!-- ======= Footer ======= -->
+    <footer id="" class="footer">
+        <div class="copyright">
+            &copy; KeshavSoft @ 2024<strong>
         </div>
+
     </footer>
+    <!-- End Footer -->
 
 
 

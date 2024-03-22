@@ -3,8 +3,8 @@ import ConfigJson from "../../../../Config.json" assert { type: "json" };
 let StartFunc = async () => {
     let LocalroutePath = ConfigJson.routePath;
     let LocaltableName = ConfigJson.tableName;
-    let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
-
+    // let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    let jVarLocalBranchName = localStorage.getItem("BranchName");
 
     let jVarLocalFetchUrl = `/bin/${LocalroutePath}/${jVarLocalBranchName}/DataOnly`
     let response = await fetch(jVarLocalFetchUrl);

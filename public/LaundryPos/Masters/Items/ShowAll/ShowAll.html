@@ -298,6 +298,26 @@
                     <span>Masters</span>
                 </a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-people"></i><span>Customers</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="charts-nav" class="nav-content  collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="../../CustomersDashboard/ShowAll/ShowAll.html" class="">
+                            <i class="bi bi-circle"></i><span>ShowAll</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../CustomersDashboard/Create/Create.html" class="">
+                            <i class="bi bi-circle"></i><span>Create</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
             <!-- End Dashboard Nav -->
             <li class="nav-item">
                 <a class="nav-link " data-bs-target="#items-nav" data-bs-toggle="collapse" href="#">
@@ -317,7 +337,6 @@
 
                 </ul>
             </li><!-- End Today Items Nav -->
-
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
@@ -349,10 +368,28 @@
                             <i class="bi bi-circle"></i><span>RateBar</span>
                         </a>
                     </li>
-                    
+
                 </ul>
             </li><!-- End Charts Nav -->
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#Qrcodes-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-patch-plus-fill"></i><span>AddOns</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="Qrcodes-nav" class="nav-content  collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="../../AddOnsDashboard/ShowAll/ShowAll.html" class="">
+                            <i class="bi bi-circle"></i><span>ShowAll</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../AddOnsDashboard/Create/Create.html" class="">
+                            <i class="bi bi-circle"></i><span>Create</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li><!-- End Addons Nav -->
         </ul>
     </aside>
     <!-- End Sidebar-->
@@ -380,8 +417,9 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="m-2">
-                                <button type="button" name="" id="CustomerCreateId" class="btn btn-primary"><a class="link-light" href="../CreateNew/CreateNew.html">Create
-                                    New</a></button>
+                                <button type="button" name="" id="CustomerCreateId" class="btn btn-primary"><a
+                                        class="link-light" href="../CreateNew/CreateNew.html">Create
+                                        New</a></button>
 
                             </div>
                             <table id="table" data-toolbar="#toolbar" data-search="true" data-searchable="true"
@@ -394,6 +432,8 @@
                                         <th data-field="ItemName">ItemName</th>
                                         <th data-field="DryWashRate" class="d-none d-lg-table-cell">WashRate</th>
                                         <th data-field="Pcs" class="d-none d-lg-table-cell">Pcs</th>
+                                        <th data-formatter="EditFormatter">Edit</th>
+                                        <th data-formatter="DeleteFormatter">Delete</th>
                                     </tr>
                                 </thead>
                             </table>
@@ -419,6 +459,35 @@
         function jFLocalSerialColumn(value, row, index) {
             return index + 1;
         };
+
+        function EditFormatter(value, row, index) {
+
+            return [
+                `<a class="like btn btn-primary" href="../Alter/Alter.html?RowPk=${row.pk}" title="Edit">`,
+                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">',
+                '<path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>',
+                '<path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>',
+                '</svg>',
+                ' ',
+                ,
+                '</a>',
+
+            ].join('')
+
+        };
+
+        function DeleteFormatter(value, row, index) {
+
+            return [
+                `<a class="like btn btn-danger DeleteClass" href="#" data-rowpk=${row.pk}  title="Delete">`,
+                '<i class="bi bi-trash3"></i>'
+                ,
+                '</a>',
+
+            ].join('')
+
+        };
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
