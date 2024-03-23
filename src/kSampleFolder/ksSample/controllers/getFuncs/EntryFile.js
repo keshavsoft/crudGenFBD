@@ -5,12 +5,19 @@ import {
     GetIdFunc as GetIdFuncRepo, GetBodyCheckFunc as GetBodyCheckFuncRepo, GetRowCountFunc as GetRowCountFuncRepo,
     GetRowDataFunc as GetRowDataFuncRepo,
     GetRowCountByIdFunc as GetRowCountByIdFuncRepo,
-    GetfilterDataFunc as GetfilterDataFuncRepo
+    GetfilterDataFunc as GetfilterDataFuncRepo,
+    GetSummeryFunc as GetSummeryFuncRepo
 } from '../../repos/getFuncs/EntryFile.js';
 
 
 let GetFunc = async (req, res) => {
     let LocalFromRepo = await GetFuncRepo();
+
+    res.json(LocalFromRepo);
+};
+
+let GetSummeryFunc = async (req, res) => {
+    let LocalFromRepo = await GetSummeryFuncRepo();
 
     res.json(LocalFromRepo);
 };
@@ -98,5 +105,5 @@ export {
     GetFromModalUuidFunc, GetFromModalUuidAndTSFunc,
     GetIdFunc,
     GetBodyCheckFunc, GetRowCountFunc, GetRowDataFunc, GetRowCountByIdFunc,
-    GetFilterDataFunc
+    GetFilterDataFunc,GetSummeryFunc
 };
