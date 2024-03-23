@@ -1,7 +1,7 @@
 
 let StartFunc = ({ inDataToShow }) => {
     let LocalDataToShow = inDataToShow;
-    let LocalFilterData = LocalDataToShow.filter(e => e.DataCount !== 0)
+    let LocalFilterData = LocalDataToShow.filter(e => e.todayTotalCount !== 0)
 
     let LocalmodifiedData = jFLocalShowDateDiffInMinSec({ inData: LocalFilterData });
 

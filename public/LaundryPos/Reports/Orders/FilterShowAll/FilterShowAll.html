@@ -447,16 +447,16 @@
         };
 
         function CashAmountFormatter(data) {
-            return data.map(ele => ele.CashAmount).reduce((a, b) => a + b, 0)
+            return '₹ ' + data.map(ele => ele.CashAmount).filter(value => value !== undefined).reduce((a, b) => a + b, 0)
         };
         function PcsFormatter(data) {
-            return data.map(ele => ele.TotalPcs).reduce((a, b) => a + b, 0)
+            return '₹ ' + data.map(ele => ele.TotalPcs).filter(value => value !== undefined).reduce((a, b) => a + b, 0)
         };
         function CardAmountFormatter(data) {
-            return data.map(ele => ele.CardAmount).reduce((a, b) => a + b, 0)
+            return '₹ ' + data.map(ele => ele.CardAmount).filter(value => value !== undefined).reduce((a, b) => a + b, 0)
         };
         function UPIAmountFormatter(data) {
-            return data.map(ele => ele.UPIAmount).reduce((a, b) => a + b, 0)
+            return '₹ ' + data.map(ele => ele.UPIAmount).filter(value => value !== undefined).reduce((a, b) => a + b, 0)
         };
        
         function priceFormatter(data) {
@@ -468,10 +468,7 @@
             }, 0)
         }
 
-        function QrFormatter(data) {
-            return data.map(ele => ele.TotalItems).reduce((a, b) => a + b, 0)
-
-        }
+       
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

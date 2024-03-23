@@ -293,7 +293,7 @@
             </li>
 
             <li class="nav-item">
-                <a  class="nav-link collapsed" href="../../Dashboard/Dashboard.html" >
+                <a class="nav-link collapsed" href="../../Dashboard/Dashboard.html">
                     <i class="bi bi-columns-gap"></i></i>
                     <span>Masters-Dashboard</span>
                 </a>
@@ -301,7 +301,7 @@
 
             <!-- End Dashboard Nav -->
 
-          
+
 
             <li class="nav-item">
                 <a class="nav-link " data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
@@ -321,7 +321,7 @@
 
                 </ul>
             </li><!-- End  Customers Nav -->
-            
+
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#TodayDC-nav" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-x-diamond-fill"></i><span>Scan</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -341,9 +341,9 @@
                 </ul>
             </li><!-- End  Items Nav -->
 
-                    
-                </ul>
-            </li><!-- End Today Orders Nav -->
+
+        </ul>
+        </li><!-- End Today Orders Nav -->
         </ul>
     </aside>
     <!-- End Sidebar-->
@@ -384,12 +384,17 @@
                                         <th data-field="OrderData.BranchName" data-visible="false">Branch</th>
                                         <th data-field="CustomerData.CustomerMobile" data-filter-control="">Mobile</th>
                                         <th data-formatter="jFLocalDateFormatter">Date</th>
-                                        <th data-field="TotalPcs" data-footer-formatter="PcsFormatter" data-align="right">Pcs</th>
-                                        <th data-field="CashAmount" data-footer-formatter="CashAmountFormatter" data-align="right">Cash</th>
-                                        <th data-field="CardAmount" data-footer-formatter="CardAmountFormatter" data-align="right">Card</th>
-                                        <th data-field="UPIAmount" data-footer-formatter="UPIAmountFormatter" data-align="right">UPI</th>
-                                        <th data-field="AggValues.SettlementAmount" data-footer-formatter="priceFormatter" data-align="right">Total</th>
-                                       
+                                        <th data-field="TotalPcs" data-footer-formatter="PcsFormatter"
+                                            data-align="right">Pcs</th>
+                                        <th data-field="CashAmount" data-footer-formatter="CashAmountFormatter"
+                                            data-align="right">Cash</th>
+                                        <th data-field="CardAmount" data-footer-formatter="CardAmountFormatter"
+                                            data-align="right">Card</th>
+                                        <th data-field="UPIAmount" data-footer-formatter="UPIAmountFormatter"
+                                            data-align="right">UPI</th>
+                                        <th data-field="AggValues.SettlementAmount"
+                                            data-footer-formatter="priceFormatter" data-align="right">Total</th>
+
                                     </tr>
                                 </thead>
                             </table>
@@ -420,18 +425,18 @@
         };
 
         function CashAmountFormatter(data) {
-            return data.map(ele => ele.CashAmount).reduce((a, b) => a + b, 0)
+            return '₹ ' + data.map(ele => ele.CashAmount).filter(value => value !== undefined).reduce((a, b) => a + b, 0);
         };
         function PcsFormatter(data) {
-            return data.map(ele => ele.TotalPcs).reduce((a, b) => a + b, 0)
+            return  data.map(ele => ele.TotalPcs).filter(value => value !== undefined).reduce((a, b) => a + b, 0);
         };
         function CardAmountFormatter(data) {
-            return data.map(ele => ele.CardAmount).reduce((a, b) => a + b, 0)
+            return '₹ ' + data.map(ele => ele.CardAmount).filter(value => value !== undefined).reduce((a, b) => a + b, 0);
         };
         function UPIAmountFormatter(data) {
-            return data.map(ele => ele.UPIAmount).reduce((a, b) => a + b, 0)
+            return '₹ ' + data.map(ele => ele.UPIAmount).filter(value => value !== undefined).reduce((a, b) => a + b, 0);
         };
-       
+
         function priceFormatter(data) {
             var field = this.field
             return '₹ ' + data.map(function (row) {
@@ -441,7 +446,7 @@
             }, 0)
         }
 
-      
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -459,7 +464,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
         integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+    <script
+        src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
 
     <!-- Template Main JS File -->
     <script src="./assets/js/main.js"></script>

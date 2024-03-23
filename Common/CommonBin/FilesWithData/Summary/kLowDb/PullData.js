@@ -60,7 +60,8 @@ const LocalSummaryFunc = ({ inData }) => {
         LocalneedData.firstOrder = "";
         LocalneedData.lastOrder = ""
         LocalneedData.todayFirstOrder = ""
-        LocalneedData.todaylastOrder = ""
+        LocalneedData.todaylastOrder = "";
+        LocalneedData.todayTotalCount = 0;
 
         if (element.FileData.length > 0) {
             let LastOrdeDate = element.FileData[element.FileData.length - 1];
@@ -71,6 +72,8 @@ const LocalSummaryFunc = ({ inData }) => {
             let TodayLastOrdeDate = LocalTodayData[LocalTodayData.length - 1];
             LocalneedData.todayFirstOrder = LocalTodayData[0];
             LocalneedData.todaylastOrder = TodayLastOrdeDate;
+            let LocalTodayCount = Object.keys(LocalTodayData).length;
+            LocalneedData.todayTotalCount = LocalTodayCount;
         };
         LocalDataArray.push(LocalneedData)
 
