@@ -168,7 +168,7 @@
                 </a>
                 <ul id="charts-nav" class="nav-content  collapse" data-bs-parent="#sidebar-nav">
                     <li>
-                        <a id="TotalOrderId" href="../TodayQrs/TodayQrs.html">
+                        <a id="TotalOrderId" href="../TotalQrs/TotalQrs.html">
                             <i class="bi bi-circle"></i><span>Total-Qrs</span>
                         </a>
                     </li>
@@ -234,9 +234,9 @@
                                 <thead>
                                     <tr id="tableHeadRow">
                                         <th data-formatter="jFLocalSerialColumn">#</th>
-                                        <th data-field="fileName" data-filter-control="input">Branch Name</th>
-                                        <th data-field="todayTotalCount" data-filter-control="select"
-                                            data-footer-formatter="TotalItems" data-align="right">Todat Total Orders</th>
+                                        <th data-field="key" data-filter-control="input">Branch Name</th>
+                                        <th data-field="todayCount" data-filter-control="select"
+                                            data-footer-formatter="TotalItems" data-align="right">Today Qrs</th>
                                         <th data-field="OrderDate" data-filter-control="select">Today Date</th>
                                         <th data-field="SentInterVal" data-filter-control="select">Time Span</th>
                                     </tr>
@@ -265,7 +265,7 @@
             return index + 1;
         };
         function TotalItems(data, row) {
-            let localItemsData = data.map(i => i.todayTotalCount);
+            let localItemsData = data.map(i => i.todayCount);
             let sum = 0;
             // iterate over each item in the array
             for (let i = 0; i < localItemsData.length; i++) {

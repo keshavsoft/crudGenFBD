@@ -108,6 +108,7 @@ const LocalDateAndTime1 = ({ inDataTime }) => {
 
 const LocalDateAndTime = ({ inData }) => {
     const Localdate = inData;
+    // console.log("vasu::",Localdate);
 
     const today = new Date(); // Get today's date
     const todayDate = today.toISOString().split('T')[0]; // Extract today's date portion

@@ -1,7 +1,7 @@
 
 let StartFunc = ({ inDataToShow }) => {
     let LocalDataToShow = inDataToShow;
-    let LocalFilterData = LocalDataToShow.filter(e => e.todayTotalCount !== 0)
+    let LocalFilterData = LocalDataToShow.filter(e => e.todayCount !== 0)
 
     let LocalmodifiedData = jFLocalShowDateDiffInMinSec({ inData: LocalFilterData });
 
@@ -27,8 +27,8 @@ let jFLocalShowDateDiffInMinSec = ({ inData }) => {
         element.SentInterVal = ""
         element.OrderDate = ""
         if ((element.todayFirstOrder === "") === false) {
-            element.SentInterVal = jFLocalKInterval({ inCurrentdateandtime: element.todayFirstOrder.OrderData.Currentdateandtime });
-            element.OrderDate = element.todayFirstOrder.OrderData.Currentdateandtime;
+            element.SentInterVal = jFLocalKInterval({ inCurrentdateandtime: element.todaylastQr.DateTime });
+            element.OrderDate = element.todaylastQr.DateTime;
             return element;
         };
         return element;
