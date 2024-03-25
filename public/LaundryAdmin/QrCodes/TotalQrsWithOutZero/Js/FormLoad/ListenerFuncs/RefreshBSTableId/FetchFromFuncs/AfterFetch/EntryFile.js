@@ -27,9 +27,9 @@ let jFLocalShowDateDiffInMinSec = ({ inData }) => {
     jVarLocalReturnArray = inData.map(element => {
         element.SentInterVal = ""
         element.OrderDate = ""
-        if ((element.lastOrder === "") === false) {
-            element.SentInterVal = jFLocalKInterval({ inCurrentdateandtime: element.lastOrder.OrderData.Currentdateandtime });
-            element.OrderDate = element.lastOrder.OrderData.Currentdateandtime;
+        if ((element.todayFirstOrder === "") === false) {
+            element.SentInterVal = jFLocalKInterval({ inCurrentdateandtime: element.lastOrder.DateTime });
+            element.OrderDate = element.lastOrder.DateTime;
             return element;
         };
         return element;

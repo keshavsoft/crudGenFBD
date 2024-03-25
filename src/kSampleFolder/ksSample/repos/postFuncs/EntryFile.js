@@ -7,7 +7,8 @@ import {
     PostCustomPkFunc as PostCustomPkFuncDal,
     PostWithKeysCheckFunc as PostWithKeysCheckFuncDal,
     GetUsingLoadAshFunc as  GetUsingLoadAshFuncDal,
-    FilterDataFrombodyFunc as FilterDataFrombodyFuncDal
+    FilterDataFrombodyFunc as FilterDataFrombodyFuncDal,
+    GetsummaryFunc as GetsummaryFuncDal
 } from '../../dals/postFuncs/EntryFile.js';
 
 let PostFunc = async (inModalObject) => {
@@ -46,6 +47,10 @@ let GetUsingLoadAshFunc = ({ inId, inFindKey }) => {
     return GetUsingLoadAshFuncDal({ inId, inFindKey });
 };
 
+let GetsummaryFunc = ({  inFindKey }) => {
+    return GetsummaryFuncDal({  inFindKey });
+};
+
 let FilterDataFrombodyFunc = ({ inFindValue, inFindKey }) => {
     return FilterDataFrombodyFuncDal({ inFindValue, inFindKey });
 };
@@ -53,5 +58,5 @@ let FilterDataFrombodyFunc = ({ inFindValue, inFindKey }) => {
 export {
     PostFunc, PostFromModalFunc,
     PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc, PostFilterFunc, PostCustompkFunc,
-    PostWithKeysCheckFunc, GetUsingLoadAshFunc,FilterDataFrombodyFunc
+    PostWithKeysCheckFunc, GetUsingLoadAshFunc,FilterDataFrombodyFunc,GetsummaryFunc
 };
