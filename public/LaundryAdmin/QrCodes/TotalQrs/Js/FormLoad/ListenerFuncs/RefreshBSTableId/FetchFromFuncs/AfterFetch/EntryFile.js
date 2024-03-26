@@ -1,3 +1,4 @@
+import { StartFunc as StartFuncAddlisteners } from "../../../../../Addlisteners/EntryFile.js";
 
 let StartFunc = ({ inDataToShow }) => {
     let LocalDataToShow = inDataToShow;
@@ -11,6 +12,7 @@ let StartFunc = ({ inDataToShow }) => {
     $table.bootstrapTable("destroy").bootstrapTable({
         data: LocalmodifiedData,
     });
+    StartFuncAddlisteners();
 };
 
 let jFLocalHideSpinner = () => {
@@ -26,7 +28,10 @@ let jFLocalShowDateDiffInMinSec = ({ inData }) => {
         element.OrderDate = ""
         if ((element.todayFirstOrder === "") === false) {
             element.SentInterVal = jFLocalKInterval({ inCurrentdateandtime: element.lastOrder.DateTime });
+            element.SentFirstInterVal = jFLocalKInterval({ inCurrentdateandtime: element.firstOrder.DateTime });
             element.OrderDate = element.lastOrder.DateTime;
+            element.FirstOrderNumber = element.firstOrder.pk;
+            element.lastOrderNumber = element.lastOrder.pk;
             return element;
         };
         return element;
