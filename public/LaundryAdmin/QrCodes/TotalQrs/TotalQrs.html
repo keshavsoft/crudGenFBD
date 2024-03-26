@@ -230,16 +230,22 @@
                             <table id="table" data-toolbar="#toolbar" data-search="true" data-searchable="true"
                                 data-show-columns="true" data-show-columns-toggle-all="true" data-show-export="true"
                                 data-detail-formatter="detailFormatter" data-id-field="pk" data-show-toggle="true"
-                                data-filter-control="true" data-show-footer="true" >
+                                data-filter-control="true" data-show-footer="true">
                                 <thead>
                                     <tr id="tableHeadRow">
                                         <th data-formatter="jFLocalSerialColumn">#</th>
-                                        <th data-field="key" data-filter-control="input">Branch Name</th>
+                                        <th data-formatter="jFLocalToBranchDashboard" data-filter-control="input">Branch
+                                            Name</th>
                                         <th data-field="TotalCount" data-filter-control="select"
-                                            data-footer-formatter="TotalItems" data-align="right">Total Qrs</th>
-                                        <th data-field="OrderDate" data-filter-control="select">LastQr Date</th>
-                                        <th data-field="SentInterVal" data-filter-control="select">Time span</th>
-                                       
+                                            data-footer-formatter="TotalItems" data-align="right">Total #</th>
+                                        <th data-field="OrderDate" data-filter-control="select" data-visible="false">
+                                            LastQr Date</th>
+                                        <th data-field="FirstOrderNumber" data-filter-control="input">First #</th>
+                                        <th data-field="lastOrderNumber" data-filter-control="input">Last #</th>
+                                        <th data-field="SentFirstInterVal" data-filter-control="select">First Time span
+                                        </th>
+                                        <th data-field="SentInterVal" data-filter-control="select">Last Time span</th>
+
                                     </tr>
                                 </thead>
                             </table>
@@ -276,11 +282,13 @@
         };
 
         function jFLocalToBranchDashboard(data, row) {
-            console.log("ssssssssssss",row);
+            localStorage.clear();
+            // localStorage.setItem("BranchName", row.key);
+
             return [
-                `<a href="" class="btn btn-success">`,
+                `<a href="#" class="BranchNavClass" data-branchName=${row.key}>`,
                 ` `,
-                `${row.fileName}</a>`
+                `${row.key}</a>`
             ].join('');
         };
     </script>
