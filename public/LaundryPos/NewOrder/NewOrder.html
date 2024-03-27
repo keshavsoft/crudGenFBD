@@ -43,7 +43,7 @@
                                     class="col-sm-4 col-form-label col-form-label-lg">Mobile</label>
                                 <div class="col-sm-8">
                                     <input type="email" class="form-control form-control-lg"
-                                        id="OrderInfoCustomerMobileId">
+                                        id="OrderInfoCustomerMobileId" disabled>
                                 </div>
                             </div>
                         </div>
@@ -53,16 +53,16 @@
                                 <label for="BranchNameId"
                                     class="col-sm-4 col-form-label col-form-label-sm">Branch</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control form-control-sm" id="BranchNameId">
+                                    <input type="text" class="form-control form-control-sm" id="BranchNameId" disabled>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row fs-3">
                         <div class="col"> <input class="form-control fs-4" tabindex="-1" type="datetime-local"
-                                id="Currentdateandtime"></div>
+                                id="Currentdateandtime" disabled></div>
                         <div class="col">
-                            <button type="button" class="btn btn-warning fs-4" id="CheckOutId">CheckOut</button>
+                            <button type="button" class="btn btn-warning fs-4" id="CheckOutId" hidden>CheckOut</button>
                         </div>
                     </div>
 
@@ -124,9 +124,9 @@
                                             <div class="col-10">
                                                 <div class="row mt-3">
                                                     <div class="col-md-1">
-                                                        <label for="inputEmail4" class="form-label">Item#</label>
+                                                        <label for="inputEmail4" class="form-label" hidden>Item#</label>
                                                         <input type="number" class="form-control ItemSerialClass"
-                                                            disabled min="1" max="20">
+                                                            disabled min="1" max="20" hidden>
 
                                                     </div>
                                                     <div class="col-md-3">
@@ -203,13 +203,13 @@
                                                     </div>
                                                     <div class="col-md-2">
                                                         <button type="button"
-                                                            class="btn btn-success AddItemButtonClass fs-4"
+                                                            class="btn btn-success AddItemButtonClass fs-1"
                                                             id="AddItemButtonId">+</button>
                                                     </div>
                                                     <div class="col-1">
                                                         <div class="form-check form-switch">
                                                             <input class="form-check-input AddOnMenuClass fs-3"
-                                                                type="checkbox" role="switch" id="AddOnMenuId">
+                                                                type="checkbox" role="switch" id="AddOnMenuId" hidden>
                                                         </div>
                                                     </div>
                                                 </div>
