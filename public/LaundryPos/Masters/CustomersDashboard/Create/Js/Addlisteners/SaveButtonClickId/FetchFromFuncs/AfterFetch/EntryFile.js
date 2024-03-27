@@ -1,5 +1,7 @@
 let StartFunc = ({ inFetchData }) => {
     let LocalinFetchData = inFetchData;
+    let LocalCustomerName = document.getElementById("CustomerName").value;
+    let LocalCustomerMobile = document.getElementById("Mobile").value;
     let jVarLocalFromDashBoard = getUrlQueryParams({ inGetKey: "FromDashBoard" });
 
 
@@ -14,11 +16,15 @@ let StartFunc = ({ inFetchData }) => {
     if (jVarLocalFromDashBoard) {
         const url = new URL(window.location.href);
         const params1 = new URLSearchParams(url.search);
-        let NewURl = new URL("../../../Dashboard/Dashboard.html", url);
+        let NewURl = new URL("../../../NewOrder/NewOrder.html", url);
         const new_url = new URL(`${NewURl.href}?${params1}`);
+        new_url.searchParams.append('CustomerName', LocalCustomerName);
+        new_url.searchParams.append('CustomerMobile', LocalCustomerMobile);
+
         window.location.href = new_url.href;
         return;
     };
+
 
     const url = new URL(window.location.href);
     const params1 = new URLSearchParams(url.search);
