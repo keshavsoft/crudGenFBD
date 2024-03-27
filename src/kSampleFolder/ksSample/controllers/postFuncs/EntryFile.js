@@ -140,12 +140,12 @@ let GetsummaryFunc = (req, res) => {
 };
 
 let GetWeeksummaryFunc = (req, res) => {
-    let LocalBodyFindKey = req.body.FindKey
+    let LocalBodyFilterKey = req.body.FilterKey;
+    let LocalBodyGroupKey = req.body.GroupKey;
 
     let LocalFromRepo = GetWeeksummaryFuncrepo({ inFindKey: LocalBodyFindKey });
     res.json(LocalFromRepo);
 };
-
 
 let FilterDataFrombodyFunc = (req, res) => {
     let LocalBodyFindKey = req.body.FindKey

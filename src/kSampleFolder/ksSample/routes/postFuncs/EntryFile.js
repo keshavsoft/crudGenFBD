@@ -22,8 +22,7 @@ router.post('/WithKeysCheck', PostWithKeysCheckFunc);
 router.post('/GetUsingLoadAsh/:Id', GetUsingLoadAshFunc);
 router.post('/FilterDataFrombody', FilterDataFrombodyFunc);
 router.post('/summary', GetsummaryFunc);
-router.post('/summary/Week', GetWeeksummaryFunc);
-
+router.post('/FilterAndGroup', GetWeeksummaryFunc);
 
 router.post('/Filter', PostFilterFunc);
 router.post('/FromModal', PostFromModalFunc);
