@@ -4,7 +4,6 @@ let StartFunc = async() => {
     await StartFuncFromUrlParams();
     
     jFShowDeliveryDateTime();
-
 };
 
 const jFShowDeliveryDateTime = () => {

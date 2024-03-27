@@ -4,7 +4,7 @@ import { StartFunc as StartFuncShowOnDom } from "../../../ShowOnDom/StartFunc.js
 import { StartFunc as StartFuncFromLocalStorage } from "../../../../FromLocalStorage/OrdersData/FromPk.js";
 import { StartFunc as StartFuncToLocalStorage } from "../../../../ToLocalStorage/ItemsInOrder/Bulk.js";
 import { StartFunc as StartFuncToLocalStorageAddOn } from "../../../../ToLocalStorage/AddOnData/Bulk.js";
-
+import LocalStorageKeys from '../../../Js/LocalStorageKeys.json' assert {type: 'json'};
 
 let StartFunc = async () => {
     let jVarLocalRowPk = getUrlQueryParams({ inGetKey: "OrderNumber" });
@@ -16,7 +16,21 @@ let StartFunc = async () => {
 
     StartFuncAddToDom();
     StartFuncShowOnDom({ inPk: jVarLocalRowPk });
+    jFLocalShowItemSerialId();
+};
 
+
+let jFLocalShowItemSerialId = () => {
+    let jVarLocalItemSerialId = document.getElementById("ItemSerialId");
+    let jVarLocalFromLocalStorage = localStorage.getItem(LocalStorageKeys.OrdersData);
+    let jVarLocalFromLocalStorageAsJson = JSON.parse(jVarLocalFromLocalStorage);
+    let jVarLocalKeysOnly = Object.keys(jVarLocalFromLocalStorageAsJson.ItemsInOrder);
+    let jVarLocalToNumbers = jVarLocalKeysOnly.map(element => parseInt(element));
+    Object.keys(jVarLocalFromLocalStorageAsJson.ItemsInOrder);
+
+    // console.log("jVarLocalFromLocalStorageAsJson : ", jVarLocalToNumbers);
+
+    jVarLocalItemSerialId.value = Math.max(...jVarLocalToNumbers) + 1;
 };
 
 let jFLocalFromOrdersDataToItemsInOrder = () => {

@@ -2,7 +2,6 @@ import CommonKeys from "../../ToLocalStorage/Keys.json" assert { type: "json" };
 
 
 const StartFunc = ({ inBranchName }) => {
-
     let jVarLocalBranchName = inBranchName;
 
     let jVarLocalStorageKey = CommonKeys.OrdersData;

@@ -1,17 +1,19 @@
 
 let StartFunc = ({ inDataToShow }) => {
     let LocalDataToShow = inDataToShow;
-   let LocalFilterData = LocalDataToShow.filter(e => e.DataCount !== 0)
 
+    let LocalFilterData = LocalDataToShow.filter(e => e.DataCount !== 0);
     let LocalmodifiedData = jFLocalShowDateDiffInMinSec({ inData: LocalFilterData });
 
     if ((LocalmodifiedData.length > 0) === false) swal.fire({ title: "No data !", icon: "error" });
+
+    let LocalSortedData = LocalmodifiedData.sort((a, b) => b.DataCount - a.DataCount);
 
     jFLocalHideSpinner();
     var $table = $('#table');
 
     $table.bootstrapTable("destroy").bootstrapTable({
-        data: LocalmodifiedData,
+        data: LocalSortedData,
     });
 };
 
@@ -26,14 +28,20 @@ let jFLocalShowDateDiffInMinSec = ({ inData }) => {
 
     jVarLocalReturnArray = inData.map(element => {
         element.SentInterVal = ""
-        element.OrderDate = ""
+        element.OrderDate = "";
+
         if ((element.lastOrder === "") === false) {
             element.SentInterVal = jFLocalKInterval({ inCurrentdateandtime: element.lastOrder.OrderData.Currentdateandtime });
             element.OrderDate = element.lastOrder.OrderData.Currentdateandtime;
+
+            element.FirstInterval = jFLocalKInterval({ inCurrentdateandtime: element.firstOrder.OrderData.Currentdateandtime });
+
             return element;
         };
+
         return element;
     });
+
     return jVarLocalReturnArray;
 };
 
@@ -47,8 +55,6 @@ let jFLocalKInterval = ({ inCurrentdateandtime }) => {
     var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
 
     return diffDays + " days, " + diffHrs + " hours, " + diffMins + " min...";
-
-    // console.log(diffDays + " days, " + diffHrs + " hours, " + diffMins + " min...");
 };
 
 

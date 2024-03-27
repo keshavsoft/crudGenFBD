@@ -174,7 +174,7 @@
                     </li>
                     <li>
                         <a id="TotalOrderWithoutId" href="#"  class="active">
-                            <i class="bi bi-circle"></i><span>Total Orders-without Zero</span>
+                            <i class="bi bi-circle"></i><span>Not Empty</span>
                         </a>
                     </li>
 
@@ -205,7 +205,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Orders - Show</h1>
+            <h1>Total Orders Summary sort by Count</h1>
 
 
             <nav>
@@ -230,15 +230,15 @@
                             <table id="table" data-toolbar="#toolbar" data-search="true" data-searchable="true"
                                 data-show-columns="true" data-show-columns-toggle-all="true" data-show-export="true"
                                 data-detail-view="true" data-detail-formatter="detailFormatter" data-id-field="pk"
-                                data-show-toggle="true" data-show-footer="true" data-filter-control="true" data-buttons-class="primary">
+                                data-show-toggle="true" data-show-footer="true" data-filter-control="true">
                                 <thead>
                                     <tr id="tableHeadRow">
                                         <th data-formatter="jFLocalSerialColumn">#</th>
-                                        <th data-field="fileName" data-filter-control="input">Branch Name</th>
-                                        <th data-field="DataCount" data-filter-control="select"
-                                            data-footer-formatter="TotalItems" data-align="right">Total Orders</th>
-                                        <th data-field="OrderDate" data-filter-control="select">LastOrde Date</th>
-                                        <th data-field="SentInterVal" data-filter-control="select">Time sapm</th>
+                                        <th data-field="fileName">Branch Name</th>
+                                        <th data-field="DataCount"
+                                            data-footer-formatter="TotalItems" data-align="right">Orders</th>
+                                        <th data-field="SentInterVal">Last Time Span</th>
+                                        <th data-field="FirstInterval">First Time Span</th>
                                     </tr>
                                 </thead>
                             </table>
