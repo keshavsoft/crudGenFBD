@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css">
+
+    <title>TabularColumnsData</title>
+    <!-- Custom styles for this template -->
+    <link href="./css/headers.css" rel="stylesheet">
+</head>
+
+<body class="mb-5">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="bootstrap" viewBox="0 0 118 94">
+            <title>Bootstrap</title>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z">
+            </path>
+        </symbol>
+    </svg>
+
+    <header>
+        <div class="container" id="NavBarId">
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#" id="BranchNameId">{{Branch}}</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarsExample03">
+                        <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                            <li class="nav-item">
+                                <a href="#" id="HomeId" class="nav-link text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                        class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z">
+                                        </path>
+                                        <path fill-rule="evenodd"
+                                            d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z">
+                                        </path>
+                                    </svg>
+                                    Home
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a id="QrCodesTableId" href="#" class="nav-link text-white QrCodesTableAClass">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                        class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
+                                        <path
+                                            d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z">
+                                        </path>
+                                    </svg>
+                                    Orders
+                                </a>
+                            </li>
+
+
+                        </ul>
+                        <ul class="navbar-nav">
+                            <li id="HeaderLoginButtonId">
+                                <a href="#" class="nav-link text-white" id="NavBarloginId">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                        class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z">
+                                        </path>
+                                    </svg>
+                                    Login
+                                </a>
+                            </li>
+
+                            <div id="HeaderUserIdLi" class="visually-hidden dropdown text-end">
+                                <a href="#" id="HeaderUserIdDropDown" data-bs-toggle="dropdown" aria-expanded="false"
+                                    class="nav-link text-white dropdown-toggle">
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                        class="bi bi-person-check-fill d-block mx-auto mb-1 d-none d-md-block"
+                                        viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z">
+                                        </path>
+                                        <path
+                                            d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z">
+                                        </path>
+                                    </svg>
+
+                                    UserName
+                                </a>
+                                <ul class="dropdown-menu text-small">
+                                    <li><a class="dropdown-item" href="#" id="HeaderLogOutId">
+                                            <i class="bi bi-power" style="font-size: 1.3rem; color:orangered"></i>
+                                            logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="modal fade" id="LoginModalId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Enter client user credentials</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="LoginFormPopUpId" class="" onsubmit="return false" novalidate="">
+                        <div class="mb-3 form-floating is-valid">
+                            <input type="text" class="form-control" id="KUserNameInput" required="">
+                            <label for="KUserNameInput">User Name</label>
+                            <div class="invalid-feedback">
+                                User Name cannot be empty.
+                            </div>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input type="password" class="form-control" id="KPasswordInput" required="">
+                            <label for="KPasswordInput">Password</label>
+                            <div class="invalid-feedback">
+                                Password cannot be empty.
+                            </div>
+                        </div>
+                        <input id="LoginButtonOnModalId" type="submit" class=" btn btn-primary">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-2">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+            aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a id="BRDDashboardId" href="#">Dashboard</a></li>
+                <li class="breadcrumb-item"><a id="TodayDashboardId" href="#">Today</a></li>
+                <li class="breadcrumb-item"><a class="link-warning " id="RefreshBSTableId" href="#">Orders</a>
+                </li>
+                <!-- <li class="breadcrumb-item active" aria-current="page">QrCodesTable</li> -->
+            </ol>
+        </nav>
+    </div>
+
+    <main>
+        <div class="container">
+            <div id="AlertSuccessId" class="alert alert-success alert-dismissible fade show mt-2" role="alert"
+                style="display: none;">
+                <strong id="RowPkInsertSuccessStrongId">SavedPk</strong> Saved
+                Sucessfully.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div>
+
+                <div class="spinner-border" id="SpinnerId" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+
+                <table id="table" data-toolbar="#toolbar" data-search="true" data-show-footer="true"
+                    data-searchable="true" data-show-columns="true" data-show-columns-toggle-all="true"
+                    data-show-export="true" data-detail-view="true" data-detail-formatter="detailFormatter"
+                    data-id-field="pk" data-show-toggle="true" data-buttons-class="primary">
+                    <thead>
+                        <tr id="tableHeadRow">
+                            <th data-formatter="jFLocalSerialColumn">#</th>
+                            <th data-field="UuId">Order Number</th>
+                            <th data-field="CustomerData.CustomerName">Customer Name</th>
+                            <th data-field="OrderData.BranchName">Branch</th>
+                            <th data-field="CustomerData.CustomerMobile">Mobile</th>
+                            <th data-formatter="jFLocalDateFormatter">Date</th>
+                            <th data-field="TimeSpan">TimeSpan</th>
+                            <th data-formatter="jFLocalOrderDetails">Order Details</th>
+                            <th data-formatter="jFLocalSettlementDetails" data-footer-formatter="priceFormatter">
+                                Settlement</th>
+                            <th data-formatter="jFLocalQrCodeDetails" data-footer-formatter="QrFormatter">QrCodes
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+
+        </div>
+    </main>
+
+    <footer class="footer mt-auto py-3 bg-light fixed-bottom">
+        <div class="container">
+            <div class="bg-light d-flex justify-content-between">
+                <div>KeshavSoft v19.10</div>
+
+                <div data-BaseString="Last refresh : " id="KLastRefreshDT">Last refresh : </div>
+            </div>
+        </div>
+    </footer>
+
+<!-- template for detailFormatter  -->
+    <template id="TemplateId">
+        <!-- General Form Elements -->
+        <form id="FormId">
+
+            <div class="row mb-3">
+
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">CashAmount</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control InputClass" autocomplete="off" name="CashAmount"
+                            id="CashAmountId" disabled>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">CardAmount</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control InputClass" autocomplete="off" name="CardAmount"
+                            id="CardAmountId" autofocus="" disabled>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">UPIAmount</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control InputClass" name="UPIAmount" id="UPIAmountId"
+                            autofocus="" disabled>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </form>
+        <!-- End General Form Elements -->
+
+    </template>
+
+
+<!-- js for detailFormatter -->
+    <script>
+        // Template input Code
+        function detailFormatter(index, row, $element) {
+            let template = document.getElementById("TemplateId");
+            const clone = template.content.cloneNode(true);
+            clone.getElementById("CashAmountId").value = row.CashAmount;
+            clone.getElementById("CardAmountId").value = row.CardAmount;
+            clone.getElementById("UPIAmountId").value = row.UPIAmount;
+            $element.append(clone)
+        };
+
+        function jFLocalSerialColumn(value, row, index) {
+            return index + 1;
+        };
+
+        function jFLocalDateFormatter(value, row, index) {
+            return new Date(row.OrderData.Currentdateandtime).toLocaleDateString('en-GB');
+        };
+
+        function jFLocalOrderDetails(value, row, index) {
+            return [
+                `<a href="../../OrderWithoutCheckout/OrderWithoutCheckout.html?BranchName=${row.OrderData.BranchName}&OrderNumber=${row.UuId}" class="btn btn-success" >${row.AggValues.ItemDetails}</a>`,
+            ].join('')
+        }
+
+        function jFLocalSettlementDetails(value, row, index) {
+            if (row.IsSettled) {
+                return [
+                    `<a href="#" data-ordernumber="${row.UuId}" data-BranchName="${row.OrderData.BranchName}" class="btn btn-danger SettlementButtonClass" >`,
+                    `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">`,
+                    `<path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z" />`,
+                    `</svg>`,
+                    ` `,
+                    `${row.AggValues.SettlementAmount}</a>`
+                ].join('')
+            }
+            else {
+                return [
+                    `<a href="#" data-ordernumber="${row.UuId}" data-BranchName="${row.OrderData.BranchName}" class="btn btn-outline-danger SettlementButtonClass" >`,
+                    `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">`,
+                    `<path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z" />`,
+                    `</svg>`,
+                    ` `,
+                    `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">`,
+                    `<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>`,
+                    `<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>`,
+                    `</svg>`,
+                    `</a>`
+                ].join('')
+            }
+        }
+
+        function jFLocalQrCodeDetails(value, row, index) {
+            if (row.IsQrCodesRaised) {
+                return [
+                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-primary QRGenerateClass">`,
+                    `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">`,
+                    `<path d="M2 2h2v2H2V2Z"></path>`,
+                    `<path d="M6 0v6H0V0h6ZM5 1H1v4h4V1ZM4 12H2v2h2v-2Z"></path>`,
+                    `<path d="M6 10v6H0v-6h6Zm-5 1v4h4v-4H1Zm11-9h2v2h-2V2Z"></path>`,
+                    `<path d="M10 0v6h6V0h-6Zm5 1v4h-4V1h4ZM8 1V0h1v2H8v2H7V1h1Zm0 5V4h1v2H8ZM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8H6Zm0 0v1H2V8H1v1H0V7h3v1h3Zm10 1h-1V7h1v2Zm-1 0h-1v2h2v-1h-1V9Zm-4 0h2v1h-1v1h-1V9Zm2 3v-1h-1v1h-1v1H9v1h3v-2h1Zm0 0h3v1h-2v1h-1v-2Zm-4-1v1h1v-2H7v1h2Z">`,
+                    `</path>`,
+                    `<path d="M7 12h1v3h4v1H7v-4Zm9 2v2h-3v-1h2v-1h1Z"></path>`,
+                    `</svg>`,
+                    ` `,
+                    `${row.TotalItems}`,
+                    `</a>`
+                ].join('')
+            } else {
+                return [
+                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-outline-primary QRGenerateClass">`,
+                    `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">`,
+                    `<path d="M2 2h2v2H2V2Z"></path>`,
+                    `<path d="M6 0v6H0V0h6ZM5 1H1v4h4V1ZM4 12H2v2h2v-2Z"></path>`,
+                    `<path d="M6 10v6H0v-6h6Zm-5 1v4h4v-4H1Zm11-9h2v2h-2V2Z"></path>`,
+                    `<path d="M10 0v6h6V0h-6Zm5 1v4h-4V1h4ZM8 1V0h1v2H8v2H7V1h1Zm0 5V4h1v2H8ZM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8H6Zm0 0v1H2V8H1v1H0V7h3v1h3Zm10 1h-1V7h1v2Zm-1 0h-1v2h2v-1h-1V9Zm-4 0h2v1h-1v1h-1V9Zm2 3v-1h-1v1h-1v1H9v1h3v-2h1Zm0 0h3v1h-2v1h-1v-2Zm-4-1v1h1v-2H7v1h2Z">`,
+                    `</path>`,
+                    `<path d="M7 12h1v3h4v1H7v-4Zm9 2v2h-3v-1h2v-1h1Z"></path>`,
+                    `</svg>`,
+                    ` `,
+                    `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">`,
+                    `<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>`,
+                    `<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>`,
+                    `</svg>`,
+                    `</a>`
+                ].join('')
+            }
+        }
+
+        function priceFormatter(data) {
+            var field = this.field
+            return '₹ ' + data.map(function (row) {
+                return +row.AggValues.SettlementAmount
+            }).reduce(function (sum, i) {
+                return sum + i
+            }, 0)
+        }
+
+        function QrFormatter(data) {
+            return data.map(ele => ele.TotalItems).reduce((a, b) => a + b, 0)
+
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
+
+    <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
+    <script
+        src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/export/bootstrap-table-export.min.js"></script>
+    <script
+        src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+
+    <script src="./Js/headerChange.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="./Js/QrCodesTable.js" type="module"></script>
+</body>
+
+</html>
