@@ -8,10 +8,13 @@ let StartFunc = ({ inDataToShow }) => {
     if ((LocalDataToShow.length > 0) === false) swal.fire({ title: "No data !", icon: "error" });
 
     jFLocalHideSpinner();
+
+    let LocalSortedData = LocalmodifiedData.sort((a, b) => b.todayTotalCount - a.todayTotalCount);
+
     var $table = $('#table');
 
     $table.bootstrapTable("destroy").bootstrapTable({
-        data: LocalmodifiedData,
+        data: LocalSortedData
     });
 };
 
@@ -29,6 +32,9 @@ let jFLocalShowDateDiffInMinSec = ({ inData }) => {
         if ((element.todayFirstOrder === "") === false) {
             element.SentInterVal = jFLocalKInterval({ inCurrentdateandtime: element.todayFirstOrder.OrderData.Currentdateandtime });
             element.OrderDate = element.todayFirstOrder.OrderData.Currentdateandtime;
+
+            element.FirstInterval = jFLocalKInterval({ inCurrentdateandtime: element.firstOrder.OrderData.Currentdateandtime });
+
             return element;
         };
         return element;
