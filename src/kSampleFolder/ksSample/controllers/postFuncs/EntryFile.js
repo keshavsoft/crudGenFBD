@@ -8,7 +8,8 @@ import {
     PostWithKeysCheckFunc as PostWithKeysCheckFuncRepo,
     GetUsingLoadAshFunc as GetUsingLoadAshFuncRepo,
     FilterDataFrombodyFunc as FilterDataFrombodyFuncRepo,
-    GetsummaryFunc as GetsummaryFuncRepo
+    GetsummaryFunc as GetsummaryFuncRepo,
+    GetWeeksummaryFunc as GetWeeksummaryFuncrepo
 } from '../../repos/postFuncs/EntryFile.js';
 
 import {
@@ -138,6 +139,13 @@ let GetsummaryFunc = (req, res) => {
     res.json(LocalFromRepo);
 };
 
+let GetWeeksummaryFunc = (req, res) => {
+    let LocalBodyFindKey = req.body.FindKey
+
+    let LocalFromRepo = GetWeeksummaryFuncrepo({ inFindKey: LocalBodyFindKey });
+    res.json(LocalFromRepo);
+};
+
 
 let FilterDataFrombodyFunc = (req, res) => {
     let LocalBodyFindKey = req.body.FindKey
@@ -153,5 +161,5 @@ export {
     PostFunc, PostFromModalFunc,
     PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc,
     PostUploadImageFunc, PostFilterFunc, PostCustomPkFunc,
-    PostWithKeysCheckFunc, GetUsingLoadAshFunc, FilterDataFrombodyFunc,GetsummaryFunc
+    PostWithKeysCheckFunc, GetUsingLoadAshFunc, FilterDataFrombodyFunc,GetsummaryFunc,GetWeeksummaryFunc
 };

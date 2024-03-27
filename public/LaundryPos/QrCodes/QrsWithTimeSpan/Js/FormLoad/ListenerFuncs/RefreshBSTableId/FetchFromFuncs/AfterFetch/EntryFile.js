@@ -2,7 +2,8 @@
 let StartFunc = ({ inDataToShow, inQrCodeData, ScanedQrCodeData }) => {
     let LocalDataToShow = inDataToShow;
 
-    let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    let jVarLocalBranchName = localStorage.getItem("BranchName");
+
     let LocalFilterQrCodeData = inQrCodeData.filter(e => e.BookingData.OrderData.BranchName == jVarLocalBranchName);
     let LocalFilterScanedQrData = ScanedQrCodeData.filter(e => e.BranchName == jVarLocalBranchName);
 

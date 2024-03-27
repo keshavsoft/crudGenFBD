@@ -9,6 +9,7 @@ import { StartFunc as StartFuncWriteFileKeysCheck } from '../../kLowDb/WriteTofi
 import { StartFunc as StartFuncreadFileUsingLoadAsh } from '../../kLowDb/ReadFileList/readFileUsingLoadAsh.js';
 import { StartFunc as StartFuncreadreadFileUsingbyBody } from '../../kLowDb/ReadFileList/readFileUsingbyBody.js';
 import { StartFunc as StartFunreadFileSummary } from '../../kLowDb/ReadFileList/readFileSummary.js';
+import { StartFunc as StartFuncreadFileWeekSummary } from '../../kLowDb/ReadFileList/readFileWeekSummary.js';
 
 
 // import { StartFunc as StartFuncwriteFile } from '../../kLowDb/WriteTofile/';
@@ -49,6 +50,10 @@ let GetsummaryFunc = ({ inFindKey }) => {
     return StartFunreadFileSummary({ inFindKey });
 };
 
+let GetWeeksummaryFunc = ({ inFindKey }) => {
+    return StartFuncreadFileWeekSummary({ inFindKey });
+};
+
 let FilterDataFrombodyFunc = ({ inFindValue, inFindKey }) => {
     return StartFuncreadreadFileUsingbyBody({ inFindValue, inFindKey });
 };
@@ -56,5 +61,5 @@ let FilterDataFrombodyFunc = ({ inFindValue, inFindKey }) => {
 export {
     PostFunc, PostFromModalFunc,
     PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc, PostCustomPkFunc,
-    PostWithKeysCheckFunc, GetUsingLoadAshFunc, FilterDataFrombodyFunc, GetsummaryFunc
+    PostWithKeysCheckFunc, GetUsingLoadAshFunc, FilterDataFrombodyFunc, GetsummaryFunc,GetWeeksummaryFunc
 };
