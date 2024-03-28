@@ -286,60 +286,58 @@
 
         <ul class="sidebar-nav" id="sidebar-nav">
             <li class="nav-item">
-                <a id="HomeId" class="nav-link collapsed" href="../../Dashboard/Dashboard.html">
+                <a id="HomeId" class="nav-link collapsed" href="../../../Dashboard/Dashboard.html">
                     <i class="bi bi-grid"></i>
                     <span>Home</span>
                 </a>
             </li>
 
-
             <li class="nav-item">
-                <a class="nav-link collapsed" href="../../Dashboard/Dashboard.html">
-                    <i class="bi bi-columns-gap"></i></i>
-                    <span>Masters-Dashboard</span>
+                <a  class="nav-link collapsed" href="../../Dashboard/Dashboard.html" >
+                    <i class="bi bi-clock-fill"></i></i>
+                    <span>All</span>
                 </a>
             </li>
 
             <!-- End Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link " data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-bar-chart-line"></i>Orders</span><i class="bi bi-chevron-down ms-auto"></i>
+                <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-record-circle-fill"></i><span>Orders</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="charts-nav" class="nav-content  " data-bs-parent="#sidebar-nav">
+                <ul id="charts-nav" class="nav-content  collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="../../NiceOrders/ShowAll/ShowAll.html" class="">
+                            <i class="bi bi-circle"></i><span>ShowAll</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li><!-- End Today Orders Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link " data-bs-target="#Qrcodes-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-qr-code"></i><span>Qrcodes</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="Qrcodes-nav" class="nav-content  " data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="../ShowAll/ShowAll.html" class="">
                             <i class="bi bi-circle"></i><span>ShowAll</span>
                         </a>
                     </li>
                     <li>
+                        <a href="../DcWithQr/DcWithQr.html" class="">
+                            <i class="bi bi-circle"></i><span>DcWithQr</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="#" class="active">
-                            <i class="bi bi-circle"></i><span>Filter-ShowAll</span>
+                            <i class="bi bi-circle"></i><span>Order-Details</span>
                         </a>
                     </li>
 
                 </ul>
-            </li><!-- End  Customers Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#TodayDC-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-x-diamond-fill"></i><span>Scan</span><i class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="TodayDC-nav" class="nav-content  collapse" data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="../../Scane/ShowAll/ShowAll.html" class="">
-                            <i class="bi bi-circle"></i><span>ShowAll</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../../Scane/FilterShowAll/FilterShowAll.html" class="">
-                            <i class="bi bi-circle"></i><span>Filter-ShowAll</span>
-                        </a>
-                    </li>
-
-                </ul>
-            </li><!-- End  Items Nav -->
-
+            </li><!-- End Today Qrcodes Nav -->
         </ul>
     </aside>
     <!-- End Sidebar-->
@@ -347,45 +345,16 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Report- Orders</h1>
+            <h1>Order-Details</h1>
 
 
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="../../Dashboard/Dashboard.html" id="BCHomeId">Home</a></li>
-                    <li class="breadcrumb-item active" id="RefreshBSTableId">Orders</li>
+                    <li class="breadcrumb-item"><a href="../../../Dashboard/Dashboard.html">Home</a></li>
+                    <li class="breadcrumb-item"> <a href="../../Dashboard/Dashboard.html">All</a></li>
+                    <li class="breadcrumb-item active" id="RefreshBSTableId">Order-Details</li>
                 </ol>
-
             </nav>
-            <div class="row">
-                <div class="col-4">
-                    <!-- <label class="col-md-4 col-form-label">startDate</label> -->
-                    <div class="col-md-8">
-                        <input kvs1="" id="startDateId" name="startDate" type="Date" data-dataattribute="Description"
-                            value="" data-clienteval="" type="Number" class="form-control" placeholder="Enter Pcs"
-                            autocomplete="off" required>
-                        <div class="invalid-feedback " id="PcsClass">
-                            Should not be Empty!!
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <!-- <label class="col-md-4 col-form-label">endDate</label> -->
-                    <div class="col-md-8">
-                        <input kvs1="" id="endDateId" name="endDate" type="Date" data-dataattribute="Description"
-                            value="" data-clienteval="" type="Number" class="form-control" placeholder="Enter Pcs"
-                            autocomplete="off" required>
-                        <div class="invalid-feedback " id="PcsClass">
-                            Should not be Empty!!
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="col-md-8">
-                        <button type="button" name="" id="DateFilerButtonId" class="btn btn-primary">Go</button>
-                    </div>
-                </div>
-            </div>
         </div>
         <!-- End Page Title -->
 
@@ -395,36 +364,27 @@
                     <div class="card">
                         <div class="card-body">
 
-
                             <div class="spinner-border" id="SpinnerId" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                            <table id="table" data-toolbar="#toolbar" data-search="true" data-show-footer="true"
-                                data-searchable="true" data-show-columns="true" data-show-columns-toggle-all="true"
-                                data-show-export="true" data-detail-formatter="detailFormatter" data-id-field="pk"
-                                data-show-toggle="true">
-                                <thead>
-                                    <tr id="tableHeadRow">
-                                        <th data-formatter="jFLocalSerialColumn">#</th>
-                                        <th data-field="UuId">Order #</th>
-                                        <th data-field="CustomerData.CustomerName">Customers</th>
-                                        <!-- <th data-field="OrderData.BranchName">Branch</th> -->
-                                        <th data-field="CustomerData.CustomerMobile">Mobile</th>
-                                        <th data-formatter="jFLocalDateFormatter">Date</th>
-                                        <th data-field="TotalPcs" data-footer-formatter="PcsFormatter"
-                                            data-align="right">Pcs</th>
-                                        <th data-field="CashAmount" data-footer-formatter="CashAmountFormatter"
-                                            data-align="right">Cash</th>
-                                        <th data-field="CardAmount" data-footer-formatter="CardAmountFormatter"
-                                            data-align="right">Card</th>
-                                        <th data-field="UPIAmount" data-footer-formatter="UPIAmountFormatter"
-                                            data-align="right">UPI</th>
-                                        <th data-field="AggValues.SettlementAmount"
-                                            data-footer-formatter="priceFormatter" data-align="right">Total</th>
-
-                                    </tr>
-                                </thead>
-                            </table>
+                            <table id="table" data-toolbar="#toolbar" data-search="true" data-searchable="true"
+                            data-show-columns="true" data-show-columns-toggle-all="true" data-show-export="true"
+                             data-detail-formatter="detailFormatter" data-id-field="pk"
+                            data-show-toggle="true" data-filter-control="true" data-buttons-class="primary">
+                            <thead>
+                                <tr id="tableHeadRow">
+                                    <th data-formatter="jFLocalSerialColumn">#</th>
+                                    <th data-field="pk" data-filter-control="input">QrCode</th>
+                                    <!-- <th data-field="VoucherRef" data-filter-control="select">VoucherRef</th> -->
+                                    <th data-field="ItemName" data-filter-control="select">ItemName</th>
+                                    <th data-field="Rate" data-filter-control="select">Rate</th>
+                                    <th data-field="DateTime" data-filter-control="select">Order DateTime</th>
+                                    <th data-field="DeliveryDateTime" data-filter-control="select">DeliveryDateTime</th>
+                                    <th data-field="TimeSpan" data-filter-control="select">TimeSpan</th>
+                                    <!-- <th data-field="DCFactory" data-filter-control="select">DC Factory</th> -->
+                                </tr>
+                            </thead>
+                        </table>
                         </div>
                     </div>
                 </div>
@@ -451,29 +411,7 @@
             return new Date(row.OrderData.Currentdateandtime).toLocaleDateString('en-GB');
         };
 
-        function CashAmountFormatter(data) {
-            return '₹ ' + data.map(ele => ele.CashAmount).filter(value => value !== undefined).reduce((a, b) => a + b, 0)
-        };
-        function PcsFormatter(data) {
-            return '₹ ' + data.map(ele => ele.TotalPcs).filter(value => value !== undefined).reduce((a, b) => a + b, 0)
-        };
-        function CardAmountFormatter(data) {
-            return '₹ ' + data.map(ele => ele.CardAmount).filter(value => value !== undefined).reduce((a, b) => a + b, 0)
-        };
-        function UPIAmountFormatter(data) {
-            return '₹ ' + data.map(ele => ele.UPIAmount).filter(value => value !== undefined).reduce((a, b) => a + b, 0)
-        };
-
-        function priceFormatter(data) {
-            var field = this.field
-            return '₹ ' + data.map(function (row) {
-                return +row.AggValues.SettlementAmount
-            }).reduce(function (sum, i) {
-                return sum + i
-            }, 0)
-        }
-
-
+       
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
