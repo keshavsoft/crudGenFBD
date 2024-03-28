@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Users / Profile - NiceAdmin Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="./assets/img/favicon.png" rel="icon">
+  <link href="./assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Template Main CSS File -->
+  <link href="./assets/css/style.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Updated: Jan 29 2024 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="./assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block" id="BranchNameId">{{Branch}}</span>
+
+        <!-- <span class="d-none d-lg-block">NiceAdmin</span> -->
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">4</span>
+          </a><!-- End Notification Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You have 4 new notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-exclamation-circle text-warning"></i>
+              <div>
+                <h4>Lorem Ipsum</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>30 min. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-x-circle text-danger"></i>
+              <div>
+                <h4>Atque rerum nesciunt</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>1 hr. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-check-circle text-success"></i>
+              <div>
+                <h4>Sit rerum fuga</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>2 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div>
+                <h4>Dicta reprehenderit</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>4 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all notifications</a>
+            </li>
+
+          </ul><!-- End Notification Dropdown Items -->
+
+        </li><!-- End Notification Nav -->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge bg-success badge-number">3</span>
+          </a><!-- End Messages Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+            <li class="dropdown-header">
+              You have 3 new messages
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="./assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Maria Hudson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>4 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="./assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Anna Nelson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>6 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="./assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>David Muldon</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>8 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="dropdown-footer">
+              <a href="#">Show all messages</a>
+            </li>
+
+          </ul><!-- End Messages Dropdown Items -->
+
+        </li><!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="./assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Kevin Anderson</h6>
+              <span>Web Designer</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+      <li class="nav-item">
+        <a id="HomeId" class="nav-link collapsed" href="../../../Dashboard/Dashboard.html">
+          <i class="bi bi-grid"></i>
+          <span>Home</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="../../Dashboard/Dashboard.html">
+          <i class="bi bi-clock-fill"></i></i>
+          <span>Search</span>
+        </a>
+      </li>
+
+      <!-- End Dashboard Nav -->
+
+    
+    </ul>
+  </aside>
+  <!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Qrcode-Details</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../../../Dashboard/Dashboard.html">Home</a></li>
+          <li class="breadcrumb-item active" id="RefreshBSTableId">Qrcode-Details</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section profile">
+      <div class="row">
+        <div class="col-xl-4">
+
+          <div class="card">
+            <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+              <h2>Qr Details</h2>
+
+              <!-- Top Label input -->
+              <div class="col-md-12">
+                <label class="col-md-4 col-form-label">Qrcode #</label>
+                <div class="col-md-8">
+                  <input kvs1="" id="OrderNo" name="OrderNo" min="1" step="1" max="1000000"
+                    data-dataattribute="Description" value="" data-clienteval="" type="text" class="form-control"
+                    placeholder="Enter OrderNo" autocomplete="off" required disabled>
+                  <div class="invalid-feedback " id="OrderNoClass">
+                    Should not be Empty!!
+                  </div>
+                </div>
+              </div>
+              <!-- Top Label input -->
+              <div class="col-md-12">
+                <label class="col-md-4 col-form-label">Item-Name</label>
+                <div class="col-md-8">
+                  <input kvs1="" id="CustomerName" name="CustomerName" min="1" step="1" max="1000000"
+                    data-dataattribute="Description" value="" data-clienteval="" type="text" class="form-control"
+                    placeholder="Enter CustomerName" autocomplete="off" required disabled>
+                  <div class="invalid-feedback " id="CustomerNameClass">
+                    Should not be Empty!!
+                  </div>
+                </div>
+              </div>
+              <!-- Top Label input -->
+              <div class="col-md-12">
+                <label class="col-md-4 col-form-label">Amount</label>
+                <div class="col-md-8">
+                  <input kvs1="" id="Mobile" name="Mobile" min="1" step="1" max="1000000"
+                    data-dataattribute="Description" value="" data-clienteval="" type="Number" class="form-control"
+                    placeholder="Enter Mobile" autocomplete="off" disabled>
+                  <div class="invalid-feedback " id="MobileClass">
+                    Should not be Empty!!
+                  </div>
+                </div>
+              </div>
+              <!-- Top Label input -->
+              <div class="col-md-12">
+                <label class="col-md-4 col-form-label">Date</label>
+                <div class="col-md-8">
+                  <input kvs1="" id="Date" name="Date" min="1" step="1" max="1000000" data-dataattribute="Description"
+                    value="" data-clienteval="" type="text" class="form-control" placeholder="Enter Date"
+                    autocomplete="off" disabled>
+                  <div class="invalid-feedback " id="DateClass">
+                    Should not be Empty!!
+                  </div>
+                </div>
+              </div>
+              <!-- Top Label input -->
+              <!-- <div class="col-md-12">
+                <label class="col-md-4 col-form-label">Settlement</label>
+                <div class="col-md-8">
+                  <input kvs1="" id="Settlement" name="Settlement" min="1" step="1" max="1000000"
+                    data-dataattribute="Description" value="" data-clienteval="" type="Number" class="form-control"
+                    placeholder="Enter Settlement" autocomplete="off" disabled>
+                  <div class="invalid-feedback " id="SettlementClass">
+                    Should not be Empty!!
+                  </div>
+                </div>
+              </div> -->
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-xl-8">
+
+          <div class="card">
+            <div class="card-body pt-3">
+              <!-- Bordered Tabs -->
+              <ul class="nav nav-tabs nav-tabs-bordered">
+
+                <li class="nav-item">
+                  <button class="nav-link active" data-bs-toggle="tab"
+                    data-bs-target="#profile-overview">Add Ons</button>
+                </li>
+
+                <li class="nav-item">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Customer Profile</button>
+                </li>
+
+                <li class="nav-item">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Settelement</button>
+                </li>
+
+                <li class="nav-item">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Date
+                  </button>
+                </li>
+
+              </ul>
+              <div class="tab-content pt-2">
+
+                <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                  <div class="spinner-border" id="SpinnerId" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <table id="table">
+                    <thead>
+                      <tr id="tableHeadRow">
+                        <th data-formatter="jFLocalSerialColumn">#</th>
+                        <th data-field="AddOnItemSerial" data-filter-control="input">AddOn #</th>
+                        <th data-field="AddOnService" data-filter-control="select">AddOn Name</th>
+                        <th data-field="AddOnRate" data-filter-control="select">Rate</th>
+                      </tr>
+                    </thead>
+                  </table>
+
+                </div>
+
+                <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+
+                  <!-- Profile Edit Form -->
+                  <form>
+                    
+
+                    <div class="row mb-3">
+                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="fullName" type="text" class="form-control" id="fullName" disabled>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="phone" type="text" class="form-control" id="Phone" disabled>
+                      </div>
+                    </div>
+
+                   
+                  </form><!-- End Profile Edit Form -->
+
+                </div>
+
+                <div class="tab-pane fade pt-3" id="profile-settings">
+
+                  <!-- Settings Form -->
+                  <form>
+
+                    <div class="row mb-3">
+                      <label for="CashAmount" class="col-md-4 col-lg-3 col-form-label">CashAmount</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="CashAmount" type="text" class="form-control" id="CashAmount" disabled>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="UPIAmount" class="col-md-4 col-lg-3 col-form-label">UPIAmount</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="UPIAmount" type="text" class="form-control" id="UPIAmount" disabled>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="CardAmount" class="col-md-4 col-lg-3 col-form-label">CardAmount</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="CardAmount" type="text" class="form-control" id="CardAmount" disabled>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="DiscountAmount" class="col-md-4 col-lg-3 col-form-label">DiscountAmount</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="DiscountAmount" type="text" class="form-control" id="DiscountAmount" disabled>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="SGST" class="col-md-4 col-lg-3 col-form-label">SGST</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="SGST" type="text" class="form-control" id="SGST" disabled>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="CGST" class="col-md-4 col-lg-3 col-form-label">CGST</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="CGST" type="text" class="form-control" id="CGST" disabled>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="RoundOff" class="col-md-4 col-lg-3 col-form-label">RoundOff</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="RoundOff" type="text" class="form-control" id="RoundOff" disabled>
+                      </div>
+                    </div>
+                  </form><!-- End settings Form -->
+
+                </div>
+
+                <div class="tab-pane fade pt-3" id="profile-change-password">
+                  <!-- Change Password Form -->
+                  <form>
+
+                    <div class="row mb-3">
+                      <label for="BookingDate" class="col-md-4 col-lg-3 col-form-label">Booking Date</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="BookingDate" type="text" class="form-control" id="BookingDate" disabled>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="DeliveryDate" class="col-md-4 col-lg-3 col-form-label">Delivery date</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="DeliveryDate" type="text" class="form-control" id="DeliveryDate" disabled>
+                      </div>
+                    </div>
+
+                  </form><!-- End Change Password Form -->
+
+                </div>
+
+              </div><!-- End Bordered Tabs -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+        &copy; KeshavSoft @ 2024<strong>
+    </div>
+
+</footer><!-- End Footer -->
+  <script>
+    function jFLocalSerialColumn(value, row, index) {
+      return index + 1;
+    };
+    function jFLocalDateFormatter(value, row, index) {
+      return new Date(row.OrderData.Currentdateandtime).toLocaleDateString('en-GB');
+    };
+
+
+  </script>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
+
+  <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
+  <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/export/bootstrap-table-export.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+    integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- Template Main JS File -->
+  <script src="./assets/js/main.js"></script>
+  <script type="module" src="./Js/StartFunc.js"></script>
+
+</body>
+
+</html>
