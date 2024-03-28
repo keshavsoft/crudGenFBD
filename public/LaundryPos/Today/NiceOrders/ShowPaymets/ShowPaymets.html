@@ -295,32 +295,18 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="../../Dashboard/Dashboard.html">
                     <i class="bi bi-clock-fill"></i></i>
-                    <span>All</span>
+                    <span>Today</span>
                 </a>
             </li>
 
             <!-- End Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+                <a class="nav-link " data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-record-circle-fill"></i><span>Orders</span><i
                         class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="../../NiceOrders/ShowAll/ShowAll.html" class="">
-                            <i class="bi bi-circle"></i><span>ShowAll</span>
-                        </a>
-                    </li>
-
-                </ul>
-            </li><!-- End Today Orders Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link " data-bs-target="#Qrcodes-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-qr-code"></i><span>Qrcodes</span><i class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="Qrcodes-nav" class="nav-content  " data-bs-parent="#sidebar-nav">
+                <ul id="charts-nav" class="nav-content  " data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="../ShowAll/ShowAll.html" class="">
                             <i class="bi bi-circle"></i><span>ShowAll</span>
@@ -328,21 +314,33 @@
                     </li>
                     <li>
                         <a href="#" class="active">
-                            <i class="bi bi-circle"></i><span>DcWithQr</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="../LifeCycle/LifeCycle.html" class="">
-                            <i class="bi bi-circle"></i><span>LifeCycle</span>
+                            <i class="bi bi-circle"></i><span>ShowPayments</span>
                         </a>
                     </li>
 
                 </ul>
-            </li><!-- End Today Qrcodes Nav -->
+            </li><!-- End Today Orders Nav -->
 
-        </ul>
-        </li><!-- End Today Orders Nav -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#Qrcodes-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-qr-code"></i><span>Qrcodes</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="Qrcodes-nav" class="nav-content  collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="../../NiceQrcodes/ShowAll/ShowAll.html" class="">
+                            <i class="bi bi-circle"></i><span>ShowAll</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../NiceQrcodes/DcWithQr/DcWithQr.html" class="">
+                            <i class="bi bi-circle"></i><span>DcWithQr</span>
+                        </a>
+                    </li>
+
+                   
+
+                </ul>
+            </li><!-- End Today Qrcodes Nav -->
         </ul>
     </aside>
     <!-- End Sidebar-->
@@ -350,13 +348,13 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>All - QrCodes</h1>
+            <h1>Today - Qrcodes</h1>
 
 
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="../../../Dashboard/Dashboard.html">Home</a></li>
-                    <li class="breadcrumb-item"> <a href="../../Dashboard/Dashboard.html">All</a></li>
+                    <li class="breadcrumb-item"> <a href="../../Dashboard/Dashboard.html">Today</a></li>
                     <li class="breadcrumb-item active" id="RefreshBSTableId">Qrcodes</li>
                 </ol>
             </nav>
@@ -372,22 +370,26 @@
                             <div class="spinner-border" id="SpinnerId" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                            <table id="table" data-toolbar="#toolbar" data-search="true" data-searchable="true"
-                                data-show-columns="true" data-show-columns-toggle-all="true" data-show-export="true"
-                                data-id-field="pk" data-show-toggle="true" data-filter-control="true">
+                            <table id="table" data-toolbar="#toolbar" data-search="true" data-show-footer="true"
+                                data-searchable="true" data-show-columns="true" data-show-columns-toggle-all="true"
+                                data-show-export="true" data-detail-view="true" data-detail-formatter="detailFormatter"
+                                data-id-field="pk" data-show-toggle="true" >
                                 <thead>
                                     <tr id="tableHeadRow">
                                         <th data-formatter="jFLocalSerialColumn">#</th>
-                                        <th data-field="pk" data-filter-control="select">QrCode</th>
-                                        <th data-field="ItemName" data-filter-control="select">ItemName</th>
-                                        <th data-field="Rate" data-filter-control="select">Rate</th>
-                                        <th data-field="DateTime" data-filter-control="select">Order DateTime</th>
-                                        <th data-field="DeliveryDateTime" data-filter-control="select">DeliveryDateTime
+                                        <th data-field="UuId">Order Number</th>
+                                        <th data-field="CustomerData.CustomerName">Customer Name</th>
+                                        <th data-field="OrderData.BranchName">Branch</th>
+                                        <th data-field="CustomerData.CustomerMobile">Mobile</th>
+                                        <th data-formatter="jFLocalDateFormatter">Date</th>
+                                        <th data-field="TimeSpan">TimeSpan</th>
+                                        <th data-formatter="jFLocalOrderDetails">Order Details</th>
+                                        <th data-formatter="jFLocalSettlementDetails"
+                                            data-footer-formatter="priceFormatter">
+                                            Settlement</th>
+                                        <th data-formatter="jFLocalQrCodeDetails" data-footer-formatter="QrFormatter">
+                                            QrCodes
                                         </th>
-                                        <th data-field="VoucherNumber" data-filter-control="select">Voucher No</th>
-                                        <th data-field="DCFactory" data-filter-control="select">DC Factory</th>
-                                        <th data-field="Status" data-filter-control="select">Status</th>
-                                        <th data-field="TimeSpan" data-filter-control="select">TimeSpan</th>
                                     </tr>
                                 </thead>
                             </table>
@@ -408,24 +410,77 @@
 
     </footer>
     <!-- End Footer -->
+
+    <!-- template for detailFormatter  -->
+    <template id="TemplateId">
+        <!-- General Form Elements -->
+        <form id="FormId">
+
+            <div class="row mb-3">
+
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">CashAmount</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control InputClass" autocomplete="off" name="CashAmount"
+                            id="CashAmountId" disabled>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">CardAmount</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control InputClass" autocomplete="off" name="CardAmount"
+                            id="CardAmountId" autofocus="" disabled>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">UPIAmount</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control InputClass" name="UPIAmount" id="UPIAmountId"
+                            autofocus="" disabled>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </form>
+        <!-- End General Form Elements -->
+
+    </template>
+
     <!-- Vendor JS Files -->
     <script>
+        // Template input Code
+        function detailFormatter(index, row, $element) {
+            let template = document.getElementById("TemplateId");
+            const clone = template.content.cloneNode(true);
+            clone.getElementById("CashAmountId").value = row.CashAmount;
+            clone.getElementById("CardAmountId").value = row.CardAmount;
+            clone.getElementById("UPIAmountId").value = row.UPIAmount;
+            $element.append(clone)
+        };
+
         function jFLocalSerialColumn(value, row, index) {
             return index + 1;
         };
+
         function jFLocalDateFormatter(value, row, index) {
             return new Date(row.OrderData.Currentdateandtime).toLocaleDateString('en-GB');
         };
 
         function jFLocalOrderDetails(value, row, index) {
             return [
-                `<a href="#" class="btn btn-success" >${row.AggValues.ItemDetails}</a>`,
+                `<a href="../../OrderWithoutCheckout/OrderWithoutCheckout.html?BranchName=${row.OrderData.BranchName}&OrderNumber=${row.UuId}" class="btn btn-success" >${row.AggValues.ItemDetails}</a>`,
             ].join('')
         }
+
         function jFLocalSettlementDetails(value, row, index) {
             if (row.IsSettled) {
                 return [
-                    `<a href="#" data-ordernumber="${row.UuId}" data-BranchName="${row.OrderData.BranchName}" class="btn btn-danger " >`,
+                    `<a href="#" data-ordernumber="${row.UuId}" data-BranchName="${row.OrderData.BranchName}" class="btn btn-danger SettlementButtonClass" >`,
                     `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">`,
                     `<path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z" />`,
                     `</svg>`,
@@ -435,7 +490,7 @@
             }
             else {
                 return [
-                    `<a href="#" data-ordernumber="${row.UuId}" data-BranchName="${row.OrderData.BranchName}" class="btn btn-outline-danger " >`,
+                    `<a href="#" data-ordernumber="${row.UuId}" data-BranchName="${row.OrderData.BranchName}" class="btn btn-outline-danger SettlementButtonClass" >`,
                     `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">`,
                     `<path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z" />`,
                     `</svg>`,
@@ -452,7 +507,7 @@
         function jFLocalQrCodeDetails(value, row, index) {
             if (row.IsQrCodesRaised) {
                 return [
-                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-primary ">`,
+                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-primary QRGenerateClass">`,
                     `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">`,
                     `<path d="M2 2h2v2H2V2Z"></path>`,
                     `<path d="M6 0v6H0V0h6ZM5 1H1v4h4V1ZM4 12H2v2h2v-2Z"></path>`,
@@ -467,7 +522,7 @@
                 ].join('')
             } else {
                 return [
-                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-outline-primary ">`,
+                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-outline-primary QRGenerateClass">`,
                     `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">`,
                     `<path d="M2 2h2v2H2V2Z"></path>`,
                     `<path d="M6 0v6H0V0h6ZM5 1H1v4h4V1ZM4 12H2v2h2v-2Z"></path>`,
@@ -512,8 +567,6 @@
         src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/export/bootstrap-table-export.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script
-        src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
         integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
