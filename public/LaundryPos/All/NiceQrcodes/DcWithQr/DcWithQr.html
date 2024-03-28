@@ -293,7 +293,7 @@
             </li>
 
             <li class="nav-item">
-                <a  class="nav-link collapsed" href="../../Dashboard/Dashboard.html" >
+                <a class="nav-link collapsed" href="../../Dashboard/Dashboard.html">
                     <i class="bi bi-clock-fill"></i></i>
                     <span>All</span>
                 </a>
@@ -303,7 +303,8 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-record-circle-fill"></i><span>Orders</span><i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-record-circle-fill"></i><span>Orders</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
@@ -333,9 +334,9 @@
 
                 </ul>
             </li><!-- End Today Qrcodes Nav -->
-                    
-                </ul>
-            </li><!-- End Today Orders Nav -->
+
+        </ul>
+        </li><!-- End Today Orders Nav -->
         </ul>
     </aside>
     <!-- End Sidebar-->
@@ -343,14 +344,14 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Today - Orders</h1>
+            <h1>All - QrCodes</h1>
 
 
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="../../../Dashboard/Dashboard.html">Home</a></li>
                     <li class="breadcrumb-item"> <a href="../../Dashboard/Dashboard.html">All</a></li>
-                    <li class="breadcrumb-item active" id="RefreshBSTableId">Orders</li>
+                    <li class="breadcrumb-item active" id="RefreshBSTableId">Qrcodes</li>
                 </ol>
             </nav>
         </div>
@@ -366,23 +367,24 @@
                                 <span class="visually-hidden">Loading...</span>
                             </div>
                             <table id="table" data-toolbar="#toolbar" data-search="true" data-searchable="true"
-                    data-show-columns="true" data-show-columns-toggle-all="true" data-show-export="true"
-                    data-id-field="pk" data-show-toggle="true" data-filter-control="true" >
-                    <thead>
-                        <tr id="tableHeadRow">
-                            <th data-formatter="jFLocalSerialColumn">#</th>
-                            <th data-field="pk" data-filter-control="select">QrCode</th>
-                            <th data-field="ItemName" data-filter-control="select">ItemName</th>
-                            <th data-field="Rate" data-filter-control="select">Rate</th>
-                            <th data-field="DateTime" data-filter-control="select">Order DateTime</th>
-                            <th data-field="DeliveryDateTime" data-filter-control="select">DeliveryDateTime</th>
-                            <th data-field="VoucherNumber" data-filter-control="select">Voucher No</th>
-                            <th data-field="DCFactory" data-filter-control="select">DC Factory</th>
-                            <th data-field="Status" data-filter-control="select">Status</th>
-                            <th data-field="TimeSpan" data-filter-control="select">TimeSpan</th>
-                        </tr>
-                    </thead>
-                </table>
+                                data-show-columns="true" data-show-columns-toggle-all="true" data-show-export="true"
+                                data-id-field="pk" data-show-toggle="true" data-filter-control="true">
+                                <thead>
+                                    <tr id="tableHeadRow">
+                                        <th data-formatter="jFLocalSerialColumn">#</th>
+                                        <th data-field="pk" data-filter-control="select">QrCode</th>
+                                        <th data-field="ItemName" data-filter-control="select">ItemName</th>
+                                        <th data-field="Rate" data-filter-control="select">Rate</th>
+                                        <th data-field="DateTime" data-filter-control="select">Order DateTime</th>
+                                        <th data-field="DeliveryDateTime" data-filter-control="select">DeliveryDateTime
+                                        </th>
+                                        <th data-field="VoucherNumber" data-filter-control="select">Voucher No</th>
+                                        <th data-field="DCFactory" data-filter-control="select">DC Factory</th>
+                                        <th data-field="Status" data-filter-control="select">Status</th>
+                                        <th data-field="TimeSpan" data-filter-control="select">TimeSpan</th>
+                                    </tr>
+                                </thead>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -504,6 +506,8 @@
         src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/export/bootstrap-table-export.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+        src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
         integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="

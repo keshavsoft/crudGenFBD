@@ -1,18 +1,17 @@
-import { StartFunc as StartFuncAddListeners } from "../../../../../AddListeners/StartFunc.js";
-
 let StartFunc = ({ inDataToShow, inQrCodeData }) => {
     jFLocalHideSpinner();
     let LocalinDataToShow = inDataToShow;
-    var $table = $('#table');
+    // var $table = $('#table');
     let jVarLocalTransformedData = jFLocalInsertAggValues({ inData: LocalinDataToShow });
     let jVarWithQrCodeData = jFLocalInsertQrCodeData({ inData: jVarLocalTransformedData, inQrCodeData: inQrCodeData });
     let LocalArrayReverseData = jVarWithQrCodeData.slice().reverse();
+    localStorage.setItem("OrderFilterData", JSON.stringify(LocalArrayReverseData));
 
-    $table.bootstrapTable("destroy").bootstrapTable({
-        data: LocalArrayReverseData
-    });
 
-    StartFuncAddListeners();
+    // $table.bootstrapTable("destroy").bootstrapTable({
+    //     data: LocalArrayReverseData
+    // });
+
 };
 
 
@@ -63,14 +62,5 @@ let jFLocalInsertQrCodeData = ({ inData, inQrCodeData }) => {
 
     return jVarLocalReturnArray;
 };
-
-let getUrlQueryParams = ({ inGetKey }) => {
-    const queryString = window.location.search;
-    const parameters = new URLSearchParams(queryString);
-    const value = parameters.get(inGetKey);
-    return value;
-};
-
-
 
 export { StartFunc }
