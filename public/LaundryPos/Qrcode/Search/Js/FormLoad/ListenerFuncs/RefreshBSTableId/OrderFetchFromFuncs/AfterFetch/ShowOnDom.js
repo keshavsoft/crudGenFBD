@@ -18,6 +18,7 @@ let StartFunc = ({ inDataToShow }) => {
     LocalFuncForRoundOff({ inValue: firstObject.BookingData.CheckOutData[1].RoundOff })
     LocalFuncForBookingDate({ inValue: firstObject.BookingData.OrderData.Currentdateandtime })
     LocalFuncForDeliveryDate({ inValue: firstObject.DeliveryDateTime })
+    LocalFuncForBookingDataNumber({ inValue: firstObject.GenerateReference.ReferncePk })
     // LocalFuncForAmount({ inValue: firstObject.OrderData.Currentdateandtime })
 
 };
@@ -144,6 +145,15 @@ let LocalFuncForDeliveryDate = ({ inValue }) => {
 
     if (jVarLocalpk === null === false) {
         jVarLocalpk.value = LocalDate
+    };
+};
+
+let LocalFuncForBookingDataNumber = ({ inValue }) => {
+
+    let jVarLocalpk = document.getElementById('BookingDataNumber');
+
+    if (jVarLocalpk === null === false) {
+        jVarLocalpk.value = inValue
     };
 };
 

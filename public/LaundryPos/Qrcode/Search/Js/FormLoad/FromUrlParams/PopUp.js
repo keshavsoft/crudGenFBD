@@ -7,11 +7,15 @@ let StartFunc = () => {
     if (jVarLocalReferncePk === "" || jVarLocalReferncePk === null) {
         Swal.fire({
             title: "Enter your Qrcode",
-            input: "number",
+            input: "text",
             inputValidator: (value) => {
                 if (value) {
+                    let jVarLocalInputPkId = value.trim();
+                    let jVarLocalEval = "{{KS}}.split(\"~\")[0].search(\"-\") === -1 ? {{KS}}.split(\"~\")[0] : {{KS}}.split(\"~\")[0].split(\"-\")[1]";
+                    let jVarLocalId = eval(jVarLocalEval.replaceAll("{{KS}}", `"${jVarLocalInputPkId}"`));
+
                     const url = new URL(window.location.href);
-                    url.searchParams.append('QrCodeId', value);
+                    url.searchParams.append('QrCodeId', jVarLocalId);
                     window.location.href = url;
                 }
             }
@@ -20,6 +24,7 @@ let StartFunc = () => {
 
     }
 };
+
 
 let getUrlQueryParams = ({ inGetKey }) => {
     const queryString = window.location.search;
