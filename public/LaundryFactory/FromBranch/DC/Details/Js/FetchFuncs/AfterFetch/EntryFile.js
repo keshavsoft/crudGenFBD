@@ -42,7 +42,7 @@ let jFLocalVoucherNumberColumn = () => {
 
     let jVarLocalNewTh = document.createElement("th");
     jVarLocalNewTh.innerHTML = "Dc #";
-    jVarLocalNewTh.dataset.field = "VoucherNumber";
+    jVarLocalNewTh.dataset.field = "pk";
     jVarLocalNewTh.setAttribute("data-filter-control", "input")
     return jVarLocalNewTh;
 };
@@ -58,7 +58,7 @@ let jFLocalBranchName = () => {
 let jFLocalFactory = () => {
 
     let jVarLocalNewTh = document.createElement("th");
-    jVarLocalNewTh.innerHTML = "To Factory";
+    jVarLocalNewTh.innerHTML = "Factory";
     jVarLocalNewTh.dataset.field = "Factory";
     // jVarLocalNewTh.setAttribute("data-filter-control", "select")
     return jVarLocalNewTh;
