@@ -1,22 +1,14 @@
 let StartFunc = async ({ inFetchResonse }) => {
-    let jVarLocalResponseData = inFetchResonse;
+    
+    let jVarLocalHtmlId = 'InputPkId';
+    let jVarLocalInputPkId = document.getElementById(jVarLocalHtmlId);
+    let jVarLocalLength = jVarLocalInputPkId.value.trim().length;
+    jVarLocalInputPkId.setSelectionRange(0, jVarLocalLength);
 
-    if (jVarLocalResponseData.KReason == "No Data") {
-        Swal.fire({
-            icon: "warning",
-            title: "No data found",
-            text: `${jVarLocalResponseData.KReason}`
-        });
-
-    } else {
-        Swal.fire({
-            icon: "error",
-            title: "Error",
-            text: `${jVarLocalResponseData.KReason}`
-        });
-
-        return;
-    };
+    Swal.fire({
+        icon: "error",
+        title: "No Data"
+    });
 };
 
 export { StartFunc };

@@ -72,7 +72,7 @@
         "unique": true,
         "references": {
           "model": {
-            "tableName": "QrCodeDetails"
+            "tableName": "FactoryScan"
           },
           "folderName": "Factory",
           "key": "QrCodeId"

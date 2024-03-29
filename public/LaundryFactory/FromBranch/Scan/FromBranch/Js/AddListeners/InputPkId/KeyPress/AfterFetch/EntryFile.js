@@ -4,10 +4,12 @@ import { StartFunc as StartFuncForResponse200 } from "./ForResponse200.js";
 let StartFunc = async ({ inFetchResonse }) => {
     let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
 
-    if (inFetchResonse.KTF === false) {
-        return StartFuncForResponse500({ inFetchResonse });
+    if (inFetchResonse.status === 500) {
+        return await StartFuncForResponse500({ inFetchResonse });
     };
-    StartFuncForResponse200({ inFetchResonse: inFetchResonse.JsonData });
+    if (inFetchResonse.status === 200) {
+        return await StartFuncForResponse200({ inFetchResonse });
+    };
 
 };
 

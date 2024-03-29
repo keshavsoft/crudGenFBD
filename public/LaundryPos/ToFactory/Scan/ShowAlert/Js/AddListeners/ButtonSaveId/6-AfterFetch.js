@@ -1,5 +1,6 @@
 let StartFunc = ({ inFromFetch }) => {
     let jVarLocalFetchData = inFromFetch;
+    console.log("jVarLocalFetchData:",jVarLocalFetchData);
     if (jVarLocalFetchData.KTF === true) {
         jFLocalForSuccess(jVarLocalFetchData);
     }
