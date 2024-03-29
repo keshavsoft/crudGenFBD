@@ -53,9 +53,8 @@
 
     <div class="search-bar">
       <form class="search-form d-flex align-items-center">
-        <input type="number" name="QrCodeId" placeholder="Search" id="Search" title="Enter search keyword" min="1" step="1"
-          autofocus>
-        <button type="button" id="SearchButton" title="Search"><i class="bi bi-search"></i></button>
+        <input type="text" placeholder="Search" id="Search" min="1" step="1" autofocus>
+        <button type="button" id="SearchButton" ><i class="bi bi-search"></i></button>
       </form>
     </div><!-- End Search Bar -->
 
@@ -270,44 +269,25 @@
 
   </header><!-- End Header -->
 
-  <!-- ======= Sidebar ======= -->
-  <aside id="sidebar" class="sidebar">
-
-    <ul class="sidebar-nav" id="sidebar-nav">
-      <li class="nav-item">
-        <a id="HomeId" class="nav-link collapsed" href="../../../Dashboard/Dashboard.html">
-          <i class="bi bi-grid"></i>
-          <span>Home</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link " href="../../Dashboard/Dashboard.html">
-          <i class="bi bi-search"></i>
-          <span>Search</span>
-        </a>
-      </li>
-
-      <!-- End Dashboard Nav -->
 
 
-    </ul>
-  </aside>
-  <!-- End Sidebar-->
-
-  <main id="main" class="main">
+  <main id="" class="main container ">
 
     <div class="pagetitle">
-      <h1>Qrcode-Details</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../../../Dashboard/Dashboard.html">Home</a></li>
-          <li class="breadcrumb-item active" id="RefreshBSTableId">Qrcode-Details</li>
-        </ol>
-      </nav>
+      <div class="container">
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../../Dashboard/Dashboard.html">Home</a></li>
+            <li class="breadcrumb-item active" id="RefreshBSTableId">Search</li>
+          </ol>
+        </nav>
+
+
+
+      </div>
     </div><!-- End Page Title -->
 
-    <section class="section profile">
+    <section class="section profile m-2">
       <div class="row">
         <div class="col-xl-4">
 
@@ -408,7 +388,7 @@
                 <li class="nav-item">
                   <button class="nav-link " data-bs-toggle="tab" data-bs-target="#profile-Dc">Dc</button>
                 </li>
-                
+
 
               </ul>
               <div class="tab-content pt-2">
@@ -432,25 +412,7 @@
 
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
-                  <!-- Profile Edit Form -->
-                  <form>
-
-
-                    <div class="row mb-3">
-                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="fullName" type="text" class="form-control" id="fullName" disabled>
-                      </div>
-                    </div>
-                    <div class="row mb-3">
-                      <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="phone" type="text" class="form-control" id="Phone" disabled>
-                      </div>
-                    </div>
-
-
-                  </form><!-- End Profile Edit Form -->
+                  <h3>profile</h3>
 
                 </div>
 
@@ -507,39 +469,12 @@
 
                 <div class="tab-pane fade pt-3" id="profile-change-password">
                   <!-- Change Password Form -->
-                  <form>
-
-                    <div class="row mb-3">
-                      <label for="BookingDate" class="col-md-4 col-lg-3 col-form-label">Booking Date</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="BookingDate" type="text" class="form-control" id="BookingDate" disabled>
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="DeliveryDate" class="col-md-4 col-lg-3 col-form-label">Delivery date</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="DeliveryDate" type="text" class="form-control" id="DeliveryDate" disabled>
-                      </div>
-                    </div>
-
-                  </form><!-- End Change Password Form -->
-
+                  <h3>date</h3>
                 </div>
 
                 <div class="tab-pane fade show  profile-Dc" id="profile-Dc">
-                  
-                  <table id="Dctable">
-                    <thead>
-                      <tr id="tableHeadRow">
-                        <th data-formatter="jFLocalSerialColumn">#</th>
-                        <th data-field="VoucherNumber" data-filter-control="input">Dc #</th>
-                        <th data-field="DCFactory" data-filter-control="select">DCFactory</th>
-                        <th data-field="DCDate" data-filter-control="select">DCDate</th>
-                        <th data-field="DCDescription" data-filter-control="select">DCDescription</th>
-                      </tr>
-                    </thead>
-                  </table>
+
+                  <h3>dc</h3>
 
                 </div>
 
@@ -551,11 +486,194 @@
         </div>
       </div>
     </section>
+    <div class="card">
+      <div class="card-body pt-3">
+        <!-- Bordered Tabs -->
+        <ul class="nav nav-tabs nav-tabs-bordered">
+
+          <li class="nav-item">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-Booking">Booking</button>
+          </li>
+
+          <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-DCScan">DC Scan</button>
+          </li>
+
+          <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-FactorySacn ">Factory Scan</button>
+          </li>
+
+          <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-Washing">Washing </button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link " data-bs-toggle="tab" data-bs-target="#profile-Completion">Completion</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link " data-bs-toggle="tab" data-bs-target="#profile-ReverseScan">Reverse Scan</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link " data-bs-toggle="tab" data-bs-target="#profile-BranchScan">Branch Scan</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link " data-bs-toggle="tab" data-bs-target="#profile-Delivery">Delivery</button>
+          </li>
+
+        </ul>
+        <div class="tab-content pt-2">
+
+          <div class="tab-pane fade show active profile-Booking" id="profile-Booking">
+            <!-- Profile Edit Form -->
+            <form>
+
+              <div class="row mb-3">
+                <label for="BookingDataNumber" class="col-md-4 col-lg-3 col-form-label">BookingData #</label>
+                <div class="col-md-8 col-lg-9">
+                  <input name="BookingDataNumber" type="text" class="form-control" id="BookingDataNumber" disabled>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
+                <div class="col-md-8 col-lg-9">
+                  <input name="fullName" type="text" class="form-control" id="fullName" disabled>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
+                <div class="col-md-8 col-lg-9">
+                  <input name="phone" type="text" class="form-control" id="Phone" disabled>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="BookingDate" class="col-md-4 col-lg-3 col-form-label">Booking Date</label>
+                <div class="col-md-8 col-lg-9">
+                  <input name="BookingDate" type="text" class="form-control" id="BookingDate" disabled>
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="DeliveryDate" class="col-md-4 col-lg-3 col-form-label">Delivery date</label>
+                <div class="col-md-8 col-lg-9">
+                  <input name="DeliveryDate" type="text" class="form-control" id="DeliveryDate" disabled>
+                </div>
+              </div>
+
+
+            </form><!-- End Profile Edit Form -->
+
+
+            </table>
+
+          </div>
+
+          <div class="tab-pane fade profile-DCScan pt-3" id="profile-DCScan">
+
+            <!-- Profile Edit Form -->
+            <form>
+
+
+              <div class="row mb-3">
+                <label for="DcNumber" class="col-md-4 col-lg-3 col-form-label">Dc Number</label>
+                <div class="col-md-8 col-lg-9">
+                  <input name="DcNumber" type="text" class="form-control" id="DcNumber" disabled>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="VoucherNumber" class="col-md-4 col-lg-3 col-form-label">Voucher Number</label>
+                <div class="col-md-8 col-lg-9">
+                  <input name="VoucherNumber" type="text" class="form-control" id="VoucherNumber" disabled>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="DcDate" class="col-md-4 col-lg-3 col-form-label">Dc Date</label>
+                <div class="col-md-8 col-lg-9">
+                  <input name="DcDate" type="text" class="form-control" id="DcDate" disabled>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="DCFactory" class="col-md-4 col-lg-3 col-form-label">DC Factory</label>
+                <div class="col-md-8 col-lg-9">
+                  <input name="DCFactory" type="text" class="form-control" id="DCFactory" disabled>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="DCDescription" class="col-md-4 col-lg-3 col-form-label">Dc Description</label>
+                <div class="col-md-8 col-lg-9">
+                  <input name="DCDescription" type="text" class="form-control" id="DCDescription" disabled>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="Voucherdate" class="col-md-4 col-lg-3 col-form-label">Voucher Date</label>
+                <div class="col-md-8 col-lg-9">
+                  <input name="Voucherdate" type="text" class="form-control" id="Voucherdate" disabled>
+                </div>
+              </div>
+
+
+
+            </form><!-- End Profile Edit Form -->
+          </div>
+
+
+
+
+          <div class="tab-pane fade pt-3" id="profile-FactorySacn">
+
+            <h3>Factory scan</h3>
+          </div>
+
+          <div class="tab-pane fade pt-3" id="profile-change-Washing">
+            <!-- Change Password Form -->
+            <form>
+
+              <div class="row mb-3">
+                <label for="BookingDate" class="col-md-4 col-lg-3 col-form-label">Booking Date</label>
+                <div class="col-md-8 col-lg-9">
+                  <input name="BookingDate" type="text" class="form-control" id="BookingDate" disabled>
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="DeliveryDate" class="col-md-4 col-lg-3 col-form-label">Delivery date</label>
+                <div class="col-md-8 col-lg-9">
+                  <input name="DeliveryDate" type="text" class="form-control" id="DeliveryDate" disabled>
+                </div>
+              </div>
+
+            </form><!-- End Change Password Form -->
+
+          </div>
+
+          <div class="tab-pane fade show  profile-Completion" id="profile-Completion">
+
+            <h3>Completion</h3>
+
+          </div>
+          <div class="tab-pane fade show  profile-ReverseScan" id="profile-ReverseScan">
+
+            <h1>Reverse Scan</h1>
+
+          </div>
+          <div class="tab-pane fade show  profile-BranchScan" id="profile-BranchScan">
+
+            <h1>Branch Scan</h1>
+
+          </div>
+          <div class="tab-pane fade show  profile-Delivery" id="profile-Delivery">
+
+            <h1>Delivery</h1>
+
+          </div>
+
+        </div><!-- End Bordered Tabs -->
+
+      </div>
+    </div>
 
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
+  <footer id="" class="footer">
     <div class="copyright">
       &copy; KeshavSoft @ 2024<strong>
     </div>
