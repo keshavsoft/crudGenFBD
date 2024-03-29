@@ -1,12 +1,12 @@
+import { StartFunc as StartFuncShowOnDom } from "./ShowOnDom.js";
 
 let StartFunc = ({ inDataToShow }) => {
-    let LocalDataToShow = inDataToShow;
-    // let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
-    let jVarLocalBranchName = localStorage.getItem("BranchName");
+    if (inDataToShow.KTF === false) {
 
-   
+    } else {
+        StartFuncShowOnDom({ inDataToShow });
+    }
+
 };
-
-
 
 export { StartFunc }

@@ -4,7 +4,7 @@ let StartFunc = () => {
     let jVarLocalReferncePk = getUrlQueryParams({ inGetKey: "QrCodeId" });
     let jVarLocalBodyKeysJson = {};
 
-    jVarLocalBodyKeysJson.FindKey = "e.GenerateReference.ReferncePk"
+    jVarLocalBodyKeysJson.FindKey = "e.QrCodeId"
     jVarLocalBodyKeysJson.FindValue = jVarLocalReferncePk;
 
     KeysJson.body = JSON.stringify(jVarLocalBodyKeysJson);
