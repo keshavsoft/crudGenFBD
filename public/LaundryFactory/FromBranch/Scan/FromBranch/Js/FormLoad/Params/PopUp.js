@@ -1,6 +1,8 @@
 let StartFunc = () => {
     let jVarLocalVoucherRefValue = getUrlQueryParams({ inGetKey: "VoucherRef" });
-    let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    // let jVarLocalFactoryName = getUrlQueryParams({ inGetKey: "BranchName" });
+    let jVarLocalFactoryName = localStorage.getItem("FactoryName");
+
     
     if (jVarLocalVoucherRefValue === "" || jVarLocalVoucherRefValue === null) Swal.fire({
         icon: "error",
@@ -9,7 +11,7 @@ let StartFunc = () => {
 
     });
 
-    if (jVarLocalBranchName === "" || jVarLocalBranchName === null) Swal.fire({
+    if (jVarLocalFactoryName === "" || jVarLocalFactoryName === null) Swal.fire({
         icon: "error",
         title: "Error",
         text: "BranchName Not Found in Params"

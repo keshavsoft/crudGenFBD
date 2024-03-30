@@ -11,7 +11,7 @@ let jFLocalToURL = ({ inRowPk }) => {
     let LocalinRowPk = inRowPk;
     const url = new URL(window.location.href);
     const params1 = new URLSearchParams(url.search);
-    let NewURl = new URL("../FromBranch/Scan/BSTableFilterFromVoucher/BSTableFilterFromVoucher.html", url);
+    let NewURl = new URL("../FromBranch/Scan/DcItems/DcItems.html", url);
     const new_url = new URL(`${NewURl.href}?${params1}`);
     new_url.searchParams.append('VoucherRef', LocalinRowPk);
 
