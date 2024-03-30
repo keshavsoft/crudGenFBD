@@ -279,6 +279,8 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="../../Dashboard/Dashboard.html">Home</a></li>
             <li class="breadcrumb-item active" id="RefreshBSTableId">Search</li>
+            <li class="breadcrumb-item active" id="QrRefreshButtonId">Search</li>
+            <li class="breadcrumb-item active" id="FactoryScanId">FactoryScanId</li>
           </ol>
         </nav>
 
@@ -619,7 +621,49 @@
 
           <div class="tab-pane fade pt-3" id="profile-FactorySacn">
 
-            <h3>Factory scan</h3>
+            <!-- Profile Edit Form -->
+            <form>
+
+              <div class="row mb-3">
+                <label for="FactoryDcNumber" class="col-md-4 col-lg-3 col-form-label">Dc Number</label>
+                <div class="col-md-8 col-lg-9">
+                  <input name="FactoryDcNumber" type="text" class="form-control" id="FactoryDcNumber" disabled>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="FactoryVoucherNumber" class="col-md-4 col-lg-3 col-form-label">Voucher Number</label>
+                <div class="col-md-8 col-lg-9">
+                  <input name="FactoryVoucherNumber" type="text" class="form-control" id="FactoryVoucherNumber" disabled>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="FactoryDcDate" class="col-md-4 col-lg-3 col-form-label">Dc Date</label>
+                <div class="col-md-8 col-lg-9">
+                  <input name="FactoryDcDate" type="text" class="form-control" id="FactoryDcDate" disabled>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="FactoryDCFactory" class="col-md-4 col-lg-3 col-form-label">DC Factory</label>
+                <div class="col-md-8 col-lg-9">
+                  <input name="FactoryDCFactory" type="text" class="form-control" id="FactoryDCFactory" disabled>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="FactoryDCDescription" class="col-md-4 col-lg-3 col-form-label">Dc Description</label>
+                <div class="col-md-8 col-lg-9">
+                  <input name="FactoryDCDescription" type="text" class="form-control" id="FactoryDCDescription" disabled>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="FactoryVoucherdate" class="col-md-4 col-lg-3 col-form-label">Voucher Date</label>
+                <div class="col-md-8 col-lg-9">
+                  <input name="FactoryVoucherdate" type="text" class="form-control" id="FactoryVoucherdate" disabled>
+                </div>
+              </div>
+
+
+
+            </form><!-- End Profile Edit Form -->
           </div>
 
           <div class="tab-pane fade pt-3" id="profile-change-Washing">

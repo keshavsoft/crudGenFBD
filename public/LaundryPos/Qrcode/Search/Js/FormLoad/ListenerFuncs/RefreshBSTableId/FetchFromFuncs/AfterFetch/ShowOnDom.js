@@ -4,7 +4,9 @@ let StartFunc = ({ inDataToShow }) => {
     let jVarLocalBranchName = localStorage.getItem("BranchName");
 
     let LocalFilterdata = LocalDataToShow.filter(e => e.BranchName == jVarLocalBranchName);
-    console.log("LocalFilterdata:",LocalFilterdata[0].DCDescription);
+    if (LocalFilterdata.length === 0) {
+        return
+    };
 
 
     LocalFuncForDCpk({ inData: LocalFilterdata[0].VoucherRef });
