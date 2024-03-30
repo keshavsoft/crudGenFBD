@@ -36,6 +36,7 @@
                             <option selected>Choose Factory</option>
                             <option value="Vizag">Vizag</option>
                             <option value="Vzm">Vzm</option>
+                            <option value="GD">GD</option>
                         </select>
                         <button id="FactorySelectButtonId" class="btn btn-outline-secondary" type="button">Go To
                             Factory</button>
@@ -128,6 +129,7 @@
 
             if (jVarLocalBruchSelectInputId === null === false) {
                 let jVarLocalBruchSelectInputValue = jVarLocalBruchSelectInputId.value;
+                localStorage.setItem("FactoryName", jVarLocalBruchSelectInputValue);
 
                 window.location.href = `/LaundryFactory/Dashboard/Dashboard.html?BranchName=${jVarLocalBruchSelectInputValue}`
             };
