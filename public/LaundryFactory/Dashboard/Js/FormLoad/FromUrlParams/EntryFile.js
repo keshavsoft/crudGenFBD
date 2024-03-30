@@ -1,7 +1,8 @@
 let StartFunc = () => {
-    let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
+    // let jVarLocalFactoryName = getUrlQueryParams({ inGetKey: "BranchName" });
+    let jVarLocalFactoryName = localStorage.getItem("FactoryName");
 
-    if (jVarLocalBranchName === null) {
+    if (jVarLocalFactoryName === null) {
         Swal.fire({
             title: "BranchName!",
             text: "Not found in URL!",
@@ -9,7 +10,7 @@ let StartFunc = () => {
         });
     };
 
-    document.getElementById("BranchNameId").innerHTML = jVarLocalBranchName;
+    document.getElementById("FactoryNameId").innerHTML = jVarLocalFactoryName;
 };
 
 let getUrlQueryParams = ({ inGetKey }) => {
