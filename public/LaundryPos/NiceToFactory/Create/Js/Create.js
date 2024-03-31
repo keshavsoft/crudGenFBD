@@ -6,17 +6,7 @@ const StartFunc = () => {
     StartFuncFormLoadBeforeAdmin();
     StartFuncformLoad();
 
-    const form = document.getElementById("FormId");
-
-    // form.addEventListener('submit', (e) => {
-    //     e.preventDefault(); // Prevent HTML refresh
-
     StartFuncButtonClickFunc();
-
-    // const formData = new FormData(form); // Converts to array of arrays
-    // const obj = Object.fromEntries(formData); // Array of arrays to object
-    // console.log("aaaaaaaa : ", obj);
-    // });
 };
 
 StartFunc();

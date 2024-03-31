@@ -1,9 +1,4 @@
-import { StartFunc as StartFuncNavMenu } from "./NavMenu/Entry.js";
-import { StartFunc as StartFuncBreadCumMenu } from "./BreadCumMenu/Entry.js";
-
 const StartFunc = () => {
-    // StartFuncNavMenu();
-    // StartFuncBreadCumMenu();
     jFLocalParams();
 };
 
@@ -20,13 +15,6 @@ const jFLocalParams = () => {
         jVarlocalBranch.innerHTML = jVarLocalBranchName;
     };
 
-}
-
-let getUrlQueryParams = ({ inGetKey }) => {
-    const queryString = window.location.search;
-    const parameters = new URLSearchParams(queryString);
-    const value = parameters.get(inGetKey);
-    return value;
 };
 
 export { StartFunc };

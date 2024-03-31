@@ -1,0 +1,18 @@
+{
+    "Date": {
+        "type": "STRING",
+        "allowNull": false
+    },
+    "Description": {
+        "type": "STRING",
+        "allowNull": true
+    },
+    "Factory": {
+        "type": "NUMBER",
+        "allowNull": true
+    },
+    "BranchName": {
+        "type": "NUMBER",
+        "allowNull": true
+    }
+}

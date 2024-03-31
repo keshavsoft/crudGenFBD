@@ -1,6 +1,5 @@
 import { StartFunc as StartFuncPullData } from "./PullData/EntryFile.js";
 import { StartFunc as StartFuncChecks } from "./Checks/QrCheck.js";
-import { StartFunc as StartFuncChecksQrCodeId } from "./Checks/QrCodeId.js";
 import { StartFunc as StartFuncUniqueKeyCheck } from "./Checks/UniqueKeyCheck.js";
 
 let StartFunc = ({ inDataToInsert }) => {
@@ -8,8 +7,8 @@ let StartFunc = ({ inDataToInsert }) => {
     let LocalReturnData = { KTF: false, JSONFolderPath: "", CreatedLog: {} };
     let LocalStartFuncPullData = StartFuncPullData();
 
-    if (LocalStartFuncPullData === false) {
-        LocalReturnData.KReason = LocalStartFuncPullData.KReason;
+    if ("error" in LocalStartFuncPullData) {
+        LocalReturnData.KReason = LocalStartFuncPullData.error;
         return LocalReturnData;
     };
 
