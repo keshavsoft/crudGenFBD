@@ -11,11 +11,11 @@ let StartFunc = async () => {
         // let jVarLocalFactoryName = getUrlQueryParams({ inGetKey: "BranchName" });
         let jVarLocalFactoryName = localStorage.getItem("FactoryName");
 
-        let LocalBranchFilterData = jVarLocalDcData.filter(e => e.Factory == jVarLocalFactoryName)
+        // let LocalBranchFilterData = jVarLocalDcData.filter(e => e.Factory == jVarLocalFactoryName)
         let LocalScanedFilterData = jVarLocalItemsData.filter(e => e.DCFactory == jVarLocalFactoryName)
 
         let jVarLocalData = jFLocalItemsData({
-            inDcData: LocalBranchFilterData,
+            inDcData: jVarLocalDcData,
             inItemsData: LocalScanedFilterData,
 
         });

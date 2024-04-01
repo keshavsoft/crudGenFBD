@@ -4,17 +4,15 @@ import { StartFunc as StartFuncParams } from "./Params/EntryFile.js";
 import { StartFunc as StartFuncQrTable } from "./QrTable/EntryFile.js";
 
 let StartFunc = () => {
-    StartFuncDCDetails();
-    StartFuncDCCount();
     StartFuncParams();
-    StartFuncQrTable();
-    
-
     jFLocalToInputInputVoucherRefId()
     JFlocalShowAlertFunc();
     JFlocalNewPkAlertFunc();
-    jFLocalToInputBranchName();
+    StartFuncDCDetails();
+    StartFuncDCCount();
+    // jFLocalToInputBranchName();
     jFLocalBranchName()
+    StartFuncQrTable();
 };
 
 const JFlocalShowAlertFunc = () => {
@@ -41,17 +39,17 @@ let jFLocalToInputInputVoucherRefId = () => {
     jVarLocalInputVoucherRefId.value = jVarLocalVoucherRefValue;
 };
 
-let jFLocalToInputBranchName = () => {
-    // let jVarLocalBranchNameparam = getUrlQueryParams({ inGetKey: "BranchName" });
-    let jVarLocalBranchNameparam = localStorage.getItem("FactoryName");
+// let jFLocalToInputBranchName = () => {
+//     // let jVarLocalBranchNameparam = getUrlQueryParams({ inGetKey: "BranchName" });
+//     let jVarLocalBranchNameparam = localStorage.getItem("BranchName");
 
-    let jVarLocalHtmlId = 'InputBranchNameId';
-    let jVarLocalBranchName = document.getElementById(jVarLocalHtmlId);
+//     let jVarLocalHtmlId = 'InputBranchNameId';
+//     let jVarLocalBranchName = document.getElementById(jVarLocalHtmlId);
 
-    if (jVarLocalBranchNameparam === null === false) {
-        jVarLocalBranchName.value = jVarLocalBranchNameparam;
-    };
-};
+//     if (jVarLocalBranchNameparam === null === false) {
+//         jVarLocalBranchName.value = jVarLocalBranchNameparam;
+//     };
+// };
 
 let jFLocalBranchName = () => {
     // let jVarLocalBranchNameparam = getUrlQueryParams({ inGetKey: "BranchName" });

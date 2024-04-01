@@ -5,9 +5,9 @@ let StartFunc = async ({ inDataToShow }) => {
     let jVarLocaltableHeadRow = document.getElementById(jVarLocalHtmlId);
     jVarLocaltableHeadRow.appendChild(jFLocalSerialNumberColumn());
     jVarLocaltableHeadRow.appendChild(jFLocalpkColumn());
-    jVarLocaltableHeadRow.appendChild(jFLocalVoucherNumberColumn());
-    jVarLocaltableHeadRow.appendChild(jFLocalBranchName());
-    jVarLocaltableHeadRow.appendChild(jFLocalFactory());
+    // jVarLocaltableHeadRow.appendChild(jFLocalVoucherNumberColumn());
+    // jVarLocaltableHeadRow.appendChild(jFLocalBranchName());
+    // jVarLocaltableHeadRow.appendChild(jFLocalFactory());
     jVarLocaltableHeadRow.appendChild(jFLocalDateColumn());
     jVarLocaltableHeadRow.appendChild(jFLocalDescriptionColumn());
     jVarLocaltableHeadRow.appendChild(jFLocalDateTimeColumn());

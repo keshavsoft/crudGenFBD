@@ -2,7 +2,7 @@ let StartFunc = () => {
     let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
 
     const myUrlWithParams = new URL(`${window.location.origin}${window.location.pathname}`);
-    const k1 = new URL("../../DC/DcAll/DcAll.html", myUrlWithParams.href);
+    const k1 = new URL("../../DC/DcShowAll/DcShowAll.html", myUrlWithParams.href);
     k1.searchParams.append("BranchName", jVarLocalBranchName);
 
     window.location.href = k1.href;
