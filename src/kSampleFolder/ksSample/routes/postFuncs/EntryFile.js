@@ -6,10 +6,10 @@ import {
     PostFunc, PostFromModalFunc,
     PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc,
     PostUploadImageFunc, PostFilterFunc, PostCustomPkFunc,
-    PostWithKeysCheckFunc,GetUsingLoadAshFunc,FilterDataFrombodyFunc,GetsummaryFunc,GetWeeksummaryFunc
+    PostWithKeysCheckFunc, GetUsingLoadAshFunc, FilterDataFrombodyFunc, GetsummaryFunc, GetWeeksummaryFunc, PostSaveWithCheckingFunc
 } from '../../controllers/postFuncs/EntryFile.js';
 
-import { PostFunc as PostFuncmiddleware } from '../../middlewares/postFuncs/EntryFile.js';
+import { PostFunc as PostFuncmiddleware, PostSaveWithCheckingFunc as PostSaveWithCheckingFuncMiddleware } from '../../middlewares/postFuncs/EntryFile.js';
 import { PostFunc as PostFuncPostUploadFunc } from '../../middlewares/postFuncs/PostUploadFunc.js';
 
 import { upload as uploadFromMulter } from '../../dals/postFuncs/UsingMulter.js';
@@ -19,6 +19,7 @@ router.post('/GetSelectColumns', PostGetSelectColumnsFunc);
 router.post('/', PostFunc);
 router.post('/CustomPk', PostCustomPkFunc);
 router.post('/WithKeysCheck', PostWithKeysCheckFunc);
+router.post('/SaveWithChecking', PostSaveWithCheckingFuncMiddleware, PostSaveWithCheckingFunc);
 router.post('/GetUsingLoadAsh/:Id', GetUsingLoadAshFunc);
 router.post('/FilterDataFrombody', FilterDataFrombodyFunc);
 router.post('/summary', GetsummaryFunc);

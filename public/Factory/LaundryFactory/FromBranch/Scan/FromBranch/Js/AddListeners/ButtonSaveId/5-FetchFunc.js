@@ -2,7 +2,7 @@ import { StartFunc as StartFuncFetchHeaders } from "./FetchHeaders/EntryFile.js"
 
 let StartFunc = async () => {
     let jVarLocalFetchHeaders = StartFuncFetchHeaders();
-    let jVarLocalFetchUrl = `/bin/Factory/FactoryScan/WithKeysCheck`;
+    let jVarLocalFetchUrl = `/bin/Factory/FactoryScan/SaveWithChecking`;
     let response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
     let data = await response.json();
 
