@@ -1,6 +1,5 @@
 let StartFunc = ({ inFromFetch }) => {
     let jVarLocalFetchData = inFromFetch;
-
     if (jVarLocalFetchData.KTF === true) {
         jFLocalForSuccess(jVarLocalFetchData);
     }
@@ -18,7 +17,7 @@ let StartFunc = ({ inFromFetch }) => {
                 confirmButtonText: "ok",
             }).then((result) => {
                 if (result.isConfirmed) {
-                    // window.location.href = ""
+                    window.location.href = ""
                 }
             });
 

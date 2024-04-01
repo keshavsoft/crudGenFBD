@@ -11,13 +11,12 @@ let StartFunc = () => {
 
 let LocalFuncForBranchNameId = () => {
   // let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
-  let jVarLocalfactoryName = localStorage.getItem("FactoryName");
+  let jVarLocalBranchName = localStorage.getItem("FactoryName");
 
   let jVarLocalBranchNameId = document.getElementById('FactoryNameId');
 
-
   if (jVarLocalBranchNameId === null === false) {
-    jVarLocalBranchNameId.innerHTML = jVarLocalfactoryName
+    jVarLocalBranchNameId.innerHTML = jVarLocalBranchName
   };
 };
 
