@@ -9,7 +9,8 @@ import {
     GetUsingLoadAshFunc as GetUsingLoadAshFuncRepo,
     FilterDataFrombodyFunc as FilterDataFrombodyFuncRepo,
     GetsummaryFunc as GetsummaryFuncRepo,
-    GetWeeksummaryFunc as GetWeeksummaryFuncrepo
+    GetWeeksummaryFunc as GetWeeksummaryFuncrepo,
+    PostSaveWithCheckingFunc as PostSaveWithCheckingFuncrepo
 } from '../../repos/postFuncs/EntryFile.js';
 
 import {
@@ -17,6 +18,7 @@ import {
 } from '../../DataColumns.js';
 
 import { ClassSample } from '../../ModalClass.js';
+
 
 let PostFunc = async (req, res) => {
     let LocalBody = req.body;
@@ -42,10 +44,17 @@ let PostWithKeysCheckFunc = async (req, res) => {
     let LocalBody = req.body;
     let LocalFromRepo = await PostWithKeysCheckFuncRepo({ ...LocalBody });
 
-    // if (LocalFromRepo.KTF === false) {
-    //     res.status(500).send(LocalFromRepo.KReason);
-    //     return;
-    // };
+
+    res.json(LocalFromRepo);
+};
+
+let PostSaveWithCheckingFunc = async (req, res) => {
+    let LocalInSertObject = req.body.InSertObject;
+    let localRefFilterObject = req.body.references.FilterObject;
+
+    let LocalFromRepo = await PostSaveWithCheckingFuncrepo({
+        inInSertObject: LocalInSertObject, inRefFilterObject: localRefFilterObject
+    });
 
     res.json(LocalFromRepo);
 };
@@ -161,5 +170,5 @@ export {
     PostFunc, PostFromModalFunc,
     PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc,
     PostUploadImageFunc, PostFilterFunc, PostCustomPkFunc,
-    PostWithKeysCheckFunc, GetUsingLoadAshFunc, FilterDataFrombodyFunc,GetsummaryFunc,GetWeeksummaryFunc
+    PostWithKeysCheckFunc, GetUsingLoadAshFunc, FilterDataFrombodyFunc, GetsummaryFunc, GetWeeksummaryFunc, PostSaveWithCheckingFunc
 };

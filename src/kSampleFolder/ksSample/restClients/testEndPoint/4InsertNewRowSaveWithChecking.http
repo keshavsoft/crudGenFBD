@@ -1,0 +1,11 @@
+
+
+###copy the table schema from step 1(GET)
+POST http://localhost:7016/bin/Factory/FactoryScan/SaveWithChecking
+content-type: application/json
+
+{
+    "InSertObject":{},
+    "references":"FilterObject"
+}
+

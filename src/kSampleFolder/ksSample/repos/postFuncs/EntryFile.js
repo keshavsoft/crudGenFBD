@@ -9,7 +9,8 @@ import {
     GetUsingLoadAshFunc as GetUsingLoadAshFuncDal,
     FilterDataFrombodyFunc as FilterDataFrombodyFuncDal,
     GetsummaryFunc as GetsummaryFuncDal,
-    GetWeeksummaryFunc as GetWeeksummaryFuncDal
+    GetWeeksummaryFunc as GetWeeksummaryFuncDal,
+    PostSaveWithCheckingFunc as PostSaveWithCheckingFuncDal
 } from '../../dals/postFuncs/EntryFile.js';
 
 let PostFunc = async (inModalObject) => {
@@ -22,6 +23,10 @@ let PostCustompkFunc = async (inModalObject) => {
 
 let PostWithKeysCheckFunc = async (inModalObject) => {
     return PostWithKeysCheckFuncDal({ inBodyKeys: inModalObject });
+};
+
+let PostSaveWithCheckingFunc = async ({ inInSertObject, inRefFilterObject }) => {
+    return PostSaveWithCheckingFuncDal({ inInSertObject, inRefFilterObject });
 };
 
 let PostFilterFunc = async (inModalObject) => {
@@ -63,5 +68,5 @@ let FilterDataFrombodyFunc = ({ inFindValue, inFindKey }) => {
 export {
     PostFunc, PostFromModalFunc,
     PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc, PostFilterFunc, PostCustompkFunc,
-    PostWithKeysCheckFunc, GetUsingLoadAshFunc, FilterDataFrombodyFunc, GetsummaryFunc, GetWeeksummaryFunc
+    PostWithKeysCheckFunc, GetUsingLoadAshFunc, FilterDataFrombodyFunc, GetsummaryFunc, GetWeeksummaryFunc,PostSaveWithCheckingFunc
 };
