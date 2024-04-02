@@ -1,8 +1,0 @@
-{
-    "FolderName": "Factory",
-    "FileNameOnly": "VoucherDetails",
-    "FileName": "VoucherDetails",
-    "ItemName": "VoucherDetails",
-    "FilterString":"value.BranchName === '{{BranchName}}'",
-    "ScreenName": "Create"
-}
