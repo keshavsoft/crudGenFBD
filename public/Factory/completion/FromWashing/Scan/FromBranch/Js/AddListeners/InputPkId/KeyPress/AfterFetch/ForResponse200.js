@@ -10,7 +10,7 @@ let StartFunc = async ({ inFetchResonse }) => {
         jFLocalToInputInputProductNameId({ inInputProductNameId: jVarLocalFetchData.ItemName });
         jFLocalToInputInputSalePriceId({ inInputSalePriceId: jVarLocalFetchData.Rate });
         jFLocalToInputFactorySelectedId({ inInputFactorySelectedId: jVarLocalFetchData.location })
-     // jFLocalToInputBranchNameId({ inInputFactorySelectedId: jVarLocalFetchData.BookingData.OrderData.BranchName });    30/03/24
+        jFLocalToInputBranchNameId({ inInputFactorySelectedId: jVarLocalFetchData.BookingData.OrderData.BranchName });
         jFLocalRunSaveClick();
     };
 };
@@ -48,10 +48,11 @@ let jFLocalToInputInputPkId = ({ inInputPkId }) => {
     jVarLocalInputPkId.value = inInputPkId;
 };
 
-let jFLocalToInputBranchNameId = ({ inInputPkId }) => {
+let jFLocalToInputBranchNameId = ({ inInputFactorySelectedId }) => {
     let jVarLocalHtmlId = 'InputBranchNameId';
     let jVarLocalInputPkId = document.getElementById(jVarLocalHtmlId);
-    jVarLocalInputPkId.value = inInputPkId;
+    jVarLocalInputPkId.value = inInputFactorySelectedId;
 };
+
 
 export { StartFunc };
