@@ -1,7 +1,10 @@
 let StartFunc = () => {
+    return true;
+};
+let StartFunc1 = () => {
     let jVarLocalDCFactory = jFLocalFromDomDCFactoryTextId();
     let jVarLocalInputFactorySelectedId = jFLocalFromDomInputFactorySelectedId();
-    
+
     if (jVarLocalInputFactorySelectedId === jVarLocalDCFactory) {
         return true;
     }
