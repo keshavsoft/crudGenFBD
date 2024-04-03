@@ -1,402 +1,563 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Booking Customers Barcode</title>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <!-- <link rel="stylesheet" href="./Laundry/css/bootstrap.min.css"> -->
+    <title>To factory Dashboard</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- Favicons -->
+    <link href="./assets/img/favicon.png" rel="icon">
+    <link href="./assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Template Main CSS File -->
+    <link href="./assets/css/style.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css">
 
+    <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Updated: Jan 29 2024 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Sixth navbar example" id="NavBarId">
-            <div class="container-fluid">
-                <a class="navbar-brand" id="BranchNameId">{{Branch}}</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarsExample06" aria-controls="navbarsExample06" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
 
-                <div class="collapse navbar-collapse" id="navbarsExample06">
-                    <ul class="navbar-nav me-auto mb-2 mb-xl-0" id="KHeader">
-                        <li class="nav-item Bookings">
-                            <a href="../BranchSelect.html" class="nav-link active">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                                    class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z">
-                                    </path>
-                                    <path fill-rule="evenodd"
-                                        d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z">
-                                    </path>
-                                </svg>
-                                Parent
-                            </a>
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <img src="./assets/img/logo.png" alt="">
+                <span class="d-none d-lg-block" id="BranchNameId">{{Branch}}</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div>
+        <!-- End Logo -->
+
+        <div class="search-bar">
+            <form class="search-form d-flex align-items-center" method="POST" action="#">
+                <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+        <!-- End Search Bar -->
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+
+                <li class="nav-item d-block d-lg-none">
+                    <a class="nav-link nav-icon search-bar-toggle " href="#">
+                        <i class="bi bi-search"></i>
+                    </a>
+                </li>
+                <!-- End Search Icon-->
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                        <i class="bi bi-bell"></i>
+                        <span class="badge bg-primary badge-number">4</span>
+                    </a>
+                    <!-- End Notification Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                        <li class="dropdown-header">
+                            You have 4 new notifications
+                            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
                         </li>
-
-                        <li class="nav-item Bookings">
-                            <a class="nav-link active text-info" aria-current="page" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                                    class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
-                                    <path
-                                        d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z" />
-                                </svg>
-                                Dashboard
-                            </a>
-                        </li>
-
-                        <li id="ToFactoryId" class="nav-item Bookings">
-                            <a class="nav-link active " aria-current="page"
-                                href="../NiceToFactory/Dashboard/Dashboard.html">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                                    class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
-                                    <path
-                                        d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.354-5.854 1.5 1.5a.5.5 0 0 1-.708.708L13 11.707V14.5a.5.5 0 0 1-1 0v-2.793l-.646.647a.5.5 0 0 1-.708-.708l1.5-1.5a.5.5 0 0 1 .708 0" />
-                                    <path
-                                        d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7.256A4.5 4.5 0 0 0 12.5 8a4.5 4.5 0 0 0-3.59 1.787A.5.5 0 0 0 9 9.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .39-.187A4.5 4.5 0 0 0 8.027 12H6.5a.5.5 0 0 0-.5.5V16H3a1 1 0 0 1-1-1zm2 1.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m3 0v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
-                                </svg>
-                                ToFactory
-                            </a>
+                        <li>
+                            <hr class="dropdown-divider">
                         </li>
 
-                        <li id="OrdersId" class="nav-item Bookings">
-                            <a class="nav-link active " aria-current="page"
-                                href="../Orders/QrCodesTable/QrCodesTable.html">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                                    class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
-                                    <path
-                                        d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5M11.5 4a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z" />
-                                    <path
-                                        d="M2.354.646a.5.5 0 0 0-.801.13l-.5 1A.5.5 0 0 0 1 2v13H.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1H15V2a.5.5 0 0 0-.053-.224l-.5-1a.5.5 0 0 0-.8-.13L13 1.293l-.646-.647a.5.5 0 0 0-.708 0L11 1.293l-.646-.647a.5.5 0 0 0-.708 0L9 1.293 8.354.646a.5.5 0 0 0-.708 0L7 1.293 6.354.646a.5.5 0 0 0-.708 0L5 1.293 4.354.646a.5.5 0 0 0-.708 0L3 1.293zm-.217 1.198.51.51a.5.5 0 0 0 .707 0L4 1.707l.646.647a.5.5 0 0 0 .708 0L6 1.707l.646.647a.5.5 0 0 0 .708 0L8 1.707l.646.647a.5.5 0 0 0 .708 0L10 1.707l.646.647a.5.5 0 0 0 .708 0L12 1.707l.646.647a.5.5 0 0 0 .708 0l.509-.51.137.274V15H2V2.118z" />
-                                </svg>
-                                Orders
-                            </a>
+                        <li class="notification-item">
+                            <i class="bi bi-exclamation-circle text-warning"></i>
+                            <div>
+                                <h4>Lorem Ipsum</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>30 min. ago</p>
+                            </div>
                         </li>
 
-                        <li id="QrCodeId" class="nav-item Bookings">
-                            <a class="nav-link active " aria-current="page" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                                    class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
-                                    <path d="M2 2h2v2H2z" />
-                                    <path d="M6 0v6H0V0zM5 1H1v4h4zM4 12H2v2h2z" />
-                                    <path d="M6 10v6H0v-6zm-5 1v4h4v-4zm11-9h2v2h-2z" />
-                                    <path
-                                        d="M10 0v6h6V0zm5 1v4h-4V1zM8 1V0h1v2H8v2H7V1zm0 5V4h1v2zM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8zm0 0v1H2V8H1v1H0V7h3v1zm10 1h-1V7h1zm-1 0h-1v2h2v-1h-1zm-4 0h2v1h-1v1h-1zm2 3v-1h-1v1h-1v1H9v1h3v-2zm0 0h3v1h-2v1h-1zm-4-1v1h1v-2H7v1z" />
-                                    <path d="M7 12h1v3h4v1H7zm9 2v2h-3v-1h2v-1z" />
-                                </svg>
-                                QrCodes
-                            </a>
-                        </li>
-                        <li id="QrCodeId" class="nav-item Bookings">
-                            <a class="nav-link active " aria-current="page" href="../All/Dashboard/Dashboard.html">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                                    class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
-                                    <path d="M2 2h2v2H2z" />
-                                    <path d="M6 0v6H0V0zM5 1H1v4h4zM4 12H2v2h2z" />
-                                    <path d="M6 10v6H0v-6zm-5 1v4h4v-4zm11-9h2v2h-2z" />
-                                    <path
-                                        d="M10 0v6h6V0zm5 1v4h-4V1zM8 1V0h1v2H8v2H7V1zm0 5V4h1v2zM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8zm0 0v1H2V8H1v1H0V7h3v1zm10 1h-1V7h1zm-1 0h-1v2h2v-1h-1zm-4 0h2v1h-1v1h-1zm2 3v-1h-1v1h-1v1H9v1h3v-2zm0 0h3v1h-2v1h-1zm-4-1v1h1v-2H7v1z" />
-                                    <path d="M7 12h1v3h4v1H7zm9 2v2h-3v-1h2v-1z" />
-                                </svg>
-                                All
-                            </a>
-                        </li>
-                        <li id="MastersDashBoardId" class="nav-item Bookings">
-                            <a class="nav-link active " aria-current="page" href="../Masters/Dashboard/Dashboard.html">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                                    class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
-                                    <path
-                                        d="M14 3a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z" />
-                                    <path fill-rule="evenodd"
-                                        d="M9.146 8.146a.5.5 0 0 1 .708 0L11.5 9.793l1.646-1.647a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 0-.708" />
-                                    <path fill-rule="evenodd"
-                                        d="M11.5 5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0v-4a.5.5 0 0 1 .5-.5" />
-                                    <path
-                                        d="M3.56 11V7.01h.056l1.428 3.239h.774l1.42-3.24h.056V11h1.073V5.001h-1.2l-1.71 3.894h-.039l-1.71-3.894H2.5V11z" />
-                                </svg>
-                                Masters
-                            </a>
-                        </li>
-                        <li id="TodayDashBoardId" class="nav-item Bookings">
-                            <a class="nav-link active " aria-current="page" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                                    class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
-                                    <path
-                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
-                                </svg>
-                                Today
-                            </a>
+                        <li>
+                            <hr class="dropdown-divider">
                         </li>
 
-                        <li id="ReportsId" class="nav-item Bookings">
-                            <a class="nav-link active " aria-current="page" href="../Reports/Dashboard/Dashboard.html">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                                    class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5" />
-                                </svg>
-                                Reports
-                            </a>
+                        <li class="notification-item">
+                            <i class="bi bi-x-circle text-danger"></i>
+                            <div>
+                                <h4>Atque rerum nesciunt</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>1 hr. ago</p>
+                            </div>
                         </li>
 
-                        <li id="ClockId" class="nav-item Bookings">
-                            <a class="nav-link active " aria-current="page" href="../../clock/index.html">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                                    class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
-                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
-                                </svg>
-
-                                Clock
-                            </a>
+                        <li>
+                            <hr class="dropdown-divider">
                         </li>
-                        <li id="ClockId" class="nav-item Bookings">
-                            <a class="nav-link active " aria-current="page"
-                                href="../Summary/Orders/TotalOrders/TotalOrders.html">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                                    class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
-                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
-                                </svg>
 
-                                Summary
-                            </a>
+                        <li class="notification-item">
+                            <i class="bi bi-check-circle text-success"></i>
+                            <div>
+                                <h4>Sit rerum fuga</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>2 hrs. ago</p>
+                            </div>
                         </li>
-                        <li id="ClockId" class="nav-item Bookings">
-                            <a class="nav-link active " aria-current="page" href="../Qrcode/Search/Search.html">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                                    class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
-                                    <path
-                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                                </svg>
 
-                                Search
-                            </a>
+                        <li>
+                            <hr class="dropdown-divider">
                         </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-info-circle text-primary"></i>
+                            <div>
+                                <h4>Dicta reprehenderit</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>4 hrs. ago</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="dropdown-footer">
+                            <a href="#">Show all notifications</a>
+                        </li>
+
                     </ul>
-                    <ul>
-                        <input class="form-control mr-sm-2" id="NavSearchId" type="search" placeholder="Search Qr Code"
-                            aria-label="Search">
+                    <!-- End Notification Dropdown Items -->
+
+                </li>
+                <!-- End Notification Nav -->
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                        <i class="bi bi-chat-left-text"></i>
+                        <span class="badge bg-success badge-number">3</span>
+                    </a>
+                    <!-- End Messages Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+                        <li class="dropdown-header">
+                            You have 3 new messages
+                            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="message-item">
+                            <a href="#">
+                                <img src="./assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                                <div>
+                                    <h4>Maria Hudson</h4>
+                                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                    <p>4 hrs. ago</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="message-item">
+                            <a href="#">
+                                <img src="./assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                                <div>
+                                    <h4>Anna Nelson</h4>
+                                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                    <p>6 hrs. ago</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="message-item">
+                            <a href="#">
+                                <img src="./assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                                <div>
+                                    <h4>David Muldon</h4>
+                                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                    <p>8 hrs. ago</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="dropdown-footer">
+                            <a href="#">Show all messages</a>
+                        </li>
+
                     </ul>
-                    <ul class="navbar-nav">
+                    <!-- End Messages Dropdown Items -->
 
+                </li>
+                <!-- End Messages Nav -->
 
-                        <li id="HeaderLoginButtonId">
-                            <a href="#" class="nav-link text-white" id="NavBarloginId">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z">
-                                    </path>
-                                </svg>
-                                Login
+                <li class="nav-item dropdown pe-3">
+
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <img src="./assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2">N.Keshav</span>
+                    </a>
+                    <!-- End Profile Iamge Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li class="dropdown-header">
+                            <h6>Kevin Anderson</h6>
+                            <span>Web Designer</span>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-person"></i>
+                                <span>My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-gear"></i>
+                                <span>Account Settings</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                                <i class="bi bi-question-circle"></i>
+                                <span>Need Help?</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Sign Out</span>
                             </a>
                         </li>
 
-                        <div id="HeaderUserIdLi" class="visually-hidden dropdown text-end">
-                            <a href="#" id="HeaderUserIdDropDown" data-bs-toggle="dropdown" aria-expanded="false"
-                                class="nav-link text-white dropdown-toggle">
-
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    class="bi bi-person-check-fill d-block mx-auto mb-1 d-none d-md-block"
-                                    viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z">
-                                    </path>
-                                    <path
-                                        d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z">
-                                    </path>
-                                </svg>
-
-                                UserName
-                            </a>
-                            <ul class="dropdown-menu text-small">
-                                <li><a class="dropdown-item" href="#"
-                                        onclick="jVarGlobalClientObject.UI.ModalFuncs.Show()">
-                                        <i class="bi bi-power" style="font-size: 1.3rem; color:orangered"></i>
-                                        logout</a>
-                                </li>
-                            </ul>
-
-                        </div>
                     </ul>
+                    <!-- End Profile Dropdown Items -->
+                </li>
+                <!-- End Profile Nav -->
 
-                </div>
-            </div>
+            </ul>
         </nav>
+        <!-- End Icons Navigation -->
+
     </header>
+    <!-- End Header -->
 
-    <main>
-        <div class="container" id="KCont1">
-            <div id="AlertSuccessId" class="alert alert-success alert-dismissible fade show mt-2" role="alert"
-                style="display: none;">
-                <strong id="AlertSuccessIdUserName">SavedPk</strong> User created sucessfully.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
 
+        <ul class="sidebar-nav" id="sidebar-nav">
+            <li class="nav-item">
+                <a  class="nav-link collapsed" href="../BranchSelect.html">
+                    <i class="bi bi-grid"></i>
+                    <span>Branch Select</span>
+                </a>
+            </li>
+            
+
+            <li class="nav-item">
+                <a  class="nav-link " href="#">
+                    <i class="bi bi-grid"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#Orders-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-people"></i><span>Orders</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="Orders-nav" class="nav-content  collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="../Orders/QrCodesTable/QrCodesTable.html" class="">
+                            <i class="bi bi-circle"></i><span>Qr-Table</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Orders/QrToRaise/QrToRaise.html" class="">
+                            <i class="bi bi-circle"></i><span>Qr-ToRaise</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Orders/QrCodesPrint/QrCodesPrint.html" class="">
+                            <i class="bi bi-circle"></i><span>Qr-Print</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Orders/Bill/Bill.html" class="">
+                            <i class="bi bi-circle"></i><span>Bill-Print</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li><!-- End  To Orders Nav -->
+
+            <!-- End Orders Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#Masters-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-people"></i><span>Masters</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="Masters-nav" class="nav-content  collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="../Masters/CustomersDashboard/ShowAll/ShowAll.html" class="">
+                            <i class="bi bi-circle"></i><span>Customers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Masters/Items/ShowAll/ShowAll.html" class="">
+                            <i class="bi bi-circle"></i><span>Items</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Masters/AddOnsDashboard/ShowAll/ShowAll.html" class="">
+                            <i class="bi bi-circle"></i><span>Add Ons</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li><!-- End  To Masters Nav -->
+
+          
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#ToFactory-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-people"></i><span>To Factory</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="ToFactory-nav" class="nav-content  collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="../NiceToFactory/DCAll/ShowAll/ShowAll.html" class="">
+                            <i class="bi bi-circle"></i><span>All</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../NiceToFactory/TodayDC/ShowAll/ShowAll.html" class="">
+                            <i class="bi bi-circle"></i><span>Today</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../NiceToFactory/Create/Create.html" class="">
+                            <i class="bi bi-circle"></i><span>Create</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li><!-- End  To Factory Nav -->
+
+            
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-people"></i><span>All</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="charts-nav" class="nav-content  collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="../All/NiceOrders/ShowAll/ShowAll.html" class="">
+                            <i class="bi bi-circle"></i><span>Orders</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../All/NiceQrcodes/DcWithQr/DcWithQr.html" class="">
+                            <i class="bi bi-circle"></i><span>QrCodes</span>
+                        </a>
+                    </li>
+                   
+
+                </ul>
+            </li><!-- End  To All Nav -->
+            
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#Toady-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-people"></i><span>Today</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="Toady-nav" class="nav-content  collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="../Today/NiceOrders/ShowAll/ShowAll.html" class="">
+                            <i class="bi bi-circle"></i><span>Orders</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Today/NiceQrcodes/ShowAll/ShowAll.html" class="">
+                            <i class="bi bi-circle"></i><span>Orcodes</span>
+                        </a>
+                    </li>
+                   
+
+                </ul>
+            </li><!-- End  To Today Nav -->
+           
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#Reports-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-x-diamond-fill"></i><span>Reports</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="Reports-nav" class="nav-content  collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="../Reports/Orders/FilterShowAll/FilterShowAll.html" class="">
+                            <i class="bi bi-circle"></i><span>Orders</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Reports/Scane/ShowAll/ShowAll.html" class="">
+                            <i class="bi bi-circle"></i><span>QrCodes</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li><!-- End  Reports Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#Summary-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-patch-plus-fill"></i><span>Summary</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="Summary-nav" class="nav-content  collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="../Summary/Orders/TotalOrders/TotalOrders.html" class="">
+                            <i class="bi bi-circle"></i><span>Orders</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Summary/QrCodes/TotalQrs/TotalQrs.html" class="">
+                            <i class="bi bi-circle"></i><span>QrCodes</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li><!-- End Summary Nav -->
+            <li class="nav-item">
+                <a  class="nav-link collapsed" href="../Qrcode/Search/Search.html" >
+                    <i class="bi bi-columns-gap"></i></i>
+                    <span>Search</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a  class="nav-link collapsed" href="../../clock/index.html" >
+                    <i class="bi bi-columns-gap"></i></i>
+                    <span>clock</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+    <!-- End Sidebar-->
+
+    <main id="main" class="main">
+        <datalist id="CustomerDataListId">
+            
+        </datalist>
+
+        <div class="pagetitle">
+            <h1> Home</h1>
+
+
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="float-end"></li>
+                </ol>
+                
+            </nav>
+        </div>
+        <!-- End Page Title -->
+
+        <section class="section">
             <div class="row">
-                <div class="col col-md-6">
-                    <div class="input-group mt-3 mb-3">
-                        <input type="text" class="form-control" placeholder="Scan Qrcode or Search Customer"
-                            aria-label="Input" aria-describedby="GoButtonid" id="ScanId" list="CustomerDataListId"
-                            autofocus="">
-                        <button class="btn btn-outline-secondary" type="button" id="GoButtonid">GO</button>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col col-md-6">
+                                    <div class="input-group mt-3 mb-3">
+                                        <input type="text" class="form-control" placeholder="Search Customer"
+                                            aria-label="Input" aria-describedby="GoButtonid" id="ScanId" list="CustomerDataListId"
+                                            autofocus="">
+                                        <button class="btn btn-outline-secondary" type="button" id="GoButtonid">GO</button>
+                                    </div>
+                                </div>
+                                <div class="col col-md-6">
+                                    <div class="input-group mt-3 mb-3 ">
+                
+                                        <button type="button" name="" id="CustomerCreateID" class="btn btn-primary">Create
+                                            Customer</button>
+                    
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-                <div class="col col-md-6">
-                    <div class="input-group mt-3 mb-3 ">
-
-                        <button type="button" name="" id="CustomerCreateID" class="btn btn-primary">Create
-                            Customer</button>
-
-                    </div>
-                </div>
             </div>
-            <div>
-                <table class="table" id="tableId" data-toolbar="#toolbar" data-search="true" data-searchable="true"
-                    data-show-columns="true" data-show-columns-toggle-all="true" data-click-to-select="true"
-                    data-show-export="true" data-detail-formatter="detailFormatter" data-id-field="pk"
-                    data-show-toggle="true" data-filter-control="true" data-buttons-class="primary">
-                    <thead>
-                        <tr id="tableHeadRow">
-                            <th data-formatter="jFLocalSerialColumn">#</th>
-                            <th data-field="CustomerName">CustomerName</th>
-                            <th data-field="Mobile" data-filter-control="select">Mobile</th>
-                            <th data-field="City" data-filter-control="select">City</th>
-                            <th data-formatter="ItemsFormatter"></th>
+        </section>
 
-
-                        </tr>
-                    </thead>
-                </table>
-
-            </div>
-
-            <datalist id="CustomerDataListId">
-                <option value="Keshav">
-                </option>
-                <option value="9848163021">
-                </option>
-            </datalist>
-
-            <div class="alert alert-danger d-none" role="alert" id="DangerAlertId">
-                A simple danger alert—check it out!
-            </div>
-
-
-            <div class="alert alert-success d-none" role="alert" id="SuccessAlertId">
-                Success!
-            </div>
-
-        </div>
     </main>
+    <!-- End #main -->
 
-    <div class="modal fade" id="LoginModalId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Enter client user credentials</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="LoginFormPopUpId" class="" onsubmit="return false" novalidate="">
-                        <div class="mb-3 form-floating is-valid">
-                            <input type="text" class="form-control" id="KUserNameInput" required="">
-                            <label for="KUserNameInput">User Name</label>
-                            <div class="invalid-feedback">
-                                User Name cannot be empty.
-                            </div>
-                        </div>
-                        <div class="mb-3 form-floating">
-                            <input type="password" class="form-control" id="KPasswordInput" required="">
-                            <label for="KPasswordInput">Password</label>
-                            <div class="invalid-feedback">
-                                Password cannot be empty.
-                            </div>
-                        </div>
-                        <input id="LoginButtonOnModalId" type="submit" class=" btn btn-primary">
-                    </form>
-                </div>
-            </div>
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="copyright">
+            &copy; KeshavSoft @ 2024<strong>
         </div>
-    </div>
 
-
-
-    <div id="AlertWarningId" class="alert alert-warning alert-dismissible fade show" role="alert" style="display:none;">
-        <div id="AlertWarningMessageId"><strong>Sorry!</strong> Data not saved</div>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-
-
-    <footer class="footer mt-auto py-3 bg-light fixed-bottom">
-        <div class="container">
-            <div class="bg-light d-flex justify-content-between">
-                <div>KeshavSoft v19.10</div>
-
-                <div data-BaseString="Last refresh : " id="KLastRefreshDT">Last refresh : </div>
-            </div>
-        </div>
     </footer>
-    <script>
+    <!-- End Footer -->
+    <!-- Vendor JS Files -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
-        function jFLocalSerialColumn(value, row, index) {
-            return index + 1;
-        };
-
-        function ItemsFormatter(value, row, index) {
-            // let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
-            let jVarLocalBranchName = localStorage.getItem("BranchName");
-
-            return [
-                `<a class="like btn btn-primary" href="../NewOrder/NewOrder.html?BranchName=${jVarLocalBranchName}&CustomerName=${row.CustomerName}&CustomerMobile=${row.Mobile}" title="Show">`,
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">',
-                '<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>',
-                '</svg>',
-                ' ',
-                ,
-                '</a>',
-
-            ].join('')
-
-        };
-
-        let getUrlQueryParams = ({ inGetKey }) => {
-            const queryString = window.location.search;
-            const parameters = new URLSearchParams(queryString);
-            const value = parameters.get(inGetKey);
-            return value;
-        };
-
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
-        integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
+
+    <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
+    <script
+        src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/export/bootstrap-table-export.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <script type="module" src="./Dashboard.js"></script>
-    <!-- <script type="module" src="../../Utility/src/backup"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+        integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Template Main JS File -->
+    <script src="./assets/js/main.js"></script>
+    <script type="module" src="./Js/StartFunc.js"></script>
 </body>
 
 </html>
