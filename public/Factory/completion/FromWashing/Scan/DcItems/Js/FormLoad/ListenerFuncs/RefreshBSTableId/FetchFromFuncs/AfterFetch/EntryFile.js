@@ -6,7 +6,7 @@ let StartFunc = ({ inDataToShow }) => {
 
     if (jVarLocalVoucherRef === '' || jVarLocalVoucherRef === null) swal.fire({ title: "No VoucherRef in Params", icon: "error" })
 
-    let LocalVoucherFilterData = jVarLocalDataToShow.filter(e => e.VoucherRef == jVarLocalVoucherRef && e.BranchName == jVarLocalFactoryName);
+    let LocalVoucherFilterData = jVarLocalDataToShow.filter(e => e.VoucherRef == jVarLocalVoucherRef && e.FactorySelected == jVarLocalFactoryName);
     if (LocalVoucherFilterData.length === 0 || jVarLocalVoucherRef === null) swal.fire({ title: "No Data", icon: "error" })
 
     jFLocalHideSpinner();

@@ -12,7 +12,7 @@ let StartFunc = () => {
     jFLocalToInputInputVoucherRefId()
     JFlocalShowAlertFunc();
     JFlocalNewPkAlertFunc();
-    jFLocalToInputBranchName();
+    // jFLocalToInputBranchName();
     jFLocalBranchName()
 };
 
