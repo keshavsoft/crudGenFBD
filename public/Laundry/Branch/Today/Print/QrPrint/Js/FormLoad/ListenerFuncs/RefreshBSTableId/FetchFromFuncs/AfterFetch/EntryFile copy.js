@@ -1,5 +1,4 @@
 import { StartFunc as StartFuncAddListeners } from "../../../../../AddListeners/StartFunc.js";
-import { StartFunc as StartFuncMultipleQrCodeButtonId } from "./MultipleQrCodeButtonId/EntryFile.js";
 
 let StartFunc = ({ inDataToShow, inQrCodeData }) => {
     jFLocalHideSpinner();
@@ -10,8 +9,7 @@ let StartFunc = ({ inDataToShow, inQrCodeData }) => {
     let LocalArrayReverseData = jVarWithQrCodeData.slice().reverse();
 
     $table.bootstrapTable("destroy").bootstrapTable({
-        data: LocalArrayReverseData,
-        onClickRow: jFLocalClickRow
+        data: LocalArrayReverseData
     });
 
     StartFuncAddListeners();
@@ -66,10 +64,11 @@ let jFLocalInsertQrCodeData = ({ inData, inQrCodeData }) => {
     return jVarLocalReturnArray;
 };
 
-let jFLocalClickRow = (row, $element, field) => {
-    if (field) {
-        StartFuncMultipleQrCodeButtonId({ inRowpk: row.pk }).then();
-    };
+let getUrlQueryParams = ({ inGetKey }) => {
+    const queryString = window.location.search;
+    const parameters = new URLSearchParams(queryString);
+    const value = parameters.get(inGetKey);
+    return value;
 };
 
 
