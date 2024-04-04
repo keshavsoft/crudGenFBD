@@ -1,5 +1,8 @@
 import { StartFunc as StartFuncAddListeners } from "../../../../../AddListeners/StartFunc.js";
 import { StartFunc as StartFuncMultipleQrCodeButtonId } from "./MultipleQrCodeButtonId/EntryFile.js";
+import { StartFunc as StartFuncMultipleQrCodeButtonId1 } from "./MultipleQrCodeButtonId1/EntryFile.js";
+import { StartFunc as StartFuncMultipleQrCodeButtonId2 } from "./MultipleQrCodeButtonId2/EntryFile.js";
+import { StartFunc as StartFuncMultipleQrCodeButtonId3 } from "./MultipleQrCodeButtonId3/EntryFile.js";
 
 let StartFunc = ({ inDataToShow, inQrCodeData }) => {
     jFLocalHideSpinner();
@@ -11,12 +14,14 @@ let StartFunc = ({ inDataToShow, inQrCodeData }) => {
 
     $table.bootstrapTable("destroy").bootstrapTable({
         data: LocalArrayReverseData,
-        onClickRow: jFLocalClickRow
+        onClickRow: jFLocalClickRow,
+        onClickRow: jFLocalClickRow1,
+        onClickRow: jFLocalClickRow2,
+        onClickRow: jFLocalClickRow3
     });
 
     StartFuncAddListeners();
 };
-
 
 let jFLocalHideSpinner = () => {
     let jVarLocalSpinnerId = document.getElementById("SpinnerId");
@@ -67,8 +72,33 @@ let jFLocalInsertQrCodeData = ({ inData, inQrCodeData }) => {
 };
 
 let jFLocalClickRow = (row, $element, field) => {
-    if (field) {
+    console.log("field:", field);
+    if (field === 5) {
         StartFuncMultipleQrCodeButtonId({ inRowpk: row.pk }).then();
+    };
+};
+
+let jFLocalClickRow1 = (row, $element, field) => {
+    console.log("field1:", field);
+
+    if (field === 6) {
+        StartFuncMultipleQrCodeButtonId1({ inRowpk: row.pk }).then();
+    };
+};
+
+let jFLocalClickRow2 = (row, $element, field) => {
+    console.log("field2:", field);
+
+    if (field === 7) {
+        StartFuncMultipleQrCodeButtonId2({ inRowpk: row.pk }).then();
+    };
+};
+
+let jFLocalClickRow3 = (row, $element, field) => {
+    console.log("field3:", field);
+
+    if (field === 8) {
+        StartFuncMultipleQrCodeButtonId3({ inRowpk: row.pk }).then();
     };
 };
 
