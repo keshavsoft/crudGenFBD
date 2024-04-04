@@ -1,5 +1,5 @@
 let jFLocalPullHtmlForSingleColumn = async () => {
-    let jVarLocalFetchUrl = "./ForHbs/QrCodeModalPopUp.html";
+    let jVarLocalFetchUrl = "./ForHbs/QrCodeModalPopUp1.html";
     let response = await fetch(jVarLocalFetchUrl);
     let data = await response.text();
 

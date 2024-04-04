@@ -14,10 +14,7 @@ let StartFunc = ({ inDataToShow, inQrCodeData }) => {
 
     $table.bootstrapTable("destroy").bootstrapTable({
         data: LocalArrayReverseData,
-        onClickRow: jFLocalClickRow,
-        onClickRow: jFLocalClickRow1,
-        onClickRow: jFLocalClickRow2,
-        onClickRow: jFLocalClickRow3
+        onClickRow: jFLocalClickRow
     });
 
     StartFuncAddListeners();
@@ -76,31 +73,18 @@ let jFLocalClickRow = (row, $element, field) => {
     if (field === 5) {
         StartFuncMultipleQrCodeButtonId({ inRowpk: row.pk }).then();
     };
-};
-
-let jFLocalClickRow1 = (row, $element, field) => {
-    console.log("field1:", field);
-
     if (field === 6) {
         StartFuncMultipleQrCodeButtonId1({ inRowpk: row.pk }).then();
     };
-};
-
-let jFLocalClickRow2 = (row, $element, field) => {
-    console.log("field2:", field);
-
     if (field === 7) {
         StartFuncMultipleQrCodeButtonId2({ inRowpk: row.pk }).then();
     };
-};
-
-let jFLocalClickRow3 = (row, $element, field) => {
-    console.log("field3:", field);
-
     if (field === 8) {
         StartFuncMultipleQrCodeButtonId3({ inRowpk: row.pk }).then();
     };
 };
+
+
 
 
 
