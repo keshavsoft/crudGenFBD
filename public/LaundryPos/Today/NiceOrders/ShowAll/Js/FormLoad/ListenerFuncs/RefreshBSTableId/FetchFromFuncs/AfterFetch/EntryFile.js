@@ -1,5 +1,3 @@
-import { StartFunc as StartFuncAddListeners } from "../../../../../AddListeners/StartFunc.js";
-
 let StartFunc = ({ inDataToShow, inQrCodeData }) => {
     jFLocalHideSpinner();
     let LocalinDataToShow = inDataToShow;
@@ -12,7 +10,6 @@ let StartFunc = ({ inDataToShow, inQrCodeData }) => {
         data: LocalArrayReverseData
     });
 
-    StartFuncAddListeners();
 };
 
 
