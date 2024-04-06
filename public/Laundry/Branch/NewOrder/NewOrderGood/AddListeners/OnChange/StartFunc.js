@@ -1,3 +1,5 @@
+import { StartFunc as StartFuncFromLocalStorage } from "../../FromLocalStorage/MenItems.js";
+
 let StartFunc = () => {
     let jVarLocalItemSelectId = document.getElementById("ItemSelectId");
     if (jVarLocalItemSelectId === null === false) jVarLocalItemSelectId.addEventListener("change", (event) => {
@@ -9,11 +11,6 @@ let StartFunc = () => {
 
 };
 
-let jFLocalFromLocalStorage = () => {
-    let jFLocalData = localStorage.getItem('Items');
-    return JSON.parse(jFLocalData);
-}
-
 let jFLocalItemSelectChange = ({ inEvent }) => {
     try {
         let jVarLocalStorageKey = "Items";
@@ -24,7 +21,7 @@ let jFLocalItemSelectChange = ({ inEvent }) => {
 
         let jVarLocalItemPk = parseInt(jVarLocalCurrentTarget.value);
 
-        let jVarLocalItems = jFLocalFromLocalStorage();
+        let jVarLocalItems = StartFuncFromLocalStorage({ inLocalStorageKey: jVarLocalStorageKey });
 
         let jVarLocalFind = Object.values(jVarLocalItems).find(element => element.pk === jVarLocalItemPk);
 
