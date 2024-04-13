@@ -1,20 +1,8 @@
 {
-    "method": "POST",
+    "method": "PUT",
     "headers": {
         "Accept": "application/json",
         "Content-Type": "application/json"
     },
-    "body": {
-        "ItemsInOrder": {},
-        "CustomerData": {
-            "CustomerName": "RAM",
-            "CustomerMobile": "8341177772"
-        },
-        "OrderData": {
-            "BranchName": "Kakinada",
-            "Currentdateandtime": "2024-03-05T17:02:35"
-        },
-        "AddOnData": {},
-        "CheckOutData": {}
-    }
+    "body":""
 }

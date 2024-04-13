@@ -69,7 +69,8 @@
                             <th>
                             </th>
                             <th>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" aria-label="Default select example"
+                                    id="TableFooterCategoryId">
                                     <option selected>Open this select menu</option>
                                     <option value="Men">Men</option>
                                     <option value="Women">Women</option>
@@ -102,7 +103,8 @@
                             </th>
                             <th></th>
                             <th>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" aria-label="Default select example"
+                                    id="TableFooterFactoryInputId">
                                     <option selected>Select Factory</option>
                                     <option value="Vizag">Vizag</option>
                                     <option value="Gurudwara">Gurudwara</option>
@@ -110,7 +112,7 @@
                                 </select>
                             </th>
                             <th>
-                                <input class="form-control" tabindex="-1" type="date">
+                                <input class="form-control" tabindex="-1" type="date" id="TableFooterdateInputId">
                             </th>
                             <th> <button class="btn btn-outline-success" type="button"
                                     id="TableFooterSaveButtonId">Save</button></th>
@@ -171,7 +173,7 @@
 
                 return [
                     `<a href="#" class="btn btn-primary ">`,
-                        `${jVarLocalFilterData.length} -${jVarLocalAddOnPrice}`,
+                    `${jVarLocalFilterData.length} -${jVarLocalAddOnPrice}`,
                     `</a>`
                 ].join('');
             } else {

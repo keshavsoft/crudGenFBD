@@ -1,11 +1,11 @@
-let StartFunc = (inFromFetch) => {
-    let jVarLocalHtmlId = 'RefreshBSTableId';
-    let jVarLocalRefreshBSTableId = document.getElementById(jVarLocalHtmlId);
-    jVarLocalRefreshBSTableId.click();
+let StartFunc = () => {
+    console.log('kkkkkkkkkkkk');
+    window.location.href = ""
 
-    // var $table = $('#table');
+    // let jVarLocalHtmlId = 'RefreshBSTableId';
+    // let jVarLocalRefreshBSTableId = document.getElementById(jVarLocalHtmlId);
+    // jVarLocalRefreshBSTableId.click();
 
-    // $table.bootstrapTable("refresh");
 };
 
 export { StartFunc }
