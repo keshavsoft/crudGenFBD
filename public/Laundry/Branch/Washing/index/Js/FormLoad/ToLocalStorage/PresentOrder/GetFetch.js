@@ -10,7 +10,6 @@ let StartFunc = async () => {
 
     let jVarLocalFromFetch = await fetch(jVarLocalFetchUrl);
     let jVarLocalFromFetchJson = await jVarLocalFromFetch.json();
-    console.log("jVarLocalFromFetchJson::",jVarLocalFromFetchJson);
 
     localStorage.setItem(jVarLocalLocalStorageKey, JSON.stringify(jVarLocalFromFetchJson));
 };
