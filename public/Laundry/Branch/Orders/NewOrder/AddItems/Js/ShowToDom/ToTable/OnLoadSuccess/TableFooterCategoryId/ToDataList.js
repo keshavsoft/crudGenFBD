@@ -11,8 +11,6 @@ const StartFunc = ({ inCategorySelected }) => {
     let jVarLocalThisCategory = jVarLocalFromLocalStorage.filter(element => element.Category === jVarLocalCategorySelected);
     let jVarLocalOrdered = jVarLocalThisCategory.sort((x, y) => {
         return ((x.ItemName == y.ItemName) ? 0 : ((x.ItemName > y.ItemName) ? 1 : -1));
-
-        return a.ItemName - b.ItemName;
     });
 
     var options = '';

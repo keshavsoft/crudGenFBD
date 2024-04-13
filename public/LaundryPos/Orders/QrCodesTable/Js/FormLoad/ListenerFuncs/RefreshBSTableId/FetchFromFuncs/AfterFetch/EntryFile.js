@@ -19,9 +19,7 @@ let StartFunc = ({ inDataToShow, inQrCodeData }) => {
 let jFLocalHideSpinner = () => {
     let jVarLocalSpinnerId = document.getElementById("SpinnerId");
     jVarLocalSpinnerId.style.display = "none";
-
 };
-
 
 let jFLocalInsertAggValues = ({ inData }) => {
     let jVarLocalReturnObject = [];

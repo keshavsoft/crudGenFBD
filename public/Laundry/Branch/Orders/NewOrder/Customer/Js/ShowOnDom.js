@@ -1,5 +1,4 @@
 const StartFunc = () => {
-
     let jVarLocalCustomersFromLocslstroge = localStorage.getItem("CustomerNames");
     let LocaCustomerData = JSON.parse(jVarLocalCustomersFromLocslstroge);
     let jVatLocalCustomersDataListId = document.getElementById("CustomersDataListId")
@@ -11,6 +10,5 @@ const StartFunc = () => {
         jVatLocalCustomersDataListId.appendChild(LocalOption)
 
     });
-
 };
 export { StartFunc };
