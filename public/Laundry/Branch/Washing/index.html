@@ -53,15 +53,15 @@
                 </datalist>
                 <table id="table" data-show-footer="true">
                     <thead>
-                        <th>#</th>
-                        <th data-field="ItemGroup">Group</th>
+                        <th data-formatter="jFLocalSerialColumn">#</th>
+                        <th data-field="Category">Group</th>
                         <th data-field="ItemName">Item Name</th>
                         <th>Add Ons</th>
-                        <th data-field="ItemRate">Rate</th>
-                        <th data-field="ItemPcs">Pcs</th>
-                        <th data-field="ItemAmount">Amount</th>
-                        <th data-field="Factory">Factory</th>
-                        <th data-field="Delivery">Delivery</th>
+                        <th data-field="Rate">Rate</th>
+                        <th data-field="Pcs">Pcs</th>
+                        <th data-field="Total">Amount</th>
+                        <th data-field="location">Factory</th>
+                        <th data-field="DeliveryDateTime">Delivery</th>
                         <th>Options</th>
                     </thead>
                     <tfoot>
@@ -129,6 +129,9 @@
     <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
 
     <script>
+        function jFLocalSerialColumn(value, row, index) {
+            return index + 1;
+        };
         // var $table = $('#table')
 
         // $table.bootstrapTable({
