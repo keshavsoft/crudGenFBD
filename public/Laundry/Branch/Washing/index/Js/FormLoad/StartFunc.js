@@ -3,7 +3,7 @@ import { StartFunc as StartFuncToLocalStorage } from "./ToLocalStorage/EntryFile
 
 const StartFunc = () => {
     StartFuncToLocalStorage();
-    StartFuncAddListeners();
+    // StartFuncAddListeners();
     // jFLocalModalShown();
 };
 

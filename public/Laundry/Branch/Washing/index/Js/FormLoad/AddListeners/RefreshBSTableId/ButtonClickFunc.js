@@ -16,7 +16,6 @@ let StartFunc = async () => {
     $table.bootstrapTable({
         data: [],
         onPostBody: function () {
-            console.log("aaaaaaaa");
             $("#TableFooterAccountNameId").focus();
             StartFuncOnLoadSuccess();
         }

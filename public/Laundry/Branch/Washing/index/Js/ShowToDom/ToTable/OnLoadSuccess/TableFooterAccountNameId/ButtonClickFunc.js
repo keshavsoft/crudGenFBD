@@ -1,8 +1,7 @@
-import { StartFunc as StartFuncCheckFunc } from "./CheckFunc.js";
-import { StartFunc as StartFuncFetchFromFuncs } from "./FetchFromFuncs/Entry.js";
+// import { StartFunc as StartFuncCheckFunc } from "./CheckFunc.js";
+// import { StartFunc as StartFuncFetchFromFuncs } from "./FetchFromFuncs/Entry.js";
 
 const StartFunc = () => {
-    console.log("aaaaaaaaaaaaaaa");
     var $table = $('#table');
 
     $table.bootstrapTable('insertRow', {

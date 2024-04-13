@@ -125,7 +125,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Show Items</h5>
+                    <h5 class="modal-title">Add Ons</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -161,40 +161,29 @@
         };
 
         function jFLocalAddOnFormater(value, row, index) {
-
             let JVarLocalFromStrogeAddOnData = localStorage.getItem("PresentOrder");
             let JvarLocalData = JSON.parse(JVarLocalFromStrogeAddOnData);
             let jVarLocalItemSerial = row.ItemSerial;
             let jVarLocalFilterData = Object.values(JvarLocalData.AddOnData).filter(e => e.AddOnItemSerial === jVarLocalItemSerial);
-            let jVarLocalAddOnPrice = jVarLocalFilterData.map(e => e.AddOnRate).reduce((a, b) => a + b, 0);
 
-            return [
-                `<a href="#" class="btn btn-outline-primary ">`,
-                `</svg>${jVarLocalFilterData.length} -${ jVarLocalAddOnPrice}`,
-                `</a>`
-            ].join('')
+            if (jVarLocalFilterData.length > 0) {
+                let jVarLocalAddOnPrice = jVarLocalFilterData.map(e => e.AddOnRate).reduce((a, b) => a + b, 0);
+
+                return [
+                    `<a href="#" class="btn btn-primary ">`,
+                        `${jVarLocalFilterData.length} -${jVarLocalAddOnPrice}`,
+                    `</a>`
+                ].join('');
+            } else {
+                let jVarLocalAddOnPrice = jVarLocalFilterData.map(e => e.AddOnRate).reduce((a, b) => a + b, 0);
+
+                return [
+                    `<a href="#" class="btn btn-outline-primary ">`,
+                    `Click`,
+                    `</a>`
+                ].join('')
+            };
         };
-        // var $table = $('#table')
-
-        // $table.bootstrapTable({
-        //     data: [{
-        //         "ItemGroup": "Men",
-        //         "ItemName": "M Shirt DW",
-        //         "Rate": 60,
-        //         "Pcs": 6,
-        //         "Factory": "Vizag",
-        //         "Delivery": "17-04-2024"
-        //     },
-        //     {
-        //         "ItemGroup": "Women",
-        //         "ItemName": "W Shirt DW",
-        //         "Rate": 60,
-        //         "Pcs": 1,
-        //         "Factory": "Vizag",
-        //         "Delivery": "17-04-2024"
-        //     }]
-        // })
-
     </script>
 
     <script type="module" src="./index/Js/StartFunc.js"></script>
