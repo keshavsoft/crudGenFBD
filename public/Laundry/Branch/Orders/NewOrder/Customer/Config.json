@@ -3,6 +3,7 @@
     "folderName": "Masters",
     "tableName": "CustomerNames",
     "localStorageKeys": {
-        "OrderKey": "CustomerNames"
+        "OrderKey": "CustomerNames",
+        "ItemNamesKey": "ItemNames"
     }
 }
