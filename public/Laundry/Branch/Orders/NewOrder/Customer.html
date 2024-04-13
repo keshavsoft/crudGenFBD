@@ -14,10 +14,7 @@
 
 <body>
     <datalist id="CustomersDataListId">
-        <option value="M Shirt DW">
-        <option value="W Shirt DW">
-        <option value="K Shirt DW">
-        <option value="M Jeans DW">
+        
     </datalist>
 
     <div class="container">
@@ -35,7 +32,26 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <table id="table" data-show-footer="true">
+                <thead>
+                    <th data-formatter="jFLocalSerialColumn">#</th>
+                    <th data-field="pk">Order #</th>
+                    <th data-field="CustomerData.CustomerName">CustomerName</th>
+                    <th data-field="CustomerData.CustomerMobile">Mobile</th>
+                    <th data-field="OrderData.BranchName">Branch</th>
+
+                    <th data-field="DateTime">DateTime</th>
+                </thead>
+                
+            </table>
+        </div>
     </div>
+    <script>
+         function jFLocalSerialColumn(value, row, index) {
+            return index + 1;
+        };
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
