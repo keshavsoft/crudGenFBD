@@ -1,0 +1,8 @@
+{
+    "routePath": "bin",
+    "folderName": "Masters",
+    "tableName": "CustomerNames",
+    "localStorageKeys": {
+        "OrderKey": "CustomerNames"
+    }
+}
