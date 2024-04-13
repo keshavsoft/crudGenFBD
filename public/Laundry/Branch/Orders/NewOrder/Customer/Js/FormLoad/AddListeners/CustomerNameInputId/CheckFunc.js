@@ -1,5 +1,6 @@
 let StartFunc = () => {
-   console.log("aaaaaaaaaaa");
+
+    return true;
 };
 
 export { StartFunc }
