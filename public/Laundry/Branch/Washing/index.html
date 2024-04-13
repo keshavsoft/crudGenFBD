@@ -56,7 +56,7 @@
                         <th data-formatter="jFLocalSerialColumn">#</th>
                         <th data-field="Category">Group</th>
                         <th data-field="ItemName">Item Name</th>
-                        <th>Add Ons</th>
+                        <th data-formatter="jFLocalAddOnFormater">Add Ons</th>
                         <th data-field="Rate">Rate</th>
                         <th data-field="Pcs">Pcs</th>
                         <th data-field="Total">Amount</th>
@@ -121,6 +121,33 @@
         </div>
     </div>
 
+    <div class="modal fade" id="AddOnModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Show Items</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <table id="AddOnTable">
+                        <thead>
+                            <tr id="tableHeadRow">
+                                <th data-formatter="jFLocalSerialColumn">#</th>
+                                <!-- <th data-field="AddOnItemSerial">AddOnItem #</th> -->
+                                <th data-field="AddOnService">AddOn Item</th>
+                                <th data-field="AddOnRate">Rate</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div><!-- End Large Modal-->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
@@ -131,6 +158,21 @@
     <script>
         function jFLocalSerialColumn(value, row, index) {
             return index + 1;
+        };
+
+        function jFLocalAddOnFormater(value, row, index) {
+
+            let JVarLocalFromStrogeAddOnData = localStorage.getItem("PresentOrder");
+            let JvarLocalData = JSON.parse(JVarLocalFromStrogeAddOnData);
+            let jVarLocalItemSerial = row.ItemSerial;
+            let jVarLocalFilterData = Object.values(JvarLocalData.AddOnData).filter(e => e.AddOnItemSerial === jVarLocalItemSerial);
+            let jVarLocalAddOnPrice = jVarLocalFilterData.map(e => e.AddOnRate).reduce((a, b) => a + b, 0);
+
+            return [
+                `<a href="#" class="btn btn-outline-primary ">`,
+                `</svg>${jVarLocalFilterData.length} -${ jVarLocalAddOnPrice}`,
+                `</a>`
+            ].join('')
         };
         // var $table = $('#table')
 
@@ -152,8 +194,8 @@
         //         "Delivery": "17-04-2024"
         //     }]
         // })
-   
-   </script>
+
+    </script>
 
     <script type="module" src="./index/Js/StartFunc.js"></script>
 </body>
