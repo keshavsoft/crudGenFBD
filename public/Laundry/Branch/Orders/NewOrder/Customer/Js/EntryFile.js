@@ -1,14 +1,14 @@
 // import { StartFunc as StartFuncShowOnDom } from "./ShowOnDom.js";
 import { StartFunc as StartFuncFormLoad } from "./FormLoad/StartFunc.js";
-import { StartFunc as StartFuncShowToDom } from "./ShowToDom/EntryFile.js";
+// import { StartFunc as StartFuncShowToDom } from "./ShowToDom/EntryFile.js";
 
-const StartFunc = async () => {
+const StartFunc = () => {
     let jVarLocalFromAdmin = true;
 
     if (jVarLocalFromAdmin) {
-        await StartFuncFormLoad();
-        StartFuncShowToDom();
+        StartFuncFormLoad();
+        // StartFuncShowToDom();
     };
 };
 
-StartFunc().then();
+StartFunc();
