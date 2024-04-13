@@ -8,6 +8,7 @@ import { StartFunc as StartFunRowDataByKeyId } from '../../kLowDb/ReadFromFile/R
 import { StartFunc as StartFuncSampleRow } from '../../kLowDb/ReadFromFile/SampleRow.js';
 import { StartFunc as StartFunFilterDataByKeyId } from '../../kLowDb/ReadFromFile/FilterDataByKeyId.js';
 import { StartFunc as StartFuncreadSummeryFile } from '../../kLowDb/ReadFileList/readSummeryFile.js';
+import { StartFunc as StartFuncMaxRow } from '../../kLowDb/ReadFromFile/MaxRow.js';
 
 
 let GetFunc = () => {
@@ -76,8 +77,13 @@ let GetBodyCheckFunc = () => {
     return StartFuncGetTableSchema();
 };
 
+let GetMaxRowFunc = () => {
+    return StartFuncMaxRow();
+};
+
 export {
     GetFunc, GetDataOnlyFunc, GetFromModalFunc,
     GetFromModalUuidFunc, GetFromModalUuidAndTSFunc,
-    GetIdFunc, GetBodyCheckFunc, GetRowDataFunc, GetRowCountFunc, GetRowCountByIdFunc,GetFilterDataFunc,GetSummeryFunc
+    GetIdFunc, GetBodyCheckFunc, GetRowDataFunc, GetRowCountFunc,
+    GetRowCountByIdFunc, GetFilterDataFunc, GetSummeryFunc, GetMaxRowFunc
 };

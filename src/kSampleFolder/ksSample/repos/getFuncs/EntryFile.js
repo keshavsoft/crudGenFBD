@@ -6,7 +6,8 @@ import {
     GetIdFunc as GetIdFuncDal, GetBodyCheckFunc as GetBodyCheckFuncDal,
     GetRowDataFunc as GetRowDataFuncDal, GetRowCountByIdFunc as GetRowCountByIdFuncDal, GetRowCountFunc as GetRowCountFuncDal,
     GetFilterDataFunc as GetFilterDataFuncDal,
-    GetSummeryFunc as GetSummeryFuncDal
+    GetSummeryFunc as GetSummeryFuncDal,
+    GetMaxRowFunc as GetMaxRowFuncDal
 } from '../../dals/getFuncs/EntryFile.js';
 
 let GetFunc = async () => {
@@ -57,8 +58,13 @@ let GetRowCountFunc = () => {
     return GetRowCountFuncDal();
 };
 
+let GetMaxRowFunc = () => {
+    return GetMaxRowFuncDal();
+};
+
 export {
     GetFunc, GetDataOnlyFunc, GetFromModalFunc,
     GetFromModalUuidFunc, GetFromModalUuidAndTSFunc,
-    GetIdFunc, GetBodyCheckFunc, GetRowCountFunc, GetRowDataFunc, GetRowCountByIdFunc,GetfilterDataFunc,GetSummeryFunc
+    GetIdFunc, GetBodyCheckFunc, GetRowCountFunc, GetRowDataFunc,
+    GetRowCountByIdFunc, GetfilterDataFunc, GetSummeryFunc, GetMaxRowFunc
 };
