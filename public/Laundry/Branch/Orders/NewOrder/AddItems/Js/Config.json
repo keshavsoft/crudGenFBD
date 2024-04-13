@@ -3,6 +3,7 @@
     "folderName": "Transactions",
     "tableName": "Kakinada",
     "localStorageKeys": {
-        "OrderKey": "PresentOrder"
+        "OrderKey": "PresentOrder",
+        "ItemNamesKey": "ItemNames"
     }
 }

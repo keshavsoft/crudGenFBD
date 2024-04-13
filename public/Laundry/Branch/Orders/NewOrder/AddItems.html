@@ -55,14 +55,14 @@
                     <thead>
                         <th data-formatter="jFLocalSerialColumn">#</th>
                         <th data-field="Category">Group</th>
-                        <th data-field="ItemName">Item Name</th>
+                        <th data-field="ItemName" data-width="200">Item Name</th>
                         <th data-formatter="jFLocalAddOnFormater">Add Ons</th>
-                        <th data-field="Rate">Rate</th>
+                        <th data-field="Rate" data-width="50">Rate</th>
                         <th data-field="Pcs">Pcs</th>
                         <th data-field="Total">Amount</th>
                         <th data-field="location">Factory</th>
-                        <th data-field="DeliveryDateTime">Delivery</th>
-                        <th>Options</th>
+                        <th data-field="DeliveryDateTime" data-width="100">Delivery</th>
+                        <th>Opts.</th>
                     </thead>
                     <tfoot>
                         <tr>
@@ -71,8 +71,7 @@
                             <th>
                                 <select class="form-select" aria-label="Default select example"
                                     id="TableFooterCategoryId">
-                                    <option selected>Open this select menu</option>
-                                    <option value="Men">Men</option>
+                                    <option selected value="Men">Men</option>
                                     <option value="Women">Women</option>
                                     <option value="Kids">Kids</option>
                                 </select>
@@ -89,6 +88,10 @@
                                             <path
                                                 d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                                         </svg></button>
+
+                                        <div class="invalid-feedback">
+                                            Select Item Name...
+                                          </div>
                                 </div>
                             </th>
                             <th>
@@ -106,8 +109,7 @@
                             <th>
                                 <select class="form-select" aria-label="Default select example"
                                     id="TableFooterFactoryInputId">
-                                    <option selected>Select Factory</option>
-                                    <option value="Vizag">Vizag</option>
+                                    <option value="Vizag" selected>Vizag</option>
                                     <option value="Gurudwara">Gurudwara</option>
                                     <option value="Vzm">Vzm</option>
                                 </select>

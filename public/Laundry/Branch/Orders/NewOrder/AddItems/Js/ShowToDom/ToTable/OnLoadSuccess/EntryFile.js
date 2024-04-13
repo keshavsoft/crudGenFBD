@@ -1,8 +1,11 @@
-import { StartFunc as StartFuncTableFooterAccountNameId } from "./TableFooterAccountNameId/EntryFile.js";
-// import { StartFunc as StartFuncTableFooterAccountNameSearchButtonId } from "./TableFooterAccountNameSearchButtonId/EntryFile.js";
+import { StartFunc as StartFuncTableFooterSaveButtonId } from "./TableFooterSaveButtonId/EntryFile.js";
+import { StartFunc as StartFuncTableFooterCategoryId } from "./TableFooterCategoryId/EntryFile.js";
+import { StartFunc as StartFuncTableFooterItemNameId } from "./TableFooterItemNameId/EntryFile.js";
 
 let StartFunc = () => {
-    StartFuncTableFooterAccountNameId();
+    StartFuncTableFooterSaveButtonId();
+    StartFuncTableFooterCategoryId();
+    StartFuncTableFooterItemNameId();
     // StartFuncTableFooterAccountNameSearchButtonId();
 };
 
