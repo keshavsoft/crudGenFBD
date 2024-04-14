@@ -119,7 +119,10 @@ let jFLocalInsertAggValues = ({ inData }) => {
             element.IsSettled = true;
         };
 
+        let jVarLocalAddOnArray = Object.values(element.AddOnData);
+
         element.AggValues.ItemsArray = Object.values(element.ItemsInOrder).map(element => {
+            element.AddOnDataAsArray = jVarLocalAddOnArray.filter(LoopInside => LoopInside.AddOnItemSerial === element.ItemSerial);
             return element;
         });
 

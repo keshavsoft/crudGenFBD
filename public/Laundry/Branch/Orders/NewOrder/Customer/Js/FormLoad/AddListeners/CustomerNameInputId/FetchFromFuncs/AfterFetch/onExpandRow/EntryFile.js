@@ -1,10 +1,28 @@
+import { StartFunc as StartFuncOnExpandRow } from "./onExpandRow/EntryFile.js";
+
 let StartFunc = (index, row, $detail) => {
     let jVarLocalDataArray = row.AggValues.ItemsArray;
-    console.log(" : ", jVarLocalDataArray);
+
     let jVarLocalInsideTable = $detail.html('<table></table>').find('table');
 
     jVarLocalInsideTable.bootstrapTable({
         columns: [{
+            "field": "ItemSerial",
+            "title": "ItemSerial"
+        },
+        {
+            "field": "Category",
+            "title": "Category"
+        },
+        {
+            "field": "ItemName",
+            "title": "ItemName"
+        },
+        {
+            "field": "Rate",
+            "title": "Rate"
+        },
+        {
             "field": "Pcs",
             "title": "Pcs"
         },
@@ -18,7 +36,7 @@ let StartFunc = (index, row, $detail) => {
         }],
         data: jVarLocalDataArray,
         detailView: true,
-        onExpandRow: function (index, row, $detail) { }
+        onExpandRow: StartFuncOnExpandRow
     })
 
 };
