@@ -35,7 +35,15 @@
             </div>
         </div>
         <div class="row">
-            <table id="table"></table>
+            <!-- <table id="table"></table> -->
+
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th data-field="pk">Order#</th>
+                    </tr>
+                </thead>
+            </table>
         </div>
     </div>
 
@@ -47,9 +55,9 @@
     <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
 
     <template id="TemplateForSubTable">
-        <table id="ItemsTableId">
+        <table>
             <thead>
-                <tr>
+                <tr class="table-primary">
                     <th>#</th>
                     <th data-field="ItemName">ItemName</th>
                     <th data-field="Rate">Rate</th>
@@ -64,6 +72,7 @@
             return index + 1;
         };
     </script>
+
     <script type="module" src="./Customer/Js/EntryFile.js"></script>
 </body>
 
