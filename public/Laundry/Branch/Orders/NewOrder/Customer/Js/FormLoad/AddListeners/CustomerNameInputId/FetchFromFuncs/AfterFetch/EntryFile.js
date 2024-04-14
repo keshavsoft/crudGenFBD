@@ -2,11 +2,11 @@ let StartFunc = (inData) => {
     let jVarLocalData = inData;
     let jVarLocalOrdered = jVarLocalData.sort((x, y) => ((x.pk === y.pk) ? 0 : ((x.pk < y.pk) ? 1 : -1)));
     let jVarLocalWithAggValues = jFLocalInsertAggValues({ inData: jVarLocalOrdered });
-    console.log("jVarLocalWithAggValues : ", jVarLocalWithAggValues);
+    
     var $table = $('#table')
 
     $table.bootstrapTable("destroy");
-
+    // $table.bootstrapTable();
     $table.bootstrapTable({
         data: jVarLocalWithAggValues
     });
