@@ -35,19 +35,7 @@
             </div>
         </div>
         <div class="row">
-            <table id="table" data-show-footer="true" data-detail-view="true" data-detail-formatter="detailFormatter"
-                data-id-field="pk" data-show-toggle="true">
-                <thead>
-                    <th data-formatter="jFLocalSerialColumn">#</th>
-                    <th data-field="pk">Order #</th>
-                    <th data-field="AggValues.ItemDetails">Items</th>
-                    <th data-field="AggValues.SettlementAmount">Settlement</th>
-                    <th data-field="OrderData.BranchName">Branch</th>
-
-                    <th data-field="DateTime">DateTime</th>
-                </thead>
-
-            </table>
+            <table id="table"></table>
         </div>
     </div>
 
@@ -64,38 +52,110 @@
                 <tr>
                     <th>#</th>
                     <th data-field="ItemName">ItemName</th>
-                    <th>Rate</th>
-                    <th>Pcs</th>
+                    <th data-field="Rate">Rate</th>
+                    <th data-field="Pcs">Pcs</th>
                 </tr>
             </thead>
         </table>
     </template>
 
     <script>
-        function jFLocalSerialColumn(value, row, index) {
-            return index + 1;
-        };
+        var $table = $('#table')
 
-        function detailFormatter(index, row) {
-            let jVarLocalTemplateForSubTable = "TemplateForSubTable";
-            let jVarLocalHtml = document.getElementById(jVarLocalTemplateForSubTable);
-            let jVarLocalClone = jVarLocalHtml.content.cloneNode(true);
-            let jVarLocalItemsTableId = jVarLocalClone.querySelector("#ItemsTableId");
+        function buildTable($el, cells, rows) {
+            var i; var j; var row
+            var columns = []
+            var data = []
 
-            var $table = $(jVarLocalItemsTableId);
-            console.log("table : ", $table, row);
-            $table.bootstrapTable({
-                data: Object.values(row.ItemsInOrder)
+            for (i = 0; i < cells; i++) {
+                columns.push({
+                    field: 'field' + i,
+                    title: 'Cell' + i,
+                    sortable: true
+                })
+            }
+            for (i = 0; i < rows; i++) {
+                row = {}
+                for (j = 0; j < cells; j++) {
+                    row['field' + j] = 'Row-' + i + '-' + j
+                }
+                data.push(row)
+            }
+            $el.bootstrapTable({
+                columns: columns,
+                data: data,
+                detailView: cells > 1,
+                onExpandRow: function (index, row, $detail) {
+                    /* eslint no-use-before-define: ["error", { "functions": false }]*/
+                    expandTable($detail, cells - 1)
+                }
             });
-
-            const serializer = new XMLSerializer();
-            const xmlStr = serializer.serializeToString(jVarLocalClone);
-
-            return xmlStr;
         }
+
+        function expandTable($detail, cells) {
+            buildTable($detail.html('<table></table>').find('table'), cells, 1)
+        }
+
+        // buildTable($table, 8, 1);
+
+        // $table.bootstrapTable({
+        //     columns: [{
+        //         "field": "Name",
+        //         "title": "Name"
+        //     }],
+        //     data: [{
+        //         Name: "Keshav"
+        //     },
+        //     {
+        //         Name: "Chakri"
+        //     }],
+        //     detailView: true,
+        //     onExpandRow: function (index, row, $detail) {
+        //         let jVarLocalInsideTable = $detail.html('<table></table>').find('table');
+
+        //         jVarLocalInsideTable.bootstrapTable({
+        //             columns: [{
+        //                 "field": "Mobile",
+        //                 "title": "Mobile"
+        //             }],
+        //             data: [{
+        //                 Mobile: "111111111"
+        //             },
+        //             {
+        //                 Mobile: "2222222222222"
+        //             }],
+        //             detailView: true,
+        //             onExpandRow: function (index, row, $detail) {
+        //                 let jVarLocalInsideTable2 = $detail.html('<table></table>').find('table');
+
+        //                 jVarLocalInsideTable2.bootstrapTable({
+        //                     columns: [{
+        //                         "field": "AddOns",
+        //                         "title": "AddOns"
+        //                     }],
+        //                     data: [{
+        //                         AddOns: "aaaaaaaa"
+        //                     },
+        //                     {
+        //                         AddOns: "bbbbbbbbbb"
+        //                     }],
+        //                     detailView: true,
+        //                     onExpandRow: function (index, row, $detail) {
+        //                         /* eslint no-use-before-define: ["error", { "functions": false }]*/
+        //                         console.log(index, row, $detail.html('<table></table>').find('table'));
+        //                     }
+        //                 })
+
+
+
+        //             }
+        //         })
+
+
+        //     }
+        // })
+
     </script>
-
-
     <script type="module" src="./Customer/Js/EntryFile.js"></script>
 </body>
 
