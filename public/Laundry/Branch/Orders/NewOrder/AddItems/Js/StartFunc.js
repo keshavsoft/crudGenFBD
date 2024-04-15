@@ -7,6 +7,7 @@ const StartFunc = async () => {
 
     if (jVarLocalFromAdmin) {
         await StartFuncFormLoad();
+
         StartFuncShowToDom();
     };
 };

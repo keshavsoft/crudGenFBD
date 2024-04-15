@@ -1,5 +1,6 @@
-const StartFunc = (row, $element, field) => {
+import { StartFunc as StartFuncShowOnModal } from "./ShowOnModal.js";
 
+const StartFunc = (row, $element, field) => {
     if (field === 3) {
         let JVarLocalFromStrogeAddOnData = localStorage.getItem("PresentOrder");
         let JvarLocalData = JSON.parse(JVarLocalFromStrogeAddOnData);
@@ -12,7 +13,7 @@ const StartFunc = (row, $element, field) => {
         $table.bootstrapTable({
             data: jVarLocalFilterData
         });
-
+        StartFuncShowOnModal(row);
         $("#AddOnModal").modal("show");
     };
 };

@@ -4,6 +4,7 @@
     "tableName": "CustomerNames",
     "localStorageKeys": {
         "OrderKey": "CustomerNames",
-        "ItemNamesKey": "ItemNames"
+        "ItemNamesKey": "ItemNames",
+        "AddOnsKey": "AddOns"
     }
 }

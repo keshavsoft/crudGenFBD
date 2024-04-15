@@ -130,36 +130,72 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Add Ons</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">#</label>
+                                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                                        placeholder="name@example.com" value="Keshav">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Item Name</label>
+                                    <input type="email" class="form-control" id="AddOnModalItemNameId"
+                                        placeholder="name@example.com" value="Keshav">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label">Rate</label>
+                                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                                        placeholder="name@example.com" value="9848163021">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
                 <div class="modal-body">
 
                     <table id="AddOnTable" data-show-footer="true">
                         <thead>
                             <tr id="tableHeadRow">
-                                <th data-formatter="jFLocalSerialColumn">#</th>
+                                <th data-formatter="jFLocalSerialColumn" data-width="75">#</th>
                                 <!-- <th data-field="AddOnItemSerial">AddOnItem #</th> -->
-                                <th data-field="AddOnService">AddOn Item</th>
-                                <th data-field="AddOnRate">Rate</th>
+                                <th data-field="AddOnService" data-width="400">AddOn Item</th>
+                                <th data-field="AddOnRate" data-width="200">Rate</th>
+                                <th data-width="100">Options</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th colspan="2">
-                                    <select class="form-select" aria-label="Default select example"
-                                        id="TableFooterCategoryId">
-                                        <option selected value="Men">Men</option>
-                                        <option value="Women">Women</option>
-                                        <option value="Kids">Kids</option>
+                                <th></th>
+                                <th>
+                                    <select class="form-select" aria-label="Select AddOn" id="TableFooterAddOnSelectId">
                                     </select>
+
+                                </th>
+                                <th>
+                                    <input type="number" class="form-control" id="TableFooterAddOnRate">
+                                </th>
+                                <th>
+                                    <button type="button" class="btn btn-primary" id="AddOnModalSaveButtonId">
+                                        Save
+                                    </button>
+
                                 </th>
                             </tr>
                         </tfoot>
                     </table>
                 </div>
                 <div class="modal-footer">
+                    <div class="row">
+                        <div class="col">
 
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

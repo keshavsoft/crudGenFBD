@@ -4,6 +4,7 @@
     "tableName": "Kakinada",
     "localStorageKeys": {
         "OrderKey": "PresentOrder",
-        "ItemNamesKey": "ItemNames"
+        "ItemNamesKey": "ItemNames",
+        "AddOnsKey": "AddOns"
     }
 }
