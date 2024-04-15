@@ -1,22 +1,13 @@
 let StartFunc = (index, row, $detail) => {
     let jVarLocalDataArray = row.AddOnDataAsArray;
-    console.log("jVarLocalAddOnArray : ", row.AddOnDataAsArray);
-    let jVarLocalInsideTable = $detail.html('<table></table>').find('table');
+    let jVarLocalTemplateForSubTable = document.getElementById("TemplateForAddOns");
+    let clone = jVarLocalTemplateForSubTable.content.cloneNode("true");
+    const s = new XMLSerializer();
+    const str = s.serializeToString(clone);
+
+    let jVarLocalInsideTable = $detail.html(str).find('table');
 
     jVarLocalInsideTable.bootstrapTable({
-        columns: [{
-            "title": "#",
-            "formatter": "jFLocalSerialColumn"
-        },
-        {
-            "field": "AddOnService",
-            "title": "AddOnService"
-        },
-        {
-            "field": "AddOnRate",
-            "title": "AddOnRate"
-        }
-        ],
         data: jVarLocalDataArray
     })
 

@@ -39,8 +39,12 @@
 
             <table id="table">
                 <thead>
-                    <tr>
+                    <tr class="table-primary">
                         <th data-field="pk">Order#</th>
+                        <th data-field="OrderData.Currentdateandtime">Date</th>
+                        <th data-field="AggValues.ItemDetails">Items</th>
+                        <th data-field="AggValues.SettlementAmount">Settlement</th>
+                        <th data-field="IsSettled">IsSettled</th>
                     </tr>
                 </thead>
             </table>
@@ -54,10 +58,10 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
 
-    <template id="TemplateForSubTable">
+    <template id="TemplateForItemNames">
         <table>
             <thead>
-                <tr class="table-primary">
+                <tr class="table-success">
                     <th>#</th>
                     <th data-field="ItemName">ItemName</th>
                     <th data-field="Rate">Rate</th>
@@ -66,6 +70,19 @@
             </thead>
         </table>
     </template>
+
+    <template id="TemplateForAddOns">
+        <table>
+            <thead>
+                <tr class="table-warning">
+                    <th data-formatter="jFLocalSerialColumn">#</th>
+                    <th data-field="AddOnService">AddOnService</th>
+                    <th data-field="AddOnRate">AddOnRate</th>
+                </tr>
+            </thead>
+        </table>
+    </template>
+
 
     <script>
         function jFLocalSerialColumn(value, row, index) {

@@ -4,7 +4,7 @@ let StartFunc = (inData) => {
     let jVarLocalData = inData;
     let jVarLocalOrdered = jVarLocalData.sort((x, y) => ((x.pk === y.pk) ? 0 : ((x.pk < y.pk) ? 1 : -1)));
     let jVarLocalWithAggValues = jFLocalInsertAggValues({ inData: jVarLocalOrdered });
-    let jVarLocalColumnsArray = jFLocalTableColumns();
+    // let jVarLocalColumnsArray = jFLocalTableColumns();
 
     var $table = $('#table')
 

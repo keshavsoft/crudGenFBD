@@ -2,11 +2,11 @@ import { StartFunc as StartFuncOnExpandRow } from "./onExpandRow/EntryFile.js";
 
 let StartFunc = (index, row, $detail) => {
     let jVarLocalDataArray = row.AggValues.ItemsArray;
-    let jVarLocalTemplateForSubTable = document.getElementById("TemplateForSubTable");
+    let jVarLocalTemplateForSubTable = document.getElementById("TemplateForItemNames");
     let clone = jVarLocalTemplateForSubTable.content.cloneNode("true");
     const s = new XMLSerializer();
     const str = s.serializeToString(clone);
-    console.log("clone : ", clone);
+    
     let jVarLocalInsideTable = $detail.html(str).find('table');
 
     jVarLocalInsideTable.bootstrapTable({
