@@ -11,22 +11,35 @@ let StartFunc = ({ inDataToInsert, inFileName }) => {
     if ("error" in db.data) {
         return db.data;
     };
+    let MaxPk = LocalFuncMaxOrder({ inData: db.data });
 
-    let LocalDataWithUuid = LocalFuncGeneratePk({ inDataToInsert: LocalinDataToInsert, inData: db.data });
+    let LocalFindRow = db.data.find(element => element.pk === MaxPk);
 
-    if (Array.isArray(db.data) === false) {
-        LocalReturnData.KReason = "Not array inside Json file...";
-        return LocalReturnData;
-    };
+    let LocalItemsData = LocalFindRow.ItemsInOrder
 
-    db.data.push(LocalDataWithUuid);
-    let LocalFromWrite = db.write();
-    LocalReturnData.KTF = true;
+    LocalFuncInsert({ inDataToInsert: LocalinDataToInsert, inItemsData: LocalItemsData });
+    // db.data.push(LocalDataWithUuid);
+    db.write();
 
-    return LocalDataWithUuid.UuId;
 };
 
-const LocalFuncGeneratePk = ({ inDataToInsert, inData }) => {
+const LocalFuncInsert = ({ inDataToInsert, inItemsData }) => {
+    let LocalInData = inItemsData;
+
+    let numberArray = Object.keys(LocalInData).map(Number);
+
+    let MaxPk = (Math.max(...numberArray, 0) + 1);
+    LocalFuncGenerateItemSerial({ inDataToInsert, inItemsData })
+    LocalInData[MaxPk] = inDataToInsert;
+};
+
+const LocalFuncGenerateItemSerial = ({ inDataToInsert, inItemsData }) => {
+    let LocalInData = Object.values(inItemsData);
+    let LocalItemSerial = LocalInData.map(element => element.ItemSerial);
+    inDataToInsert.ItemSerial = Math.max(...LocalItemSerial, 0) + 1;
+};
+
+const LocalFuncMaxOrder = ({ inData }) => {
     let LocalInData = inData;
     let LocalArrayPk = LocalInData.map(element => element.pk);
 
@@ -37,10 +50,9 @@ const LocalFuncGeneratePk = ({ inDataToInsert, inData }) => {
 
     let numberArray = LocalRemoveUndefined.map(Number);
 
-    let MaxPk = (Math.max(...numberArray, 0) + 1);
+    let MaxPk = Math.max(...numberArray, 0);
 
-    let LocalReturnData = { ...inDataToInsert, UuId: MaxPk, pk: MaxPk, DateTime: LocalFuncCurrentDateTime() };
-    return LocalReturnData
+    return MaxPk
 };
 
 const Timestamp = () => {
