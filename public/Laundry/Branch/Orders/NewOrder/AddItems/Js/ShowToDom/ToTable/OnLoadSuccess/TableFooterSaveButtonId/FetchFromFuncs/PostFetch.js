@@ -12,7 +12,8 @@ let StartFunc = async () => {
 
     let jVarLocalFetchHeaders = StartFuncFetchHeaders();
     // let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}`;
-    let jVarLocalFetchUrl = `/${LocalroutePath}/${LocalfolderName}/${LocaltableName}/InsertToKey/${jVarLocalRowPk}/ItemsInOrder`;
+    // let jVarLocalFetchUrl = `/${LocalroutePath}/${LocalfolderName}/${LocaltableName}/InsertToKey/${jVarLocalRowPk}/ItemsInOrder`;
+    let jVarLocalFetchUrl = `/Custom/Clients/Washtex/Orders/NewOrder/AddItem/Kakinada`;
     let response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
 
     return await response;
