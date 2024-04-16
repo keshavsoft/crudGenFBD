@@ -6,6 +6,7 @@ const StartFunc = (row, $element, field) => {
         let JvarLocalData = JSON.parse(JVarLocalFromStrogeAddOnData);
         let jVarLocalItemSerial = row.ItemSerial;
         let jVarLocalFilterData = Object.values(JvarLocalData.AddOnData).filter(e => e.AddOnItemSerial === jVarLocalItemSerial);
+        
         var $table = $('#AddOnTable')
 
         $table.bootstrapTable("destroy");
@@ -13,7 +14,9 @@ const StartFunc = (row, $element, field) => {
         $table.bootstrapTable({
             data: jVarLocalFilterData
         });
+
         StartFuncShowOnModal(row);
+        
         $("#AddOnModal").modal("show");
     };
 };
