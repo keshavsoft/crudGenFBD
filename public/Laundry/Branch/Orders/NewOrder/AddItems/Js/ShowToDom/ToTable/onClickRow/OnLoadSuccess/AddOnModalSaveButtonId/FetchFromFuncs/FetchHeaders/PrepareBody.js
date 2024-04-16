@@ -1,70 +1,51 @@
 const StartFunc = () => {
-    let jVarLocalCategory = jFLocalTableFooterCategoryId();
-    let jVarLocalItemName = LocalFuncForjVarLocalTableFooterItemNameId();
-    let jVarLocalItemRate = jFLocalTableFooterRateInputId();
-    let jVarLocalPcs = jFLocalTableFooterPcsInputId();
-    let jVarLocallocation = jFLocalTableFooterFactoryInputId();
-    let jVarLocalDeliveryDateTime = jFLocalTableFooterdateInputId();
+    // AddOnItemSerial
+    // AddOnRate
+    // AddOnService
+
+    let jVarLocalAddOnService = jFLocalTableFooterAddOnSelectId();
+    let jVarLocalAddOnRate = jFLocalTableFooterAddOnRate();
+    let jVarLocalAddOnItemSerial = jFLocalAddOnModalItemSerialId();
+
+    // let jVarLocalAddOnItemSerial = jFLocalTableFooterRateInputId();
+    // let jVarLocalPcs = jFLocalTableFooterPcsInputId();
+    // let jVarLocallocation = jFLocalTableFooterFactoryInputId();
+    // let jVarLocalDeliveryDateTime = jFLocalTableFooterdateInputId();
 
     let LocalLocalObj = {};
-    LocalLocalObj.Category = jVarLocalCategory
-    LocalLocalObj.ItemName = jVarLocalItemName
-    LocalLocalObj.Rate = jVarLocalItemRate
-    LocalLocalObj.Pcs = jVarLocalPcs
-    LocalLocalObj.location = jVarLocallocation
-    LocalLocalObj.DeliveryDateTime = jVarLocalDeliveryDateTime
+    LocalLocalObj.AddOnService = jVarLocalAddOnService
+    LocalLocalObj.AddOnRate = parseInt(jVarLocalAddOnRate);
+    LocalLocalObj.AddOnItemSerial = parseInt(jVarLocalAddOnItemSerial);
+
+    // LocalLocalObj.Rate = jVarLocalItemRate
+    // LocalLocalObj.Pcs = jVarLocalPcs
+    // LocalLocalObj.location = jVarLocallocation
+    // LocalLocalObj.DeliveryDateTime = jVarLocalDeliveryDateTime
 
     return LocalLocalObj;
 };
 
-let jFLocalTableFooterCategoryId = () => {
-    let jVarLocalTableFooterRateInputId = 'TableFooterCategoryId'
-    let jVarLocalHtmlId = document.getElementById(jVarLocalTableFooterRateInputId);
+let jFLocalTableFooterAddOnRate = () => {
+    let jVarLocalTableFooterAddOnRate = 'TableFooterAddOnRate'
+    let jVarLocalHtmlId = document.getElementById(jVarLocalTableFooterAddOnRate);
 
     if (jVarLocalHtmlId === null === false) {
         return jVarLocalHtmlId.value.trim();
     };
 };
 
-let LocalFuncForjVarLocalTableFooterItemNameId = () => {
-    let jVarLocalTableFooterItemNameId = 'TableFooterItemNameId'
-    let jVarLocalHtmlId = document.getElementById(jVarLocalTableFooterItemNameId);
+let jFLocalTableFooterAddOnSelectId = () => {
+    let jVarLocalTableFooterAddOnSelectId = 'TableFooterAddOnSelectId'
+    let jVarLocalHtmlId = document.getElementById(jVarLocalTableFooterAddOnSelectId);
 
     if (jVarLocalHtmlId === null === false) {
         return jVarLocalHtmlId.value.trim();
     };
 };
 
-let jFLocalTableFooterRateInputId = () => {
-    let jVarLocalTableFooterRateInputId = 'TableFooterRateInputId'
-    let jVarLocalHtmlId = document.getElementById(jVarLocalTableFooterRateInputId);
-
-    if (jVarLocalHtmlId === null === false) {
-        return jVarLocalHtmlId.value.trim();
-    };
-};
-
-let jFLocalTableFooterPcsInputId = () => {
-    let jVarLocalTableFooterRateInputId = 'TableFooterPcsInputId'
-    let jVarLocalHtmlId = document.getElementById(jVarLocalTableFooterRateInputId);
-
-    if (jVarLocalHtmlId === null === false) {
-        return jVarLocalHtmlId.value.trim();
-    };
-};
-
-let jFLocalTableFooterFactoryInputId = () => {
-    let jVarLocalTableFooterRateInputId = 'TableFooterFactoryInputId'
-    let jVarLocalHtmlId = document.getElementById(jVarLocalTableFooterRateInputId);
-
-    if (jVarLocalHtmlId === null === false) {
-        return jVarLocalHtmlId.value.trim();
-    };
-};
-
-let jFLocalTableFooterdateInputId = () => {
-    let jVarLocalTableFooterRateInputId = 'TableFooterdateInputId'
-    let jVarLocalHtmlId = document.getElementById(jVarLocalTableFooterRateInputId);
+let jFLocalAddOnModalItemSerialId = () => {
+    let jVarLocalAddOnModalItemSerialId = 'AddOnModalItemSerialId'
+    let jVarLocalHtmlId = document.getElementById(jVarLocalAddOnModalItemSerialId);
 
     if (jVarLocalHtmlId === null === false) {
         return jVarLocalHtmlId.value.trim();

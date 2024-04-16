@@ -1,11 +1,20 @@
 import { StartFunc as StartFuncFromLocalStorage } from "./FromLocalStorage.js";
-import { StartFunc as StartFunconClickRowFunc } from "./onClickRow/EntryFile.js";
+import { StartFunc as StartFuncOnClickRowFunc } from "./onClickRow/EntryFile.js";
 import { StartFunc as StartFuncOnLoadSuccess } from "./OnLoadSuccess/EntryFile.js";
 
 const StartFunc = () => {
     let jVarLocalDataFromLocalStorage = StartFuncFromLocalStorage();
 
     var $table = $('#table')
+
+    // $table.bootstrapTable({
+    //     data: jVarLocalDataFromLocalStorage,
+    //     onPostBody: function () {
+    //         StartFuncOnLoadSuccess();
+    //         jFdate();
+    //         $("#TableFooterItemNameId").focus();
+    //     }
+    // });
 
     $table.bootstrapTable({
         data: jVarLocalDataFromLocalStorage,
@@ -14,8 +23,9 @@ const StartFunc = () => {
             jFdate();
             $("#TableFooterItemNameId").focus();
         },
-        onClickRow: StartFunconClickRowFunc
+        onClickRow: StartFuncOnClickRowFunc
     });
+
 };
 
 const jFdate = () => {
