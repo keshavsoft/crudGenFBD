@@ -7,15 +7,6 @@ const StartFunc = () => {
 
     var $table = $('#table')
 
-    // $table.bootstrapTable({
-    //     data: jVarLocalDataFromLocalStorage,
-    //     onPostBody: function () {
-    //         StartFuncOnLoadSuccess();
-    //         jFdate();
-    //         $("#TableFooterItemNameId").focus();
-    //     }
-    // });
-
     $table.bootstrapTable({
         data: jVarLocalDataFromLocalStorage,
         onPostBody: function () {

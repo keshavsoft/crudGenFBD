@@ -6,7 +6,15 @@ let StartFunc = () => {
     StartFuncTableFooterSaveButtonId();
     StartFuncTableFooterCategoryId();
     StartFuncTableFooterItemNameId();
+
+    jFLocalEndFunc();
     // StartFuncTableFooterAccountNameSearchButtonId();
+};
+
+let jFLocalEndFunc = () => {
+    var event = new Event('change');
+
+    document.getElementById("TableFooterCategoryId").dispatchEvent(event)
 };
 
 export { StartFunc };
