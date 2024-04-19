@@ -7,6 +7,4 @@ const StartFunc = () => {
     };
 };
 
-
-
-export { StartFunc }
+export { StartFunc };

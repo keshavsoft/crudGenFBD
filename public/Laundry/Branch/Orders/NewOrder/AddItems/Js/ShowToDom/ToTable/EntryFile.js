@@ -16,7 +16,6 @@ const StartFunc = () => {
         },
         onClickRow: StartFuncOnClickRowFunc
     });
-
 };
 
 const jFdate = () => {

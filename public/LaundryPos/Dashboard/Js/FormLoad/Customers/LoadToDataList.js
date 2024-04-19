@@ -2,7 +2,7 @@
 
 const StartFunc = () => {
     // let jVarLocalDataNeeded = StartFuncFromLocalStorage();
-    let jVarLocalDataNeeded = JSON.parse(localStorage.getItem("Customers"));
+    let jVarLocalDataNeeded = JSON.parse(localStorage.getItem("CustomerNames"));
     let jVarLocalHtmlId = "CustomerDataListId";
     let jVarLocalCustomerDataListId = document.getElementById(jVarLocalHtmlId);
 

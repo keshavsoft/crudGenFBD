@@ -8,10 +8,10 @@ const StartFunc = (row, $element, field) => {
         let jVarLocalItemSerial = row.ItemSerial;
         let jVarLocalFilterData = Object.values(JvarLocalData.AddOnData).filter(e => e.AddOnItemSerial === jVarLocalItemSerial);
 
-        var $table = $('#AddOnTable')
+        var $table = $('#AddOnTable');
 
         $table.bootstrapTable("destroy");
-
+        
         $table.bootstrapTable({
             data: jVarLocalFilterData,
             onPostBody: StartFuncOnLoadSuccess
