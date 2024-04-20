@@ -1,48 +1,17 @@
-import { StartFunc as StartFuncOnExpandRow } from "./onExpandRow/EntryFile.js";
-
 let StartFunc = (inData) => {
     let jVarLocalData = inData;
     let jVarLocalOrdered = jVarLocalData.sort((x, y) => ((x.pk === y.pk) ? 0 : ((x.pk < y.pk) ? 1 : -1)));
     let jVarLocalWithAggValues = jFLocalInsertAggValues({ inData: jVarLocalOrdered });
-    // let jVarLocalColumnsArray = jFLocalTableColumns();
 
     var $table = $('#table')
 
-    // $table.bootstrapTable("destroy");
-    // // $table.bootstrapTable();
     // $table.bootstrapTable({
-    //     data: jVarLocalWithAggValues
+    //     data: jVarLocalWithAggValues,
+    //     detailView: true,
+    //     onExpandRow: StartFuncOnExpandRow
     // });
-    $table.bootstrapTable({
-        data: jVarLocalWithAggValues,
-        detailView: true,
-        onExpandRow: StartFuncOnExpandRow
-    })
-};
 
-let jFLocalTableColumns = () => {
-    return [{
-        "field": "pk",
-        "title": "pk"
-    },
-    {
-        "field": "OrderData.Currentdateandtime",
-        "title": "Date"
-    },
-    {
-        "field": "AggValues.ItemDetails",
-        "title": "ItemDetails"
-    },
-    {
-        "field": "AggValues.SettlementAmount",
-        "title": "Settlement"
-    },
-    {
-        "field": "IsSettled",
-        "title": "IsSettled"
-    }
-    ]
-
+    $table.bootstrapTable("load", jVarLocalWithAggValues);
 };
 
 let jFLocalInsertAggValues = ({ inData }) => {

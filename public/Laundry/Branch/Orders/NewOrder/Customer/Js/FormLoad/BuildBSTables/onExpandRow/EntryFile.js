@@ -13,39 +13,7 @@ let StartFunc = (index, row, $detail) => {
         data: jVarLocalDataArray,
         detailView: true,
         onExpandRow: StartFuncOnExpandRow
-    })
-
-};
-
-let jFLocalTableColumns = () => {
-    [{
-        "field": "ItemSerial",
-        "title": "ItemSerial"
-    },
-    {
-        "field": "Category",
-        "title": "Category"
-    },
-    {
-        "field": "ItemName",
-        "title": "ItemName"
-    },
-    {
-        "field": "Rate",
-        "title": "Rate"
-    },
-    {
-        "field": "Pcs",
-        "title": "Pcs"
-    },
-    {
-        "field": "location",
-        "title": "location"
-    },
-    {
-        "field": "DeliveryDateTime",
-        "title": "DeliveryDateTime"
-    }]
+    });
 };
 
 export { StartFunc };

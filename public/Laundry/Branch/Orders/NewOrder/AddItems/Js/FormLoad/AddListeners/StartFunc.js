@@ -1,7 +1,7 @@
-// import { StartFunc as StartFuncAddOnModalSaveButtonId } from "./AddOnModalSaveButtonId/EntryFile.js";
+import { StartFunc as StartFuncBranchNameAnchorId } from "./BranchNameAnchorId/EntryFile.js";
 
 let StartFunc = () => {
-    // StartFuncAddOnModalSaveButtonId();
+    StartFuncBranchNameAnchorId();
 };
 
 export { StartFunc };

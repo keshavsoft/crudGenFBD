@@ -40,7 +40,7 @@
 
             </div>
             <div class="col-2">
-                <a href="./Customer.html" class="btn btn-secondary fs-1">Kakinada</a>
+                <a id="BranchNameAnchorId" href="#" class="btn btn-secondary fs-1">Kakinada</a>
             </div>
         </div>
 
@@ -165,7 +165,7 @@
                                 <!-- <th data-field="AddOnItemSerial">AddOnItem #</th> -->
                                 <th data-field="AddOnService" data-width="400">AddOn Item</th>
                                 <th data-field="AddOnRate" data-width="200">Rate</th>
-                                <th data-width="100">Options</th>
+                                <th data-formatter="jFLocalOptsForAddOnOnModalFormater" data-width="100">Options</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -240,7 +240,15 @@
         function jFLocalOptsFormater(value, row, index) {
             return [
                 `<a href="#" class="btn btn-danger ">`,
-                    `<i class="bi bi-trash3"></i>`,
+                `<i class="bi bi-trash3"></i>`,
+                `</a>`
+            ].join('');
+        };
+
+        function jFLocalOptsForAddOnOnModalFormater(value, row, index) {
+            return [
+                `<a href="#" class="btn btn-danger ">`,
+                `<i class="bi bi-trash3"></i>`,
                 `</a>`
             ].join('');
         };
