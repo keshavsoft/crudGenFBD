@@ -1,4 +1,5 @@
-import { StartFunc as StartFuncFormLoad } from "../../../../../../../FormLoad/ToLocalStorage/EntryFile.js";
+// import { StartFunc as StartFuncFormLoad } from "../../../../../../../FormLoad/ToLocalStorage/EntryFile.js";
+import { StartFunc as StartFuncFormLoad } from "../../../../../../../../FormLoad/ToLocalStorage/EntryFile.js";
 
 let StartFunc = async () => {
     await StartFuncFormLoad();
