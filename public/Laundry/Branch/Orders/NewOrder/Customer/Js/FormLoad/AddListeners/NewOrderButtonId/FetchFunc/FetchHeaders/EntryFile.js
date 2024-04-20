@@ -4,8 +4,10 @@ import KeysJson from './Keys.json' assert {type: 'json'};
 let StartFunc = () => {
     let jVarLocalFromDom = jFLocalCustomerNameInputId();
     let jVarLocalMobileNumber = jVarLocalFromDom.split(":")[1];
-    
+    let jVarLocalCustomerName = jVarLocalFromDom.split(":")[0];
+
     KeysJson.body.CustomerData.CustomerMobile = jVarLocalMobileNumber;
+    KeysJson.body.CustomerData.CustomerName = jVarLocalCustomerName;
 
     KeysJson.body = JSON.stringify(KeysJson.body);
 

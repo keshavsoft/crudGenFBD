@@ -1,9 +1,19 @@
 import { StartFunc as StartFuncFromLocalStorage } from "./FromLocalStorage.js";
 
 const StartFunc = () => {
-    let jVarLocalData = StartFuncFromLocalStorage();
-    
-    jFLocalToInputCustomerMobileId(jVarLocalData.CustomerData.CustomerMobile);
+    let jVarLocalFromLocalStorage = StartFuncFromLocalStorage();
+
+    jFLocalToInputCustomerMobileId(jVarLocalFromLocalStorage.CustomerData.CustomerMobile);
+    jFLocalToInputCustomerNameId(jVarLocalFromLocalStorage.CustomerData.CustomerName);
+};
+
+let jFLocalToInputCustomerNameId = (inValue) => {
+    let jVarLocalHtmlId = 'CustomerNameId';
+    let jVarLocalCustomerNameId = document.getElementById(jVarLocalHtmlId);
+
+    if (jVarLocalCustomerNameId === null === false) {
+        jVarLocalCustomerNameId.value = inValue;
+    };
 };
 
 let jFLocalToInputCustomerMobileId = (inValue) => {
@@ -15,4 +25,4 @@ let jFLocalToInputCustomerMobileId = (inValue) => {
     };
 };
 
-export { StartFunc }
+export { StartFunc };
