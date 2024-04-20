@@ -1,19 +1,18 @@
 import { StartFunc as StartFuncShowOnModal } from "./ShowOnModal.js";
-import { StartFunc as StartFuncOnLoadSuccess } from "./OnLoadSuccess/EntryFile.js";
-import { StartFunc as StartFuncOnClickRowFunc } from "./ForAddOnTable/onClickRow/EntryFile.js";
 
 const StartFunc = ({ inRow }) => {
     let jVarLocalDataForTable = jFLocalTransformData({ inItemSerial: inRow.ItemSerial });
-
+    
     var $table = $('#AddOnTable');
+    $table.bootstrapTable("load", jVarLocalDataForTable);
 
-    $table.bootstrapTable("destroy");
+    // $table.bootstrapTable("destroy");
 
-    $table.bootstrapTable({
-        data: jVarLocalDataForTable,
-        onPostBody: StartFuncOnLoadSuccess,
-        onClickRow: StartFuncOnClickRowFunc
-    });
+    // $table.bootstrapTable({
+    //     data: jVarLocalDataForTable,
+    //     onPostBody: StartFuncOnLoadSuccess,
+    //     onClickRow: StartFuncOnClickRowFunc
+    // });
 
     StartFuncShowOnModal(inRow);
 
