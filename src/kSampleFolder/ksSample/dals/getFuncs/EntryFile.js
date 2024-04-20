@@ -10,6 +10,7 @@ import { StartFunc as StartFunFilterDataByKeyId } from '../../kLowDb/ReadFromFil
 import { StartFunc as StartFuncreadSummeryFile } from '../../kLowDb/ReadFileList/readSummeryFile.js';
 import { StartFunc as StartFuncMaxRow } from '../../kLowDb/ReadFromFile/MaxRow.js';
 import { StartFunc as StartFunReadFileByPk } from '../../kLowDb/ReadFromFile/readFileByPk.js';
+import { StartFunc as StartFuncReadFileByPkNonMaxRow } from '../../kLowDb/ReadFromFile/readFileByPkNonMaxRow.js';
 
 let GetFunc = () => {
     return StartFuncreadFile();
@@ -81,9 +82,20 @@ let GetMaxRowFunc = () => {
     return StartFuncMaxRow();
 };
 
+let GetNonMaxRowFunc = ({ inId }) => {
+    let LocalFromLowDb = StartFuncReadFileByPkNonMaxRow({ inId });
+
+    if (LocalFromLowDb === false) {
+        return false;
+    };
+
+    return LocalFromLowDb;
+};
+
 export {
     GetFunc, GetDataOnlyFunc, GetFromModalFunc,
     GetFromModalUuidFunc, GetFromModalUuidAndTSFunc,
     GetIdFunc, GetBodyCheckFunc, GetRowDataFunc, GetRowCountFunc,
-    GetRowCountByIdFunc, GetFilterDataFunc, GetSummeryFunc, GetMaxRowFunc
+    GetRowCountByIdFunc, GetFilterDataFunc, GetSummeryFunc,
+    GetMaxRowFunc, GetNonMaxRowFunc
 };

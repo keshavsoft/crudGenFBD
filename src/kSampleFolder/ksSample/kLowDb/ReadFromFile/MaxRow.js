@@ -20,7 +20,7 @@ let StartFunc = () => {
             maxPk = row.pk;
             maxRow = row;
         }
-    }
+    };
 
     LocalReturnData.JsonData = maxRow;
     LocalReturnData.KTF = true;

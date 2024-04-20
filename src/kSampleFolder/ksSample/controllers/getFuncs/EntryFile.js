@@ -7,7 +7,8 @@ import {
     GetRowCountByIdFunc as GetRowCountByIdFuncRepo,
     GetfilterDataFunc as GetfilterDataFuncRepo,
     GetSummeryFunc as GetSummeryFuncRepo,
-    GetMaxRowFunc as GetMaxRowFuncRepo
+    GetMaxRowFunc as GetMaxRowFuncRepo,
+    GetNonMaxRowFunc as GetNonMaxRowFuncRepo
 } from '../../repos/getFuncs/EntryFile.js';
 
 
@@ -35,6 +36,20 @@ let GetIdFunc = (req, res) => {
 
     let LocalFromRepo = GetIdFuncRepo({ inId: LocalIfFromParam });
     res.json(LocalFromRepo);
+};
+
+let GetNonMaxRowFunc = (req, res) => {
+    let LocalParams = req.params;
+    let LocalIfFromParam = LocalParams.id;
+
+    let LocalFromRepo = GetNonMaxRowFuncRepo({ inId: LocalIfFromParam });
+
+    if (LocalFromRepo.KTF === false) {
+        res.status(500).send(LocalFromRepo.KReason);
+        return;
+    };
+
+    res.json(LocalFromRepo.JsonData);
 };
 
 let GetRowDataFunc = (req, res) => {
@@ -117,5 +132,5 @@ export {
     GetFromModalUuidFunc, GetFromModalUuidAndTSFunc,
     GetIdFunc,
     GetBodyCheckFunc, GetRowCountFunc, GetRowDataFunc, GetRowCountByIdFunc,
-    GetFilterDataFunc, GetSummeryFunc, GetMaxRowFunc
+    GetFilterDataFunc, GetSummeryFunc, GetMaxRowFunc, GetNonMaxRowFunc
 };
