@@ -84,38 +84,20 @@ const LocalSummaryFunc = ({ inData }) => {
     return LocalReturnData;
 };
 
-const LocalDateAndTime1 = ({ inDataTime }) => {
-    const dateString = inDataTime;
-
-    // Create a new Date object from the string
-    const dateObject = new Date(dateString);
-
-    // Get the date components
-    const year = dateObject.getFullYear();
-    const month = dateObject.getMonth() + 1; // Month is zero-based, so add 1
-    const day = dateObject.getDate();
-
-    // Get the time components
-    const hours = dateObject.getHours();
-    const minutes = dateObject.getMinutes();
-    const seconds = dateObject.getSeconds();
-
-    let LocalDate = (day + "-" + month + "-" + year);
-    let LocalTime = (hours + ":" + minutes + ":" + seconds);
-    return { LocalDate, LocalTime }
-
-}
-
 const LocalDateAndTime = ({ inData }) => {
-    const Localdate = inData;
+    const LocalData = inData;
     // console.log("vasu::",Localdate);
 
     const today = new Date(); // Get today's date
     const todayDate = today.toISOString().split('T')[0]; // Extract today's date portion
+    console.log("LocalData : ", LocalData);
+    return LocalData.filter(obj => {
+        // const objDate = new Date(obj.DateTime).toISOString().split('T')[0]; // Extract date portion of object's timestamp
 
-    return Localdate.filter(obj => {
-        const objDate = new Date(obj.DateTime).toISOString().split('T')[0]; // Extract date portion of object's timestamp
+        const objDate = new Date(obj.Currentdateandtime);
+
         return objDate === todayDate; // Compare with today's date
     });
 };
+
 export { StartFunc };

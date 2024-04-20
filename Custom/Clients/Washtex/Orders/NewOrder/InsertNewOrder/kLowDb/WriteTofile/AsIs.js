@@ -16,8 +16,9 @@ let StartFunc = ({ inDataToInsert, inFileName }) => {
 
     let MaxPk = LocalFuncMaxOrder({ inData: db.data });
 
-    LocalinDataToInsert.OrderData.Currentdateandtime = LocalFuncCurrentDateTime();
+    LocalinDataToInsert.OrderData.Currentdateandtime = LocalFuncCurrentDateOnly();
     LocalinDataToInsert.pk = MaxPk + 1;
+    LocalinDataToInsert.DateTime = LocalFuncCurrentDateAndTime();
 
     db.data.push(LocalinDataToInsert);
     db.write();
@@ -42,7 +43,18 @@ const LocalFuncMaxOrder = ({ inData }) => {
     return MaxPk
 };
 
-let LocalFuncCurrentDateTime = () => {
+let LocalFuncCurrentDateOnly = () => {
+    let jVarLocalAddDays7 = new Date();
+    let date = new Date(jVarLocalAddDays7);
+
+    let dd = (date.getDate() < 10 ? '0' : '') + date.getDate();
+    let MM = ((date.getMonth() + 1) < 10 ? '0' : '') + (date.getMonth() + 1);
+    let yyyy = date.getFullYear();
+
+    return `${yyyy}-${MM}-${dd}`;
+};
+
+let LocalFuncCurrentDateAndTime = () => {
     let jVarLocalAddDays7 = new Date();
     let date = new Date(jVarLocalAddDays7);
 
