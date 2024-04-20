@@ -5,6 +5,16 @@ const StartFunc = () => {
 
     jFLocalToInputCustomerMobileId(jVarLocalFromLocalStorage.CustomerData.CustomerMobile);
     jFLocalToInputCustomerNameId(jVarLocalFromLocalStorage.CustomerData.CustomerName);
+    jFLocalToInputOrderNumberId(jVarLocalFromLocalStorage.pk);
+};
+
+let jFLocalToInputOrderNumberId = (inValue) => {
+    let jVarLocalHtmlId = 'OrderNumberId';
+    let jVarLocalOrderNumberId = document.getElementById(jVarLocalHtmlId);
+
+    if (jVarLocalOrderNumberId === null === false) {
+        jVarLocalOrderNumberId.innerHTML = inValue;
+    };
 };
 
 let jFLocalToInputCustomerNameId = (inValue) => {

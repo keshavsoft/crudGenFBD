@@ -8,7 +8,6 @@ let StartFunc = () => {
     StartFuncTableFooterItemNameId();
 
     jFLocalEndFunc();
-    // StartFuncTableFooterAccountNameSearchButtonId();
 };
 
 let jFLocalEndFunc = () => {

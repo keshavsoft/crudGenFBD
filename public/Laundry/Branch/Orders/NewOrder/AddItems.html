@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row mt-3">
             <div class="col-2">
-                <button type="button" class="btn btn-primary fs-1" id="RefreshBSTableId">16</button>
+                <button type="button" class="btn btn-primary fs-1" id="OrderNumberId">16</button>
             </div>
             <div class="col">
                 <div class="row">
@@ -53,16 +53,16 @@
                 </datalist>
                 <table id="table" data-show-footer="true">
                     <thead>
-                        <th data-formatter="jFLocalSerialColumn">#</th>
-                        <th data-field="Category">Group</th>
+                        <th data-formatter="jFLocalSerialColumn" data-width="50">#</th>
+                        <th data-field="Category" data-width="120">Group</th>
                         <th data-field="ItemName" data-width="200">Item Name</th>
-                        <th data-formatter="jFLocalAddOnFormater">Add Ons</th>
-                        <th data-field="Rate" data-width="50">Rate</th>
-                        <th data-field="Pcs">Pcs</th>
-                        <th data-field="Total">Amount</th>
-                        <th data-field="location">Factory</th>
+                        <th data-formatter="jFLocalAddOnFormater" data-width="100">Add Ons</th>
+                        <th data-field="Rate" data-width="100">Rate</th>
+                        <th data-field="Pcs" data-width="75">Pcs</th>
+                        <th data-field="Total" data-width="100">Amount</th>
+                        <th data-field="location" data-width="100">Factory</th>
                         <th data-field="DeliveryDateTime" data-width="100">Delivery</th>
-                        <th>Opts.</th>
+                        <th data-formatter="jFLocalOptsFormater" data-width="50">Opts.</th>
                     </thead>
                     <tfoot>
                         <tr>
@@ -94,12 +94,10 @@
                                     </div>
                                 </div>
                             </th>
+                            <th></th>
                             <th>
-                                <button class="btn btn-outline-warning" type="button"
-                                    id="TableFooterAddOnsButtonId">AddOns</button>
-                            </th>
-                            <th>
-                                <input type="text" class="form-control" id="TableFooterRateInputId">
+                                <input type="text" class="form-control" id="TableFooterRateInputId" tabindex="-1"
+                                    readonly>
                             </th>
                             <th>
                                 <input class="form-control" id="TableFooterPcsInputId" type="number" min="1" max="100"
@@ -236,6 +234,13 @@
                     `</a>`
                 ].join('')
             };
+        };
+
+        function jFLocalOptsFormater(value, row, index) {
+            return [
+                `<a href="#" class="btn btn-danger ">`,
+                `</a>`
+            ].join('');
         };
 
         const myModalEl = document.getElementById('AddOnModal');
