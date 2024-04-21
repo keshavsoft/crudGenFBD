@@ -70,7 +70,7 @@
                     <ul class="menu">
                         <li class="sidebar-title">Masters</li>
 
-                        <li class="sidebar-item active  has-sub">
+                        <li class="sidebar-item  has-sub">
                             <a href="#" class="sidebar-link">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-person-plus" viewBox="0 0 16 16">
@@ -84,8 +84,8 @@
 
                             <ul class="submenu active submenu-open" style="--submenu-height: 774px;">
 
-                                <li class="submenu-item">
-                                    <a href="../Create/Create.html" class="submenu-link">
+                                <li class="submenu-item active">
+                                    <a href="#" class="submenu-link">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                             fill="currentColor" class="bi bi-plus-square" viewBox="0 0 19 19">
                                             <path
@@ -96,7 +96,7 @@
                                         Create</a>
                                 </li>
 
-                                <li class="submenu-item ">
+                                <li class="submenu-item">
                                     <a href="../ShowAll/ShowAll.html" class="submenu-link" id="CustomersShowAll">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-table" viewBox="0 0 19 19">
@@ -117,8 +117,8 @@
 
                                 </li>
 
-                                <li class="submenu-item active ">
-                                    <a href="#" class="submenu-link">
+                                <li class="submenu-item ">
+                                    <a href="../Delete/Delete.html" class="submenu-link">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 19 19">
                                             <path
@@ -134,7 +134,7 @@
 
                         </li>
 
-                        <li class="sidebar-item  has-sub">
+                        <li class="sidebar-item active  has-sub">
                             <a href="#" class="sidebar-link">
                                 <i class="bi bi-diagram-3"></i>
                                 <span>Items</span>
@@ -143,7 +143,7 @@
                             <ul class="submenu submenu-closed" style="--submenu-height: 774px;">
 
                                 <li class="submenu-item">
-                                    <a href="component-accordion.html" class="submenu-link">
+                                    <a href="../Create/Create.html" class="submenu-link">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                             fill="currentColor" class="bi bi-plus-square" viewBox="0 0 19 19">
                                             <path
@@ -278,7 +278,7 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">Masters</li>
                                     <li class="breadcrumb-item active" aria-current="page">Customers</li>
-                                    <li class="breadcrumb-item"> <a href="#" id="RefreshBSTableId"> Show All</a></li>
+                                    <li class="breadcrumb-item"> <a href="#" id="RefreshBSTableId"> Create</a></li>
                                 </ol>
                             </nav>
                         </div>
@@ -288,30 +288,56 @@
                     <div class="row">
                         <div class="col">
                             <div class="card">
-
-                                <div class="card-content">
-                                    <div class="card-body">
-
-                                        <div class="table-responsive">
-
-                                            <table id="table" data-toolbar="#toolbar" data-search="true"
-                                                data-searchable="true" data-id-field="pk" data-show-toggle="true"
-                                                data-show-pagination-switch="true" data-pagination="true"
-                                                data-detail-view="true">
-                                                <thead>
-                                                    <tr id="tableHeadRow">
-                                                        <th data-formatter="jFLocalSerialColumn"
-                                                            class="d-none d-md-table-cell">#</th>
-                                                        <th data-field="CustomerName" data-filter-control="input">
-                                                            CustomerName</th>
-                                                        <th data-field="Mobile" class="d-none d-sm-table-cell">Mobile
-                                                        </th>
-                                                        <th data-field="City" class="d-none d-md-table-cell">City</th>
-                                                    </tr>
-                                                </thead>
-                                            </table>
+                                <div class="card-body">
+        
+                                    <form href="#" class="form-horizontal needs-validation" id="FormId">
+                                        <div class="row">
+                
+                                            <div class="col-md-12">
+                                                <label class="col-md-4 col-form-label">CustomerName</label>
+                
+                                                <div class="col-md-8">
+                                                    <input kvs1="" id="CustomerName" name="CustomerName" data-clienteval=""
+                                                        type="text" class="form-control" placeholder="Enter Customer Name"
+                                                        autocomplete="off" required autofocus>
+                                                    <div class="invalid-feedback">
+                                                        Should not be Empty!!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label class="col-md-4 col-form-label">Mobile</label>
+                                                <div class="col-md-8">
+                                                    <input kvs1="" id="Mobile" name="Mobile"
+                                                        data-dataattribute="Description" value="" data-clienteval="" type="Number"
+                                                        class="form-control" placeholder="Enter Mobile" autocomplete="off"
+                                                        required>
+                                                    <div class="invalid-feedback " id="MobileClass">
+                                                        Should not be Empty!!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label class="col-md-4 col-form-label">City</label>
+                                                <div class="col-md-8">
+                                                    <input kvs1="" id="City" name="City" data-dataattribute="City" value=""
+                                                        data-clienteval="" type=""
+                                                        class="form-control KeshavSoftHtmlAttributes" min="" max="" step=""
+                                                        placeholder="Enter City" autocomplete="off" list="FactoryId">
+                                                    <div class="invalid-feedback">
+                                                        Should not be Empty!!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="col-md-8 m-3">
+                                                    <button type="button" id="CreateCustomerButtonId" class="btn btn-primary">
+                                                        Save New
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
 
@@ -337,41 +363,6 @@
         </div>
     </div>
 
-    <template id="TemplateForRow">
-        <div class="row m-2">
-
-            <div class="col-md-12">
-                <label class="col-md-4 col-form-label">CustomerName</label>
-
-                <div class="col-md-8">
-                    <input id="CustomerNameId" type="text" class="form-control" autocomplete="off">
-                </div>
-            </div>
-            <div class="col-md-12">
-                <label class="col-md-4 col-form-label">Mobile</label>
-                <div class="col-md-8">
-                    <input kvs1="" id="Mobile" name="Mobile" data-dataattribute="Description" value=""
-                        data-clienteval="" type="Number" class="form-control" placeholder="Enter Mobile"
-                        autocomplete="off" required>
-                    <div class="invalid-feedback " id="MobileClass">
-                        Should not be Empty!!
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <label class="col-md-4 col-form-label">City</label>
-                <div class="col-md-8">
-                    <input kvs1="" id="City" name="City" data-dataattribute="City" value="" data-clienteval="" type=""
-                        class="form-control KeshavSoftHtmlAttributes" min="" max="" step="" placeholder="Enter City"
-                        autocomplete="off" list="FactoryId">
-                    <div class="invalid-feedback">
-                        Should not be Empty!!
-                    </div>
-                </div>
-            </div>
-        </div>
-    </template>
-
     <script>
         function jFLocalSerialColumn(value, row, index) {
             return index + 1;
@@ -380,7 +371,7 @@
 
     <script src="../../assets/static/js/components/dark.js"></script>
     <script src="../../assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-
+    
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script> -->
