@@ -1,4 +1,5 @@
 import { StartFunc as StartFuncOnExpandRow } from "./onExpandRow/EntryFile.js";
+import { StartFunc as StartFuncOnClickRow } from "./onClickRow/EntryFile.js";
 
 const StartFunc = () => {
     var $table = $('#table');
@@ -6,7 +7,8 @@ const StartFunc = () => {
     $table.bootstrapTable({
         data: [],
         detailView: true,
-        onExpandRow: StartFuncOnExpandRow
+        onExpandRow: StartFuncOnExpandRow,
+        onClickRow: StartFuncOnClickRow
     });
 };
 
