@@ -4,7 +4,7 @@ let StartFunc = () => {
 
 let jFLocalToURL = () => {
     const url = new URL(window.location.href);
-    const new_url = new URL("./Customer.html", url);
+    const new_url = new URL("../NewOrder/Customer.html", url);
 
     let jVarLocalCustomerMobile = jFLocalCustomerMobileId();
     let jVarLocalCustomerName = jFLocalCustomerNameId();

@@ -44,12 +44,15 @@
                 </div>
                 <div class="col" style="text-align: center;">
                     <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-                        <h1 class="display-4 fw-normal text-body-emphasis">Select Branch Name</h1>
+                        <h1 class="display-4 fw-normal text-body-emphasis">
+                            <a href="#" id="BranchOrderId">
+                                Select Branch Name</a>
+                        </h1>
                         <p class="fs-5 text-body-secondary">Choose your own Branch and start your Laundry bookings
                         </p>
                     </div>
                     <div class="input-group">
-                        <select id="BruchSelectInputId" class="form-select"
+                        <select id="BranchSelectId" class="form-select"
                             aria-label="Example select with button addon">
                             <option selected>Choose Branch</option>
                             <option value="Kakinada">Kakinada</option>
@@ -97,19 +100,25 @@
             let jVarLocalBruchSelectButtonId = document.getElementById('BruchSelectButtonId');
 
             if (jVarLocalBruchSelectButtonId === null === false) {
-                jVarLocalBruchSelectButtonId.addEventListener("click", jFLocalBruchSelectInputId)
+                jVarLocalBruchSelectButtonId.addEventListener("click", jFLocalBranchSelectId)
+            };
+            
+            let jVarLocalBranchOrderId = document.getElementById('BranchOrderId');
+
+            if (jVarLocalBranchOrderId === null === false) {
+                jVarLocalBranchOrderId.addEventListener("click", jFLocalBranchSelectId)
             };
         };
 
-        let jFLocalBruchSelectInputId = () => {
-            let jVarLocalBruchSelectInputId = document.getElementById('BruchSelectInputId');
+        let jFLocalBranchSelectId = () => {
+            let jVarLocalBranchSelectId = document.getElementById('BranchSelectId');
 
-            if (jVarLocalBruchSelectInputId === null === false) {
-                let jVarLocalBruchSelectInputValue = jVarLocalBruchSelectInputId.value;
+            if (jVarLocalBranchSelectId === null === false) {
+                let jVarLocalBruchSelectInputValue = jVarLocalBranchSelectId.value;
                 localStorage.setItem("BranchName", jVarLocalBruchSelectInputValue);
 
-
-                window.location.href = `/LaundryPos/Dashboard/Dashboard.html?BranchName=${jVarLocalBruchSelectInputValue}`
+                // window.location.href = `/LaundryPos/Dashboard/Dashboard.html?BranchName=${jVarLocalBruchSelectInputValue}`;
+                window.location.href = `/Laundry/Branch/Orders/NewOrder/Customer.html`;
             };
         };
         jFLocalBruchSelectButtonId();
@@ -125,10 +134,10 @@
         };
 
         let jFLocalFactorySelectInputId = () => {
-            let jVarLocalBruchSelectInputId = document.getElementById('FactorySelectInputId');
+            let jVarLocalBranchSelectId = document.getElementById('FactorySelectInputId');
 
-            if (jVarLocalBruchSelectInputId === null === false) {
-                let jVarLocalBruchSelectInputValue = jVarLocalBruchSelectInputId.value;
+            if (jVarLocalBranchSelectId === null === false) {
+                let jVarLocalBruchSelectInputValue = jVarLocalBranchSelectId.value;
                 localStorage.setItem("FactoryName", jVarLocalBruchSelectInputValue);
 
                 window.location.href = `/Factory/Dashboard/Dashboard.html?BranchName=${jVarLocalBruchSelectInputValue}`
