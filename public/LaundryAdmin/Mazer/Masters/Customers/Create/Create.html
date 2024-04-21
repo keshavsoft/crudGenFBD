@@ -85,7 +85,7 @@
                             <ul class="submenu active submenu-open" style="--submenu-height: 774px;">
 
                                 <li class="submenu-item">
-                                    <a href="../Create/Create.html" class="submenu-link">
+                                    <a href="component-accordion.html" class="submenu-link">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                             fill="currentColor" class="bi bi-plus-square" viewBox="0 0 19 19">
                                             <path
@@ -288,30 +288,56 @@
                     <div class="row">
                         <div class="col">
                             <div class="card">
-
-                                <div class="card-content">
-                                    <div class="card-body">
-
-                                        <div class="table-responsive">
-
-                                            <table id="table" data-toolbar="#toolbar" data-search="true"
-                                                data-searchable="true" data-detail-formatter="detailFormatter"
-                                                data-id-field="pk" data-show-toggle="true"
-                                                data-show-pagination-switch="true" data-pagination="true"
-                                                data-detail-view="true">
-                                                <thead>
-                                                    <tr id="tableHeadRow">
-                                                        <th data-formatter="jFLocalSerialColumn" class="d-none d-md-table-cell">#</th>
-                                                        <th data-field="CustomerName" data-filter-control="input">
-                                                            CustomerName</th>
-                                                        <th data-field="Mobile" class="d-none d-sm-table-cell">Mobile
-                                                        </th>
-                                                        <th data-field="City" class="d-none d-md-table-cell">City</th>
-                                                    </tr>
-                                                </thead>
-                                            </table>
+                                <div class="card-body">
+        
+                                    <form href="#" class="form-horizontal needs-validation" id="FormId">
+                                        <div class="row">
+                
+                                            <div class="col-md-12">
+                                                <label class="col-md-4 col-form-label">CustomerName</label>
+                
+                                                <div class="col-md-8">
+                                                    <input kvs1="" id="CustomerName" name="CustomerName" data-clienteval=""
+                                                        type="text" class="form-control" placeholder="Enter Customer Name"
+                                                        autocomplete="off" required autofocus>
+                                                    <div class="invalid-feedback">
+                                                        Should not be Empty!!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label class="col-md-4 col-form-label">Mobile</label>
+                                                <div class="col-md-8">
+                                                    <input kvs1="" id="Mobile" name="Mobile"
+                                                        data-dataattribute="Description" value="" data-clienteval="" type="Number"
+                                                        class="form-control" placeholder="Enter Mobile" autocomplete="off"
+                                                        required>
+                                                    <div class="invalid-feedback " id="MobileClass">
+                                                        Should not be Empty!!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label class="col-md-4 col-form-label">City</label>
+                                                <div class="col-md-8">
+                                                    <input kvs1="" id="City" name="City" data-dataattribute="City" value=""
+                                                        data-clienteval="" type=""
+                                                        class="form-control KeshavSoftHtmlAttributes" min="" max="" step=""
+                                                        placeholder="Enter City" autocomplete="off" list="FactoryId">
+                                                    <div class="invalid-feedback">
+                                                        Should not be Empty!!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="col-md-8 m-3">
+                                                    <button type="button" id="CreateCustomerButtonId" class="btn btn-primary">
+                                                        Save New
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
 
