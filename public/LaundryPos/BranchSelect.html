@@ -96,21 +96,21 @@
         </script>
 
     <script>
-        let jFLocalBruchSelectButtonId = () => {
+        let jFLocalBranchAssignListeners = () => {
             let jVarLocalBruchSelectButtonId = document.getElementById('BruchSelectButtonId');
 
             if (jVarLocalBruchSelectButtonId === null === false) {
-                jVarLocalBruchSelectButtonId.addEventListener("click", jFLocalBranchSelectId)
+                jVarLocalBruchSelectButtonId.addEventListener("click", jFLocalToLaundryPos)
             };
             
             let jVarLocalBranchOrderId = document.getElementById('BranchOrderId');
 
             if (jVarLocalBranchOrderId === null === false) {
-                jVarLocalBranchOrderId.addEventListener("click", jFLocalBranchSelectId)
+                jVarLocalBranchOrderId.addEventListener("click", jFLocalToNewOrder)
             };
         };
 
-        let jFLocalBranchSelectId = () => {
+        let jFLocalToNewOrder = () => {
             let jVarLocalBranchSelectId = document.getElementById('BranchSelectId');
 
             if (jVarLocalBranchSelectId === null === false) {
@@ -121,7 +121,20 @@
                 window.location.href = `/Laundry/Branch/Orders/NewOrder/Customer.html`;
             };
         };
-        jFLocalBruchSelectButtonId();
+      
+        let jFLocalToLaundryPos = () => {
+            let jVarLocalBranchSelectId = document.getElementById('BranchSelectId');
+
+            if (jVarLocalBranchSelectId === null === false) {
+                let jVarLocalBruchSelectInputValue = jVarLocalBranchSelectId.value;
+                localStorage.setItem("BranchName", jVarLocalBruchSelectInputValue);
+
+                // window.location.href = `/LaundryPos/Dashboard/Dashboard.html?BranchName=${jVarLocalBruchSelectInputValue}`;
+                window.location.href = `/LaundryPos/Dashboard/Dashboard.html`;
+            };
+        };
+     
+        jFLocalBranchAssignListeners();
     </script>
 
     <script>
