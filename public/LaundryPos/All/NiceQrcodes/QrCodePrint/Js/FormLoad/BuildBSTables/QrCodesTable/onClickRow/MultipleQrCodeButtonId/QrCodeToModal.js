@@ -1,13 +1,18 @@
 let StartFunc = ({ inData }) => {
     let jVarLocalDataNeeded = inData;
-    console.log(jVarLocalDataNeeded)
+    console.log(jVarLocalDataNeeded);
 
     let jVarLocalTemplate = document.getElementById("TemplateForQrCodePrint");
     let clone = jVarLocalTemplate.content.cloneNode("true");
 
-    let jVarLocalBranchClass = clone.querySelector(".BranchClass");
-    jVarLocalBranchClass.textContent = "aaaaaaaaaa";
-    
+    // let jVarLocalBranchClass = clone.querySelector(".BranchClass");
+    // jVarLocalBranchClass.textContent = "aaaaaaaaaa";
+
+    jFLocalTotextContent({
+        inClone: clone, inHtmlClassName: "BranchClass",
+        inTextContent: jVarLocalDataNeeded.BookingData.OrderData.BranchName
+    });
+
     let jVarLocalPkClass = clone.querySelector(".PkClass");
     jVarLocalPkClass.textContent = "bbbbb";
 
@@ -36,6 +41,15 @@ let StartFunc = ({ inData }) => {
     var myModal = new bootstrap.Modal(document.getElementById(jVarLocalId), { keyboard: true, focus: true });
 
     myModal.show();
+};
+
+let jFLocalTotextContent = ({ inClone, inHtmlClassName, inTextContent }) => {
+    let jVarLocalClone = inClone;
+    let jVarLocalHtmlClassName = inHtmlClassName;
+    let jVarLocalTextContent = inTextContent;
+
+    let jVarLocalFound = jVarLocalClone.querySelector(`.${jVarLocalHtmlClassName}`);
+    jVarLocalFound.textContent = jVarLocalTextContent;
 };
 
 let GenerateQrCodeOnModal = ({ QrDataKey, inQrData = "", inCanvasId }) => {
