@@ -13,20 +13,45 @@ let StartFunc = ({ inData }) => {
         inTextContent: jVarLocalDataNeeded.BookingData.OrderData.BranchName
     });
 
-    let jVarLocalPkClass = clone.querySelector(".PkClass");
-    jVarLocalPkClass.textContent = "bbbbb";
+    // let jVarLocalPkClass = clone.querySelector(".PkClass");
+    // jVarLocalPkClass.textContent = "bbbbb";
 
-    let jVarLocalItemNameClass = clone.querySelector(".ItemNameClass");
-    jVarLocalItemNameClass.textContent = "ccccccc";
+    jFLocalTotextContent({
+        inClone: clone, inHtmlClassName: "PkClass",
+        inTextContent: jVarLocalDataNeeded.locationPk        
+    });
 
-    let jVarLocalItemSerialClass = clone.querySelector(".ItemSerialClass");
-    jVarLocalItemSerialClass.textContent = "ddddddItemSerial";
+    // let jVarLocalItemNameClass = clone.querySelector(".ItemNameClass");
+    // jVarLocalItemNameClass.textContent = "ccccccc";
 
-    let jVarLocalAddOnDataAsStringClass = clone.querySelector(".AddOnDataAsStringClass");
-    jVarLocalAddOnDataAsStringClass.textContent = "eeeeeee";
+    jFLocalTotextContent({
+        inClone: clone, inHtmlClassName: "ItemNameClass",
+        inTextContent: jVarLocalDataNeeded.ItemName       
+    });
 
-    let jVarLocalOrderDateClass = clone.querySelector(".OrderDateClass");
-    jVarLocalOrderDateClass.textContent = "Gggggg";
+    // let jVarLocalItemSerialClass = clone.querySelector(".ItemSerialClass");
+    // jVarLocalItemSerialClass.textContent = "ddddddItemSerial";
+
+    jFLocalTotextContent({
+        inClone: clone, inHtmlClassName: "ItemSerialClass",
+        inTextContent: jVarLocalDataNeeded.ItemSerial      
+    });
+
+    // let jVarLocalAddOnDataAsStringClass = clone.querySelector(".AddOnDataAsStringClass");
+    // jVarLocalAddOnDataAsStringClass.textContent = "eeeeeee";
+
+    jFLocalTotextContent({
+        inClone: clone, inHtmlClassName: "AddOnDataAsStringClass",
+        inTextContent: jVarLocalDataNeeded.ItemNamePk       
+    });
+
+    // let jVarLocalOrderDateClass = clone.querySelector(".OrderDateClass");
+    // jVarLocalOrderDateClass.textContent = "Gggggg";
+
+    jFLocalTotextContent({
+        inClone: clone, inHtmlClassName: "OrderDateClass",
+        inTextContent: jVarLocalDataNeeded.DeliveryDateTime      
+    });
 
     // {{BookingData.OrderData.BranchName}}-{{location}}
 
