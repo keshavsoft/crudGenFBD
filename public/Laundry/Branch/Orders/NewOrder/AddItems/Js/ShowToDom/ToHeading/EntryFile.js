@@ -6,6 +6,16 @@ const StartFunc = () => {
     jFLocalToInputCustomerMobileId(jVarLocalFromLocalStorage.CustomerData.CustomerMobile);
     jFLocalToInputCustomerNameId(jVarLocalFromLocalStorage.CustomerData.CustomerName);
     jFLocalToInputOrderNumberId(jVarLocalFromLocalStorage.pk);
+    jFLocalToInputBranchNameAnchorId(localStorage.getItem("BranchName"));
+};
+
+let jFLocalToInputBranchNameAnchorId = (inValue) => {
+    let jVarLocalHtmlId = 'BranchNameAnchorId';
+    let jVarLocalBranchNameAnchorId = document.getElementById(jVarLocalHtmlId);
+
+    if (jVarLocalBranchNameAnchorId === null === false) {
+        jVarLocalBranchNameAnchorId.innerHTML = inValue;
+    };
 };
 
 let jFLocalToInputOrderNumberId = (inValue) => {
