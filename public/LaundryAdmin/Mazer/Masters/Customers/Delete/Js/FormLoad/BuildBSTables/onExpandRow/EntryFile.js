@@ -4,10 +4,21 @@ let StartFunc = (index, row, $detail) => {
 
     const s = new XMLSerializer();
     const str = s.serializeToString(clone);
+    $detail.html(str)
+    jFLocalShowCustomerName({inCustomerName:row.CustomerName,$detail,inStr:str})
+    jFLocalShowMobile({inMobile:row.Mobile,$detail,inStr:str})
+};
+let jFLocalShowCustomerName = ({inCustomerName,$detail}) =>{
+    let jVarLocalCustomerNameId = $detail.find('#CustomerNameId');
 
-    let jVarLocalCustomerNameId = $detail.html(str).find('#CustomerNameId');
+    jVarLocalCustomerNameId[0].value = inCustomerName;
+};
 
-    jVarLocalCustomerNameId[0].value = row.CustomerName;
+let jFLocalShowMobile = ({inMobile,$detail}) =>{
+    let jVarLocalMobileId = $detail.find('#MobileId');
+
+    jVarLocalMobileId[0].value = inMobile;
 };
 
 export { StartFunc };
+
