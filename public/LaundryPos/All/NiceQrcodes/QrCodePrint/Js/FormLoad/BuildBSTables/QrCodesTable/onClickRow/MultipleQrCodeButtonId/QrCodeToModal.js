@@ -1,11 +1,27 @@
 let StartFunc = ({ inData }) => {
     let jVarLocalDataNeeded = inData;
+    console.log(jVarLocalDataNeeded)
 
     let jVarLocalTemplate = document.getElementById("TemplateForQrCodePrint");
     let clone = jVarLocalTemplate.content.cloneNode("true");
 
     let jVarLocalBranchClass = clone.querySelector(".BranchClass");
     jVarLocalBranchClass.textContent = "aaaaaaaaaa";
+    
+    let jVarLocalPkClass = clone.querySelector(".PkClass");
+    jVarLocalPkClass.textContent = "bbbbb";
+
+    let jVarLocalItemNameClass = clone.querySelector(".ItemNameClass");
+    jVarLocalItemNameClass.textContent = "ccccccc";
+
+    let jVarLocalItemSerialClass = clone.querySelector(".ItemSerialClass");
+    jVarLocalItemSerialClass.textContent = "ddddddItemSerial";
+
+    let jVarLocalAddOnDataAsStringClass = clone.querySelector(".AddOnDataAsStringClass");
+    jVarLocalAddOnDataAsStringClass.textContent = "eeeeeee";
+
+    let jVarLocalOrderDateClass = clone.querySelector(".OrderDateClass");
+    jVarLocalOrderDateClass.textContent = "Gggggg";
 
     // {{BookingData.OrderData.BranchName}}-{{location}}
 
