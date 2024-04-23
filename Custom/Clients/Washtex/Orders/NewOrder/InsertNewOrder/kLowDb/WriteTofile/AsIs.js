@@ -18,13 +18,14 @@ let StartFunc = ({ inDataToInsert, inFileName }) => {
 
     LocalinDataToInsert.OrderData.Currentdateandtime = LocalFuncCurrentDateOnly();
     LocalinDataToInsert.pk = MaxPk + 1;
+    LocalinDataToInsert.UuId = MaxPk + 1;
     LocalinDataToInsert.DateTime = LocalFuncCurrentDateAndTime();
 
     db.data.push(LocalinDataToInsert);
     db.write();
 
-    LocalReturnData.KTF=true;
-    
+    LocalReturnData.KTF = true;
+
     return LocalReturnData;
 };
 

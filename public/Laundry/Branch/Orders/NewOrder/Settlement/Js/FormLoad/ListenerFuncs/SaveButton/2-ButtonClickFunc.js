@@ -3,15 +3,15 @@ import { StartFunc as StartFuncPreparePostData } from "./4-PreparePostData/Entry
 import { StartFunc as StartFuncCheckBeforeFetch } from "./3-CheckBeforeFetch.js";
 import { StartFunc as StartFuncAfterFetch } from "./6-AfterFetch.js";
 
-let StartFunc = () => {
+let StartFunc = async () => {
     if (StartFuncCheckBeforeFetch()) {
         let jVarLocalBodyData = StartFuncPreparePostData()
 
-        let response = StartFuncFetchFunc({
+        let response = await StartFuncFetchFunc({
             inSettlementData: jVarLocalBodyData
         });
-        
-        StartFuncAfterFetch({ inFromFetch: response});
+
+        StartFuncAfterFetch({ inFromFetch: response });
     };
 };
 
