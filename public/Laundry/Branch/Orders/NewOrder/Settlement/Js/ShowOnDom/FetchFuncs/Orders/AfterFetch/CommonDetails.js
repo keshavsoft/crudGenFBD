@@ -1,6 +1,5 @@
 const StartFunc = ({ inData, }) => {
     let jVarLocalData = inData;
-
     jFLocalCustomerName({ inOrderInfoCustomerNameId: jVarLocalData.CustomerData.CustomerName });
     jFLocalOrderInfoCustomerMobileId({ inOrderInfoCustomerMobileId: jVarLocalData.CustomerData.CustomerMobile });
 

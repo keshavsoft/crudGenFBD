@@ -1,15 +1,6 @@
-import { StartFunc as StartFuncFromLocalStorageOrderItemsToShow } from "../../../../../../FromLocalStorage/OrderItemsToShow/Bulk.js";
-
 let StartFunc = ({ inData }) => {
-    let jVarLocalDataNeeded = StartFuncFromLocalStorageOrderItemsToShow();
-    console.log("jVarLocalDataNeeded::",jVarLocalDataNeeded.BodyData);
-    let jVarLocalItemsArray = Object.values(jVarLocalDataNeeded.BodyData).map(element => {
-        return element.Total;
-    });
-
-    const sum = jVarLocalItemsArray.reduce((partialSum, a) => partialSum + a, 0);
-
-    jFLocalOrderAmountId({ inOrderAmountId: sum });
+    let LocalOrderAmount = Object.values(inData).map(e => e.Pcs * e.Rate).reduce((a, b) => a + b, 0);
+    jFLocalOrderAmountId({ inOrderAmountId: LocalOrderAmount });
 };
 
 let jFLocalOrderAmountId = ({ inOrderAmountId }) => {

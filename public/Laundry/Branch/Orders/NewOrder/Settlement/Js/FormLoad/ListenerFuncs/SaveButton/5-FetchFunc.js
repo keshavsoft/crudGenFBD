@@ -2,7 +2,7 @@
 let StartFunc = async ({ inSettlementData }) => {
     // let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
     let jVarLocalBranchName = localStorage.getItem("BranchName");
-
+    console.log("inSettlementData::", inSettlementData);
     let jVarLocalBodyData = inSettlementData.inDataToUpdate;
 
     let jVarLocalFetchUrl = `/bin/Transactions/${jVarLocalBranchName}/InsertToKey/${inSettlementData.MainRowPK}/${inSettlementData.InsertKey}`;
@@ -26,6 +26,5 @@ let getUrlQueryParams = ({ inGetKey }) => {
     const value = parameters.get(inGetKey);
     return value;
 };
-
 
 export { StartFunc };
