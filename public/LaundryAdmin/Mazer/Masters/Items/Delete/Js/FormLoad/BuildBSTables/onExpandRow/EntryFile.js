@@ -1,23 +1,31 @@
-import { StartFunc as StartFuncOnExpandRow } from "./onExpandRow/EntryFile.js";
-
 let StartFunc = (index, row, $detail) => {
-   
-    // let jVarLocalDataArray = row.AggValues.ItemsArray;
     let jVarLocalTemplateForSubTable = document.getElementById("TemplateForRow");
     let clone = jVarLocalTemplateForSubTable.content.cloneNode("true");
 
-    clone.querySelector("#CustomerNameId").textContent  = "aaaaaaaaaaa";
-    console.log("clone : ",  clone.querySelector("#CustomerNameId"));
     const s = new XMLSerializer();
     const str = s.serializeToString(clone);
+    $detail.html(str)
+    jFLocalShowCustomerName({inCustomerName:row.CustomerName,$detail,inStr:str})
+    jFLocalShowMobile({inMobile:row.Mobile,$detail,inStr:str})
+    jFLocalShowCity({inCity:row.City,$detail,inStr:str})
+};
+let jFLocalShowCustomerName = ({inCustomerName,$detail}) =>{
+    let jVarLocalCustomerNameId = $detail.find('#CustomerNameId');
 
-    let jVarLocalInsideTable = $detail.html(str).find('table');
+    jVarLocalCustomerNameId[0].value = inCustomerName;
+};
 
-    // jVarLocalInsideTable.bootstrapTable({
-    //     data: jVarLocalDataArray,
-    //     detailView: true,
-    //     onExpandRow: StartFuncOnExpandRow
-    // });
+let jFLocalShowMobile = ({inMobile,$detail}) =>{
+    let jVarLocalMobileId = $detail.find('#MobileId');
+
+    jVarLocalMobileId[0].value = inMobile;
+};
+
+let jFLocalShowCity = ({inCity,$detail}) =>{
+    let jVarLocalCityId = $detail.find('#CityId');
+
+    jVarLocalCityId[0].value = inCity;
 };
 
 export { StartFunc };
+
