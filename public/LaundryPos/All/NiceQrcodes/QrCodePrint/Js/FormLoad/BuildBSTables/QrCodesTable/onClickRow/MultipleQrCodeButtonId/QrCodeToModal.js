@@ -16,8 +16,8 @@ let StartFunc = ({ inData }) => {
     });
 
     jFLocalTotextContent({
-        inClone: clone, inHtmlClassName: "ItemSerialClass",
-        inTextContent: jVarLocalDataNeeded.ItemNamePk
+        inClone: clone, inHtmlClassName: "QrCodeClass",
+        inTextContent: jVarLocalDataNeeded.UuId
     });
 
     jFLocalTotextContent({
@@ -31,18 +31,23 @@ let StartFunc = ({ inData }) => {
     });
 
     jFLocalTotextContent({
+        inClone: clone, inHtmlClassName: "ItemSerialClass",
+        inTextContent: jVarLocalDataNeeded.ItemSerial
+    });
+
+    jFLocalTotextContent({
         inClone: clone, inHtmlClassName: "AddOnDataAsStringClass",
         inTextContent: jVarLocalDataNeeded.WashType
     });
 
     jFLocalTotextContent({
         inClone: clone, inHtmlClassName: "DateTimeClass",
-        inTextContent: jVarLocalDataNeeded.DateTime
+        inTextContent: new Date(jVarLocalDataNeeded.BookingData.OrderData.Currentdateandtime).toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: '2-digit' }).split('/').join('-')
     })
 
     jFLocalTotextContent({
         inClone: clone, inHtmlClassName: "OrderDateClass",
-        inTextContent: jVarLocalDataNeeded.DeliveryDateTime
+        inTextContent: new Date(jVarLocalDataNeeded.DeliveryDateTime).toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: '2-digit' }).split('/').join('-')
     });
 
 
