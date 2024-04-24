@@ -16,19 +16,29 @@ let StartFunc = ({ inData }) => {
     });
 
     jFLocalTotextContent({
+        inClone: clone, inHtmlClassName: "ItemSerialClass",
+        inTextContent: jVarLocalDataNeeded.ItemNamePk
+    });
+
+    jFLocalTotextContent({
+        inClone: clone, inHtmlClassName: "OrderNumberClass",
+        inTextContent: jVarLocalDataNeeded.OrderNumber
+    });
+
+    jFLocalTotextContent({
         inClone: clone, inHtmlClassName: "ItemNameClass",
         inTextContent: jVarLocalDataNeeded.ItemName
     });
 
     jFLocalTotextContent({
-        inClone: clone, inHtmlClassName: "ItemSerialClass",
-        inTextContent: jVarLocalDataNeeded.ItemSerial
+        inClone: clone, inHtmlClassName: "AddOnDataAsStringClass",
+        inTextContent: jVarLocalDataNeeded.WashType
     });
 
     jFLocalTotextContent({
-        inClone: clone, inHtmlClassName: "AddOnDataAsStringClass",
-        inTextContent: jVarLocalDataNeeded.ItemNamePk
-    });
+        inClone: clone, inHtmlClassName: "DateTimeClass",
+        inTextContent: jVarLocalDataNeeded.DateTime
+    })
 
     jFLocalTotextContent({
         inClone: clone, inHtmlClassName: "OrderDateClass",
