@@ -424,18 +424,14 @@
     <template id="TemplateForQrCodePrint">
         <div style="width: 100%; height: 300px;">
             <div style="text-align: center;" class="col">
-                <canvas id="CanvasId-{{@key}}" width="1" height="1"
-                    style="border:1px solid #fff;visibility:hidden"></canvas>
+                <canvas id="CanvasId" width="1" height="1" style="border:1px solid #fff;visibility:hidden"></canvas>
             </div>
             <div class="row">
-                <div style="text-align: center;" class="col BranchClass" >
+                <div style="text-align: center;" class="col ">
+                    <label class="BranchClass"></label>-<label class="PkClass"></label>
                 </div>
             </div>
-            <div class="row">
-                <div style="text-align: center;" class="col">
-                    <div class="fs-4 PkClass">{{pk}}-<b>{{GenerateReference.ReferncePk}}</b></div>
-                </div>
-            </div>
+
             <div class="row">
                 <div style="text-align: center;" class="col ItemNameClass">
                     {{ItemName}}.{{Pcs}}
@@ -628,6 +624,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Template Main JS File -->
+    <script src="./Js/vendor/bwip-js-min.js"></script>
+    <script src="./Js/vendor/print.min.js"></script>
+
     <script src="./assets/js/main.js"></script>
     <script type="module" src="./Js/StartFunc.js"></script>
 </body>
