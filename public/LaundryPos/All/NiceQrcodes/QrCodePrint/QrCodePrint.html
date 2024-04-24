@@ -427,38 +427,39 @@
                 <canvas id="CanvasId" width="1" height="1" style="border:1px solid #fff;visibility:hidden"></canvas>
             </div>
             <div class="row">
-                <div style="text-align: center;" class="col ">
+                <div style="text-align: center;font-weight: 500;font-size: larger; " class="col ">
                     <label class="BranchClass"></label>-<label class="PkClass"></label>
                 </div>
             </div>
 
             <div class="row">
-                <div style="text-align: center;" class="col ">
-                    <label class="ItemSerialClass"></label>-<label class="OrderNumberClass"></label>
+                <div style="text-align: center; " class="col ">
+                    <label style="font-size: x-large; font-weight: 500;" class="QrCodeClass"></label>-<label style="font-size: x-large;" class="OrderNumberClass"></label>
                 </div>
             </div>
             <div class="row">
-                <div style="text-align: center;" class="col ItemNameClass">
+                <div style="text-align: center;font-weight: 500;" class="col ItemNameClass">
                     {{ItemName}}.{{Pcs}}
                 </div>
             </div>
             <div class="row">
-                <div style="text-align: center;" class="col AddOnDataAsStringClass">
+                <div style="text-align: center; font-weight: 500;" class="col ItemSerialClass">
+                    {{ItemSerial}}.{{Pcs}}
+                </div>
+            </div>
+            
+            <div class="row">
+                <div style="text-align: center; font-weight: 500;" class="col AddOnDataAsStringClass">
                     {{AddOnDataAsString}}
                 </div>
             </div>
 
-            <div class="row">
-                <div style="text-align: center;" class="col DateTimeClass">
-                    {{DateTime}}
-                </div>
-            </div>
+            <div class="row" style="text-align: center; font-weight: 500;">
 
-            <div class="row">
-                <div style="text-align: center;" class="col OrderDateClass">
-                    {{OrderDate}}@{{DeliveryDateTime}}
-                </div>
+                <label class="col DateTimeClass"></label>@<label class="col OrderDateClass"></label>
+            
             </div>
+        
         </div>
     </template>
 
