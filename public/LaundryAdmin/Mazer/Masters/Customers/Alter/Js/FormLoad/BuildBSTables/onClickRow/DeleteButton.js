@@ -3,12 +3,12 @@ import { StartFunc as StartFuncRefreshBSTableId } from "../../ListenerFuncs/Refr
 let StartFunc = async ({ inRow }) => {
     let jVarLocalFromSwal = await Swal.fire({
         title: "Are you sure?",
-        text: "You won't be able to revert this!",
+        text: "You Want To Alter It ",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#d33",
         cancelButtonColor: "grey",
-        confirmButtonText: "Yes, delete it!",
+        confirmButtonText: "Yes, Alter it!",
         // returnFocus:false,
         reverseButtons: true,
         focusCancel: true,
