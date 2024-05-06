@@ -1,4 +1,4 @@
-import { StartFunc as StartFuncFetchFuncs } from "./PostFetch.js";
+import { StartFunc as StartFuncFetchFuncs } from "./GetFetch.js";
 
 import { StartFunc as StartFuncAfterFetch } from "./AfterFetch/EntryFile.js";
 
