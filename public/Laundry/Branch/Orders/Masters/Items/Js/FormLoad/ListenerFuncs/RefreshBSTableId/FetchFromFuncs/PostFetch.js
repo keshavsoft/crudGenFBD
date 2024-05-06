@@ -1,6 +1,6 @@
 let StartFunc = async () => {
 
-    let jVarLocalFetchUrl = `/bin/Masters/CustomerNames`
+    let jVarLocalFetchUrl = `/bin/Masters/Items`
     let response = await fetch(jVarLocalFetchUrl);
     let data = await response.json();
 
