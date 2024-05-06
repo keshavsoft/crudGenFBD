@@ -1,6 +1,7 @@
+import UrlJson from './Url.json' with {type: 'json'};
 let StartFunc = async () => {
 
-    let jVarLocalFetchUrl = `/bin/Masters/CustomerNames`
+    let jVarLocalFetchUrl = UrlJson.GetUrl;
     let response = await fetch(jVarLocalFetchUrl);
     let data = await response.json();
 
