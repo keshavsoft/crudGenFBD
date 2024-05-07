@@ -127,7 +127,7 @@
                         <li class="notification-item">
                             <i class="bi bi-info-circle text-primary"></i>
                             <div>
-                                    <h4>Dicta reprehenderit</h4>
+                                <h4>Dicta reprehenderit</h4>
                                 <p>Quae dolorem earum veritatis oditseno</p>
                                 <p>4 hrs. ago</p>
                             </div>
@@ -291,24 +291,24 @@
                     <span>Branch Select</span>
                 </a>
             </li> -->
-            
+
 
             <li class="nav-item">
-                <a  class="nav-link " href="#">
+                <a class="nav-link " href="#">
                     <i class="bi bi-people"></i>
                     <span>Customers</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a  class="nav-link collapsed" href="../Items/ShowAll.html">
+                <a class="nav-link collapsed" href="../Items/ShowAll.html">
                     <i class="bi bi-x-diamond-fill"></i>
                     <span>Items</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a  class="nav-link collapsed" href="../AddOns/ShowAll.html">
+                <a class="nav-link collapsed" href="../AddOns/ShowAll.html">
                     <i class="bi bi-list"></i>
                     <span>Add Ons</span>
                 </a>
@@ -317,13 +317,13 @@
 
             <!-- End Orders Nav -->
 
-            </ul>
-            </aside>
+        </ul>
+    </aside>
     <!-- End Sidebar-->
 
     <main id="main" class="main">
         <datalist id="CustomerDataListId">
-            
+
         </datalist>
 
         <div class="pagetitle">
@@ -333,11 +333,11 @@
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Masters</a></li>
-                    <li class="breadcrumb-item"><a id ="RefreshBSTableId" href="#">Customers</a></li>
-                    
+                    <li class="breadcrumb-item"><a id="RefreshBSTableId" href="#">Customers</a></li>
+
 
                 </ol>
-                
+
             </nav>
         </div>
         <!-- End Page Title -->
@@ -349,24 +349,28 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <table id="table" data-toolbar="#toolbar" data-search="true" data-search-highlight="true"
-                                                data-searchable="true" data-detail-formatter="detailFormatter"
-                                                data-id-field="pk" data-show-toggle="true" data-show-columns-toggle-all="true" data-minimum-count-columns="2"
-                                                data-show-pagination-switch="true" data-pagination="true" data-show-columns="true">
-                                                <thead>
-                                                    <tr id="tableHeadRow">
-                                                        <th data-formatter="jFLocalSerialColumn"
-                                                            class="d-none d-md-table-cell">#</th>
-                                                            <th data-field="Mobile" class="d-none d-sm-table-cell" data-sortable="true" data-sort-name="Mobile" data-sort-order="desc">Mobile
-                                                            </th>
-                                                        <th data-field="CustomerName" data-filter-control="select" data-sortable="true" data-sort-name="CustomerName" data-sort-order="desc">
-                                                            CustomerName</th>
-                                                        <th data-field="City" class="d-none d-md-table-cell" data-sortable="true" data-sort-name="City" data-sort-order="desc">City</th>
-                                                    </tr>
-                                                </thead>
-                                            </table>
+                                    <table id="table" data-toolbar="#toolbar">
+                                        <thead>
+                                            <tr id="tableHeadRow">
+                                                <th data-formatter="jFLocalSerialColumn" class="d-none d-md-table-cell"
+                                                    data-sortable="true" data-sort-name="tableHeadRow"
+                                                    data-sort-order="desc">#</th>
+                                                <th data-field="Mobile" class="d-none d-sm-table-cell"
+                                                    data-sortable="true" data-sort-name="Mobile" data-sort-order="desc">
+                                                    Mobile
+                                                </th>
+                                                <th data-field="CustomerName" data-filter-control="select"
+                                                    data-sortable="true" data-sort-name="CustomerName"
+                                                    data-sort-order="desc">
+                                                    CustomerName</th>
+                                                <th data-field="City" class="d-none d-md-table-cell"
+                                                    data-sortable="true" data-sort-name="City" data-sort-order="desc">
+                                                    City</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
                                 </div>
-                                
+
                             </div>
 
                         </div>
@@ -392,7 +396,7 @@
             return index + 1;
         };
     </script>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
