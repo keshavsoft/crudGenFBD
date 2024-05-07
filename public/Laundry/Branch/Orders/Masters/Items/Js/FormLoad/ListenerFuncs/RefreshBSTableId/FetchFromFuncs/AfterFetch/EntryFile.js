@@ -5,9 +5,7 @@ let StartFunc = ({ inDataToShow }) => {
 
     var $table = $('#table');
     
-    $table.bootstrapTable("destroy").bootstrapTable({
-        data: LocalDataToShow,
-    });
+    $table.bootstrapTable("load",LocalDataToShow);
 };
 
 export { StartFunc }

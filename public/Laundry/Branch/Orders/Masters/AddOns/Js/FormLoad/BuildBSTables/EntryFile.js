@@ -23,46 +23,36 @@ const jFLocalToTableTag = () => {
     $table.attr("data-minimum-count-columns", "2");
     $table.attr("data-show-pagination-switch", "true");
     $table.attr("data-pagination", "true");
+    $table.attr("data-id-field", "pk")
 };
 
 const jFPrepareColumns = () => {
-    jFPrepareMobile();
-    jFPrepareCustomerName();
-    jFPrepareCity();
-
+    jFPrepareAddOnService();
+    jFPrepareAddOnRate();
 };
 
-const jFPrepareMobile = () => {
-    var $mobile = $('#Mobile');
-    $mobile.attr({
-        "data-field": "Mobile",
+const jFPrepareAddOnService = () => {
+    var $AddOnService = $('#AddOnService');
+    $AddOnService.attr({
+        "data-field": "AddOnService",
         "data-sortable": "true",
-        "data-sort-name": "Mobile",
+        "data-sort-name": "AddOnService",
         "data-sort-order": "desc"
     });
-    $mobile.addClass("d-none d-sm-table-cell");
+    $AddOnService.addClass("d-none d-sm-table-cell");
 };
 
-const jFPrepareCustomerName = () => {
-    var $CustomerName = $('#CustomerName');
-    $CustomerName.attr({
-        "data-field": "CustomerName",
+const jFPrepareAddOnRate = () => {
+    var $AddOnRate = $('#AddOnRate');
+    $AddOnRate.attr({
+        "data-field": "AddOnRate",
         "data-sortable": "true",
-        "data-sort-name": "CustomerName",
-        "data-sort-order": "desc"
+        "data-sort-name": "AddOnRate",
+        "data-sort-order": "desc",
+        "data-halign": "left",
+        "data-align": "right"
     });
-    $CustomerName.addClass("d-none d-sm-table-cell");
-};
-
-const jFPrepareCity = () => {
-    var $City = $('#City');
-    $City.attr({
-        "data-field": "City",
-        "data-sortable": "true",
-        "data-sort-name": "City",
-        "data-sort-order": "desc"
-    });
-    $City.addClass("d-none d-sm-table-cell");
+    $AddOnRate.addClass("d-none d-sm-table-cell");
 };
 
 export { StartFunc };
