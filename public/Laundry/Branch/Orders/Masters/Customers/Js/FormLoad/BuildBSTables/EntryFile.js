@@ -33,7 +33,7 @@ const jFPrepareColumns = () => {
 };
 
 const jFPrepareMobile = () => {
-    var $mobile = $('#Mobile');
+    var $mobile = $('#MobileId');
     $mobile.attr({
         "data-field": "Mobile",
         "data-sortable": "true",
@@ -44,7 +44,7 @@ const jFPrepareMobile = () => {
 };
 
 const jFPrepareCustomerName = () => {
-    var $CustomerName = $('#CustomerName');
+    var $CustomerName = $('#CustomerNameId');
     $CustomerName.attr({
         "data-field": "CustomerName",
         "data-sortable": "true",
@@ -55,7 +55,7 @@ const jFPrepareCustomerName = () => {
 };
 
 const jFPrepareCity = () => {
-    var $City = $('#City');
+    var $City = $('#CityId');
     $City.attr({
         "data-field": "City",
         "data-sortable": "true",
