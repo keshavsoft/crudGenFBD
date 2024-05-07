@@ -351,17 +351,17 @@
                                 <div class="col">
                                     <table id="table" data-toolbar="#toolbar" data-search="true" data-search-highlight="true"
                                                 data-searchable="true" data-detail-formatter="detailFormatter"
-                                                data-id-field="pk" data-show-toggle="true"
+                                                data-id-field="pk" data-show-toggle="true" data-show-columns-toggle-all="true" data-minimum-count-columns="2"
                                                 data-show-pagination-switch="true" data-pagination="true" data-show-columns="true">
                                                 <thead>
                                                     <tr id="tableHeadRow">
                                                         <th data-formatter="jFLocalSerialColumn"
                                                             class="d-none d-md-table-cell">#</th>
-                                                        <th data-field="CustomerName" data-filter-control="Select" data-sortable="true" data-sort-name="CustomerName" data-sort-order="desc">
+                                                            <th data-field="Mobile" class="d-none d-sm-table-cell" data-sortable="true" data-sort-name="Mobile" data-sort-order="desc">Mobile
+                                                            </th>
+                                                        <th data-field="CustomerName" data-filter-control="select" data-sortable="true" data-sort-name="CustomerName" data-sort-order="desc">
                                                             CustomerName</th>
-                                                        <th data-field="Mobile" class="d-none d-sm-table-cell">Mobile
-                                                        </th>
-                                                        <th data-field="City" class="d-none d-md-table-cell" >City</th>
+                                                        <th data-field="City" class="d-none d-md-table-cell" data-sortable="true" data-sort-name="City" data-sort-order="desc">City</th>
                                                     </tr>
                                                 </thead>
                                             </table>
