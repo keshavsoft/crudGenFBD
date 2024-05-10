@@ -8,7 +8,7 @@ const StartFunc = () => {
         LocalOption.value = `${element.CustomerName}:${element.Mobile}`
         LocalOption.innerHTML = `${element.CustomerName}:${element.Mobile}`
         jVatLocalCustomersDataListId.appendChild(LocalOption)
-
     });
 };
+
 export { StartFunc };
