@@ -20,7 +20,7 @@ let jFLocalInsertAggValues = ({ inData }) => {
 
     jVarLocalReturnObject = jVarLocalData.map(element => {
         element.AggValues = {};
-        element.AggValues.ItemDetails = `${Object.keys(element.ItemsInOrder).length} / ${Object.values(element.ItemsInOrder).map(p => p.Pcs).reduce((acc, val) => acc + val, 0)}`;
+        element.AggValues.ItemDetails = `${Object.keys(element.ItemsInOrder).length} / ${Object.values(element.ItemsInOrder).map(p => p.Pcs).reduce((acc, val) => acc + parseInt(val), 0)}`;
 
         element.AggValues.SettlementAmount = ""
 
