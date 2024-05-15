@@ -341,18 +341,18 @@
             </li><!-- End Today Qrcodes Nav -->
 
             <li class="nav-item">
-                <a class="nav-link" data-bs-target="#QrCodePrint" data-bs-toggle="collapse" href="#">
+                <a class="nav-link collapsed" data-bs-target="#QrCodePrint" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-qr-code"></i><span>Qrcodes-Print</span><i
                         class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="QrCodePrint" class="nav-content " data-bs-parent="#sidebar-nav">
+                <ul id="QrCodePrint" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="../../QrCodePrint/PrintQr/QrCodePrint.html">
                             <i class="bi bi-circle"></i><span>Print QR</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../../QrCodePrint/MultiPrintQr/QrCodeRaise.html" class="active">
+                        <a href="../../QrCodePrint/MultiPrintQr/QrCodeRaise.html">
                             <i class="bi bi-circle" ></i><span>Multi Qr Print</span>
                         </a>
                     </li>
@@ -360,19 +360,18 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#BillPrint" data-bs-toggle="collapse" href="#">
+                <a class="nav-link" data-bs-target="#BillPrint" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-receipt"></i><span>Bill-Print</span><i
                         class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="BillPrint" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                <ul id="BillPrint" class="nav-content " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="../../BillPrint/PrintBill/PrintBill.html">
+                        <a href="../../BillPrint/PrintBill/PrintBill.html" class="active">
                             <i class="bi bi-circle"></i><span>Print Bill</span>
                         </a>
                     </li>
                 </ul>
             </li>
-            
 
         </ul>
         </li><!-- End Today Orders Nav -->
@@ -383,14 +382,14 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Multi Qr Print</h1>
+            <h1>Bill Print</h1>
 
 
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="../../../Dashboard/Dashboard.html">Home</a></li>
-                    <li class="breadcrumb-item"> <a href="../../Dashboard/Dashboard.html">Qrcodes-Print</a></li>
-                    <li class="breadcrumb-item active" id="RefreshBSTableId">Multi Qr Print</li>
+                    <li class="breadcrumb-item"> <a href="../../Dashboard/Dashboard.html">Bill-Print</a></li>
+                    <li class="breadcrumb-item active" id="RefreshBSTableId">Print Bill</li>
                 </ol>
             </nav>
         </div>
@@ -405,28 +404,28 @@
                             <div class="spinner-border" id="SpinnerId" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                            <table id="table" data-toolbar="#toolbar" data-search="true" data-show-footer="true"
-                                data-searchable="true" data-show-columns="true" data-show-columns-toggle-all="true"
-                                data-show-export="true" data-detail-formatter="detailFormatter" data-id-field="pk"
-                                data-show-toggle="true" >
-                                <thead>
-                                    <tr id="tableHeadRow">
-                                        <th data-formatter="jFLocalSerialColumn">#</th>
-                                        <th data-field="UuId">Order Number</th>
-                                        <th data-field="CustomerData.CustomerName">Customer Name</th>
-                                        <th data-field="OrderData.BranchName">Branch</th>
-                                        <th data-field="CustomerData.CustomerMobile">Mobile</th>
-                                        <th data-formatter="jFLocalDateFormatter">Date</th>
-                                        <th data-formatter="jFLocalOrderDetails">Order Details</th>
-                                        <th data-formatter="jFLocalSettlementDetails"
-                                            data-footer-formatter="priceFormatter">
-                                            Settlement</th>
-                                        <th data-formatter="jFLocalQrCodeDetails" data-footer-formatter="QrFormatter">
-                                            QrCodes
-                                        </th>
-                                    </tr>
-                                </thead>
-                            </table>
+                            <table id="table" data-toolbar="#toolbar" data-search="true" data-show-footer="true" data-searchable="true"
+                            data-show-columns="true" data-show-columns-toggle-all="true" data-show-export="true"
+                             data-detail-formatter="detailFormatter" data-id-field="pk"
+                            data-show-toggle="true" data-buttons-class="primary">
+                            <thead>
+                                <tr id="tableHeadRow">
+                                    <th data-formatter="jFLocalSerialColumn">#</th>
+                                    <th data-field="UuId">Order Number</th>
+                                    <th data-field="CustomerData.CustomerName">Customer Name</th>
+                                    <th data-field="OrderData.BranchName">Branch</th>
+                                    <th data-field="CustomerData.CustomerMobile">Mobile</th>
+                                    <th data-formatter="jFLocalDateFormatter">Date</th>
+                                    <th data-formatter="jFLocalOrderDetails">Order Details</th>
+                                    <th data-formatter="jFLocalSettlementDetails" data-footer-formatter="priceFormatter">
+                                        Settlement</th>
+                                    <th data-formatter="jFLocalQrCodeDetails" data-footer-formatter="QrFormatter">
+                                        QrCodes
+                                    </th>
+                                    <th data-formatter="Billprint">Bill print</th>
+                                </tr>
+                            </thead>
+                        </table>
                         </div>
                     </div>
                 </div>
@@ -487,9 +486,9 @@
                 </div>
             </div>
 
-            <div class="col" style="text-align: center; font-weight: 500;">
+            <div class="row" style="text-align: center; font-weight: 500;">
 
-                <label class=" DateTimeClass"></label> @ <label class=" OrderDateClass"></label>
+                <label class="col DateTimeClass"></label>@<label class="col OrderDateClass"></label>
             
             </div>
         
@@ -595,6 +594,17 @@
             }
         }
 
+        function Billprint(value, row, index) {
+            return [
+                `<a href="./../BillPrint/BillPrint.html?BranchName=${row.OrderData.BranchName}&OrderNumber=${row.UuId}" data-rowpk="{{pk}}" class="btn btn-warning">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer-fill" viewBox="0 0 16 16">
+                                <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z"/>
+                                <path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                              </svg>
+                            </a>`
+            ].join('')
+        }
+        
         function priceFormatter(data) {
             var field = this.field
             return '₹ ' + data.map(function (row) {
