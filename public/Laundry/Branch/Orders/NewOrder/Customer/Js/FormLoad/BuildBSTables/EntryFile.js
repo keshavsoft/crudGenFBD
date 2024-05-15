@@ -1,4 +1,5 @@
 import { StartFunc as StartFuncOnExpandRow } from "./onExpandRow/EntryFile.js";
+import IconsJson from './icons.json' with {type: 'json'};
 
 const StartFunc = () => {
     var $table = $('#table');
@@ -6,7 +7,8 @@ const StartFunc = () => {
     $table.bootstrapTable({
         data: [],
         detailView: true,
-        onExpandRow: StartFuncOnExpandRow
+        onExpandRow: StartFuncOnExpandRow,
+        icons: IconsJson
     });
 
     // $table.on('post-header.bs.table', function () {
