@@ -8,25 +8,15 @@ let StartFunc = ({ inData }) => {
     jVarLocalDataNeeded.map(element => {
         const str = StartFuncSingleQrcode({ inData: element });
         jVarLocalModalBody.innerHTML += str;
-
-        // let jVarLocalHtmlQrId = document.getElementById(`CanvasId`);
-        // GenerateQrCodeOnModal({ inQrData: jVarLocalDataNeeded, inCanvasId: jVarLocalHtmlQrId })
-
     });
-    console.log("--QrDatarrrrrrrrrrr-", jVarLocalDataNeeded);
 
     let k1 = document.querySelectorAll("canvas");
 
     for (let i = 0; i < k1.length; i++) {
         const element = k1[i];
         GenerateQrCodeOnModal({ inQrData: jVarLocalDataNeeded, inCanvasId: element })
-        console.log("element", element);
 
-    }
-    console.log("kk", k1);
-
-
-
+    };
     let jVarLocalId = "ModalForQrCode";
 
     var myModal = new bootstrap.Modal(document.getElementById(jVarLocalId), { keyboard: true, focus: true });

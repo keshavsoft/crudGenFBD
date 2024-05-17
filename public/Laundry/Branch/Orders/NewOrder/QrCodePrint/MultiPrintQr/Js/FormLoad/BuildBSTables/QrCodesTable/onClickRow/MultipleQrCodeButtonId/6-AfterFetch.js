@@ -20,7 +20,9 @@ let jFLocalAddOnData = ({ inQrCodeData }) => {
 
     let jFLocalData = inQrCodeData.map(element => {
         element.AddOnDataAsString = Object.values(element.BookingData.AddOnData).map(LoopAddOn => {
-            if (element.ItemSerial == LoopAddOn.AddOnItemSerial) {
+            console.log("element:",element);
+            console.log("LoopAddOn::",LoopAddOn);
+            if (element.ItemSerial === LoopAddOn.AddOnItemSerial) {
                 return LoopAddOn.AddOnRate > 0 ? `${LoopAddOn.AddOnService}` : LoopAddOn.AddOnService;
             };
         }).join(", ");

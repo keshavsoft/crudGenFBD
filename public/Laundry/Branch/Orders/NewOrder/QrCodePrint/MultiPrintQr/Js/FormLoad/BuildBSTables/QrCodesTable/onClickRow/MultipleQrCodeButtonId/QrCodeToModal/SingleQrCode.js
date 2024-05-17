@@ -1,5 +1,6 @@
 let StartFunc = ({ inData }) => {
     let jVarLocalDataNeeded = inData;
+    console.log("jVarLocalDataNeeded:",jVarLocalDataNeeded);
 
     let jVarLocalTemplate = document.getElementById("TemplateForQrCodePrint");
     let clone = jVarLocalTemplate.content.cloneNode("true");
@@ -11,7 +12,7 @@ let StartFunc = ({ inData }) => {
 
     jFLocalTotextContent({
         inClone: clone, inHtmlClassName: "PkClass",
-        inTextContent: jVarLocalDataNeeded.locationPk
+        inTextContent: jVarLocalDataNeeded.location
     });
 
     jFLocalTotextContent({
@@ -36,7 +37,7 @@ let StartFunc = ({ inData }) => {
 
     jFLocalTotextContent({
         inClone: clone, inHtmlClassName: "AddOnDataAsStringClass",
-        inTextContent: jVarLocalDataNeeded.WashType
+        inTextContent: jVarLocalDataNeeded.AddOnDataAsString
     });
 
     jFLocalTotextContent({
@@ -75,40 +76,5 @@ let jFLocalTotextContent = ({ inClone, inHtmlClassName, inTextContent }) => {
     jVarLocalFound.textContent = jVarLocalTextContent;
 };
 
-let GenerateQrCodeOnModal = ({ inQrData = "", inCanvasId }) => {
-    var canvas = inCanvasId;
-    canvas.height = 1;
-    canvas.width = 1;
-    canvas.style.visibility = 'hidden';
-
-    // Convert the options to an object.
-    let opts = {};
-    opts.text = `${inQrData.pk}~`
-    opts.text += `${inQrData.pk}-${inQrData.OrderNumber}~`
-    opts.text += `${inQrData.ItemName}~`
-    opts.text += `${inQrData.WashType}@${inQrData.ItemSerial}/${inQrData.Pcs}/${inQrData.TotalQrCodes}~`
-    opts.text += `${inQrData.AddOnDataAsString}~`
-    opts.text += `${inQrData.BookingData.OrderData.Currentdateandtime}~`
-    opts.text += `${inQrData.DeliveryDateTime}`;
-    opts.bcid = "qrcode";
-    opts.scaleX = 1;
-    opts.scaleY = 1;
-    opts.rotate = "N";
-
-    // Draw the bar code to the canvas
-    try {
-        let ts0 = new Date;
-        bwipjs.toCanvas(canvas, opts);
-        show(ts0, new Date);
-    } catch (e) {
-        console.log("error : ", e);
-
-        return;
-    }
-
-    function show(ts0, ts1) {
-        canvas.style.visibility = 'visible';
-    }
-};
 
 export { StartFunc };
